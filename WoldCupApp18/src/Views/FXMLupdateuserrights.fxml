@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.FXMLupdateuserrightsController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="5.0" prefHeight="517.0" prefWidth="746.0">
+         <children>
+            <TableView fx:id="table" layoutY="53.0" prefHeight="326.0" prefWidth="731.0">
+               <columns>
+                  <TableColumn fx:id="name" prefWidth="43.0" text="nom" />
+                  <TableColumn fx:id="last_name" prefWidth="58.0" text="prenom" />
+                  <TableColumn fx:id="birth_date" prefWidth="109.0" text="date de naissance" />
+                  <TableColumn fx:id="nationality" prefWidth="69.0" text="nationalite" />
+                  <TableColumn fx:id="email" prefWidth="52.0" text="e-mail" />
+                  <TableColumn fx:id="tel" prefWidth="73.0" text="telephone" />
+                  <TableColumn fx:id="login" prefWidth="73.0" text="identifiant" />
+                  <TableColumn fx:id="password" prefWidth="91.0" text="mot de passe" />
+                  <TableColumn fx:id="favorite_team" prefWidth="109.0" text="equipe preferee" />
+               </columns>
+            </TableView>
+            <Label layoutX="288.0" layoutY="14.0" prefHeight="27.0" prefWidth="193.0" text="details de l'utilisateur" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn2" layoutX="27.0" layoutY="409.0" mnemonicParsing="true" onAction="#deleteUser" prefHeight="27.0" prefWidth="122.0" text="Supprimer" />
+            <TextField fx:id="recherche_txt" layoutX="574.0" layoutY="410.0" />
+            <Label layoutX="503.0" layoutY="414.0" text="rechercher:" />
+            <ChoiceBox fx:id="combo_rech" layoutX="310.0" layoutY="410.0" prefWidth="150.0" />
+            <Label layoutX="209.0" layoutY="414.0" text="rechercher selon:" />
+            <Label fx:id="label" layoutX="518.0" layoutY="19.0" prefHeight="17.0" prefWidth="159.0" />
+            <Button fx:id="modifrights" layoutX="127.0" layoutY="457.0" mnemonicParsing="false" onAction="#updateUserRights" prefHeight="25.0" prefWidth="246.0" text="changer les droits d'acces d'un membre" />
+            <Button fx:id="bloquer" layoutX="455.0" layoutY="457.0" mnemonicParsing="false" onAction="#bannerCompte" text="bloquer un compte" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
