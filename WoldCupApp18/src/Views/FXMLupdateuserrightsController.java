@@ -28,7 +28,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import Entities.User;
-import Services.service_user;
+import Services.ServiceUser;
 
 /**
  * FXML Controller class
@@ -94,7 +94,7 @@ public class FXMLupdateuserrightsController implements Initializable {
     public void afficher()    
 {
     try {
-        service_user s = new service_user();
+        ServiceUser s = new ServiceUser();
         name.setCellValueFactory(new PropertyValueFactory<>("user_name"));
         last_name.setCellValueFactory(new PropertyValueFactory<>("user_last_name"));
         birth_date.setCellValueFactory(new PropertyValueFactory<>("user_birthday"));
@@ -123,7 +123,7 @@ public class FXMLupdateuserrightsController implements Initializable {
             alert.setHeaderText("Etes vous sur de vouloir supprimer l'utilisateur : " + table.getSelectionModel().getSelectedItem().getUser_name()+ " ?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                service_user s=new service_user();
+                ServiceUser s=new ServiceUser();
         s.DeleteUser(table.getSelectionModel().getSelectedItem().getUser_name());
             afficher();
                  
@@ -141,7 +141,7 @@ public class FXMLupdateuserrightsController implements Initializable {
     
     void filtrerUserList(String oldValue, String newValue) throws SQLException {
         String choix = combo_rech.getValue();
-        service_user st = new service_user();
+        ServiceUser st = new ServiceUser();
         if(choix.equals("nom")){
         ObservableList<User> filteredList = FXCollections.observableArrayList();
         if (recherche_txt.getText() == null || (newValue.length() < oldValue.length()) || newValue == null) {
@@ -218,7 +218,7 @@ public class FXMLupdateuserrightsController implements Initializable {
     @FXML
     private void bannerCompte(ActionEvent event) {
         if (!table.getSelectionModel().isEmpty()) {
-           service_user su = new service_user();
+           ServiceUser su = new ServiceUser();
 
             
             
@@ -246,7 +246,7 @@ public class FXMLupdateuserrightsController implements Initializable {
      @FXML
     private void updateUserRights(ActionEvent event) {
         if (!table.getSelectionModel().isEmpty()) {
-           service_user su = new service_user();
+           ServiceUser su = new ServiceUser();
 
             
             //System.out.println(table.getSelectionModel().getSelectedItem().getUser_id());

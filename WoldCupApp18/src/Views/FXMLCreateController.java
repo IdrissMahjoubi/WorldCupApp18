@@ -27,7 +27,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import Entities.User;
-import Services.service_user;
+import Services.ServiceUser;
 
 /**
  * FXML Controller class
@@ -185,7 +185,7 @@ public class FXMLCreateController implements Initializable {
         String user_favoriteteam =team.getValue();
        
         User u = new User(user_name,user_lastname,user_birthday,user_nationality,user_email,user_phonenumber,user_login,user_password,user_favoriteteam);
-        service_user s = new service_user();
+        ServiceUser s = new ServiceUser();
         if(password2.getText().equals(password.getText()) ){
             System.out.println("confirme");
             s.addUser(u);

@@ -23,7 +23,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-import Services.service_user;
+import Services.ServiceUser;
 import Utilities.Session;
 import com.jfoenix.controls.JFXButton;
 
@@ -55,7 +55,7 @@ public class FXMLauthentificationController implements Initializable {
 
     @FXML
     private void authentification(ActionEvent event) throws SQLException {
-        service_user s = new service_user();
+        ServiceUser s = new ServiceUser();
         System.out.println(s.CheckLoginAndPassword(login.getText(), password.getText()));
         if ((s.CheckLoginAndPassword(login.getText(), password.getText())) == 0){
             

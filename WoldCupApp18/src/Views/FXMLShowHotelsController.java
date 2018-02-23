@@ -21,7 +21,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import Entities.Hotel;
-import Services.Service_hotel;
+import Services.ServiceHotel;
 
 /**
  * FXML Controller class
@@ -81,7 +81,7 @@ public class FXMLShowHotelsController implements Initializable {
             alert.setHeaderText("Etes vous sur de vouloir supprimer : " + table.getSelectionModel().getSelectedItem().getHotel_ID());
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-            Service_hotel s=new Service_hotel();
+            ServiceHotel s=new ServiceHotel();
             s.DeleteHotel(table.getSelectionModel().getSelectedItem().getHotel_ID());
             afficherhotel();
             }
@@ -103,7 +103,7 @@ public class FXMLShowHotelsController implements Initializable {
     
       public void afficherhotel(){
            
-        Service_hotel s = new Service_hotel();
+        ServiceHotel s = new ServiceHotel();
         id.setCellValueFactory(new PropertyValueFactory<>("HOTEL_ID"));
         name.setCellValueFactory(new PropertyValueFactory<>("Hotel_NAME"));
         location.setCellValueFactory(new PropertyValueFactory<>("Hotel_LOCATION"));

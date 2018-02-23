@@ -8,7 +8,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.FXMLUserinterfaceController">
    <children>
-      <Button fx:id="bouton_modif" layoutX="441.0" layoutY="24.0" mnemonicParsing="false" onAction="#updateUserDetails" text="modofier mon compte" />
-      <Button fx:id="logout" layoutX="31.0" layoutY="24.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="112.0" text="se déconnecter" />
+      <Button fx:id="bouton_modif" layoutX="354.0" layoutY="24.0" mnemonicParsing="false" onAction="#updateUserDetails" prefHeight="25.0" prefWidth="112.0" text="modifier  compte" />
+      <Button fx:id="logout" layoutX="482.0" layoutY="24.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="112.0" text="se déconnecter" />
+      <Button fx:id="teams" layoutX="31.0" layoutY="86.0" mnemonicParsing="false" onAction="#teams" text="Teams" />
    </children>
 </AnchorPane>

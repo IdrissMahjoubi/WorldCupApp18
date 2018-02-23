@@ -17,7 +17,7 @@ import Utilities.DataSource;
  *
  * @author MyTEK
  */
-public class Service_hotel {
+public class ServiceHotel {
     
      public void addHotel( Hotel hotel ) throws SQLException
     {

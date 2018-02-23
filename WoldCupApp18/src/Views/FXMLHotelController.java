@@ -20,7 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import Entities.Hotel;
-import Services.Service_hotel;
+import Services.ServiceHotel;
 
 /**
  * FXML Controller class
@@ -61,7 +61,7 @@ public class FXMLHotelController implements Initializable {
         String HOTEL_LOCATION_Y = hotely.getText();
          
          Hotel hotel = new Hotel (Hotel_NAME,Hotel_LOCATION,HOTEL_STARS,HOTEL_LOCATION_X,HOTEL_LOCATION_Y);
-         Service_hotel sh = new Service_hotel();
+         ServiceHotel sh = new ServiceHotel();
          sh.addHotel(hotel);
          FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLShowHotels.fxml"));
         try {

@@ -24,7 +24,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import Entities.User;
-import Services.service_user;
+import Services.ServiceUser;
 import Utilities.Session;
 
 /**
@@ -79,7 +79,7 @@ public class FXMLUpdateUserController implements Initializable {
         
         int ID_User_new = Session.LoggedUser.getUser_id();
         
-            service_user su = new service_user();
+            ServiceUser su = new ServiceUser();
             User u = new User();
             
             

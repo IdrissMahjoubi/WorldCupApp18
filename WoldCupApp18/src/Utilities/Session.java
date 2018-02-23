@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Properties;
 import Entities.User;
-import Services.service_user;
+import Services.ServiceUser;
 
 
 /**
@@ -38,7 +38,7 @@ public class Session {
     //private static Session instance ; 
 
   
-    public static service_user su =new service_user();
+    public static ServiceUser su =new ServiceUser();
     public  static User LoggedUser ;
 
     public static Session getDefaultInstance(Properties props, Object object) {

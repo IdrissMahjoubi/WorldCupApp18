@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import com.jfoenix.controls.*?>
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="738.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.FXMLAffichageTeamController">
+   <children>
+      <TableView fx:id="table" layoutX="26.0" layoutY="389.0" prefHeight="340.0" prefWidth="395.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="113.0" text="Equipe" />
+          <TableColumn fx:id="coach" prefWidth="111.0" text="Entraineur" />
+            <TableColumn fx:id="continent" prefWidth="95.0" text="Continent" />
+            <TableColumn fx:id="groupe" prefWidth="75.0" text="Group" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="230.0" fitWidth="352.0" layoutX="26.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@830x532_logo-officiel-coupe-monde-2018-presente-28-octobre-2014.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="supprimer" layoutX="454.0" layoutY="697.0" mnemonicParsing="false" onAction="#supprimerTeamadmin" text="Supprimer" />
+      <Button fx:id="modifier" layoutX="547.0" layoutY="697.0" mnemonicParsing="false" onAction="#modifierTeam" prefHeight="25.0" prefWidth="72.0" text="Modifier" />
+      <TextField fx:id="team_txt" layoutX="547.0" layoutY="327.0" />
+      <TextField fx:id="coach_txt" layoutX="547.0" layoutY="377.0" />
+      <Label layoutX="463.0" layoutY="331.0" text="Equipe" />
+      <Button fx:id="BrowseFlag" layoutX="621.0" layoutY="623.0" mnemonicParsing="false" onAction="#BrowseFlag" prefHeight="25.0" prefWidth="108.0" text="Parcourir drapeau..." />
+      <Button fx:id="BrowseLogo" layoutX="621.0" layoutY="572.0" mnemonicParsing="false" onAction="#BrowseLogo" prefHeight="25.0" prefWidth="108.0" text="Parcourir logo..." />
+      <Label layoutX="462.0" layoutY="381.0" text="Entraineur" />
+      <Label layoutX="461.0" layoutY="466.0" text="Groupe" />
+      <Label layoutX="463.0" layoutY="424.0" text="Continent" />
+      <ImageView fx:id="flagimage" fitHeight="84.0" fitWidth="114.0" layoutX="460.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="team_logo" fitHeight="77.0" fitWidth="108.0" layoutX="462.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="rechercheteam_txt" layoutX="224.0" layoutY="350.0" />
+      <Label layoutX="42.0" layoutY="354.0" text="Valeur :" />
+      <ChoiceBox fx:id="comboRech" layoutX="224.0" layoutY="302.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="42.0" layoutY="306.0" text="Choisir un critère de recherche :" />
+      <MediaView fx:id="view" fitHeight="200.0" fitWidth="200.0" layoutX="499.0" layoutY="14.0" AnchorPane.bottomAnchor="446.0" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="14.0" />
+      <Button fx:id="play" layoutX="507.0" layoutY="250.0" mnemonicParsing="false" onAction="#play" text="play" />
+      <Button fx:id="stop" layoutX="554.0" layoutY="250.0" mnemonicParsing="false" onAction="#stop" text="stop" />
+      <ComboBox fx:id="ComboContinent" layoutX="547.0" layoutY="420.0" prefHeight="25.0" prefWidth="149.0" />
+      <ComboBox fx:id="ComboGrp" layoutX="547.0" layoutY="462.0" prefHeight="25.0" prefWidth="149.0" />
+      <ComboBox fx:id="ComboRechCont" layoutX="224.0" layoutY="350.0" onAction="#FonctionComboRechCont" prefWidth="150.0" />
+      <ComboBox fx:id="ComboRechGrp" layoutX="224.0" layoutY="350.0" onAction="#FonctionRechercheGrp" prefWidth="150.0" />
+      <Button fx:id="ajouter" layoutX="648.0" layoutY="697.0" mnemonicParsing="false" onAction="#ajouterEquipe" text="Ajouter" />
+      <Button fx:id="play2" layoutX="622.0" layoutY="521.0" mnemonicParsing="false" onAction="#playHymne" text="Hymne on" />
+      <Button fx:id="stop2" layoutX="703.0" layoutY="521.0" mnemonicParsing="false" onAction="#stopp" text="Hymne off" />
+   </children>
+</AnchorPane>

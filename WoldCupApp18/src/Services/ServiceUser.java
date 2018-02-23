@@ -21,12 +21,12 @@ import java.util.logging.Logger;
  *
  * @author MyTEK
  */
-public class service_user {
+public class ServiceUser {
 
     public Connection con;
     PreparedStatement ste;
 
-    public service_user() {
+    public ServiceUser() {
 
         con = DataSource.getInstance().getConnection();
 
