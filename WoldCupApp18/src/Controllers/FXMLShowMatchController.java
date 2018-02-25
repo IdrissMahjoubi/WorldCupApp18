@@ -16,7 +16,7 @@ import javafx.scene.control.Label;
  *
  * @author apple
  */
-public class FXML_ShowMatchController implements Initializable {
+public class FXMLShowMatchController implements Initializable {
     @FXML
     private Label Label_date;
     @FXML
