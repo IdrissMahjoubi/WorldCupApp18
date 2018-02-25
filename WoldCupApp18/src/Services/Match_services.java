@@ -200,8 +200,8 @@ public class Match_services implements Match_inteface {
         System.out.println(t2.toString());
         //update database (table team)
         ServiceTeam st = new ServiceTeam();
-        st.update(t2);
-        st.update(t1);
+        st.updatePoints(t2);
+        st.updatePoints(t1);
     }
 
     public Team getTeamByName(String team) {

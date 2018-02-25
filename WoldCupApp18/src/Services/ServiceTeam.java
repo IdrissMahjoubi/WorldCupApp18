@@ -102,6 +102,32 @@ public class ServiceTeam {
             ex.printStackTrace();
         }
     }
+      public void updatePoints(Team t) {
+        String req = "UPDATE `TEAM` SET `TEAM_NAME`=?,`TEAM_COACH`=?,`TEAM_INTMATCHPLAYED`=?,`TEAM_INTMATCHWON`=?,`TEAM_INTMATCHLOST`=?,`TEAM_INTMATCHDRAW`=?,`TEAM_GOALSFOR`=?,`TEAM_GOALSAGAINST`=?,`TEAM_POINTS`=?,`TEAM_POSITION`=?,`TEAM_GROUP`=?,`TEAM_CONTINENT`=?,`TEAM_LOGO`=?,`TEAM_FLAG`=? WHERE TEAM_ID = ?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = connection.prepareStatement(req);
+            preparedStatement.setString(1, t.getTEAM_NAME());
+            preparedStatement.setString(2, t.getTEAM_COACH());
+            preparedStatement.setInt(3, t.getTEAM_NUMBERMATCHPLAYED());
+            preparedStatement.setInt(4, t.getTEAM_NUMBERMATCHWON());
+            preparedStatement.setInt(5, t.getTEAM_NUMBERMATCHLOST());
+            preparedStatement.setInt(6, t.getTEAM_NUMBERMATCHDRAW());
+            preparedStatement.setInt(7, t.getTEAM_GOALSFOR());
+            preparedStatement.setInt(8, t.getTEAM_GOALSAGAINST());
+            preparedStatement.setInt(9, t.getTEAM_POINTS());
+            preparedStatement.setInt(10, t.getTEAM_POSITION());
+            preparedStatement.setString(11, t.getTEAM_GROUP());
+            preparedStatement.setString(12, t.getTEAM_CONTINENT());
+            preparedStatement.setString(13, t.getTEAM_LOGO());
+            preparedStatement.setString(14, t.getTEAM_FLAG());
+            preparedStatement.setInt(15, t.getTEAM_ID());
+   
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
      
      
 
