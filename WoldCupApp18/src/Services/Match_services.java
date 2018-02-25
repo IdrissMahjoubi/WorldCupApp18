@@ -23,8 +23,6 @@ import Utilities.DataSource;
  */
 public class Match_services implements Match_inteface {
 
-
-
     DataSource ds = DataSource.getInstance();
     Statement statement;
     Connection connection;
@@ -159,55 +157,59 @@ public class Match_services implements Match_inteface {
         }
     }
 
-    
     public void PointsCount(Match m) {
 
+        //get both teams from table view
         Team t1 = getTeamByName(m.getTeam1());
         Team t2 = getTeamByName(m.getTeam2());
 
-        t1.setTEAM_GOALSFOR(t1.getTEAM_GOALSFOR()+m.getTeam1Score());
-        t1.setTEAM_GOALSAGAINST(t1.getTEAM_GOALSAGAINST()+m.getTeam2Score());
-       
-        t2.setTEAM_GOALSFOR(t2.getTEAM_GOALSFOR()+m.getTeam2Score());
-        t2.setTEAM_GOALSAGAINST(t2.getTEAM_GOALSAGAINST()+m.getTeam1Score());
+        //team one goals for and agains
+        t1.setTEAM_GOALSFOR(t1.getTEAM_GOALSFOR() + m.getTeam1Score());
+        t1.setTEAM_GOALSAGAINST(t1.getTEAM_GOALSAGAINST() + m.getTeam2Score());
 
-        t1.setTEAM_NUMBERMATCHPLAYED(t1.getTEAM_NUMBERMATCHPLAYED()+1);
-        t2.setTEAM_NUMBERMATCHPLAYED(t2.getTEAM_NUMBERMATCHPLAYED()+1);
+        //team two goals for and agains
+        t2.setTEAM_GOALSFOR(t2.getTEAM_GOALSFOR() + m.getTeam2Score());
+        t2.setTEAM_GOALSAGAINST(t2.getTEAM_GOALSAGAINST() + m.getTeam1Score());
 
-        if (m.getTeam1Score()> m.getTeam2Score()) {
-            
-            
-         t1.setTEAM_POINTS(t1.getTEAM_POINTS()+3);
-            
-            
-            
-            
+        //Number of match played
+        t1.setTEAM_NUMBERMATCHPLAYED(t1.getTEAM_NUMBERMATCHPLAYED() + 1);
+        t2.setTEAM_NUMBERMATCHPLAYED(t2.getTEAM_NUMBERMATCHPLAYED() + 1);
+
+        //Count Points
+        if (m.getTeam1Score() > m.getTeam2Score()) {
+
+            t1.setTEAM_POINTS(t1.getTEAM_POINTS() + 3);
+            t1.setTEAM_NUMBERMATCHWON(t1.getTEAM_NUMBERMATCHWON()+1);
+            t2.setTEAM_NUMBERMATCHLOST(t2.getTEAM_NUMBERMATCHLOST()+1);
+
         } else if (m.getTeam1Score() < m.getTeam2Score()) {
-            
-            
-            
-         t2.setTEAM_POINTS(t2.getTEAM_POINTS()+3);
+
+            t2.setTEAM_POINTS(t2.getTEAM_POINTS() + 3);
+            t2.setTEAM_NUMBERMATCHWON(t2.getTEAM_NUMBERMATCHWON()+1);
+            t1.setTEAM_NUMBERMATCHLOST(t1.getTEAM_NUMBERMATCHLOST()+1);
+
         } else {
-            
-            
-            
-         t1.setTEAM_POINTS(t1.getTEAM_POINTS()+1);
-         t2.setTEAM_POINTS(t2.getTEAM_POINTS()+1);
+
+            t1.setTEAM_POINTS(t1.getTEAM_POINTS() + 1);
+            t2.setTEAM_POINTS(t2.getTEAM_POINTS() + 1);
+            t1.setTEAM_NUMBERMATCHDRAW(t1.getTEAM_NUMBERMATCHDRAW()+1);
+            t2.setTEAM_NUMBERMATCHDRAW(t2.getTEAM_NUMBERMATCHDRAW()+1);
+
         }
         System.out.println(t1.toString());
         System.out.println(t2.toString());
-
-            ServiceTeam st = new ServiceTeam();
-            st.update(t2);
-            st.update(t1);
+        //update database (table team)
+        ServiceTeam st = new ServiceTeam();
+        st.update(t2);
+        st.update(t1);
     }
-    
-        public Team getTeamByName(String team) {
-                            Team t = new Team();
+
+    public Team getTeamByName(String team) {
+        Team t = new Team();
         try {
-                 String req = "SELECT * from TEAM where TEAM_NAME='" + team + "'";
+            String req = "SELECT * from TEAM where TEAM_NAME='" + team + "'";
             result = statement.executeQuery(req);
-             if (result.next()) {
+            if (result.next()) {
                 t.setTEAM_ID(result.getInt(1));
                 t.setTEAM_NAME(result.getString(2));
                 t.setTEAM_COACH(result.getString(3));
@@ -222,16 +224,12 @@ public class Match_services implements Match_inteface {
                 t.setTEAM_GROUP(result.getString(12));
                 t.setTEAM_CONTINENT(result.getString(13));
                 t.setTEAM_LOGO(result.getString(14));
-                t.setTEAM_FLAG(result.getString(15));     
+                t.setTEAM_FLAG(result.getString(15));
             }
         } catch (SQLException ex) {
-            System.out.println("ERROR GET Team"+ex.getMessage());        
+            System.out.println("ERROR GET Team" + ex.getMessage());
         }
         return t;
-}
-
-  
-    
-    
+    }
 
 }
