@@ -5,6 +5,7 @@
  */
 package Services;
 
+import Controllers.FXMLShowMatchsController;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,6 +17,7 @@ import javafx.collections.ObservableList;
 import Entities.Match;
 import Entities.Team;
 import Utilities.DataSource;
+import javafx.scene.control.Alert;
 
 /**
  *
@@ -158,7 +160,7 @@ public class Match_services implements Match_inteface {
     }
 
     public void PointsCount(Match m) {
-
+        FXMLShowMatchsController.alertMessage("Group Stage", Alert.AlertType.WARNING);
         //get both teams from table view
         Team t1 = getTeamByName(m.getTeam1());
         Team t2 = getTeamByName(m.getTeam2());
@@ -174,7 +176,9 @@ public class Match_services implements Match_inteface {
         //Number of match played
         t1.setTEAM_NUMBERMATCHPLAYED(t1.getTEAM_NUMBERMATCHPLAYED() + 1);
         t2.setTEAM_NUMBERMATCHPLAYED(t2.getTEAM_NUMBERMATCHPLAYED() + 1);
-
+     
+        if(m.getGameKind().contains("Group"))
+        {
         //Count Points
         if (m.getTeam1Score() > m.getTeam2Score()) {
 
@@ -196,12 +200,27 @@ public class Match_services implements Match_inteface {
             t2.setTEAM_NUMBERMATCHDRAW(t2.getTEAM_NUMBERMATCHDRAW()+1);
 
         }
-        System.out.println(t1.toString());
-        System.out.println(t2.toString());
         //update database (table team)
         ServiceTeam st = new ServiceTeam();
         st.updatePoints(t2);
         st.updatePoints(t1);
+        }else //if not in group stage
+        {
+                if (m.getTeam1Score() > m.getTeam2Score()) {
+            t1.setTEAM_NUMBERMATCHWON(t1.getTEAM_NUMBERMATCHWON()+1);
+            t2.setTEAM_NUMBERMATCHLOST(t2.getTEAM_NUMBERMATCHLOST()+1);
+        } else if (m.getTeam1Score() < m.getTeam2Score()) {
+            t2.setTEAM_NUMBERMATCHWON(t2.getTEAM_NUMBERMATCHWON()+1);
+            t1.setTEAM_NUMBERMATCHLOST(t1.getTEAM_NUMBERMATCHLOST()+1);
+        } else {
+            t1.setTEAM_NUMBERMATCHDRAW(t1.getTEAM_NUMBERMATCHDRAW()+1);
+            t2.setTEAM_NUMBERMATCHDRAW(t2.getTEAM_NUMBERMATCHDRAW()+1);
+        }
+        //update database (table team)
+        ServiceTeam st = new ServiceTeam();
+        st.updatePoints(t2);
+        st.updatePoints(t1);
+        }
     }
 
     public Team getTeamByName(String team) {
