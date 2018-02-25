@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="guiTest.FXMLAffichageTeamUserController">
+   <children>
+      <ImageView fitHeight="129.0" fitWidth="134.0" layoutX="14.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Icons/FIFA_World_Cup_2018_Logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="121.0" fitWidth="190.0" layoutX="585.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Icons/28235820_1814682398596456_1287436617_n.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="257.0" layoutY="14.0" prefHeight="58.0" prefWidth="242.0" text="Teams" textAlignment="CENTER">
+         <font>
+            <Font name="System Italic" size="80.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="14.0" layoutY="215.0" prefHeight="304.0" prefWidth="416.0">
+        <columns>
+          <TableColumn fx:id="team" prefWidth="116.0" text="Teams" />
+          <TableColumn fx:id="coach" prefWidth="136.0" text="Coach" />
+            <TableColumn fx:id="group" prefWidth="46.0" text="Group" />
+            <TableColumn fx:id="continent" prefWidth="117.0" text="Continent" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="flagview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logoview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="PLAY" layoutX="500.0" layoutY="506.0" mnemonicParsing="false" onAction="#play" text="Anthem On" />
+      <Button fx:id="STOP" layoutX="622.0" layoutY="506.0" mnemonicParsing="false" onAction="#stop" text="Anthem Off" />
+      <ChoiceBox fx:id="choice" layoutX="24.0" layoutY="181.0" prefWidth="150.0" />
+      <TextField fx:id="rechercheteam_txt" layoutX="211.0" layoutY="181.0" />
+      <ComboBox fx:id="continents" layoutX="211.0" layoutY="181.0" onAction="#rechercheContinent" prefWidth="150.0" />
+      <ComboBox fx:id="groupes" layoutX="211.0" layoutY="181.0" onAction="#rechercheGroupes" prefWidth="150.0" />
+   </children>
+</AnchorPane>
