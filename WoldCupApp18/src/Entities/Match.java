@@ -16,11 +16,11 @@ public class Match {
     private Date date_match;
     private String referee;
     private String time;
-    private int Winner_teamScore;
-    private int Looser_teamScore;
+    private int Team1Score;
+    private int Team2Score;
     public String gameKind; 
-    public String Winnerteam;
-    public String LooserTeam;
+    public String Team1;
+    public String Team2;
     public String Venue;
     public String Stadium;
     public int MatchNumber;
@@ -67,20 +67,20 @@ public class Match {
         this.time = time;
     }
 
-    public int getWinner_teamScore() {
-        return Winner_teamScore;
+    public int getTeam1Score() {
+        return Team1Score;
     }
 
-    public void setWinner_teamScore(int Winner_teamScore) {
-        this.Winner_teamScore = Winner_teamScore;
+    public void setTeam1Score(int Winner_teamScore) {
+        this.Team1Score = Winner_teamScore;
     }
 
-    public int getLooser_teamScore() {
-        return Looser_teamScore;
+    public int getTeam2Score() {
+        return Team2Score;
     }
 
-    public void setLooser_teamScore(int Looser_teamScore) {
-        this.Looser_teamScore = Looser_teamScore;
+    public void setTeam2Score(int Looser_teamScore) {
+        this.Team2Score = Looser_teamScore;
     }
 
     public String getGameKind() {
@@ -91,20 +91,20 @@ public class Match {
         this.gameKind = gameKind;
     }
 
-    public String getWinnerteam() {
-        return Winnerteam;
+    public String getTeam1() {
+        return Team1;
     }
 
-    public void setWinnerteam(String Winnerteam) {
-        this.Winnerteam = Winnerteam;
+    public void setTeam1(String Winnerteam) {
+        this.Team1 = Winnerteam;
     }
 
-    public String getLooserTeam() {
-        return LooserTeam;
+    public String getTeam2() {
+        return Team2;
     }
 
-    public void setLooserTeam(String LooserTeam) {
-        this.LooserTeam = LooserTeam;
+    public void setTeam2(String LooserTeam) {
+        this.Team2 = LooserTeam;
     }
 
     public String getVenue() {
@@ -123,30 +123,30 @@ public class Match {
         this.Stadium = Stadium;
     }
 
-    public Match(int match_id, Date date_match, String referee, String time, int Winner_teamScore, int Looser_teamScore, String gameKind, String Winnerteam, String LooserTeam, String Venue, String Stadium, int MatchNumber) {
+    public Match(int match_id, Date date_match, String referee, String time, int Team1Score, int Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, int MatchNumber) {
         this.match_id = match_id;
         this.date_match = date_match;
         this.referee = referee;
         this.time = time;
-        this.Winner_teamScore = Winner_teamScore;
-        this.Looser_teamScore = Looser_teamScore;
+        this.Team1Score = Team1Score;
+        this.Team2Score = Team2Score;
         this.gameKind = gameKind;
-        this.Winnerteam = Winnerteam;
-        this.LooserTeam = LooserTeam;
+        this.Team1 = Team1;
+        this.Team2 = Team2;
         this.Venue = Venue;
         this.Stadium = Stadium;
         this.MatchNumber = MatchNumber;
     }
 
-    public Match(Date date_match, String referee, String time, int Winner_teamScore, int Looser_teamScore, String gameKind, String Winnerteam, String LooserTeam, String Venue, String Stadium, int MatchNumber) {
+    public Match(Date date_match, String referee, String time, int Team1Score, int Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, int MatchNumber) {
         this.date_match = date_match;
         this.referee = referee;
         this.time = time;
-        this.Winner_teamScore = Winner_teamScore;
-        this.Looser_teamScore = Looser_teamScore;
+        this.Team1Score = Team1Score;
+        this.Team2Score = Team2Score;
         this.gameKind = gameKind;
-        this.Winnerteam = Winnerteam;
-        this.LooserTeam = LooserTeam;
+        this.Team1 = Team1;
+        this.Team2 = Team2;
         this.Venue = Venue;
         this.Stadium = Stadium;
         this.MatchNumber = MatchNumber;
@@ -160,8 +160,8 @@ public class Match {
         this.date_match = date_match;
         this.referee = referee;
         this.time = time;
-        this.Winner_teamScore = Winner_teamScore;
-        this.Looser_teamScore = Looser_teamScore;
+        this.Team1Score = Winner_teamScore;
+        this.Team2Score = Looser_teamScore;
     }
 
 

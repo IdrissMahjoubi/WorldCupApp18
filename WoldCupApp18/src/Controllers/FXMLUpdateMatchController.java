@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import Entities.Match;
+import Entities.Team;
 import Services.Match_services;
 
 /**
@@ -180,6 +181,10 @@ public class FXMLUpdateMatchController implements Initializable {
             String winnerTeam = winnerTeam_textfield1.getText();
             int Id= getId_match();
             Match M = new Match(Id, date, referee, time, winnerScore, looserScore, gamekind, winnerTeam, looserTeam, venue, stadium, MatchNumber);
+            
+
+
+            match_services.PointsCount(M);
             match_services.updateMatch(M);
             Parent root = ld.load();
             update_button.getScene().setRoot(root);
@@ -201,5 +206,6 @@ public class FXMLUpdateMatchController implements Initializable {
         }
         
     }
-
 }
+    
+
