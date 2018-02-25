@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
@@ -63,7 +63,7 @@ public class FXMLHotelController implements Initializable {
          Hotel hotel = new Hotel (Hotel_NAME,Hotel_LOCATION,HOTEL_STARS,HOTEL_LOCATION_X,HOTEL_LOCATION_Y);
          ServiceHotel sh = new ServiceHotel();
          sh.addHotel(hotel);
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLShowHotels.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowHotels.fxml"));
         try {
             Parent root = loader.load();
             FXMLShowHotelsController dc = loader.getController();

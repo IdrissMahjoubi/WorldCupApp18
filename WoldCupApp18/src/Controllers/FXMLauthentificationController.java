@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -78,7 +78,7 @@ public class FXMLauthentificationController implements Initializable {
             alert.setTitle("Bienvenu");
             alert.setHeaderText("authentification avec succes ");
              Optional<ButtonType> result = alert.showAndWait();*/
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLadminInterface.fxml"));
+             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLadminInterface.fxml"));
         try {
             Parent root = loader.load();
             FXMLadminInterfaceController dc = loader.getController();
@@ -96,7 +96,7 @@ public class FXMLauthentificationController implements Initializable {
             alert.setTitle("Bienvenu");
             alert.setHeaderText("authentification avec succes ");
              Optional<ButtonType> result = alert.showAndWait();*/
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLUserinterface.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));
         try {
             Parent root = loader.load();
             FXMLUserinterfaceController dc = loader.getController();
@@ -117,7 +117,7 @@ public class FXMLauthentificationController implements Initializable {
 
     @FXML
     private void creerCompte(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLCreate.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLCreate.fxml"));
         try {
             Parent root = loader.load();
             FXMLCreateController dc = loader.getController();

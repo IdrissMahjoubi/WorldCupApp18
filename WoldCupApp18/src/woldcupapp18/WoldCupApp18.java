@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package woldcupapp18;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -24,7 +24,7 @@ public class WoldCupApp18 extends Application {
     public void start(Stage primaryStage) {
        Parent root;
         try {
-        root = FXMLLoader.load(getClass().getResource("FXMLauthentification.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
         Scene scene = new Scene(root);
         Stage stage=new Stage();
         stage.setScene(scene);

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -114,7 +114,7 @@ public class FXMLUpdateUserController implements Initializable {
 
     @FXML
     private void logout(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLauthentification.fxml"));  
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLauthentification.fxml"));  
         try {
             Parent root = loader.load();
             FXMLauthentificationController dc = loader.getController();

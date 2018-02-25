@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -37,7 +37,7 @@ public class FXMLadminInterfaceController implements Initializable {
 
     @FXML
     private void gererUsers(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLupdateuserrights.fxml"));  
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLupdateuserrights.fxml"));  
         try {
             Parent root = loader.load();
             FXMLupdateuserrightsController dc = loader.getController();

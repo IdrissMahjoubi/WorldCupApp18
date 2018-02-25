@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="525.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.FXMLAddTeamController">
+<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="525.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddTeamController">
     <stylesheets>
         <URL value="@fxml.css" />
     </stylesheets>

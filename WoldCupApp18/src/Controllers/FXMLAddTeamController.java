@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import Entities.Team;
 import java.io.File;
@@ -150,7 +150,7 @@ public class FXMLAddTeamController implements Initializable {
     @FXML
     private void retourner(ActionEvent event) throws IOException {
         Stage stage = new Stage();    
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLAffichageTeams.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeams.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

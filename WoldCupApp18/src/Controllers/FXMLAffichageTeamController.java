@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import Entities.Team;
 import java.awt.event.ActionListener;
@@ -121,6 +121,8 @@ public class FXMLAffichageTeamController implements Initializable {
 
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -133,24 +135,23 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboRechGrp.setVisible(false);
         ComboRechGrp.setItems(comboListGRP);
         ComboRechGrp.getSelectionModel().selectFirst();
-        ///
         ComboRechCont.setItems(comboListCont);
         ComboRechCont.getSelectionModel().selectFirst();
 
-        String urlv = "file:/C:/Users/pacha/Videos/fifa-world-cup-russia-2018-official-video.mp4";
+      /*  String urlv = "file:/C:/Users/pacha/Videos/fifa-world-cup-russia-2018-official-video.mp4";
         media = new Media(urlv);
         mediaPlayer = new MediaPlayer(media);
         view.setFitHeight(600);
         view.setFitWidth(400);
         view.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setAutoPlay(true);*/
         afficher();
         comboRech.setItems(comboList);
         table.getSelectionModel().selectedItemProperty().
                 addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         showTeamDetails(newValue);
-                        switch(newValue.getTEAM_NAME()) { 
+                      /*  switch(newValue.getTEAM_NAME()) { 
                             case "Tunisie": 
                             Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile);
@@ -180,7 +181,7 @@ public class FXMLAffichageTeamController implements Initializable {
                             mediaPlayer2=new MediaPlayer(musicFile7);
                             break; 
                             
-                    }
+                    }*/
                     }
 
                 });
@@ -497,7 +498,7 @@ public class FXMLAffichageTeamController implements Initializable {
     @FXML
     private void ajouterEquipe(ActionEvent event) throws IOException {
             Stage stage = new Stage();    
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLAddTeam.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAddTeam.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();

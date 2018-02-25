@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Views;
+package Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -45,7 +45,7 @@ public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
     private void updateUserDetails(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLUpdateUser.fxml"));  
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUpdateUser.fxml"));  
         try {
             Parent root = loader.load();
             FXMLUpdateUserController dc = loader.getController();
@@ -56,7 +56,7 @@ public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
     private void logout(ActionEvent event) {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLauthentification.fxml"));  
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLauthentification.fxml"));  
         try {
             Parent root = loader.load();
             FXMLauthentificationController dc = loader.getController();
@@ -69,7 +69,7 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     private void teams(ActionEvent event) throws IOException {
         Stage stage = new Stage();    
-            Parent root = FXMLLoader.load(getClass().getResource("FXMLAffichageTeams.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeams.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
