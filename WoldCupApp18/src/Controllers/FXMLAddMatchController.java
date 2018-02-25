@@ -24,13 +24,13 @@ import javafx.scene.control.TextField;
 import Entities.Match;
 import Services.Match_services;
 import Controllers.FXML_ShowMatchController;
-import Controllers.FXML_ShowAllController;
+import Controllers.FXMLShowMatchsController;
 /**
  * FXML Controller class
  *
  * @author apple
  */
-public class FXML_matchController implements Initializable {
+public class FXMLAddMatchController implements Initializable {
     @FXML
     private TextField Referee_textfield;
     @FXML
@@ -85,10 +85,10 @@ public class FXML_matchController implements Initializable {
         m.setWinner_teamScore(Integer.parseInt(winner_textfield.getText()));
         
         match_services.createMatch(m);
-        FXML_ShowAllController.alertMessage("ajout reussie",Alert.AlertType.INFORMATION);
+        FXMLShowMatchsController.alertMessage("ajout reussie",Alert.AlertType.INFORMATION);
 
         
-          FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXML_ShowAll.fxml"));
+          FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {
             Parent root= ld.load();
@@ -101,7 +101,7 @@ public class FXML_matchController implements Initializable {
     @FXML
     private void ReturnToView(ActionEvent event) {
                
-          FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXML_ShowAll.fxml"));
+          FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {
             Parent root= ld.load();

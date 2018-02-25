@@ -37,7 +37,7 @@ import Utilities.ParseHTML;
  *
  * @author apple
  */
-public class FXML_ShowAllController implements Initializable {
+public class FXMLShowMatchsController implements Initializable {
 
     @FXML
     private TableColumn<Match, Date> Col_Date;
@@ -109,10 +109,10 @@ public class FXML_ShowAllController implements Initializable {
 
     @FXML
     private void Link_Add(ActionEvent event) {
-                FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXML_match.fxml"));
+                FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXMLAddMatch.fxml"));
         try {
             Parent root = ld.load();
-                    FXML_matchController MatchCnt = ld.getController();
+                    FXMLAddMatchController MatchCnt = ld.getController();
                     Add_match_button.getScene().setRoot(root);
 
 
@@ -150,14 +150,14 @@ public class FXML_ShowAllController implements Initializable {
     @FXML
     private void updateShow(ActionEvent event) {
         Match m = Table_matchAll.getSelectionModel().getSelectedItem();
-        FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXML_update_match.fxml"));
+        FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXMLUpdateMatch.fxml"));
             if (!Table_matchAll.getSelectionModel().isEmpty()) {
             Optional<ButtonType> result = alertMessage("Vouler vous vraiment modifier ?", Alert.AlertType.CONFIRMATION);
             if (result.get() == ButtonType.OK) {
         try {
                
             Parent root = ld.load();
-            FXML_update_matchController upMatchCnt = ld.getController();
+            FXMLUpdateMatchController upMatchCnt = ld.getController();
             upMatchCnt.setId_match(m.getMatch_id());
             upMatchCnt.setDatePiker(m.getDate_match());
             upMatchCnt.setLooser_textfield(m.getLooser_teamScore());
@@ -192,8 +192,8 @@ public class FXML_ShowAllController implements Initializable {
             
         match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
         }
-        FXML_ShowAllController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
-        FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXML_ShowAll.fxml"));
+        FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
+        FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {
             Parent root= ld.load();

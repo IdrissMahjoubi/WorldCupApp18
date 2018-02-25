@@ -26,7 +26,7 @@ import Services.Match_services;
  *
  * @author apple
  */
-public class FXML_update_matchController implements Initializable {
+public class FXMLUpdateMatchController implements Initializable {
 
     @FXML
     private TextField Referee_textfield;
@@ -164,7 +164,7 @@ public class FXML_update_matchController implements Initializable {
     @FXML
     private void Update() {
 
-        FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXML_ShowAll.fxml"));
+        FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
 
         try {
             String referee = Referee_textfield.getText();
@@ -192,7 +192,7 @@ public class FXML_update_matchController implements Initializable {
 
     @FXML
     private void ReturnToView(ActionEvent event) {
-                FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXML_ShowAll.fxml"));
+                FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
             try{
             Parent root = ld.load();
             update_button.getScene().setRoot(root);
