@@ -24,7 +24,7 @@ public class WoldCupApp18 extends Application {
     public void start(Stage primaryStage) {
        Parent root;
         try {
-        root = FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Views/FXML_ShowAll.fxml"));
         Scene scene = new Scene(root);
         Stage stage=new Stage();
         stage.setScene(scene);
