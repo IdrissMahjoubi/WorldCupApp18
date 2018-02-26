@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="441.0" prefWidth="664.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Views.FXMLGroupsController">
+   <children>
+      <TableView fx:id="group1" layoutX="40.0" layoutY="48.0" prefHeight="234.0" prefWidth="528.0">
+        <columns>
+          <TableColumn fx:id="position" prefWidth="75.0" text="Position" />
+          <TableColumn fx:id="team" prefWidth="75.0" text="Team" />
+            <TableColumn fx:id="points" prefWidth="50.0" text="Points" />
+            <TableColumn fx:id="mp" prefWidth="45.0" text="MP" />
+            <TableColumn fx:id="mw" prefWidth="46.0" text="MW" />
+            <TableColumn fx:id="ml" prefWidth="35.0" text="ML" />
+            <TableColumn fx:id="md" prefWidth="40.0" text="MD" />
+            <TableColumn fx:id="gf" prefWidth="38.0" text="GF" />
+            <TableColumn fx:id="ga" prefWidth="60.0" text="GA" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

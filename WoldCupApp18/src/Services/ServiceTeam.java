@@ -70,11 +70,13 @@ public class ServiceTeam {
                 t.setTEAM_FLAG(rs.getString(15));
                 
                 myList.add(t);
+                
             }
         } catch (SQLException ex) {
             System.out.println("Error = "+ex.getMessage());
         }
         return myList;
+        
     }
    
     public void removeEquipe(int team_id) {
