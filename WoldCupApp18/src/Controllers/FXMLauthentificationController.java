@@ -28,6 +28,8 @@ import Utilities.Session;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 /**
@@ -51,13 +53,17 @@ public class FXMLauthentificationController implements Initializable {
     private Label ExitLabel;
     @FXML
     private AnchorPane MainPane;
+    
+    MediaPlayer mediaPlayer;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
+        mediaPlayer=new MediaPlayer(musicFile);
+        mediaPlayer.setAutoPlay(true);
     }    
 
     @FXML
