@@ -87,7 +87,7 @@ public class FXMLAddTeamController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Media musicFile=new Media("file:/C:/Users/pacha/Music/Ya%20russia%20haw%20jayin.mp3");
+        Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
         mediaPlayer=new MediaPlayer(musicFile);
         mediaPlayer.setAutoPlay(true);
         groupcb.setItems(comboList);
