@@ -135,7 +135,7 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboRechCont.setItems(comboListCont);
         ComboRechCont.getSelectionModel().selectFirst();
 
-     /*   String urlv = "file:/Users/apple/Desktop/WorldCupApp18/WoldCupApp18/src/Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
+       /*String urlv = "file:/@../../../../../../../Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
         media = new Media(urlv);
         System.out.println(urlv);
         mediaPlayer = new MediaPlayer(media);
