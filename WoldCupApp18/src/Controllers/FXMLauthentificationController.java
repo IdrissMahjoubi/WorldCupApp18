@@ -25,7 +25,10 @@ import javafx.scene.control.TextField;
 
 import Services.ServiceUser;
 import Utilities.Session;
-import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -43,7 +46,11 @@ public class FXMLauthentificationController implements Initializable {
     @FXML
     private Button creer;
     @FXML
-    private JFXButton sms;
+    private Label ForgotPass;
+    @FXML
+    private Label ExitLabel;
+    @FXML
+    private AnchorPane MainPane;
 
     /**
      * Initializes the controller class.
@@ -128,8 +135,34 @@ public class FXMLauthentificationController implements Initializable {
 
     }
 
+
+
+
     @FXML
-    private void sendSms(ActionEvent event) {
+    private void SelectLabel(MouseEvent event) {
+                ForgotPass.setStyle("-fx-font-weight: bold; -fx-text-fill:#40739e;");               
+    }
+
+    @FXML
+    private void DeselectLabel(MouseEvent event) {
+                ForgotPass.setStyle("-fx-font-weight: regular;-fx-text-fill:#333333;");
+    }
+
+    @FXML
+    private void SmsView(MouseEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLPasswordRecoveryController pr = loader.getController();
+            creer.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("Password Recovery ERROR="+ex.getMessage());        }
+    }
+
+    @FXML
+    private void ExitApp(MouseEvent event) {
+        Stage stage = (Stage) MainPane.getScene().getWindow();
+        stage.close();
     }
     
 }

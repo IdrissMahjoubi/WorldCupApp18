@@ -5,6 +5,9 @@
  */
 package Services;
 
+import Controllers.ControllerSendMail;
+import Controllers.ControllerSendSms;
+import Controllers.FXMLPasswordRecoveryController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,8 +17,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Entities.User;
 import Utilities.DataSource;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.mail.MessagingException;
 
 /**
  *
@@ -40,7 +45,7 @@ public class ServiceUser {
             ste = con.prepareStatement(req);
             ste.setString(1, u.getUser_name());
             ste.setString(2, u.getUser_last_name());
-            ste.setString(3, u.getUser_birthday());
+            ste.setDate(3, (Date)u.getUser_birthday());
             ste.setString(4, u.getUser_nationality());
             ste.setString(5, u.getUser_email());
             ste.setInt(6, u.getUser_tel());
@@ -68,7 +73,7 @@ public class ServiceUser {
                 u.setUser_id(rs.getInt(1));
                 u.setUser_name(rs.getString(2));
                 u.setUser_last_name(rs.getString(3));
-                u.setUser_birthday(rs.getString(4));
+                u.setUser_birthday(rs.getDate(4));
                 u.setUser_nationality(rs.getString(5));
                 u.setUser_email(rs.getString(6));
                 u.setUser_tel(rs.getInt(7));
@@ -127,7 +132,7 @@ public class ServiceUser {
                         resultSet.getInt(1),
                         resultSet.getString(2),
                         resultSet.getString(3),
-                        resultSet.getString(4),
+                        resultSet.getDate(4),
                         resultSet.getString(5),
                         resultSet.getString(6),
                         resultSet.getInt(7),
@@ -177,7 +182,7 @@ public class ServiceUser {
                 isValid = rs.getInt(1);
             }
             
-            System.out.println("azebi");
+            
 
         } catch (Exception ex) {
         }
@@ -217,7 +222,7 @@ public class ServiceUser {
 
             ste.setString(1, u.getUser_name());
             ste.setString(2, u.getUser_last_name());
-            ste.setString(3, u.getUser_birthday());
+            ste.setDate(3, (Date) u.getUser_birthday());
             ste.setString(4, u.getUser_nationality());
             ste.setString(5, u.getUser_email());
             ste.setInt(6, u.getUser_tel());
@@ -241,7 +246,6 @@ public class ServiceUser {
             //ste.setInt(1, u.getUser_state());
             ste.setInt(1, u.getUser_id());
             ste.executeUpdate();
-            System.out.println("bassa");
         } catch (SQLException ex) {
             System.out.println("Error" + ex.getMessage());
         }
@@ -297,4 +301,65 @@ public class ServiceUser {
             System.out.println("Error"+ex.getMessage());
         }
     }*/
+    public static void sendPassword(User u)
+    {
+               Connection bd = DataSource.getInstance().getConnection();
+               String query="select USER_PASSWORD from USER where USER_EMAIL = ?";
+        try {
+            PreparedStatement statement = bd.prepareStatement(query);
+            statement.setString(1, u.getUser_email());
+            ResultSet rs = statement.executeQuery();
+            int count = 0;
+            while(rs.next())
+            {
+                try {
+                    ControllerSendMail.sendMail(u.getUser_email(),"password recovery" ,rs.getString("USER_PASSWORD") );
+                    FXMLPasswordRecoveryController.isfound="true";
+                    count++;
+
+                } catch (MessagingException ex) {
+                    Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            
+            
+            if(count <=0)
+            {
+                FXMLPasswordRecoveryController.isfound="false";
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+    public static void sendPassword2(User u)
+    {
+               Connection bd = DataSource.getInstance().getConnection();
+               String query="select USER_PASSWORD from USER where USER_TEL = ?";
+        try {
+            PreparedStatement statement = bd.prepareStatement(query);
+            statement.setString(1, u.getUser_tel2());
+            ResultSet rs = statement.executeQuery();
+            int count = 0;
+            while(rs.next())
+            {
+                ControllerSendSms.sendSms("+216"+u.getUser_tel2(),"WORLD CUP APP Password : "+rs.getString("USER_PASSWORD") );
+                FXMLPasswordRecoveryController.isfound="true";
+                count++;
+            }
+            
+            
+            if(count <=0)
+            {
+                FXMLPasswordRecoveryController.isfound="false";
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ServiceUser.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
+    
 }

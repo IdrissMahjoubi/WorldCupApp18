@@ -63,13 +63,13 @@ public class FXMLHotelController implements Initializable {
          Hotel hotel = new Hotel (Hotel_NAME,Hotel_LOCATION,HOTEL_STARS,HOTEL_LOCATION_X,HOTEL_LOCATION_Y);
          ServiceHotel sh = new ServiceHotel();
          sh.addHotel(hotel);
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowHotels.fxml"));
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLadminHotel.fxml"));
         try {
             Parent root = loader.load();
-            FXMLShowHotelsController dc = loader.getController();
+            FXMLadminHotelController dc = loader.getController();
             addhotel.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLShowHotelsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLadminHotelController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

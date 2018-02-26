@@ -34,6 +34,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import Services.ServiceTeam;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.UUID;
+import org.controlsfx.tools.Utils;
+
 import tray.notification.TrayNotification;
 
 /**
@@ -62,7 +69,8 @@ public class FXMLAddTeamController implements Initializable {
     private ImageView pic1;
     
     String imageFile;
-    String imageFile1;
+    static String imageFile1;
+   // private static String uuid;  
     @FXML
     private ChoiceBox<String> groupcb;
     ObservableList<String> comboList = FXCollections.observableArrayList("A","B","C","D","E","F","G","H");
@@ -88,17 +96,22 @@ public class FXMLAddTeamController implements Initializable {
     }    
     
     @FXML
-    private void addFlag(ActionEvent event)throws MalformedURLException  {
-         FileChooser fc = new FileChooser();
+    private void addFlag(ActionEvent event)throws MalformedURLException, IOException  {
+        FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
          
-            imageFile = selectedFile.toURI().toURL().toString();
-            System.out.println(imageFile);
-
-            Image image = new Image(imageFile);
-
+            Image image = new Image(selectedFile.toURI().toString());
             pic.setImage(image);
+            imageFile = selectedFile.getName();
+            int pos = imageFile.lastIndexOf("/");
+            if (pos > 0) {
+            imageFile = imageFile.substring(0, pos);
+            }
+            pic.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + imageFile;
+            System.out.println(emplacement);
+            CopyImage(emplacement, selectedFile.toPath().toString());
        
 
         } else {
@@ -107,18 +120,22 @@ public class FXMLAddTeamController implements Initializable {
     }
 
     @FXML
-    private void addLogo(ActionEvent event) throws MalformedURLException {
-        FileChooser fc = new FileChooser();
+    private void addLogo(ActionEvent event) throws MalformedURLException, IOException {
+       FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
          
-            imageFile1 = selectedFile.toURI().toURL().toString();
-            
-
-            Image image = new Image(imageFile1);
-
+            Image image = new Image(selectedFile.toURI().toString());
             pic1.setImage(image);
-       
+            imageFile1 = selectedFile.getName();
+            int pos = imageFile1.lastIndexOf("/");
+            if (pos > 0) {
+            imageFile1 = imageFile1.substring(0, pos);
+            }
+            pic1.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + imageFile1;
+            System.out.println(emplacement);
+            CopyImage(emplacement, selectedFile.toPath().toString());
 
         } else {
             System.out.println("file doesn't exist");
@@ -127,14 +144,17 @@ public class FXMLAddTeamController implements Initializable {
     public Image image=new Image("file:/C:/Users/pacha/Pictures/FIFA_World_Cup_2018_Logo.png",true);
     @FXML
     private void saveTeam(ActionEvent event) {
+       
         String team_name = TEAM_NAME.getText();
         String team_coach = TEAM_COACH.getText();
         String team_group=groupcb.getValue();
         String team_continent = TEAM_CONTINENT.getValue();
         
+        
         Team t = new Team(team_name,team_coach,team_group,team_continent);
         t.setTEAM_FLAG(imageFile);
         t.setTEAM_LOGO(imageFile1);
+        System.out.println(t);
                     
         ServiceTeam s=new ServiceTeam();
         s.addTeam(t);
@@ -167,4 +187,23 @@ public class FXMLAddTeamController implements Initializable {
     private void play(ActionEvent event) {
         mediaPlayer.play();
     }
+    
+    public void CopyImage(String url, String imageDestination) throws IOException {
+        
+        //URL l'emplacement de fichier image sous wamp exemple (http://localhost/image/product)
+        
+
+        InputStream inputStream = new FileInputStream(imageDestination);//upload l'image
+        System.out.println("Start uploading second file");
+        
+        OutputStream output = new FileOutputStream(url);
+        byte[] bytesIn = new byte[4096];
+        int read = 1;
+        while ((read = inputStream.read(bytesIn)) != -1) {//copier l'image au serveur
+            output.write(bytesIn, 0, read);
+        }
+        output.close();
+        inputStream.close();
+    }
+
 }
