@@ -15,12 +15,12 @@
 
 <AnchorPane id="AnchorPane" prefHeight="589.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMAPController">
    <children>
-      <Label layoutX="290.0" layoutY="27.0" text="Stadium Localisation">
+      <Label layoutX="290.0" layoutY="27.0" text="Stades Localisation">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <GoogleMapView fx:id="gmap" layoutX="92.0" layoutY="129.0" prefHeight="493.0" prefWidth="747.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <GoogleMapView fx:id="gmap" layoutX="92.0" layoutY="129.0" prefHeight="522.0" prefWidth="747.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
       <Button fx:id="retour" layoutX="580.0" layoutY="30.0" mnemonicParsing="false" onAction="#ReturnToListStadium" text="Retour" />
    </children>
 </AnchorPane>
