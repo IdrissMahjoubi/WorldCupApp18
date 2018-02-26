@@ -26,6 +26,8 @@ import javafx.scene.control.TextField;
 import Services.ServiceUser;
 import Utilities.Session;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.input.MouseDragEvent;
+import org.controlsfx.control.HyperlinkLabel;
 
 /**
  * FXML Controller class
@@ -43,7 +45,7 @@ public class FXMLauthentificationController implements Initializable {
     @FXML
     private Button creer;
     @FXML
-    private JFXButton sms;
+    private HyperlinkLabel sms;
 
     /**
      * Initializes the controller class.
@@ -129,7 +131,9 @@ public class FXMLauthentificationController implements Initializable {
     }
 
     @FXML
-    private void sendSms(ActionEvent event) {
+    private void sendSms(MouseDragEvent event) {
+        
     }
+
     
 }
