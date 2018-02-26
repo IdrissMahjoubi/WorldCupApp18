@@ -22,7 +22,7 @@
       </TableView>
       <ImageView fitHeight="230.0" fitWidth="352.0" layoutX="26.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@830x532_logo-officiel-coupe-monde-2018-presente-28-octobre-2014.jpg" />
+            <Image url="@../Resources/Icons/28235820_1814682398596456_1287436617_n.jpg" />
          </image>
       </ImageView>
       <Button fx:id="supprimer" layoutX="454.0" layoutY="697.0" mnemonicParsing="false" onAction="#supprimerTeamadmin" text="Supprimer" />

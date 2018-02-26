@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="654.0" prefWidth="874.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowStadiumsController">
+   <children>
+      <Label layoutX="183.0" layoutY="22.0" text="Liste Des Stades">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" editable="true" layoutX="10.0" layoutY="127.0" prefHeight="200.0" prefWidth="523.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="37.0" text="ID" visible="false" />
+          <TableColumn fx:id="name" prefWidth="120.0" text="Nom Stade" />
+            <TableColumn fx:id="location" prefWidth="109.0" text="Localisation Stade" />
+            <TableColumn fx:id="capacity" prefWidth="143.0" text="Capacite Stade" />
+            <TableColumn prefWidth="76.66668701171875" text="XMAP" fx:id="xmap" />
+            <TableColumn fx:id="ymap" prefWidth="69.33331298828125" text="YMAP" />
+        </columns>
+         <effect>
+            <Blend />
+         </effect>
+      </TableView>
+      <Button fx:id="btndelete" layoutX="14.0" layoutY="96.0" mnemonicParsing="false" onAction="#delete" text="Supprimer Stade" />
+      <Button fx:id="Update" layoutX="122.0" layoutY="96.0" mnemonicParsing="false" onAction="#UpdateStadium" text="Modifier Stade" />
+      <Button fx:id="goback" layoutX="227.0" layoutY="96.0" mnemonicParsing="false" onAction="#goBack" text="Ajouter Stade" />
+      <TextField fx:id="Recherche" layoutX="323.0" layoutY="96.0" promptText="Rechercher" />
+      <ChoiceBox fx:id="choiseBox" layoutX="482.0" layoutY="96.0" prefHeight="25.0" prefWidth="126.0" />
+      <Label layoutX="21.0" layoutY="356.0" text="Nom Stade :" />
+      <Label layoutX="21.0" layoutY="393.0" text="Localisation stade :" />
+      <Label layoutX="21.0" layoutY="426.0" text="Capacite Stade :" />
+      <Label layoutX="323.0" layoutY="356.0" text="Photo Stade" />
+      <Label layoutX="20.0" layoutY="465.0" text="Stade XMAP :" />
+      <Label layoutX="21.0" layoutY="499.0" text="Stade YMAP :" />
+      <TextField fx:id="StadiumName" layoutX="141.0" layoutY="352.0" promptText="Nom de stade" />
+      <TextField fx:id="StadiumLocation" layoutX="141.0" layoutY="389.0" promptText="Localisation de stade" />
+      <TextField fx:id="StadiumCapacity" layoutX="141.0" layoutY="422.0" promptText="Capacité de stade" />
+      <TextField fx:id="XMAP" layoutX="141.0" layoutY="461.0" promptText="Latitude" />
+      <TextField fx:id="YMAP" layoutX="141.0" layoutY="495.0" promptText="Longtitude" />
+      <ImageView fx:id="PicViewer" fitHeight="169.0" fitWidth="224.0" layoutX="421.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="ChosePic" layoutX="324.0" layoutY="381.0" mnemonicParsing="false" onAction="#ChosePicture" text="Select Photo" />
+      <Button fx:id="map" layoutX="545.0" layoutY="127.0" mnemonicParsing="false" onAction="#GotoMap" text="Afficher les stades dans laMAP" />
+      <Button fx:id="acceuil" layoutX="14.0" layoutY="67.0" mnemonicParsing="false" onAction="#acceuil" text="Acceuil" />
+   </children>
+</AnchorPane>

@@ -31,6 +31,10 @@ import javafx.stage.Stage;
 import Entities.Match;
 import Services.Match_services;
 import Utilities.ParseHTML;
+import javafx.concurrent.Task;
+import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
+import org.controlsfx.control.MaskerPane;
 
 /**
  * FXML Controller class
@@ -75,7 +79,10 @@ public class FXMLShowMatchsController implements Initializable {
     private TableColumn<?, ?> Col_LooserTeamScore;
     @FXML
     private JFXButton Reparse_match_button;
-
+    Match_services match_services = Match_services.getInstance();
+    @FXML
+    private MaskerPane maskerpane;
+    
     /**
      * Initializes the controller class.
      *
@@ -84,24 +91,24 @@ public class FXMLShowMatchsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        match_services.setAllPositions();
         affiche();
     }
-
+    
     void affiche() {
         AnchorPane.toFront();
         ObservableList<Match> data = match_service.getAllMatchs();
-        
         Col_Date.setCellValueFactory(new PropertyValueFactory<>("date_match"));
         Col_Referee.setCellValueFactory(new PropertyValueFactory<>("Referee"));
         Col_Time.setCellValueFactory(new PropertyValueFactory<>("time"));
-        Col_WinnerTeam.setCellValueFactory(new PropertyValueFactory<>("Winnerteam"));
-        Col_LooserTeam.setCellValueFactory(new PropertyValueFactory<>("LooserTeam"));  
+        Col_WinnerTeam.setCellValueFactory(new PropertyValueFactory<>("Team1"));
+        Col_LooserTeam.setCellValueFactory(new PropertyValueFactory<>("Team2"));  
         Col_GameKind.setCellValueFactory(new PropertyValueFactory<>("gameKind"));
         Col_MatchNumber.setCellValueFactory(new PropertyValueFactory<>("MatchNumber"));
         Col_Stadium.setCellValueFactory(new PropertyValueFactory<>("Stadium"));
         Col_Venue.setCellValueFactory(new PropertyValueFactory<>("Venue"));
-        Col_WinnerTeamScore.setCellValueFactory(new PropertyValueFactory<>("Winner_teamScore"));
-        Col_LooserTeamScore.setCellValueFactory(new PropertyValueFactory<>("Looser_teamScore"));
+        Col_WinnerTeamScore.setCellValueFactory(new PropertyValueFactory<>("Team1Score"));
+        Col_LooserTeamScore.setCellValueFactory(new PropertyValueFactory<>("Team2Score"));
         
         Table_matchAll.setItems(null);
         Table_matchAll.setItems(data);
@@ -160,13 +167,13 @@ public class FXMLShowMatchsController implements Initializable {
             FXMLUpdateMatchController upMatchCnt = ld.getController();
             upMatchCnt.setId_match(m.getMatch_id());
             upMatchCnt.setDatePiker(m.getDate_match());
-            upMatchCnt.setLooser_textfield(m.getLooser_teamScore());
-            upMatchCnt.setWinner_textfield(m.getWinner_teamScore());
+            upMatchCnt.setLooser_textfield(m.getTeam2Score());
+            upMatchCnt.setWinner_textfield(m.getTeam1Score());
             upMatchCnt.setReferee_textfield(m.getReferee());
             upMatchCnt.setTime_textfield(m.getTime());
             upMatchCnt.setGamekind_textfield(m.getGameKind());
-            upMatchCnt.setLooserTeam_textfield(m.getLooserTeam());
-            upMatchCnt.setWinnerTeam_textfield1(m.getWinnerteam());
+            upMatchCnt.setLooserTeam_textfield(m.getTeam2());
+            upMatchCnt.setWinnerTeam_textfield1(m.getTeam1());
             upMatchCnt.setVenue_textfield(m.getVenue());
             upMatchCnt.setStadium_textfield(m.getStadium());
             upMatchCnt.setMatchNumber_textfield(m.getMatchNumber());
@@ -180,19 +187,24 @@ public class FXMLShowMatchsController implements Initializable {
             alertMessage("Select a match please !", Alert.AlertType.ERROR);
             }
     }
-
+    
+    
 
 
     @FXML
     private void ReparseMatch(ActionEvent event) {
            int i=1;
-        match_service.EmptyMatch();
-        ParseHTML.ParseMatch();
-        for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
+       // match_service.EmptyMatch();
+       // ParseHTML.ParseMatch();
+        //for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
             
-        match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
-        }
-        FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
+      //  match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
+       // }                       
+
+               // maskerpane.setVisible(true);
+
+                
+      //  FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
         FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {

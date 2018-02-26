@@ -135,7 +135,7 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboRechCont.setItems(comboListCont);
         ComboRechCont.getSelectionModel().selectFirst();
 
-        /*String urlv = "file:/@../Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
+     /*   String urlv = "file:/Users/apple/Desktop/WorldCupApp18/WoldCupApp18/src/Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
         media = new Media(urlv);
         System.out.println(urlv);
         mediaPlayer = new MediaPlayer(media);
@@ -149,7 +149,7 @@ public class FXMLAffichageTeamController implements Initializable {
                 addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         showTeamDetails(newValue);
-                        switch(newValue.getTEAM_NAME()) { 
+                      /*  switch(newValue.getTEAM_NAME()) { 
                             case "Tunisie": 
                             Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile);
@@ -179,7 +179,7 @@ public class FXMLAffichageTeamController implements Initializable {
                             mediaPlayer2=new MediaPlayer(musicFile7);
                             break; 
                             
-                    }
+                    }*/
                     }
 
                 });

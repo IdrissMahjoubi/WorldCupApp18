@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPopup?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.validation.NumberValidator?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import com.jfoenix.validation.ValidationFacade?>
+<?import java.net.URL?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.MaskerPane?>
+<?import org.controlsfx.control.PlusMinusSlider?>
+<?import org.controlsfx.control.RangeSlider?>
+<?import org.controlsfx.control.SnapshotView?>
+<?import org.controlsfx.control.StatusBar?>
+
+<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1097.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Controllers.FXMLMatchUSerController">
+    <stylesheets>
+        <URL value="@fxmlmatchuser.css" />
+    </stylesheets>
+   <children>
+      <SplitPane dividerPositions="0.2327718223583461" layoutX="-2.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="655.0" prefWidth="1100.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <JFXSpinner layoutX="576.0" layoutY="58.0" />
+                  <JFXPopup layoutX="810.0" layoutY="73.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <StatusBar layoutX="65.0" layoutY="438.0" prefWidth="278.0" />
+                  <ValidationFacade layoutX="140.0" layoutY="336.0" prefHeight="45.0" prefWidth="98.0" />
+                  <SnapshotView layoutX="160.0" layoutY="173.0" />
+                  <RequiredFieldValidator layoutX="189.0" layoutY="76.0" />
+                  <RangeSlider layoutX="473.0" layoutY="79.0" />
+                  <PlusMinusSlider layoutX="683.0" layoutY="148.0" />
+                  <NumberValidator layoutX="189.0" layoutY="45.0" />
+                  <MaskerPane layoutX="614.0" layoutY="272.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

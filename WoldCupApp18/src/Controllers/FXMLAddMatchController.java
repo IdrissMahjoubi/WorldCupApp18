@@ -23,7 +23,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import Entities.Match;
 import Services.Match_services;
-import Controllers.FXML_ShowMatchController;
+import Controllers.FXMLShowMatchController;
 import Controllers.FXMLShowMatchsController;
 /**
  * FXML Controller class
@@ -74,15 +74,15 @@ public class FXMLAddMatchController implements Initializable {
         Match m=new Match();
         m.setDate_match(java.sql.Date.valueOf(DatePiker.getValue()));
         m.setGameKind(gamekind_textfield.getText());
-        m.setLooserTeam(LooserTeam_textfield.getText());
-        m.setLooser_teamScore(Integer.parseInt(looser_textfield.getText()));
+        m.setTeam2(LooserTeam_textfield.getText());
+        m.setTeam2Score(Integer.parseInt(looser_textfield.getText()));
         m.setMatchNumber(Integer.parseInt(MatchNumber_textfield.getText()));
         m.setReferee(Referee_textfield.getText());
         m.setStadium(Stadium_textfield.getText());
         m.setTime(time_textfield.getText());
         m.setVenue(Venue_textfield.getText());
-        m.setWinnerteam(winnerTeam_textfield1.getText());
-        m.setWinner_teamScore(Integer.parseInt(winner_textfield.getText()));
+        m.setTeam1(winnerTeam_textfield1.getText());
+        m.setTeam1Score(Integer.parseInt(winner_textfield.getText()));
         
         match_services.createMatch(m);
         FXMLShowMatchsController.alertMessage("ajout reussie",Alert.AlertType.INFORMATION);
