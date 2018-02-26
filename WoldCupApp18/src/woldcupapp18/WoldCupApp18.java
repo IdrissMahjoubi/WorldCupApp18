@@ -5,9 +5,6 @@
  */
 package woldcupapp18;
 
-import Services.PlayerServices;
-import Services.ServiceTeam;
-
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,14 +22,14 @@ public class WoldCupApp18 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        //ServiceTeam sp = new ServiceTeam();
-        
-           // System.out.println(sp.showTeamsStat().get(0).getTEAM_CONTINENT());
-    
        Parent root;
         try {
+<<<<<<< HEAD
         root = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
 
+=======
+        root = FXMLLoader.load(getClass().getResource("/Views/FXMLMenu.fxml"));
+>>>>>>> f086b28a058826d03d688e277584463606725975
         Scene scene = new Scene(root);
         Stage stage=new Stage();
         stage.setScene(scene);
@@ -41,8 +38,8 @@ public class WoldCupApp18 extends Application {
             System.out.println("START METHOD ERROR="+ex.getMessage());
         }
 
-    
-}
+    }
+
     /**
      * @param args the command line arguments
      */

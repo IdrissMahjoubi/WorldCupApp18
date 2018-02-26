@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="633.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStadiumController">
+   <children>
+      <Label layoutX="192.0" layoutY="22.0" prefHeight="51.0" prefWidth="215.0" text="Ajouter Stade">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="75.0" layoutY="125.0" text="Nom Stade :" />
+      <Label layoutX="75.0" layoutY="163.0" text="Localisation Stade :" />
+      <Label layoutX="75.0" layoutY="288.0" text="Localisation XMAP :" />
+      <Label layoutX="75.0" layoutY="329.0" text="Localisation YMAP :" />
+      <Label layoutX="75.0" layoutY="248.0" text="Photo Stade :" />
+      <Label layoutX="75.0" layoutY="205.0" text="Capacite Stade" />
+      <TextField fx:id="StadiumName" layoutX="200.0" layoutY="121.0" promptText="Nom de Stade" />
+      <TextField fx:id="StadiumYmap" layoutX="200.0" layoutY="325.0" promptText="Longtitude" />
+      <TextField fx:id="StadiumXmap" layoutX="200.0" layoutY="284.0" promptText="Latitude" />
+      <TextField fx:id="StadiumCapacity" layoutX="200.0" layoutY="201.0" promptText="Capacité de stade" />
+      <TextField fx:id="StadiumLocation" layoutX="200.0" layoutY="159.0" promptText="Localisation de stade" />
+      <Button fx:id="addStadium" layoutX="360.0" layoutY="325.0" mnemonicParsing="false" onAction="#AddStadium" text="Ajouter Stade" />
+      <Button fx:id="Cancel" layoutX="466.0" layoutY="325.0" mnemonicParsing="false" onAction="#EmptyFields" text="Annuler et retour" />
+      <Button fx:id="ChosePicture" layoutX="360.0" layoutY="244.0" mnemonicParsing="false" onAction="#ChosePicture" text="Select Photo" />
+      <ListView fx:id="ListView" layoutX="202.0" layoutY="236.0" prefHeight="33.0" prefWidth="149.0" />
+      <ImageView fx:id="PicViewer" fitHeight="150.0" fitWidth="200.0" layoutX="366.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="afficher" layoutX="360.0" layoutY="359.0" mnemonicParsing="false" onAction="#afficherStades" text="Afficher la liste des stades" />
+   </children>
+</AnchorPane>
