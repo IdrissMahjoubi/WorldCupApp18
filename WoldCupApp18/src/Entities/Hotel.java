@@ -22,14 +22,7 @@ public class Hotel {
 
     public Hotel() {
     }
-        public Hotel(String Hotel_NAME, String Hotel_LOCATION, int HOTEL_STARS, String HOTEL_LOCATION_X, String HOTEL_LOCATION_Y) {
-        this.Hotel_NAME = Hotel_NAME;
-        this.Hotel_LOCATION = Hotel_LOCATION;
-        this.HOTEL_STARS = HOTEL_STARS;
-        this.HOTEL_LOCATION_X = HOTEL_LOCATION_X;
-        this.HOTEL_LOCATION_Y = HOTEL_LOCATION_Y;
-    }
-        
+
     public Hotel(int Hotel_ID, String Hotel_NAME, String Hotel_LOCATION, int HOTEL_STARS, String HOTEL_LOCATION_X, String HOTEL_LOCATION_Y) {
         this.Hotel_ID = Hotel_ID;
         this.Hotel_NAME = Hotel_NAME;
@@ -38,11 +31,18 @@ public class Hotel {
         this.HOTEL_LOCATION_X = HOTEL_LOCATION_X;
         this.HOTEL_LOCATION_Y = HOTEL_LOCATION_Y;
     }
-        
-        
+
     @Override
     public String toString() {
         return "Hotel{" + "Hotel_ID=" + Hotel_ID + ", Hotel_NAME=" + Hotel_NAME + ", Hotel_LOCATION=" + Hotel_LOCATION + ", HOTEL_STARS=" + HOTEL_STARS + ", HOTEL_LOCATION_X=" + HOTEL_LOCATION_X + ", HOTEL_LOCATION_Y=" + HOTEL_LOCATION_Y + '}';
+    }
+
+    public Hotel(String Hotel_NAME, String Hotel_LOCATION, int HOTEL_STARS, String HOTEL_LOCATION_X, String HOTEL_LOCATION_Y) {
+        this.Hotel_NAME = Hotel_NAME;
+        this.Hotel_LOCATION = Hotel_LOCATION;
+        this.HOTEL_STARS = HOTEL_STARS;
+        this.HOTEL_LOCATION_X = HOTEL_LOCATION_X;
+        this.HOTEL_LOCATION_Y = HOTEL_LOCATION_Y;
     }
 
     public int getHotel_ID() {
@@ -52,11 +52,6 @@ public class Hotel {
     public void setHotel_ID(int Hotel_ID) {
         this.Hotel_ID = Hotel_ID;
     }
-
-
-
-
-   
 
     public String getHotel_NAME() {
         return Hotel_NAME;
@@ -105,6 +100,5 @@ public class Hotel {
     public static void setInstance(Hotel instance) {
         Hotel.instance = instance;
     }
-
     
 }

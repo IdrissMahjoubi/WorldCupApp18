@@ -17,6 +17,10 @@ import javafx.collections.ObservableList;
 import Entities.Match;
 import Entities.Team;
 import Utilities.DataSource;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import javafx.scene.control.Alert;
 
 /**
@@ -222,7 +226,52 @@ public class Match_services implements Match_inteface {
         st.updatePoints(t1);
         }
     }
+    
+    public List<Team> DivideTeams(String Group)
+    {
+        ServiceTeam st= new ServiceTeam();
+        List<Team> t=new ArrayList<Team>();
+        List<Team> teams=st.showTeams();
+        
+  
+        for (int i=0;i<teams.size();i++)
+        {
+                if (teams.get(i).getTEAM_GROUP().equals(Group)) 
+                {
+                t.add(teams.get(i));
+                } 
+        }
+        return t;
+    }
 
+    public void sortTeamPosition(List<Team> t)
+    {
+        Collections.sort(t, new Comparator<Team>() {
+        @Override 
+        public int compare(Team p1, Team p2) {
+            return   p2.getTEAM_POINTS() - p1.getTEAM_POINTS(); 
+        }
+        });
+        for(int i=0;i<t.size();i++)
+        {
+            
+            t.get(i).setTEAM_POSITION(i+1);
+            updatePosition(t.get(i).getTEAM_NAME(), t.get(i).getTEAM_POSITION());
+        }
+    }
+    
+    public void setAllPositions()
+    {
+        List<Team> l=new ArrayList<Team>();
+        for(char i='A';i<='H';i++)
+        {
+          l=DivideTeams(String.valueOf(i));
+          sortTeamPosition(l);
+                  
+        }
+    }
+
+    
     public Team getTeamByName(String team) {
         Team t = new Team();
         try {
@@ -251,4 +300,16 @@ public class Match_services implements Match_inteface {
         return t;
     }
 
+                public void updatePosition(String name, int pos) {
+        try {
+            if (!name.isEmpty()) {
+                String req = "UPDATE `TEAM` SET `TEAM_POSITION`='" + pos + "'WHERE TEAM_NAME='" + name + "'";
+                statement.executeUpdate(req);
+            }
+        } catch (SQLException ex) {
+            System.out.println("UPDATE ERROR= " + ex.getMessage());
+        }
+    }
+                                
+               
 }
