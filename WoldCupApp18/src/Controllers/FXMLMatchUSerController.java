@@ -32,8 +32,12 @@ public class FXMLMatchUSerController implements Initializable {
     WebEngine Webeng = StreamBeing.getEngine();
     @FXML
     private JFXButton Reload;
+    @FXML
+    private JFXButton Back;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -42,7 +46,7 @@ public class FXMLMatchUSerController implements Initializable {
 
     @FXML
     private void ShowStream(ActionEvent event) {
-           Webeng.load("blob:http://www.247bay.tv/b6a24975-0f4a-4857-b465-351b7b5e7288");
+           Webeng.load("https://connect.bein.net/en/");
           StreamPane.getChildren().addAll(StreamBeing);
 
     }
@@ -50,6 +54,10 @@ public class FXMLMatchUSerController implements Initializable {
     @FXML
     private void ReloadFn(ActionEvent event) {
         Webeng.reload();
+    }
+
+    @FXML
+    private void SwitchShowMatchUser(ActionEvent event) {
     }
     
     
