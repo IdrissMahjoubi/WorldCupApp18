@@ -24,8 +24,8 @@
             <TableColumn fx:id="Col_Stadium" prefWidth="69.8712158203125" text="Stadium" />
           <TableColumn fx:id="Col_Date" editable="false" prefWidth="93.3150634765625" sortable="false" text="Match Date" />
             <TableColumn fx:id="Col_Time" prefWidth="65.52996826171875" text="Time" />
-            <TableColumn fx:id="Col_WinnerTeamScore" prefWidth="93.731201171875" text="LooserScore" />
-            <TableColumn fx:id="Col_LooserTeamScore" prefWidth="93.932373046875" text="LooserScore" />
+            <TableColumn fx:id="Col_WinnerTeamScore" prefWidth="93.731201171875" text="Team1Score" />
+            <TableColumn fx:id="Col_LooserTeamScore" prefWidth="93.932373046875" text="Team2Score" />
           <TableColumn fx:id="Col_Referee" prefWidth="115.94580078125" text="Match Referee" />
         </columns>
       </TableView>
