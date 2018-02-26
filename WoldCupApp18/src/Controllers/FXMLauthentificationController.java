@@ -26,7 +26,9 @@ import javafx.scene.control.TextField;
 import Services.ServiceUser;
 import Utilities.Session;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseDragEvent;
+import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.HyperlinkLabel;
 
 /**
@@ -45,7 +47,7 @@ public class FXMLauthentificationController implements Initializable {
     @FXML
     private Button creer;
     @FXML
-    private HyperlinkLabel sms;
+    private Label ForgotPass;
 
     /**
      * Initializes the controller class.
@@ -130,12 +132,8 @@ public class FXMLauthentificationController implements Initializable {
 
     }
 
-    @FXML
-<<<<<<< HEAD
     private void sendSms(MouseDragEvent event) {
         
-=======
-    private void sendSms(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
         try {
             Parent root = loader.load();
@@ -144,8 +142,19 @@ public class FXMLauthentificationController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(FXMLPasswordRecoveryController.class.getName()).log(Level.SEVERE, null, ex);
         }
->>>>>>> 99d281ab70fbca96fc5a0ca1a56feb2fa141d66e
     }
 
+
+    @FXML
+    private void SelectLabel(MouseEvent event) {
+                ForgotPass.setStyle("-fx-text-fill:#273c75");
+
+    }
+
+    @FXML
+    private void DeselectLabel(MouseEvent event) {
+                        ForgotPass.setStyle("-fx-text-fill:#273c75");
+
+    }
     
 }
