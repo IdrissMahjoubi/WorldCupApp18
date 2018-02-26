@@ -34,6 +34,13 @@ public class Team {
     public Team() {
     }
 
+    public Team(String TEAM_NAME, int TEAM_GOALSFOR) {
+        this.TEAM_NAME = TEAM_NAME;
+        this.TEAM_GOALSFOR = TEAM_GOALSFOR;
+    }
+    
+    
+
     public Team(String TEAM_NAME, String TEAM_COACH, String TEAM_GROUP, String TEAM_CONTINENT, String TEAM_LOGO, String TEAM_FLAG) {
         this.TEAM_NAME = TEAM_NAME;
         this.TEAM_COACH = TEAM_COACH;
