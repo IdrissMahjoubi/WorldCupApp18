@@ -25,7 +25,6 @@
       <Label layoutX="52.0" layoutY="344.0" text="equipe préférée:" />
       <TextField fx:id="name" layoutX="218.0" layoutY="78.0" />
       <TextField fx:id="last_name" layoutX="218.0" layoutY="108.0" />
-      <TextField fx:id="birthday" layoutX="218.0" layoutY="143.0" />
       <TextField fx:id="nationaity" layoutX="218.0" layoutY="179.0" />
       <TextField fx:id="mail" layoutX="218.0" layoutY="212.0" />
       <TextField fx:id="tel" layoutX="218.0" layoutY="246.0" />
@@ -34,5 +33,6 @@
       <ChoiceBox fx:id="team" layoutX="218.0" layoutY="340.0" prefWidth="150.0" />
       <Button fx:id="buttonvalid" layoutX="427.0" layoutY="204.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="25.0" prefWidth="99.0" text="valider" />
       <Button fx:id="logout" layoutX="33.0" layoutY="28.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="112.0" text="se déconnecter" />
+      <DatePicker fx:id="birthday" layoutX="217.0" layoutY="143.0" prefHeight="25.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

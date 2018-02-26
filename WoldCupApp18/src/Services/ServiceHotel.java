@@ -21,7 +21,7 @@ public class ServiceHotel {
     
      public void addHotel( Hotel hotel ) throws SQLException
     {
-    String req ="INSERT INTO `hotel`(`HOTEL_NAME`, `HOTEL_LOCATION`, `HOTEL_STARS`, `HOTEL_LOCATION_X`, `HOTEL_LOCATION_Y`) VALUES (?,?,?,?,?)";
+    String req ="INSERT INTO `HOTEL`(`HOTEL_NAME`, `HOTEL_LOCATION`, `HOTEL_STARS`, `HOTEL_LOCATION_X`, `HOTEL_LOCATION_Y`) VALUES (?,?,?,?,?)";
     
         PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(req);
         pst.setString(1, hotel.getHotel_NAME());
@@ -41,7 +41,7 @@ public class ServiceHotel {
     
 
                 ObservableList<Hotel> myList = FXCollections.observableArrayList();
-            String req = "SELECT * FROM `hotel`";
+            String req = "SELECT * FROM `HOTEL`";
             try{
                 PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(req);
                 ResultSet rs = pst.executeQuery(req);
@@ -65,11 +65,30 @@ public class ServiceHotel {
         }
       
        public void DeleteHotel (int x) throws SQLException{
-        String req ="DELETE FROM hotel WHERE HOTEL_ID = ?";
+        String req ="DELETE FROM HOTEL WHERE HOTEL_ID = ?";
         PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(req);
         pst.setInt(1, x);
         pst.executeUpdate();
     
+    }
+       
+        public void updateHotel (Hotel h){
+        String req = "UPDATE HOTEL SET `HOTEL_NAME`=?,`HOTEL_LOCATION`=?,`HOTEL_STARS`=?,`HOTEL_LOCATION_X`=?,`HOTEL_LOCATION_Y`=? WHERE HOTEL_ID =?";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement = DataSource.getInstance().getConnection().prepareStatement(req);
+  
+            preparedStatement.setString(1, h.getHotel_NAME());
+            preparedStatement.setString(2, h.getHotel_LOCATION());
+            preparedStatement.setInt(3, h.getHOTEL_STARS());
+            preparedStatement.setString(4, h.getHOTEL_LOCATION_X());
+            preparedStatement.setString(5, h.getHOTEL_LOCATION_Y());
+            preparedStatement.setInt(6, h.getHotel_ID());
+            
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            System.out.println("Error"+ex.getMessage());
+        }
     }
     
 }

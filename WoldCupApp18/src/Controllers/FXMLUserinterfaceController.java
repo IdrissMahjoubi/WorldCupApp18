@@ -34,6 +34,8 @@ public class FXMLUserinterfaceController implements Initializable {
     private Button logout;
     @FXML
     private Button teams;
+    @FXML
+    private Button hotels;
 
     /**
      * Initializes the controller class.
@@ -74,6 +76,18 @@ public class FXMLUserinterfaceController implements Initializable {
             stage.setScene(scene);
             stage.show();
             ((Node) event.getSource()).getScene().getWindow().hide();
+    }
+
+    @FXML
+    private void goToHotels(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLuserHotel.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLuserHotelController dc = loader.getController();
+            hotels.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLuserHotelController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
     }
     
 }

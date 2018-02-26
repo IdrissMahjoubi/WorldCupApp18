@@ -5,29 +5,29 @@
  */
 package Controllers;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import static java.lang.Integer.parseInt;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javax.swing.JOptionPane;
 import Entities.User;
 import Services.ServiceUser;
+import java.io.IOException;
+import java.sql.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.control.DatePicker;
 
 /**
  * FXML Controller class
@@ -45,7 +45,7 @@ public class FXMLCreateController implements Initializable {
     @FXML
     private TextField lastname;
     @FXML
-    private TextField birthday;
+    private DatePicker birthday;
     @FXML
     private TextField nationality;
     @FXML
@@ -61,8 +61,6 @@ public class FXMLCreateController implements Initializable {
       ObservableList<String> comboList = FXCollections.observableArrayList("Egypte", "Maroc","Nigeria","Sénégal","Tunisie","Arabie Saoudite","Australie","Japon","Republique de Coree","RI Iran","Allemagne","Angleterre","Belgique","Croatie","Danemark","Espagne","France","Islande","Pologne","Portugal","Russie","Serbie","Suède","Suisse","Costa Rica","Mexique","Panama","Argentine","Brésil","Colombie","Pérou","Uruguay");
     @FXML
     private PasswordField password2;
-    @FXML
-    private Button retour;
    
 
     public Button getSave() {
@@ -99,11 +97,11 @@ public class FXMLCreateController implements Initializable {
         this.lastname = lastname;
     }
 
-    public TextField getBirthday() {
+    public DatePicker getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(TextField birthday) {
+    public void setBirthday(DatePicker birthday) {
         this.birthday = birthday;
     }
 
@@ -173,7 +171,7 @@ public class FXMLCreateController implements Initializable {
         System.out.println("hgjgjhg");
          String user_name = name.getText();
         String user_lastname = lastname.getText();
-        String user_birthday = birthday.getText();
+        Date user_birthday = java.sql.Date.valueOf(birthday.getValue());
         String user_nationality = nationality.getText();
         String user_email = email.getText();
         int user_phonenumber = parseInt(tel.getText());
@@ -189,6 +187,14 @@ public class FXMLCreateController implements Initializable {
         if(password2.getText().equals(password.getText()) ){
             System.out.println("confirme");
             s.addUser(u);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLauthentification.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLauthentificationController ac = loader.getController();
+            save.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLauthentificationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
             /*try{
             String host ="smtp.gmail.com" ;
             String user = "your email address";
@@ -263,8 +269,5 @@ public class FXMLCreateController implements Initializable {
         }*/
     }}
 
-    @FXML
-    private void retour(ActionEvent event) {
-    }
     
 }
