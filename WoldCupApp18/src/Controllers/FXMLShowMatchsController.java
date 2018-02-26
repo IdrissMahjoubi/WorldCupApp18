@@ -75,6 +75,7 @@ public class FXMLShowMatchsController implements Initializable {
     private TableColumn<?, ?> Col_LooserTeamScore;
     @FXML
     private JFXButton Reparse_match_button;
+    Match_services match_services = Match_services.getInstance();
 
     /**
      * Initializes the controller class.
@@ -84,9 +85,10 @@ public class FXMLShowMatchsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        match_services.setAllPositions();
         affiche();
     }
-
+    
     void affiche() {
         AnchorPane.toFront();
         ObservableList<Match> data = match_service.getAllMatchs();
