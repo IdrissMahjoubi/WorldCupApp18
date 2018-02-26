@@ -31,6 +31,10 @@ import javafx.stage.Stage;
 import Entities.Match;
 import Services.Match_services;
 import Utilities.ParseHTML;
+import javafx.concurrent.Task;
+import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
+import org.controlsfx.control.MaskerPane;
 
 /**
  * FXML Controller class
@@ -76,7 +80,9 @@ public class FXMLShowMatchsController implements Initializable {
     @FXML
     private JFXButton Reparse_match_button;
     Match_services match_services = Match_services.getInstance();
-
+    @FXML
+    private MaskerPane maskerpane;
+    
     /**
      * Initializes the controller class.
      *
@@ -92,7 +98,6 @@ public class FXMLShowMatchsController implements Initializable {
     void affiche() {
         AnchorPane.toFront();
         ObservableList<Match> data = match_service.getAllMatchs();
-        
         Col_Date.setCellValueFactory(new PropertyValueFactory<>("date_match"));
         Col_Referee.setCellValueFactory(new PropertyValueFactory<>("Referee"));
         Col_Time.setCellValueFactory(new PropertyValueFactory<>("time"));
@@ -182,19 +187,24 @@ public class FXMLShowMatchsController implements Initializable {
             alertMessage("Select a match please !", Alert.AlertType.ERROR);
             }
     }
-
+    
+    
 
 
     @FXML
     private void ReparseMatch(ActionEvent event) {
            int i=1;
-      //  match_service.EmptyMatch();
+       // match_service.EmptyMatch();
        // ParseHTML.ParseMatch();
         //for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
             
       //  match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
-       // }
-        FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
+       // }                       
+
+               // maskerpane.setVisible(true);
+
+                
+      //  FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
         FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {

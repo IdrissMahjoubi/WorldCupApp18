@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.TableColumn?>
@@ -9,8 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.MaskerPane?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="543.0" prefWidth="959.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchsController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="532.0" prefWidth="959.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchsController">
     <stylesheets>
     </stylesheets>
    <children>
@@ -22,11 +22,11 @@
             <TableColumn fx:id="Col_GameKind" prefWidth="121.02726745605469" text="Game Kind" />
             <TableColumn fx:id="Col_Venue" prefWidth="75.00143432617188" text="Venue" />
             <TableColumn fx:id="Col_Stadium" prefWidth="69.8712158203125" text="Stadium" />
-          <TableColumn fx:id="Col_Date" editable="false" prefWidth="93.3150634765625" sortable="false" text="Match Date" />
-            <TableColumn fx:id="Col_Time" prefWidth="65.52996826171875" text="Time" />
             <TableColumn fx:id="Col_WinnerTeamScore" prefWidth="93.731201171875" text="Team1Score" />
             <TableColumn fx:id="Col_LooserTeamScore" prefWidth="93.932373046875" text="Team2Score" />
           <TableColumn fx:id="Col_Referee" prefWidth="115.94580078125" text="Match Referee" />
+          <TableColumn fx:id="Col_Date" editable="false" prefWidth="93.3150634765625" sortable="false" text="Match Date" />
+            <TableColumn fx:id="Col_Time" prefWidth="65.52996826171875" text="Time" />
         </columns>
       </TableView>
       <Accordion layoutX="300.0" />
@@ -57,5 +57,6 @@
             </JFXButton>
          </children>
       </HBox>
+      <MaskerPane fx:id="maskerpane" layoutX="409.0" layoutY="344.0" />
    </children>
 </AnchorPane>
