@@ -26,6 +26,8 @@ public class FXMLadminInterfaceController implements Initializable {
 
     @FXML
     private Button gererusers;
+    @FXML
+    private Button hotels;
 
     /**
      * Initializes the controller class.
@@ -44,6 +46,18 @@ public class FXMLadminInterfaceController implements Initializable {
             gererusers.getScene().setRoot(root);
         } catch (IOException ex) {
             Logger.getLogger(FXMLupdateuserrightsController.class.getName()).log(Level.SEVERE, null, ex);
+        } 
+    }
+
+    @FXML
+    private void goToHotels(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLadminHotel.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLadminHotelController dc = loader.getController();
+            hotels.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLadminHotelController.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
     

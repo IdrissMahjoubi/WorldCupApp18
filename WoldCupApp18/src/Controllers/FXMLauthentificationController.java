@@ -131,8 +131,20 @@ public class FXMLauthentificationController implements Initializable {
     }
 
     @FXML
+<<<<<<< HEAD
     private void sendSms(MouseDragEvent event) {
         
+=======
+    private void sendSms(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLPasswordRecoveryController pr = loader.getController();
+            creer.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPasswordRecoveryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+>>>>>>> 99d281ab70fbca96fc5a0ca1a56feb2fa141d66e
     }
 
     

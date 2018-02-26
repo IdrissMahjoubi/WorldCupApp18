@@ -5,12 +5,38 @@
  */
 package Entities;
 
+import java.sql.Date;
+
 /**
  *
  * @author MyTEK
  */
 public class User {
    private int user_id; 
+   private String user_name;
+   private String user_last_name;
+   private Date user_birthday;
+   private String user_nationality;
+   private String user_email;
+   private int user_tel;
+   private String user_tel2;
+   private String user_login;
+   private String user_password;
+   private String user_team;
+   private int user_fidelity;
+   private int user_state;
+   private String user_type;
+   
+   
+   public User(String email)
+   {
+      this.user_email=email;
+   }
+   
+   public User(String tel,int a)
+   {
+      this.user_tel2=tel;
+   }
 
     public int getUser_id() {
         return user_id;
@@ -24,20 +50,16 @@ public class User {
         this.user_id = user_id;
         
     }
-   private String user_name;
-   private String user_last_name;
-   private String user_birthday;
-   private String user_nationality;
-   private String user_email;
-   private int user_tel;
-   private String user_login;
-   private String user_password;
-   private String user_team;
-   private int user_fidelity;
-   private int user_state;
-   private String user_type;
+     public String getUser_tel2() {
+        return user_tel2;
+    }
 
-    public User(int user_id, String user_name, String user_last_name, String user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team, int user_fidelity, int user_state, String user_type) {
+    public void setUser_tel2() {
+        this.user_tel2 = Integer.toString(user_tel);
+    }
+   
+
+    public User(int user_id, String user_name, String user_last_name, Date user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team, int user_fidelity, int user_state, String user_type) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.user_last_name = user_last_name;
@@ -53,7 +75,7 @@ public class User {
         this.user_type = user_type;
     }
 
-    public User(String user_name, String user_last_name, String user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team, int user_fidelity, int user_state, String user_type) {
+    public User(String user_name, String user_last_name, Date user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team, int user_fidelity, int user_state, String user_type) {
         this.user_name = user_name;
         this.user_last_name = user_last_name;
         this.user_birthday = user_birthday;
@@ -68,7 +90,7 @@ public class User {
         this.user_type = user_type;
     }
 
-    public User(String user_name, String user_last_name, String user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team) {
+    public User(String user_name, String user_last_name, Date user_birthday, String user_nationality, String user_email, int user_tel, String user_login, String user_password, String user_team) {
         this.user_name = user_name;
         this.user_last_name = user_last_name;
         this.user_birthday = user_birthday;
@@ -109,11 +131,11 @@ public class User {
         this.user_last_name = user_last_name;
     }
 
-    public String getUser_birthday() {
+    public Date getUser_birthday() {
         return user_birthday;
     }
 
-    public void setUser_birthday(String user_birthday) {
+    public void setUser_birthday(Date user_birthday) {
         this.user_birthday = user_birthday;
     }
 
