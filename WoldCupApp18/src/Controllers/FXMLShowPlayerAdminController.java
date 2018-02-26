@@ -163,7 +163,7 @@ System.out.println(teamUpdate.getValue());
 System.out.println(heightUpdate.getText());
 System.out.println(weightUpdate.getText());
 System.out.println(imgPath);
-PlayerServices ps = new PlayerServices();
+PlayerServices ps = PlayerServices.getInstance();
             Player p = new Player();
             p.setPLAYER_ID(idTnew);
            
@@ -200,7 +200,7 @@ PlayerServices ps = new PlayerServices();
     
             void showPlayerDetails(Player p) {
                 
-                PlayerServices ps = new PlayerServices();
+                PlayerServices ps = PlayerServices.getInstance();
 
         idTnew = p.getPLAYER_ID();
         imgPath = String.valueOf(p.getPLAYER_PICTURE());
@@ -243,7 +243,7 @@ PlayerServices ps = new PlayerServices();
     }
     void filtrerPlayerList(String oldValue, String newValue) {
         String choix = (String) comboRech.getValue();
-        PlayerServices ps = new PlayerServices();
+        PlayerServices ps = PlayerServices.getInstance();
         if(choix.equals("Name")){
         ObservableList<Player> filteredList = FXCollections.observableArrayList();
         if (recherchePlayer_txt.getText() == null || (newValue.length() < oldValue.length()) || newValue == null) {
@@ -368,7 +368,7 @@ PlayerServices ps = new PlayerServices();
 
     @FXML
     private void reparse(ActionEvent event) {
-        PlayerServices ps = new PlayerServices();
+        PlayerServices ps = PlayerServices.getInstance();
         ParseJoueurs pj = new ParseJoueurs();
         
         ps.EmptyPlayer();

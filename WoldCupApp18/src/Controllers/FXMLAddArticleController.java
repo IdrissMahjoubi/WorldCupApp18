@@ -87,7 +87,7 @@ public class FXMLAddArticleController implements Initializable {
        
       
                     
-        ArticleServices s=new ArticleServices();
+        ArticleServices s=ArticleServices.getInstance();
         s.addArticle(a);
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLDetailsAdd.fxml"));

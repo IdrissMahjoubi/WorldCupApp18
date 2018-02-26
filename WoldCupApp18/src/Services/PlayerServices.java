@@ -24,6 +24,22 @@ public class PlayerServices {
     
     Connection connection;
     PreparedStatement preparedStatement;
+    
+    static PlayerServices instance;
+   
+    public PlayerServices() {
+           connection = DataSource.getInstance().getConnection();
+
+    }
+
+      public static PlayerServices getInstance() {
+        if (instance == null) {
+            instance = new PlayerServices();
+        }
+        return instance;
+    }
+    
+    
     public void addPlayer(Player p){
         String requete="INSERT INTO `PLAYER`(`PLAYER_NAME`,`PLAYER_AGE`,`PLAYER_TEAM` ,`PLAYER_POSITION`,`PLAYER_CLUB`,`PLAYER_HEIGHT`,`PLAYER_TSHIRT`,`PLAYER_WEIGHT`) VALUES (?,?,?,?,?,?,?,?)";
         try {
@@ -164,8 +180,6 @@ public class PlayerServices {
      
      
 
-    public PlayerServices() {
-        connection = DataSource.getInstance().getConnection();
-    }
+  
     
 }
