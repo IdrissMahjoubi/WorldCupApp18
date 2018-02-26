@@ -32,7 +32,7 @@ public class WoldCupApp18 extends Application {
        Parent root;
         try {
 
-        root = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Views/FXMLMatchUSer.fxml"));
 
 
         Scene scene = new Scene(root);
