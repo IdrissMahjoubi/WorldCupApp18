@@ -5,6 +5,7 @@
  */
 package Controllers;
 
+import static Controllers.FXMLAddTeamController.imageFile1;
 import Entities.Team;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -46,6 +47,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import Services.ServiceTeam;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 import tray.notification.TrayNotification;
 
 /**
@@ -281,10 +286,6 @@ public class FXMLAffichageTeamController implements Initializable {
         table.setItems(s.showTeams());
     }
 
-    private void supprimerTeam(ActionEvent event) {
-       
-    }
-
     @FXML
     private void modifierTeam(ActionEvent event) {
         if (!table.getSelectionModel().isEmpty()) {
@@ -318,18 +319,22 @@ public class FXMLAffichageTeamController implements Initializable {
     }
 
     @FXML
-    private void BrowseFlag(ActionEvent event) throws MalformedURLException {
+    private void BrowseFlag(ActionEvent event) throws MalformedURLException, IOException {
         String imageFile;
         FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            imageFile = selectedFile.toURI().toURL().toString();
-            System.out.println(imageFile);
-
-            Image image1 = new Image(imageFile);
-
-            flagimage.setImage(image1);
-            flag_path = imageFile;
+             Image image = new Image(selectedFile.toURI().toString());
+            flagimage.setImage(image);
+            flag_path = selectedFile.getName();
+            int pos = flag_path.lastIndexOf("/");
+            if (pos > 0) {
+            flag_path = flag_path.substring(0, pos);
+            }
+            flagimage.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + flag_path;
+            System.out.println(emplacement);
+            CopyImage(emplacement, selectedFile.toPath().toString());
 
         } else {
             System.out.println("file doesn't exist");
@@ -337,19 +342,23 @@ public class FXMLAffichageTeamController implements Initializable {
     }
 
     @FXML
-    private void BrowseLogo(ActionEvent event) throws MalformedURLException {
+    private void BrowseLogo(ActionEvent event) throws MalformedURLException, IOException {
         String imageFile;
         FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
 
-            imageFile = selectedFile.toURI().toURL().toString();
-            System.out.println(imageFile);
-
-            Image image1 = new Image(imageFile);
-
-            team_logo.setImage(image1);
-            logo_path = imageFile;
+           Image image = new Image(selectedFile.toURI().toString());
+            team_logo.setImage(image);
+            logo_path = selectedFile.getName();
+            int pos = logo_path.lastIndexOf("/");
+            if (pos > 0) {
+            logo_path = logo_path.substring(0, pos);
+            }
+            team_logo.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + logo_path;
+            System.out.println(emplacement);
+            CopyImage(emplacement, selectedFile.toPath().toString());
 
         } else {
             System.out.println("file doesn't exist");
@@ -531,6 +540,23 @@ public class FXMLAffichageTeamController implements Initializable {
             alert.setHeaderText("Veuillez selectionner un team !");
             Optional<ButtonType> result = alert.showAndWait();
         }
+    }
+    public void CopyImage(String url, String imageDestination) throws IOException {
+        
+        //URL l'emplacement de fichier image sous wamp exemple (http://localhost/image/product)
+        
+
+        InputStream inputStream = new FileInputStream(imageDestination);//upload l'image
+        System.out.println("Start uploading second file");
+        
+        OutputStream output = new FileOutputStream(url);
+        byte[] bytesIn = new byte[4096];
+        int read = 1;
+        while ((read = inputStream.read(bytesIn)) != -1) {//copier l'image au serveur
+            output.write(bytesIn, 0, read);
+        }
+        output.close();
+        inputStream.close();
     }
         
     

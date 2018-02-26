@@ -26,6 +26,8 @@ import javafx.scene.control.TextField;
 import Entities.User;
 import Services.ServiceUser;
 import Utilities.Session;
+import java.sql.Date;
+import javafx.scene.control.DatePicker;
 
 /**
  * FXML Controller class
@@ -39,7 +41,7 @@ public class FXMLUpdateUserController implements Initializable {
     @FXML
     private TextField last_name;
     @FXML
-    private TextField birthday;
+    private DatePicker birthday;
     @FXML
     private TextField nationaity;
     @FXML
@@ -66,12 +68,13 @@ public class FXMLUpdateUserController implements Initializable {
          team.setItems(comboList);
          name.setText(Session.LoggedUser.getUser_name());
          last_name.setText(Session.LoggedUser.getUser_last_name());
-         birthday.setText(Session.LoggedUser.getUser_birthday());
+         //birthday.value((Session.LoggedUser.getUser_birthday()));
          nationaity.setText(Session.LoggedUser.getUser_nationality());
          mail.setText(Session.LoggedUser.getUser_email());
          tel.setText(Integer.toString(Session.LoggedUser.getUser_tel()));
          login.setText(Session.LoggedUser.getUser_login());
          password.setText(Session.LoggedUser.getUser_password());
+         team.getSelectionModel().selectFirst();
     }    
 
     @FXML
@@ -89,7 +92,7 @@ public class FXMLUpdateUserController implements Initializable {
             
             u.setUser_last_name(last_name.getText());
            
-            u.setUser_birthday(birthday.getText());
+            u.setUser_birthday(java.sql.Date.valueOf(birthday.getValue()));
             
             u.setUser_nationality(nationaity.getText());
            

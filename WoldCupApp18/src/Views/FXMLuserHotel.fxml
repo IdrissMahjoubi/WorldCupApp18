@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="Controllers.FXMLuserHotelController">
+   <children>
+      <Label layoutX="218.0" layoutY="32.0" text="Hotels List">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" editable="true" layoutX="39.0" layoutY="108.0" prefHeight="200.0" prefWidth="523.0">
+         <columns>
+            <TableColumn fx:id="id" prefWidth="37.0" text="ID" visible="false" />
+            <TableColumn fx:id="nameh" prefWidth="120.0" text="hotel name" />
+            <TableColumn fx:id="locationh" prefWidth="109.0" text="hotel location" />
+            <TableColumn fx:id="hotelstars" prefWidth="143.0" text="hotel stars" />
+            <TableColumn prefWidth="76.66668701171875" text="XMAP" fx:id="xmap" />
+            <TableColumn fx:id="ymap" prefWidth="69.33331298828125" text="YMAP" />
+         </columns>
+         <effect>
+            <Blend />
+         </effect>
+      </TableView>
+      <TextField fx:id="Recherche" layoutX="144.0" layoutY="333.0" promptText="Rechercher" />
+      <ChoiceBox fx:id="choiseBox" layoutX="322.0" layoutY="333.0" prefHeight="25.0" prefWidth="126.0" />
+   </children>
+</AnchorPane>

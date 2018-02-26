@@ -130,6 +130,14 @@ public class FXMLauthentificationController implements Initializable {
 
     @FXML
     private void sendSms(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLPasswordRecoveryController pr = loader.getController();
+            creer.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLPasswordRecoveryController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

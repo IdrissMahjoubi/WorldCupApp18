@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 import Entities.Match;
 import Entities.Team;
 import Services.Match_services;
+import java.util.List;
 
 /**
  * FXML Controller class
@@ -182,7 +183,7 @@ public class FXMLUpdateMatchController implements Initializable {
             int Id= getId_match();
             Match M = new Match(Id, date, referee, time, winnerScore, looserScore, gamekind, winnerTeam, looserTeam, venue, stadium, MatchNumber);
             
-
+            
 
             match_services.PointsCount(M);
             match_services.updateMatch(M);
