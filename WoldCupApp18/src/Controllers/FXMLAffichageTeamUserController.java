@@ -29,6 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import Services.ServiceTeam;
+import java.io.File;
 
 /**
  * FXML Controller class
@@ -94,33 +95,37 @@ public class FXMLAffichageTeamUserController implements Initializable {
                     if (newValue != null) {
                         showTeamDetails(newValue);
                         switch(newValue.getTEAM_NAME()) { 
-                            case "Tunisie": 
-                            Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
+                            case "Tunisia": 
+                            Media musicFile=new Media("file:/C:/wamp64/www/ImagesPacha/Tunisia.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile);
                             break; 
-                            case "Bresil": 
-                            Media musicFile2=new Media("file:/C:/Users/pacha/Music/Hymne%20National%20du%20Brésil.mp3");
+                            case "Russia": 
+                            Media musicFile2=new Media("file:/C:/wamp64/www/ImagesPacha/Russie.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile2);
                             break; 
-                            case "Allemagne": 
-                            Media musicFile3=new Media("file:/C:/Users/pacha/Music/Hymne%20national%20de%20lAllemagne.mp3");
+                            case "Germany": 
+                            Media musicFile3=new Media("file:/C:/wamp64/www/ImagesPacha/Allemagne.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile3);
                             break;
-                            case "Espagne": 
-                            Media musicFile4=new Media("file:/C:/Users/pacha/Music/Himno%20español.mp3");
+                            case "Spain": 
+                            Media musicFile4=new Media("file:/C:/wamp64/www/ImagesPacha/Espagne.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile4);
                             break; 
                             case "Panama": 
-                            Media musicFile5=new Media("file:/C:/Users/pacha/Music/Panama.mp3");
+                            Media musicFile5=new Media("file:/C:/wamp64/www/ImagesPacha/Panama.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile5);
                             break;
-                            case "Russie": 
-                            Media musicFile6=new Media("file:/C:/Users/pacha/Music/Russie.mp3");
+                            case "France": 
+                            Media musicFile6=new Media("file:/C:/wamp64/www/ImagesPacha/france.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile6);
                             break;
                             case "Egypt": 
-                            Media musicFile7=new Media("file:/C:/Users/pacha/Music/Égypte.mp3");
+                            Media musicFile7=new Media("file:/C:/wamp64/www/ImagesPacha/Égypte.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile7);
+                            break;
+                            case "Brazil": 
+                            Media musicFile8=new Media("file:/C:/wamp64/www/ImagesPacha/Brésil.mp3");
+                            mediaPlayer2=new MediaPlayer(musicFile8);
                             break; 
                             
                     }
@@ -176,15 +181,12 @@ public class FXMLAffichageTeamUserController implements Initializable {
     }
     void showTeamDetails(Team t) {
        
-
-        flag_path = String.valueOf(t.getTEAM_FLAG());
-        logo_path = String.valueOf(t.getTEAM_LOGO());
-        Image image1 = new Image(t.getTEAM_FLAG());
-        flagview.setImage(image1);
-        Image image2 = new Image(t.getTEAM_LOGO());
+        File file = new File("src/Resources/Icons/Flags/" + t.getTEAM_FLAG());
+        Image image1 = new Image(file.toURI().toString());
+         flagview.setImage(image1);
+        File file2 = new File("src/Resources/Icons/Logos/" + t.getTEAM_LOGO());
+        Image image2 = new Image(file2.toURI().toString());
         logoview.setImage(image2);
-
-
     }
     void filtrerTeamList(String oldValue, String newValue) {
         String choix = choice.getValue();

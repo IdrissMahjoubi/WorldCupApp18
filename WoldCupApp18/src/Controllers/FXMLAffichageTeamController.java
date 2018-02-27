@@ -5,7 +5,6 @@
  */
 package Controllers;
 
-import static Controllers.FXMLAddTeamController.imageFile1;
 import Entities.Team;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -88,7 +87,7 @@ public class FXMLAffichageTeamController implements Initializable {
     ObservableList<String> comboList = FXCollections.observableArrayList("Equipe", "Continent", "Groupe");
     ObservableList<String> comboListCont = FXCollections.observableArrayList("Asie & Océanie", "Afrique", "Amerique de sud", "Europe", "Amerique de nord");
 
-    ObservableList<String> comboListGRP = FXCollections.observableArrayList("A", "B","C", "D", "E", "F", "G", "H");
+    ObservableList<String> comboListGRP = FXCollections.observableArrayList("A", "B", "C", "D", "E", "F", "G", "H");
     @FXML
     private MediaView view;
     @FXML
@@ -97,8 +96,8 @@ public class FXMLAffichageTeamController implements Initializable {
     private Button stop;
     Media media;
     MediaPlayer mediaPlayer;
-    MediaPlayer mediaPlayer2;
-    
+    static MediaPlayer mediaPlayer2;
+
     @FXML
     private ComboBox<String> ComboContinent;
     @FXML
@@ -109,8 +108,8 @@ public class FXMLAffichageTeamController implements Initializable {
     private ComboBox<String> ComboRechGrp;
     @FXML
     private Button play2;
-    
-    public static String urlm="";
+
+    public static String urlm = "";
     @FXML
     private Button stop2;
     @FXML
@@ -124,14 +123,17 @@ public class FXMLAffichageTeamController implements Initializable {
     @FXML
     private Button ajouter;
 
+    static String imageFile;
+
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
         rechercheteam_txt.setVisible(true);
         ComboRechCont.setVisible(false);
         ComboRechGrp.setVisible(false);
@@ -140,7 +142,7 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboRechCont.setItems(comboListCont);
         ComboRechCont.getSelectionModel().selectFirst();
 
-       /*String urlv = "file:/@../../../../../../../Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
+        /*String urlv = "file:/@../../../../../../../Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
         media = new Media(urlv);
         System.out.println(urlv);
         mediaPlayer = new MediaPlayer(media);
@@ -154,9 +156,9 @@ public class FXMLAffichageTeamController implements Initializable {
                 addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         showTeamDetails(newValue);
-                      /*  switch(newValue.getTEAM_NAME()) { 
-                            case "Tunisie": 
-                            Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
+                         switch(newValue.getTEAM_NAME()) { 
+                            case "Tunisia": 
+                            Media musicFile=new Media("file:/C:/wamp64/www/ImagesPacha/Ya%20russia%20haw%20jayin.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile);
                             break; 
                             case "Bresil": 
@@ -175,7 +177,7 @@ public class FXMLAffichageTeamController implements Initializable {
                             Media musicFile5=new Media("file:/C:/Users/pacha/Music/Panama.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile5);
                             break;
-                            case "Russie": 
+                            case "Russia": 
                             Media musicFile6=new Media("file:/C:/Users/pacha/Music/Russie.mp3");
                             mediaPlayer2=new MediaPlayer(musicFile6);
                             break;
@@ -184,7 +186,7 @@ public class FXMLAffichageTeamController implements Initializable {
                             mediaPlayer2=new MediaPlayer(musicFile7);
                             break; 
                             
-                    }*/
+                    }
                     }
 
                 });
@@ -215,7 +217,7 @@ public class FXMLAffichageTeamController implements Initializable {
                 }
             }
         });
-  
+
         rechercheteam_txt.textProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observable, Object oldValue, Object newValue) {
@@ -223,8 +225,7 @@ public class FXMLAffichageTeamController implements Initializable {
             }
 
         });
-        
-        
+
     }
 
     public TableColumn<?, ?> getName() {
@@ -297,11 +298,11 @@ public class FXMLAffichageTeamController implements Initializable {
             t.setTEAM_COACH(coach_txt.getText());
             t.setTEAM_GROUP(ComboGrp.getValue());
             t.setTEAM_CONTINENT(ComboContinent.getValue());
-            t.setTEAM_FLAG(flag_path);
-            t.setTEAM_LOGO(logo_path);
+            t.setTEAM_FLAG(imageFile2);
+            t.setTEAM_LOGO(imageFile);
             st.update(t);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Modifier team ");
             alert.setHeaderText("Modification d'equipe :"
                     + table.getSelectionModel().getSelectedItem().getTEAM_NAME() + " est effectué avec succes");
@@ -319,20 +320,21 @@ public class FXMLAffichageTeamController implements Initializable {
     }
 
     @FXML
-    private void BrowseFlag(ActionEvent event) throws MalformedURLException, IOException {
-        String imageFile;
+    private void BrowseLogo(ActionEvent event) throws MalformedURLException, IOException {
+
         FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-             Image image = new Image(selectedFile.toURI().toString());
-            flagimage.setImage(image);
-            flag_path = selectedFile.getName();
-            int pos = flag_path.lastIndexOf("/");
+
+            Image image = new Image(selectedFile.toURI().toString());
+            team_logo.setImage(image);
+            imageFile = selectedFile.getName();
+            int pos = imageFile.lastIndexOf("/");
             if (pos > 0) {
-            flag_path = flag_path.substring(0, pos);
+                imageFile = imageFile.substring(0, pos);
             }
-            flagimage.setImage(image);
-            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + flag_path;
+            team_logo.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + imageFile;
             System.out.println(emplacement);
             CopyImage(emplacement, selectedFile.toPath().toString());
 
@@ -340,23 +342,24 @@ public class FXMLAffichageTeamController implements Initializable {
             System.out.println("file doesn't exist");
         }
     }
+    static String imageFile2;
 
     @FXML
-    private void BrowseLogo(ActionEvent event) throws MalformedURLException, IOException {
-        String imageFile;
+    private void BrowseFlag(ActionEvent event) throws MalformedURLException, IOException {
+
         FileChooser fc = new FileChooser();
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
 
-           Image image = new Image(selectedFile.toURI().toString());
-            team_logo.setImage(image);
-            logo_path = selectedFile.getName();
-            int pos = logo_path.lastIndexOf("/");
+            Image image = new Image(selectedFile.toURI().toString());
+            flagimage.setImage(image);
+            imageFile2 = selectedFile.getName();
+            int pos = imageFile2.lastIndexOf("/");
             if (pos > 0) {
-            logo_path = logo_path.substring(0, pos);
+                imageFile2 = imageFile2.substring(0, pos);
             }
-            team_logo.setImage(image);
-            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + logo_path;
+            flagimage.setImage(image);
+            String emplacement = "C:\\wamp64\\www\\ImagesPacha\\" + imageFile2;
             System.out.println(emplacement);
             CopyImage(emplacement, selectedFile.toPath().toString());
 
@@ -379,9 +382,11 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboContinent.getItems().add(t.getTEAM_CONTINENT());
         ComboContinent.getSelectionModel().selectFirst();
         coach_txt.setText(t.getTEAM_COACH());
-        Image image1 = new Image(t.getTEAM_FLAG());
+        File file = new File("src/Resources/Icons/Flags/" + t.getTEAM_FLAG());
+        Image image1 = new Image(file.toURI().toString());
         flagimage.setImage(image1);
-        Image image2 = new Image(t.getTEAM_LOGO());
+        File file2 = new File("src/Resources/Icons/Logos/" + t.getTEAM_LOGO());
+        Image image2 = new Image(file2.toURI().toString());
         team_logo.setImage(image2);
 
         for (int i = 0; i < comboListCont.size(); i++) {
@@ -430,7 +435,7 @@ public class FXMLAffichageTeamController implements Initializable {
         } else if (choix.equals("Continent")) {
 
             ObservableList<Team> filteredList = FXCollections.observableArrayList();
-            if (rechercheteam_txt.getText()== null || newValue == null) {
+            if (rechercheteam_txt.getText() == null || newValue == null) {
                 table.setItems(st.showTeams());
             } else {
                 table.setItems(st.showTeams());
@@ -451,18 +456,17 @@ public class FXMLAffichageTeamController implements Initializable {
             }
 
         } else {
-            
+
             ObservableList<Team> filteredList = FXCollections.observableArrayList();
-            if (rechercheteam_txt.getText()== null || newValue == null) {
+            if (rechercheteam_txt.getText() == null || newValue == null) {
                 table.setItems(st.showTeams());
             } else {
                 table.setItems(st.showTeams());
-              
 
                 newValue = newValue.toUpperCase();
 
                 for (Team team : table.getItems()) {
-                   
+
                     String filterTeamName = team.getTEAM_GROUP();
 
                     if (filterTeamName.toUpperCase().contains(newValue)) {
@@ -504,13 +508,13 @@ public class FXMLAffichageTeamController implements Initializable {
 
     @FXML
     private void ajouterEquipe(ActionEvent event) throws IOException {
-            Stage stage = new Stage();    
-            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAddTeam.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-            ((Node) event.getSource()).getScene().getWindow().hide();
-           }
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAddTeam.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        ((Node) event.getSource()).getScene().getWindow().hide();
+    }
 
     @FXML
     private void playHymne(ActionEvent event) {
@@ -524,7 +528,7 @@ public class FXMLAffichageTeamController implements Initializable {
 
     @FXML
     private void supprimerTeamadmin(ActionEvent event) {
-         if (!table.getSelectionModel().isEmpty()) {
+        if (!table.getSelectionModel().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Supprimer Equipe");
             alert.setHeaderText("Vouler vous vraiment supprimer  : " + table.getSelectionModel().getSelectedItem().getTEAM_NAME() + " ?");
@@ -541,14 +545,13 @@ public class FXMLAffichageTeamController implements Initializable {
             Optional<ButtonType> result = alert.showAndWait();
         }
     }
-    public void CopyImage(String url, String imageDestination) throws IOException {
-        
-        //URL l'emplacement de fichier image sous wamp exemple (http://localhost/image/product)
-        
 
+    public void CopyImage(String url, String imageDestination) throws IOException {
+
+        //URL l'emplacement de fichier image sous wamp exemple (http://localhost/image/product)
         InputStream inputStream = new FileInputStream(imageDestination);//upload l'image
         System.out.println("Start uploading second file");
-        
+
         OutputStream output = new FileOutputStream(url);
         byte[] bytesIn = new byte[4096];
         int read = 1;
@@ -558,9 +561,5 @@ public class FXMLAffichageTeamController implements Initializable {
         output.close();
         inputStream.close();
     }
-        
-    
-    }
 
-
-
+}
