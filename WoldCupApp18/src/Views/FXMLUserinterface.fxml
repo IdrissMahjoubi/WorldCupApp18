@@ -12,5 +12,6 @@
       <Button fx:id="logout" layoutX="482.0" layoutY="24.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="112.0" text="se déconnecter" />
       <Button fx:id="teams" layoutX="31.0" layoutY="86.0" mnemonicParsing="false" onAction="#teams" text="Teams" />
       <Button fx:id="hotels" layoutX="31.0" layoutY="134.0" mnemonicParsing="false" onAction="#goToHotels" text="Hotels" />
+      <Button fx:id="evenement" layoutX="31.0" layoutY="37.0" mnemonicParsing="false" onAction="#gotoevent" text="Evenement" />
    </children>
 </AnchorPane>

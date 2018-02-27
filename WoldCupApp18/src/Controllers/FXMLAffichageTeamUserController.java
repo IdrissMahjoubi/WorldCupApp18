@@ -29,7 +29,18 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import Services.ServiceTeam;
+<<<<<<< HEAD
 import java.io.File;
+=======
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
 
 /**
  * FXML Controller class
@@ -69,6 +80,8 @@ public class FXMLAffichageTeamUserController implements Initializable {
     ObservableList<String> listG = FXCollections.observableArrayList("A", "B","C", "D", "E", "F", "G", "H");
     String flag_path;
     String logo_path;
+    static String teamS;
+    static String teamImg;
     @FXML
     private ComboBox<String> continents;
     @FXML
@@ -79,6 +92,33 @@ public class FXMLAffichageTeamUserController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+    table.setOnMousePressed(new EventHandler<MouseEvent>() {
+    @Override 
+    public void handle(MouseEvent event) {
+       
+
+        if (event.isPrimaryButtonDown() && event.getClickCount() == 2) {
+             teamS = table.getSelectionModel().getSelectedItem().getTEAM_NAME();
+             //teamImg = table.getSelectionModel().getSelectedItem().getTEAM_FLAG();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowPlayerUser.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLShowPlayerUserController dc = loader.getController();
+            
+            dc.setTitle(table.getSelectionModel().getSelectedItem().getTEAM_NAME()); 
+            STOP.getScene().setRoot(root);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLShowPlayerUserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                     
+
+            System.out.println(table.getSelectionModel().getSelectedItem());
+        }
+    }
+});
         rechercheteam_txt.setVisible(true);
         groupes.setVisible(false);
         continents.setVisible(false);
@@ -94,9 +134,15 @@ public class FXMLAffichageTeamUserController implements Initializable {
                 addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         showTeamDetails(newValue);
+<<<<<<< HEAD
                         switch(newValue.getTEAM_NAME()) { 
                             case "Tunisia": 
                             Media musicFile=new Media("file:/C:/wamp64/www/ImagesPacha/Tunisia.mp3");
+=======
+                       /*switch(newValue.getTEAM_NAME()) { 
+                            case "Tunisie": 
+                            Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
                             mediaPlayer2=new MediaPlayer(musicFile);
                             break; 
                             case "Russia": 
@@ -128,7 +174,7 @@ public class FXMLAffichageTeamUserController implements Initializable {
                             mediaPlayer2=new MediaPlayer(musicFile8);
                             break; 
                             
-                    }
+                    }*/
                     }
 
                 });
@@ -171,6 +217,8 @@ public class FXMLAffichageTeamUserController implements Initializable {
     
     
     
+    
+    
     public void afficher() {
         ServiceTeam s = new ServiceTeam();
         team.setCellValueFactory(new PropertyValueFactory<>("TEAM_NAME"));
@@ -181,12 +229,24 @@ public class FXMLAffichageTeamUserController implements Initializable {
     }
     void showTeamDetails(Team t) {
        
+<<<<<<< HEAD
         File file = new File("src/Resources/Icons/Flags/" + t.getTEAM_FLAG());
         Image image1 = new Image(file.toURI().toString());
          flagview.setImage(image1);
         File file2 = new File("src/Resources/Icons/Logos/" + t.getTEAM_LOGO());
         Image image2 = new Image(file2.toURI().toString());
         logoview.setImage(image2);
+=======
+
+        flag_path = String.valueOf(t.getTEAM_FLAG());
+        logo_path = String.valueOf(t.getTEAM_LOGO());
+        Image image1 = new Image(t.getTEAM_FLAG());
+        flagview.setImage(image1);
+        //Image image2 = new Image(t.getTEAM_LOGO());
+        //logoview.setImage(image2);
+
+
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
     }
     void filtrerTeamList(String oldValue, String newValue) {
         String choix = choice.getValue();

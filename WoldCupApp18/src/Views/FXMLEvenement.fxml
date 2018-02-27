@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,42 +9,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="688.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLEvenementController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLEvenementController">
    <children>
-      <Label layoutX="202.0" layoutY="24.0" text="Créer Evenement">
-         <font>
-            <Font size="23.0" />
-         </font>
-      </Label>
-      <Label layoutX="66.0" layoutY="90.0" text="Nom Evenement :" />
-      <Label layoutX="66.0" layoutY="128.0" text="Date Debut :" />
-      <Label layoutX="63.0" layoutY="196.0" text="Gouvernorat :" />
-      <Label layoutX="66.0" layoutY="281.0" text="Description :" />
-      <TextField fx:id="EventName" layoutX="202.0" layoutY="86.0" promptText="Donner un nom d'evenement" />
-      <TextField fx:id="EventGouv" layoutX="202.0" layoutY="192.0" promptText="gouvernaurat" />
-      <TextField fx:id="EventDesc" layoutX="202.0" layoutY="277.0" promptText="heure d'evenement etc.." />
-      <Button fx:id="Valider" layoutX="408.0" layoutY="74.0" mnemonicParsing="false" onAction="#AddEvent" prefHeight="17.0" prefWidth="53.0" text="Valider" />
-      <Button fx:id="Cancel" layoutX="408.0" layoutY="116.0" mnemonicParsing="false" onAction="#EmptyFields" text="Annuler" />
-      <Button fx:id="GoBack" layoutX="408.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoBack" text="Retour au Menu" />
-      <DatePicker fx:id="EventDate" layoutX="202.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" promptText="Date debut d'evenement" />
-      <TableView fx:id="Table" layoutX="12.0" layoutY="327.0" prefHeight="137.0" prefWidth="673.0">
-        <columns>
-          <TableColumn fx:id="EvName" prefWidth="77.0" text="Nom " />
-          <TableColumn fx:id="EvDate" prefWidth="85.0" text="Date Debut" />
-            <TableColumn fx:id="EvFin" prefWidth="99.0" text="Date Fin" />
-            <TableColumn fx:id="Evgouv" prefWidth="104.0" text="Gouvernorat" />
-            <TableColumn fx:id="EvEndroit" prefWidth="108.0" text="Endroit" />
-            <TableColumn fx:id="Evdesc" prefWidth="130.0" text="Description" />
-            <TableColumn fx:id="nbrparticip" prefWidth="65.0" text="Nbr participant" />
-        </columns>
-      </TableView>
-      <Label layoutX="66.0" layoutY="235.0" text="Endroit :" />
-      <TextField fx:id="EventPlace" layoutX="202.0" layoutY="231.0" promptText="cafe/resto..." />
-      <Button fx:id="showmap" layoutX="408.0" layoutY="192.0" mnemonicParsing="false" onAction="#ShowMap" text="Afficher dans la map " />
-      <Label layoutX="66.0" layoutY="159.0" text="Date fin :" />
-      <DatePicker fx:id="EventEnd" layoutX="202.0" layoutY="155.0" prefHeight="25.0" prefWidth="149.0" promptText="Date fin d'evenement" />
-      <Button fx:id="Participer" layoutX="409.0" layoutY="223.0" mnemonicParsing="false" onAction="#Participate" text="Participer" />
-      <Label fx:id="txtnbrparticipant" layoutX="409.0" layoutY="256.0" text="Nombre de participants dans ce evenement :" />
-      <TextField fx:id="txtparticipant" layoutX="647.0" layoutY="252.0" prefHeight="25.0" prefWidth="32.0" />
+      <AnchorPane id="AnchorPane" prefHeight="528.0" prefWidth="688.0" style="-fx-background-color: #353b48;">
+         <children>
+            <Label layoutX="202.0" layoutY="24.0" text="Create Event" textFill="WHITE">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="90.0" text="Event Name :" textFill="WHITE" />
+            <Label layoutX="66.0" layoutY="128.0" text="Date Begin :" textFill="WHITE" />
+            <Label layoutX="63.0" layoutY="196.0" text="Governorate" textFill="#f8f8f8" />
+            <Label layoutX="66.0" layoutY="281.0" text="Description :" textFill="WHITE" />
+            <TextField fx:id="EventName" layoutX="202.0" layoutY="86.0" promptText="Event Name" />
+            <TextField fx:id="EventGouv" layoutX="202.0" layoutY="192.0" promptText="gouvernaurat" />
+            <TextField fx:id="EventDesc" layoutX="202.0" layoutY="277.0" promptText="Event houre, desciption" />
+            <Button fx:id="Valider" layoutX="408.0" layoutY="74.0" mnemonicParsing="false" onAction="#AddEvent" prefHeight="17.0" prefWidth="53.0" text="Add" textFill="#331261" />
+            <Button fx:id="Cancel" layoutX="408.0" layoutY="116.0" mnemonicParsing="false" onAction="#EmptyFields" text="Cancel" textFill="#30145b" />
+            <Button fx:id="GoBack" layoutX="408.0" layoutY="155.0" mnemonicParsing="false" onAction="#GoBack" text="Back To Menu" textFill="#361672" />
+            <DatePicker fx:id="EventDate" layoutX="202.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" promptText="Date Begin Event" />
+            <TableView fx:id="Table" layoutX="12.0" layoutY="327.0" prefHeight="137.0" prefWidth="673.0">
+              <columns>
+                <TableColumn fx:id="EvName" prefWidth="77.0" text="Name " />
+                <TableColumn fx:id="EvDate" prefWidth="85.0" text="Date Begin" />
+                  <TableColumn fx:id="EvFin" prefWidth="99.0" text="Date End" />
+                  <TableColumn fx:id="Evgouv" prefWidth="104.0" text="Governorate" />
+                  <TableColumn fx:id="EvEndroit" prefWidth="108.0" text="Place" />
+                  <TableColumn fx:id="Evdesc" prefWidth="130.0" text="Description" />
+                  <TableColumn fx:id="nbrparticip" prefWidth="65.0" text="Nbr participant" />
+              </columns>
+            </TableView>
+            <Label layoutX="66.0" layoutY="235.0" text="Event Place" textFill="#f8f8f8" />
+            <TextField fx:id="EventPlace" layoutX="202.0" layoutY="231.0" promptText="cafe/resto..." />
+            <Button fx:id="showmap" layoutX="408.0" layoutY="192.0" mnemonicParsing="false" onAction="#ShowMap" text="Show Location Event in MAP" textFill="#401368" />
+            <Label layoutX="66.0" layoutY="159.0" text="Date End :" textFill="WHITE" />
+            <DatePicker fx:id="EventEnd" layoutX="202.0" layoutY="155.0" prefHeight="25.0" prefWidth="149.0" promptText="Date End Event" />
+            <Button fx:id="Participer" layoutX="409.0" layoutY="223.0" mnemonicParsing="false" onAction="#Participate" text="Participate" textFill="#31116b" />
+            <Label fx:id="txtnbrparticipant" layoutX="409.0" layoutY="256.0" text="Number of  Participation in the Event" textFill="WHITE" />
+            <TextField fx:id="txtparticipant" layoutX="612.0" layoutY="252.0" prefHeight="25.0" prefWidth="32.0" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

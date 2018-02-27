@@ -10,7 +10,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="782.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamUserController">
+=======
+<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamUserController">
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
    <children>
       <ImageView fitHeight="150.0" fitWidth="286.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
          <image>

@@ -25,6 +25,21 @@ public class ArticleServices {
     
     Connection connection;
     PreparedStatement preparedStatement;
+    
+    static ArticleServices instance;
+   
+    public ArticleServices() {
+           connection = DataSource.getInstance().getConnection();
+
+    }
+
+      public static ArticleServices getInstance() {
+        if (instance == null) {
+            instance = new ArticleServices();
+        }
+        return instance;
+    }
+    
     public void addArticle(Article a){
         String requete="INSERT INTO `ARTICLE`(`ARTICLE_TITLE`,`ARTICLE_DESCRIPTION` , `ARTICLE_IMAGE`) VALUES (?,?,?)";
         try {
@@ -127,8 +142,6 @@ public class ArticleServices {
      
      
 
-    public ArticleServices() {
-        connection = DataSource.getInstance().getConnection();
-    }
+ 
     
 }
