@@ -93,8 +93,8 @@ public class FXMLShowStationsController implements Initializable {
         choiseBox.setItems(comboList);
         table.getSelectionModel().selectedItemProperty().
                 addListener((observable, oldValue, newValue) -> {
-
-                    showStationsDetails(newValue);
+             if (newValue!=null)
+            {showStationsDetails(newValue);}
 
                 });
         Recherche.textProperty().addListener(new ChangeListener() {
@@ -263,7 +263,7 @@ public class FXMLShowStationsController implements Initializable {
 
     @FXML
     private void acceuil(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowStations.fxml"));
         try {
             Parent root = loader.load();
             FXMLMenuController dc = loader.getController();

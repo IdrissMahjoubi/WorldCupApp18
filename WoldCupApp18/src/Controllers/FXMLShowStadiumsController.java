@@ -337,7 +337,7 @@ public class FXMLShowStadiumsController implements Initializable {
     @FXML
     private void acceuil(ActionEvent event) {
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowStadiums.fxml"));
         try{
             Parent root = loader.load();
             FXMLMenuController dc = loader.getController();

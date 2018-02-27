@@ -13,7 +13,9 @@ import Entities.Stadium;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import Utilities.DataSource;
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 /**
@@ -21,6 +23,25 @@ import javafx.collections.ObservableList;
  * @author Bich
  */
 public class CrudStadium {
+    
+    
+ DataSource ds = DataSource.getInstance();
+    Statement statement;
+    Connection connection;
+    ResultSet result;
+    static CrudStadium instance;
+    static CrudStadium crudStadium;
+    
+
+    public CrudStadium() {
+        connection = ds.getConnection();
+        try {
+            statement = connection.createStatement();
+        } catch (SQLException ex) {
+            System.out.println("Constructor Crud Stadium" + ex.getMessage());
+        }
+    }
+    
      public void addStadium( Stadium s ) throws SQLException
     {
     String req ="INSERT INTO STADIUM (STADIUM_NAME,STADIUM_LOCATION,STADIUM_CAPACITY,STADIUM_PICTURE,STADIUM_LOCATION_X,STADIUM_LOCATION_Y) values (?,?,?,?,?,?)";

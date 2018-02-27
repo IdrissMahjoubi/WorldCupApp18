@@ -23,6 +23,8 @@ import javafx.collections.ObservableList;
  */
 public class CrudStation {
     
+    
+    
         public void addStation( Station st ) throws SQLException
     {
     String req ="INSERT INTO STATION(STATION_NAME,STATION_LOCATION,STATION_TYPE,STATION_LOCATION_X,STATION_LOCATION_Y) values (?,?,?,?,?)";

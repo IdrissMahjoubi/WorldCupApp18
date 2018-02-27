@@ -105,7 +105,7 @@ public class CrudEvenement {
     public void updateparticip( int y, String x)
     {
         
-        
+      
         String req1 = "UPDATE EVENT SET  NBR_PARTICIP=? WHERE EVENT_NAME=?  ";
             PreparedStatement preparedStatement;
         try {

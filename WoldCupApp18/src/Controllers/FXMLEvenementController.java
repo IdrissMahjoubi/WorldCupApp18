@@ -38,6 +38,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import Services.ParticipationServices;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * FXML Controller class
@@ -108,6 +112,18 @@ public class FXMLEvenementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date today = new Date();
+            Date todayWithZeroTime;
+        try {
+            todayWithZeroTime = formatter.parse(formatter.format(today));
+            System.out.println(todayWithZeroTime);
+
+        } catch (ParseException ex) {
+            Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
         afficherEvent();
         txtnbrparticipant.setVisible(false);
         txtparticipant.setVisible(false);
@@ -219,19 +235,26 @@ public class FXMLEvenementController implements Initializable {
 
     }
 
-    /*private void DeleteEvent(){
-        
+   /* private void DeleteEvent() throws SQLException {
         Evenement e = new Evenement();
-        Calendar today;
-        today = Calendar.getInstance();
-        if (e.getEVENT_END().compareTo(today.getTime()) <0 )
-        {
+       DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+        Date today = new Date();
+
+        try {
+            Date todayWithZeroTime = formatter.parse(formatter.format(today));
+          if (e.getEVENT_END().after(todayWithZeroTime)) 
+          {
             int x = e.getEVENT_ID();
-            try {
                 cr.DeleteEvent(x);
-            } catch (SQLException ex) {
-                Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+
         }
+        } catch (ParseException ex) {
+            Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+  
     }*/
+    
+    
 }

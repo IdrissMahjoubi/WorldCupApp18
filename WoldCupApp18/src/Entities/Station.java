@@ -18,6 +18,7 @@ public class Station {
     private String STATION_TYPE ;
     private String STATION_LOCATION_X ;
     private String STATION_LOCATION_Y;
+    
     private static Station instance ;
     
     

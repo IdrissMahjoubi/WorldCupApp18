@@ -20,11 +20,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import validation.TextFieldValidation;
 
 /**
  * FXML Controller class
@@ -56,6 +58,16 @@ public class FXMLStadiumController implements Initializable {
     private ListView<?> ListView;
     @FXML
     private Button afficher;
+    @FXML
+    private Label lbl1;
+    @FXML
+    private Label lbl12;
+    @FXML
+    private Label lbl13;
+    @FXML
+    private Label lbl14;
+    @FXML
+    private Label lbl5;
 
     /**
      * Initializes the controller class.
@@ -71,6 +83,30 @@ public class FXMLStadiumController implements Initializable {
     @FXML
     private void AddStadium(ActionEvent event) throws SQLException {
 
+        boolean isnotAlphName = validation.TextFieldValidation.textalphabet(StadiumName, lbl1, "Il faut remplir avec des alphabets");
+        boolean isnotAlphLocation = validation.TextFieldValidation.textalphabet(StadiumLocation, lbl12, "Il faut remplir avec des alphabets");
+        boolean isnotNumCapacity = TextFieldValidation.texNum(StadiumCapacity, lbl13, "Il faut remplir avec des chiffres");
+        boolean isnotNumXmap = TextFieldValidation.texNum(StadiumXmap, lbl14, "Il faut remplir avec des chiffres pour latitude");
+        boolean isnotNumYmap = TextFieldValidation.texNum(StadiumYmap, lbl5, "Il faut remplir avec des chiffres pour Longtitude");
+        boolean var = false ;
+        
+        if (isnotAlphName) {
+            lbl1.setText("");
+        }
+        if (isnotAlphLocation) {
+            lbl12.setText("");
+        }
+        if (isnotNumCapacity) {
+            lbl13.setText("");
+        }
+        if (isnotNumXmap) {
+            lbl14.setText("");
+        }
+         if (isnotNumYmap) {
+            lbl5.setText("");
+        }
+        
+      
         String STADIUM_NAME = StadiumName.getText();
         String STADIUM_LOCATION = StadiumLocation.getText();
         int STADIUM_CAPACITY;

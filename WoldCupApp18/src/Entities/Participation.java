@@ -13,6 +13,8 @@ public class Participation {
     int ID_PARTICIPATION ;
     int ID_EVENT ;
     int ID_USER;
+    
+    public static Participation instance ;
 
     public int getID_PARTICIPATION() {
         return ID_PARTICIPATION;
