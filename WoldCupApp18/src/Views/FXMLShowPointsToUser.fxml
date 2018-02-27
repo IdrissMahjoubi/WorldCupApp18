@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Controllers.FXMLShowPointsToUserController">
+   <children>
+      <JFXTreeTableView fx:id="treeView" layoutX="99.0" layoutY="172.0" prefHeight="293.0" prefWidth="758.0" />
+      <JFXTextField fx:id="input" layoutX="101.0" layoutY="118.0" />
+   </children>
+</AnchorPane>
