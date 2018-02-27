@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,276 +10,809 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #40739e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchUserController">
-    <stylesheets>
-        <URL value="@fxmlshowmatchuser.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #40739e;" styleClass="pane" stylesheets="@../CSS/GroupStage.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchUserController">
    <children>
-      <Label layoutX="354.0" layoutY="27.0" text="Group Stage">
+      <ScrollPane fx:id="scrollpane" layoutX="93.0" layoutY="191.0" prefHeight="380.0" prefWidth="809.0">
+         <content>
+          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="863.0" prefWidth="778.0" style="-fx-background-color: #f5f6fa;">
+               <children>
+                  <VBox prefHeight="864.0" prefWidth="788.0" spacing="40.0">
+                     <children>
+                        <HBox prefHeight="391.0" prefWidth="786.0" spacing="10.0">
+                           <children>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m1" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="13.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/saudi_arabia_national_football.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m2" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Égypte_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="133.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(4).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m3" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="15.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Portugal_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="130.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(7).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m4" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/20170607084347!Football_Maroc_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Federation_Islamic_Republic_of_Iran.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m5" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/00552682.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m6" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/1200px-Fpf-logo.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(10).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m7" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(11).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(12).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m8" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(13).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m9" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(14).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m10" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(15).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(16).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m11" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Mexico_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m12" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Suède_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m13" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/URBSFA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m14" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Tunisia_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/200px-Football_Angleterre_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m15" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(3).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/fsf.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m16" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Japan_national_team.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m17" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Égypte_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m18" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(4).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/saudi_arabia_national_football.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m19" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Portugal_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/20170607084347!Football_Maroc_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m20" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Federation_Islamic_Republic_of_Iran.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(7).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m21" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/00552682.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/1200px-Fpf-logo.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m22" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(10).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m23" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(11).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(13).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m24" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(12).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox prefHeight="359.0" prefWidth="790.0" spacing="10.0">
+                           <children>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m25" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(15).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m26" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(16).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(14).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m27" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Suède_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m28" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Mexico_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m29" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(3).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m30" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/URBSFA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Tunisia_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets left="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m31" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/200px-Football_Angleterre_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m32" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Japan_national_team.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/fsf.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m33" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(4).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m34" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/saudi_arabia_national_football.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Égypte_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m35" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Federation_Islamic_Republic_of_Iran.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Portugal_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m36" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(7).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/20170607084347!Football_Maroc_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m37" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(10).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/00552682.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m38" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/1200px-Fpf-logo.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m39" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(11).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m40" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(12).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(13).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m41" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(16).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m42" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(15).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(14).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="488.0" prefWidth="186.0" spacing="5.0">
+                                 <children>
+                                    <Pane fx:id="m43" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(2).jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m44" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Mexico_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Suède_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m45" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/200px-Football_Angleterre_federation.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/URBSFA.jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m46" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Tunisia_FA.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m47" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Japan_national_team.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/téléchargement%20(3).jpg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <Pane fx:id="m48" prefHeight="59.0" prefWidth="148.0" style="-fx-background-color: #353b48;" styleClass="pane">
+                                       <children>
+                                          <Label layoutX="84.0" layoutY="21.0" text="VS" textFill="#eeeeee" />
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/fsf.png" />
+                                             </image>
+                                          </ImageView>
+                                          <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="124.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <Label layoutX="397.0" layoutY="48.0" text="Group Stage">
          <font>
-            <Font name="System Bold" size="46.0" />
+            <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <HBox layoutX="29.0" layoutY="335.0" prefHeight="235.0" prefWidth="892.0" style="-fx-background-color: white;">
-         <children>
-            <VBox prefHeight="235.0" prefWidth="223.0">
-               <children>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <VBox prefHeight="235.0" prefWidth="223.0">
-               <children>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <VBox prefHeight="235.0" prefWidth="223.0">
-               <children>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-            <VBox prefHeight="235.0" prefWidth="223.0">
-               <children>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="59.0" prefWidth="193.0" style="-fx-background-color: #353b48;">
-                     <children>
-                        <Label layoutX="104.0" layoutY="21.0" text="VS" />
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="24.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Colombie_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="49.0" fitWidth="57.0" layoutX="159.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Resources/Icons/Logos/Football_Corée_du_Sud_federation.svg.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-               </children>
-            </VBox>
-         </children>
-      </HBox>
+      <Text fill="#c9c9c9" layoutX="327.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on a match to view details">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

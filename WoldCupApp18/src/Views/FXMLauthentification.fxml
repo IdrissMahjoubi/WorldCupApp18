@@ -10,53 +10,36 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="MainPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #40739e;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLauthentificationController">
+<AnchorPane id="AnchorPane" fx:id="MainPane" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #3c6382;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLauthentificationController">
    <children>
-      <ImageView fitHeight="367.0" fitWidth="304.0" layoutX="204.0" layoutY="18.0" opacity="0.24" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="400.0" fitWidth="700.0" opacity="0.38" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../Resources/Icons/masckot.png" />
+            <Image url="@../Resources/Icons/back.png" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="17.0" layoutY="21.0" prefHeight="360.0" prefWidth="400.0">
-         <children>
-            <JFXButton fx:id="creer" layoutX="28.0" layoutY="259.0" onAction="#creerCompte" prefHeight="27.0" prefWidth="187.0" style="-fx-background-color: #e74c3c;" text="Sign Up" textAlignment="CENTER" />
-            <Label layoutX="11.0" layoutY="88.0" style="-fx-text-fill: lightgrey;" text="Wold Cup App 18'">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Label>
-            <Text fill="#fcfcfc" layoutX="18.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Follow your favorit team all along" wrappingWidth="245.77325439453125" />
-            <Text fill="#fcfcfc" layoutX="18.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIFA's Wold Cup 2O18 in Russia" wrappingWidth="245.77325439453125" />
-            <Text fill="#fcfcfc" layoutX="18.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="and Support it all the way " wrappingWidth="245.77325439453125" />
-            <Label layoutX="11.0" layoutY="124.0" style="-fx-text-fill: #273c75; -fx-font-size: 20;" text="Stay Loyal ...">
-               <font>
-                  <Font name="System Bold" size="29.0" />
-               </font>
-            </Label>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="446.0" layoutY="19.0" prefHeight="364.0" prefWidth="206.0" style="-fx-background-color: #dcdde1; -fx-border-color: #718093; -fx-border-width: 1;">
+      <AnchorPane layoutX="27.0" layoutY="21.0" opacity="0.3" prefHeight="360.0" prefWidth="400.0" style="-fx-background-color: #dcdde1; -fx-border-color: #718093; -fx-border-width: 0;" />
+      <AnchorPane layoutX="456.0" layoutY="19.0" prefHeight="364.0" prefWidth="206.0" style="-fx-background-color: #dcdde1; -fx-border-color: #718093; -fx-border-width: 0;">
          <children>
             <JFXTextField fx:id="login" layoutX="21.0" layoutY="123.0" promptText="Pseudo Name" style="-fx-background-color: #ecf0f1;" />
             <JFXPasswordField fx:id="password" layoutX="21.0" layoutY="177.0" promptText="Password" style="-fx-background-color: #ecf0f1;" />
             <JFXButton fx:id="connect" layoutX="23.0" layoutY="256.0" onAction="#authentification" prefHeight="27.0" prefWidth="164.0" style="-fx-background-color: #e74c3c;" text="Sign In" textAlignment="CENTER" />
-            <Label layoutX="78.0" layoutY="31.0" text="Sign Up" />
-            <Label layoutX="66.0" layoutY="48.0" prefHeight="17.0" prefWidth="87.0" text="Be a Membre">
+            <Label layoutX="78.0" layoutY="31.0" style="-fx-text-fill: black;" text="Sign Up" />
+            <Label layoutX="66.0" layoutY="48.0" prefHeight="17.0" prefWidth="87.0" style="-fx-text-fill: black;" text="Be a Membre">
                <font>
                   <Font name="Lato Light" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="66.0" text="of our ">
+            <Label layoutX="54.0" layoutY="66.0" style="-fx-text-fill: black;" text="of our ">
                <font>
                   <Font name="Lato Light" size="13.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="66.0" text="community :)">
+            <Label layoutX="91.0" layoutY="66.0" style="-fx-text-fill: black;" text="community :)">
                <font>
                   <Font name="Lato Semibold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="ForgotPass" layoutX="46.0" layoutY="302.0" onMouseClicked="#SmsView" onMouseEntered="#SelectLabel" onMouseExited="#DeselectLabel" text="Forgot Password ?">
+            <Label fx:id="ForgotPass" layoutX="46.0" layoutY="302.0" onMouseClicked="#SmsView" onMouseEntered="#SelectLabel" onMouseExited="#DeselectLabel" style="-fx-text-fill: black;" text="Forgot Password ?">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -66,6 +49,32 @@
       <Label fx:id="ExitLabel" layoutX="679.0" layoutY="4.0" onMouseClicked="#ExitApp" style="-fx-text-fill: lightgrey;" text="X">
          <font>
             <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="creer" layoutX="48.0" layoutY="279.0" onAction="#creerCompte" prefHeight="27.0" prefWidth="187.0" style="-fx-background-color: #e74c3c;" text="Sign Up" textAlignment="CENTER" />
+      <Label layoutX="31.0" layoutY="108.0" style="-fx-text-fill: #353b48; -fx-font-size: 28; -fx-font-weight: bold;" text="Wold Cup App 18'">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="38.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Follow your favorit team all along" wrappingWidth="245.77325439453125">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="38.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="FIFA's Wold Cup 2O18 in Russia" wrappingWidth="245.77325439453125">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="38.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="and Support it all the way " wrappingWidth="245.77325439453125">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="31.0" layoutY="144.0" style="-fx-text-fill: #192a56; -fx-font-size: 20; -fx-font-weight: bold;" stylesheets="@../CSS/GroupStage.css" text="Stay Loyal ...">
+         <font>
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
    </children>

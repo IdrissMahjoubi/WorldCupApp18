@@ -194,17 +194,13 @@ public class FXMLShowMatchsController implements Initializable {
     @FXML
     private void ReparseMatch(ActionEvent event) {
            int i=1;
-       // match_service.EmptyMatch();
-       // ParseHTML.ParseMatch();
-        //for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
+        match_service.EmptyMatch();
+        ParseHTML.ParseMatch();
+        for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
             
-      //  match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
-       // }                       
-
-               // maskerpane.setVisible(true);
-
-                
-      //  FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
+        match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
+        }                                       
+        FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
         FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
         
         try {
