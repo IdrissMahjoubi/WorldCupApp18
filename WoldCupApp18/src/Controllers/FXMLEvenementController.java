@@ -92,6 +92,8 @@ public class FXMLEvenementController implements Initializable {
     String newid;
     @FXML
     private TableColumn<?, ?> nbrparticip;
+    @FXML
+    private Button home;
     /**
      * Initializes the controller class.
      */
@@ -205,13 +207,18 @@ public class FXMLEvenementController implements Initializable {
           }
     }
 
-  
-
- 
-
-    
-    
-    
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
     }
+
+}
 
 

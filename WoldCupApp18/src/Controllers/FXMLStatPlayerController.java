@@ -8,15 +8,20 @@ package Controllers;
 
 import Services.ServiceTeam;
 import com.jfoenix.controls.JFXTabPane;
+import java.io.IOException;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Side;
+import javafx.scene.Parent;
 import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
@@ -51,6 +56,8 @@ public class FXMLStatPlayerController implements Initializable {
     private VBox vb1;
     @FXML
     private PieChart pie1;
+    @FXML
+    private Button home;
     /**
      * Initializes the controller class.
      */
@@ -76,5 +83,18 @@ public class FXMLStatPlayerController implements Initializable {
         pie1.setData(myList1);
         pie1.setLegendSide(Side.LEFT);
     }    
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
+    }
+    
     
 }

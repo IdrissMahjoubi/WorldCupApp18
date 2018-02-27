@@ -44,5 +44,6 @@
       <Button fx:id="Participer" layoutX="409.0" layoutY="223.0" mnemonicParsing="false" onAction="#Participate" text="Participer" />
       <Label fx:id="txtnbrparticipant" layoutX="409.0" layoutY="256.0" text="Nombre de participants dans ce evenement :" />
       <TextField fx:id="txtparticipant" layoutX="647.0" layoutY="252.0" prefHeight="25.0" prefWidth="32.0" />
+      <Button fx:id="home" layoutX="48.0" layoutY="29.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
    </children>
 </AnchorPane>

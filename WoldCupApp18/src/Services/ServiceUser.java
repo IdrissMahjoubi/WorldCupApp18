@@ -17,6 +17,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import Entities.User;
 import Utilities.DataSource;
+import static Utilities.DataSource.instance;
 import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,18 +31,26 @@ public class ServiceUser {
 
     public Connection con;
     PreparedStatement ste;
+    public static ServiceUser instance;
+    
+    public static ServiceUser getInstance(){
+        if (instance==null){
+            instance = new ServiceUser();
+        }
+        return instance;
+    }
 
     public ServiceUser() {
 
         con = DataSource.getInstance().getConnection();
-
+        
     }
+    
 
     public void addUser(User u){
 
         try {
             String req = "INSERT INTO `USER`(`USER_NAME`, `USER_LASTNAME`, `USER_BIRTHDAY`, `USER_NATIONALITY`, `USER_EMAIL`, `USER_TEL`, `USER_LOGIN`, `USER_PASSWORD`, `USER_TEAM`)  VALUES (?,?,?,?,?,?,?,?,?)";
-            System.out.println(req);
             ste = con.prepareStatement(req);
             ste.setString(1, u.getUser_name());
             ste.setString(2, u.getUser_last_name());
@@ -178,7 +187,6 @@ public class ServiceUser {
             System.out.println(sql);
 
             while (rs.next()) {
-                System.out.println("go");
                 isValid = rs.getInt(1);
             }
             
@@ -203,7 +211,6 @@ public class ServiceUser {
 //Session.LoggedUser.getUser_id();
 
             while (rs.next()) {
-                System.out.println("go");
                 type = rs.getString(13);
             }
 
@@ -215,8 +222,6 @@ public class ServiceUser {
 
     public void updateUser(User u) {
         String req = "UPDATE USER SET `USER_NAME`=?,`USER_LASTNAME`=?,`USER_BIRTHDAY`=?,`USER_NATIONALITY`=?,`USER_EMAIL`=?,`USER_TEL`=?,`USER_LOGIN`=?,`USER_PASSWORD`=?,`USER_TEAM`=? WHERE USER_ID =?";
-        System.out.println(req);
-
         try {
             ste = con.prepareStatement(req);
 
@@ -239,8 +244,6 @@ public class ServiceUser {
 
     public void closeAccount(User u) {
         String req = "UPDATE USER SET `USER_STATE`=0 WHERE USER_ID =?";
-        System.out.println(req);
-
         try {
             ste = con.prepareStatement(req);
             //ste.setInt(1, u.getUser_state());
@@ -253,8 +256,6 @@ public class ServiceUser {
 
     public void upgradeUser(User u) {
         String req = "UPDATE USER SET `USER_TYPE`='admin' WHERE USER_ID =?";
-        System.out.println(req);
-
         try {
             ste = con.prepareStatement(req);
             //ste.setInt(1, u.getUser_state());
@@ -278,7 +279,6 @@ public class ServiceUser {
 //Session.LoggedUser.getUser_id();
 
             while (rs.next()) {
-                System.out.println("go");
                 state = rs.getInt(12);
             }
 

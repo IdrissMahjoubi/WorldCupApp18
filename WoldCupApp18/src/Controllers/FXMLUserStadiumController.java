@@ -63,7 +63,6 @@ public class FXMLUserStadiumController implements Initializable {
 
     @FXML
     private Button map;
-    @FXML
     private Button acceuil;
     String ID_Stadium_new;
     String Stadium_path;
@@ -79,6 +78,8 @@ public class FXMLUserStadiumController implements Initializable {
     private TextField XMAP;
     @FXML
     private TextField YMAP;
+    @FXML
+    private Button home;
     /**
      * Initializes the controller class.
      */
@@ -129,7 +130,6 @@ public class FXMLUserStadiumController implements Initializable {
             }
     }
 
-    @FXML
     private void acceuil(ActionEvent event) {
         
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
@@ -229,6 +229,18 @@ public class FXMLUserStadiumController implements Initializable {
         table.setItems(s.showStadium());
                } catch (SQLException ex) {
             Logger.getLogger(FXMLShowStadiumsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
         }
     }
 }

@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="Controllers.FXMLUserStationController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStationController">
    <children>
       <TableView fx:id="table" layoutX="32.0" layoutY="137.0" prefHeight="200.0" prefWidth="540.0">
          <columns>
@@ -27,6 +26,6 @@
       <TextField fx:id="XMAP" layoutX="211.0" layoutY="449.0" promptText="Latitude" visible="false" />
       <TextField fx:id="YMAP" layoutX="211.0" layoutY="484.0" promptText="Longtitude" visible="false" />
       <Button fx:id="Map" layoutX="456.0" layoutY="103.0" mnemonicParsing="false" onAction="#AfficherMap" text="Afficher MAP" />
-      <Button fx:id="acceuil" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#acceuil" text="Acceuil" />
+      <Button fx:id="home" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
    </children>
 </AnchorPane>

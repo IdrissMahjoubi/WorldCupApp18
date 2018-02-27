@@ -5,6 +5,8 @@
  */
 package Entities;
 
+import Utilities.DataSource;
+import static Utilities.DataSource.instance;
 import java.sql.Date;
 
 /**
@@ -26,6 +28,7 @@ public class User {
    private int user_fidelity;
    private int user_state;
    private String user_type;
+   
    
    
    public User(String email)
@@ -210,6 +213,7 @@ public class User {
     public void setUser_type(String user_type) {
         this.user_type = user_type;
     }
+     
    
    
     

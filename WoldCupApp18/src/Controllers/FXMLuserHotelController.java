@@ -7,6 +7,7 @@ package Controllers;
 
 import Entities.Hotel;
 import Services.ServiceHotel;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -16,8 +17,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,6 +55,8 @@ public class FXMLuserHotelController implements Initializable {
     @FXML
     private ChoiceBox<String> choiseBox;
     ObservableList<String> comboList = FXCollections.observableArrayList("Hotel name", "Hotel Location","Hotel stars");
+    @FXML
+    private Button home;
 
     /**
      * Initializes the controller class.
@@ -156,4 +163,17 @@ public class FXMLuserHotelController implements Initializable {
         table.setItems(null);
         table.setItems(s.showHotel());
     }
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
+    }
+    
 }

@@ -29,13 +29,15 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import Entities.User;
 import Services.ServiceUser;
+import Utilities.DataSource;
+import java.sql.Date;
 
 /**
  * FXML Controller class
  *
  * @author MyTEK
  */
-public class FXMLupdateuserrightsController implements Initializable {
+public class FXMLShowUserToAdminController implements Initializable {
 
     @FXML
     private TableView<User> table;
@@ -44,7 +46,7 @@ public class FXMLupdateuserrightsController implements Initializable {
     @FXML
     private TableColumn<?, ?> last_name;
     @FXML
-    private TableColumn<?, ?> birth_date;
+    private TableColumn<User, Date> birth_date;
     @FXML
     private TableColumn<?, ?> nationality;
     @FXML
@@ -70,6 +72,12 @@ public class FXMLupdateuserrightsController implements Initializable {
     private Button modifrights;
     @FXML
     private Button bloquer;
+    
+    public FXMLShowUserToAdminController() {
+
+        ServiceUser s = ServiceUser.getInstance();
+        
+    }
 
     /**
      * Initializes the controller class.
@@ -84,7 +92,7 @@ public class FXMLupdateuserrightsController implements Initializable {
                 try {
                     filtrerUserList((String) oldValue, (String) newValue);
                 } catch (SQLException ex) {
-                    Logger.getLogger(FXMLupdateuserrightsController.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(FXMLShowUserToAdminController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
   });
@@ -110,13 +118,12 @@ public class FXMLupdateuserrightsController implements Initializable {
         
         table.setItems(s.showUsers());
         } catch (SQLException ex) {
-            Logger.getLogger(FXMLupdateuserrightsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLShowUserToAdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
 }
 
     @FXML
     private void deleteUser(ActionEvent event) {
-         System.out.println("hhhhhhhhhhhhhhh");
         if (!table.getSelectionModel().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Supprimer utilisateur");
