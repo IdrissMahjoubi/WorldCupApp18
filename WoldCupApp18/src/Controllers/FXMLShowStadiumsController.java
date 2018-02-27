@@ -208,8 +208,8 @@ public class FXMLShowStadiumsController implements Initializable {
     private void delete(ActionEvent event) throws SQLException {
      if (!table.getSelectionModel().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("Supprimer Stadium");
-            alert.setHeaderText("Etes vous sur de vouloir supprimer : " + table.getSelectionModel().getSelectedItem().getSTADIUM_ID()+ " ?");
+            alert.setTitle("Delete Stadium");
+            alert.setHeaderText("Are you sure you want to delete this stadium : " + table.getSelectionModel().getSelectedItem().getSTADIUM_ID()+ " ?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
                 CrudStadium st=new CrudStadium();
@@ -221,7 +221,7 @@ public class FXMLShowStadiumsController implements Initializable {
         }else {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Erreur");
-            alert.setHeaderText("Veuillez selectionner une station !");
+            alert.setHeaderText("Would you select a stadium ! !");
              Optional<ButtonType> result = alert.showAndWait();
         }
         EmptyFields(event);
@@ -244,15 +244,15 @@ public class FXMLShowStadiumsController implements Initializable {
             cs.updateStadium(st);
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Modifier Stadium ");
-            alert.setHeaderText("Modification de stadium :"
-            + table.getSelectionModel().getSelectedItem().getSTADIUM_NAME() + " est effectué avec succes");
+            alert.setTitle("Update Stadium ");
+            alert.setHeaderText("Updating d stadium :"
+            + table.getSelectionModel().getSelectedItem().getSTADIUM_NAME() + " done");
             Optional<ButtonType> result = alert.showAndWait();
 
         } else {
             Alert alert1 = new Alert(Alert.AlertType.WARNING);
             alert1.setTitle("Erreur de selection");
-            alert1.setHeaderText("Vous etes obligé de selectioner un stade  ");
+            alert1.setHeaderText("Would you select a stadium !  ");
             Optional<ButtonType> result = alert1.showAndWait();
         }
         afficherstadium();
@@ -337,7 +337,7 @@ public class FXMLShowStadiumsController implements Initializable {
     @FXML
     private void acceuil(ActionEvent event) {
         
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowStadiums.fxml"));
         try{
             Parent root = loader.load();
             FXMLMenuController dc = loader.getController();

@@ -42,7 +42,7 @@ public class CrudEvenement {
     }
      
     public void DeleteEvent (int x) throws SQLException  {
-    String req ="DELETE FROM EVENT WHERE EVENT_ID= '"+x+"'";
+        String req ="DELETE FROM EVENT WHERE EVENT_ID= '"+x+"'";
         PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(req);
         pst.executeUpdate();
     }
@@ -84,7 +84,7 @@ public class CrudEvenement {
 
                 while(rs.next()){
                     Evenement e = new Evenement();
-                   
+                    e.setEVENT_ID(rs.getInt(1));
                     e.setEVENT_NAME(rs.getString(2));
                     e.setEVENT_DATE(rs.getDate(3));
                     e.setEVENT_END(rs.getDate(4));
@@ -103,7 +103,9 @@ public class CrudEvenement {
         }
     
     public void updateparticip( int y, String x)
-    {Evenement e = new Evenement();
+    {
+        
+      
         String req1 = "UPDATE EVENT SET  NBR_PARTICIP=? WHERE EVENT_NAME=?  ";
             PreparedStatement preparedStatement;
         try {
@@ -118,6 +120,9 @@ public class CrudEvenement {
         }
 
     }
+    
+ 
+    
 
 }
 

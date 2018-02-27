@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowStationsController">
    <children>
-      <Label layoutX="189.0" layoutY="21.0" text="Liste Des Stations">
+      <Label layoutX="189.0" layoutY="21.0" text="Liste Des Stations" textFill="#4b0cd3">
          <font>
             <Font size="32.0" />
          </font>
@@ -24,22 +24,22 @@
             <TableColumn fx:id="y" prefWidth="82.0" text="Y MAP" />
         </columns>
       </TableView>
-      <Button fx:id="btndelete" layoutX="22.0" layoutY="93.0" mnemonicParsing="false" onAction="#deleteStation" text="Supprimer Stade" />
-      <Button fx:id="Update" layoutX="130.0" layoutY="93.0" mnemonicParsing="false" onAction="#UpdateStation" text="Modifier Stade" />
-      <Button fx:id="goback" layoutX="227.0" layoutY="93.0" mnemonicParsing="false" onAction="#goback" text="Ajouter Station" />
+      <Button fx:id="btndelete" layoutX="22.0" layoutY="93.0" mnemonicParsing="false" onAction="#deleteStation" text="Supprimer Stade" textFill="#5d05eb" />
+      <Button fx:id="Update" layoutX="130.0" layoutY="93.0" mnemonicParsing="false" onAction="#UpdateStation" text="Modifier Stade" textFill="#5608d3" />
+      <Button fx:id="goback" layoutX="227.0" layoutY="93.0" mnemonicParsing="false" onAction="#goback" text="Ajouter Station" textFill="#4f0ac6" />
       <TextField fx:id="Recherche" layoutX="330.0" layoutY="93.0" prefHeight="25.0" prefWidth="119.0" promptText="Recherche" />
       <ChoiceBox fx:id="choiseBox" layoutX="455.0" layoutY="93.0" prefHeight="25.0" prefWidth="119.0" />
-      <Label layoutX="40.0" layoutY="346.0" text="Nom Station :" />
-      <Label layoutX="40.0" layoutY="379.0" text="Localisation Station :" />
-      <Label layoutX="44.0" layoutY="410.0" text="Type Station :" />
-      <Label layoutX="41.0" layoutY="443.0" text="Map X :" />
-      <Label layoutX="41.0" layoutY="478.0" text="Map Y :" />
+      <Label layoutX="40.0" layoutY="346.0" text="Nom Station :" textFill="#7b0fcd" />
+      <Label layoutX="40.0" layoutY="379.0" text="Localisation Station :" textFill="#720dd0" />
+      <Label layoutX="44.0" layoutY="410.0" text="Type Station :" textFill="#7d0bc9" />
+      <Label layoutX="41.0" layoutY="443.0" text="Map X :" textFill="#5e0ab9" />
+      <Label layoutX="41.0" layoutY="478.0" text="Map Y :" textFill="#6e0fd3" />
       <TextField fx:id="StationName" layoutX="201.0" layoutY="342.0" promptText="Nom de station" />
       <TextField fx:id="StationLocation" layoutX="201.0" layoutY="375.0" promptText="Localisation de station" />
       <TextField fx:id="StationType" layoutX="201.0" layoutY="406.0" promptText="bus/train/airport.." />
       <TextField fx:id="XMAP" layoutX="201.0" layoutY="439.0" promptText="Latitude" />
       <TextField fx:id="YMAP" layoutX="201.0" layoutY="474.0" promptText="Longtitude" />
-      <Button fx:id="Map" layoutX="589.0" layoutY="93.0" mnemonicParsing="false" onAction="#AfficherMap" text="Afficher MAP" />
-      <Button fx:id="acceuil" layoutX="22.0" layoutY="56.0" mnemonicParsing="false" onAction="#acceuil" text="Acceuil" />
+      <Button fx:id="Map" layoutX="589.0" layoutY="93.0" mnemonicParsing="false" onAction="#AfficherMap" text="Afficher MAP" textFill="#6010d0" />
+      <Button fx:id="acceuil" layoutX="22.0" layoutY="56.0" mnemonicParsing="false" onAction="#acceuil" text="Acceuil" textFill="#720ed7" />
    </children>
 </AnchorPane>
