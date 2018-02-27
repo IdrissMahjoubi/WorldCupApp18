@@ -34,7 +34,7 @@ import javafx.scene.control.DatePicker;
  *
  * @author MyTEK
  */
-public class FXMLCreateController implements Initializable {
+public class FXMLCreateAccountController implements Initializable {
 
    
 
@@ -58,9 +58,11 @@ public class FXMLCreateController implements Initializable {
     private TextField password;
     @FXML
     private ChoiceBox<String> team;
-      ObservableList<String> comboList = FXCollections.observableArrayList("Egypte", "Maroc","Nigeria","Sénégal","Tunisie","Arabie Saoudite","Australie","Japon","Republique de Coree","RI Iran","Allemagne","Angleterre","Belgique","Croatie","Danemark","Espagne","France","Islande","Pologne","Portugal","Russie","Serbie","Suède","Suisse","Costa Rica","Mexique","Panama","Argentine","Brésil","Colombie","Pérou","Uruguay");
+      ObservableList<String> comboList = FXCollections.observableArrayList("Egypt", "Morroco","Nigeria","Senegal","Tunisia","saudi Arabia","Australia","Japan","Coreen Republic","RI Iran","Germany","England","Belgium","Croatia","Danemark","Spain","France","Island","Poland","Portugal","Russia","Serbia","Sweeden","Switzerland","Costa Rica","Mexico","Panama","Argentina","Brasil","Colombia","Perou","Uruguay");
     @FXML
     private PasswordField password2;
+    @FXML
+    private Button home;
    
 
     public Button getSave() {
@@ -268,6 +270,18 @@ public class FXMLCreateController implements Initializable {
              Optional<ButtonType> result = alert.showAndWait();
         }*/
     }}
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLauthentification.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLauthentificationController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
+    }
 
     
 }

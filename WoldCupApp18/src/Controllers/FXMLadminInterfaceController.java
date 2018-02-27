@@ -42,10 +42,10 @@ public class FXMLadminInterfaceController implements Initializable {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLupdateuserrights.fxml"));  
         try {
             Parent root = loader.load();
-            FXMLupdateuserrightsController dc = loader.getController();
+            FXMLShowUserToAdminController dc = loader.getController();
             gererusers.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLupdateuserrightsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLShowUserToAdminController.class.getName()).log(Level.SEVERE, null, ex);
         } 
     }
 

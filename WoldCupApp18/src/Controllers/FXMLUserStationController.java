@@ -70,9 +70,10 @@ public class FXMLUserStationController implements Initializable {
     private TextField YMAP;
     @FXML
     private Button Map;
-    @FXML
     private Button acceuil;
     String ID_Station_new;
+    @FXML
+    private Button home;
     /**
      * Initializes the controller class.
      */
@@ -110,7 +111,6 @@ public class FXMLUserStationController implements Initializable {
             }
     }
 
-    @FXML
     private void acceuil(ActionEvent event) {
        
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMenu.fxml"));
@@ -223,5 +223,17 @@ public class FXMLUserStationController implements Initializable {
         table.setItems(null);
         table.setItems(s.showStation());
            
+    }
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
     }
 }

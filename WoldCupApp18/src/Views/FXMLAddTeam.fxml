@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import com.jfoenix.validation.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
@@ -10,22 +11,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="525.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddTeamController">
+<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="525.0" style="-fx-background-color: #353b48;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddTeamController">
     <stylesheets>
         <URL value="@fxml.css" />
     </stylesheets>
    <children>
-      <Button fx:id="saveTeam" layoutX="333.0" layoutY="555.0" mnemonicParsing="false" onAction="#saveTeam" text="Valider" />
+      <Button fx:id="saveTeam" layoutX="333.0" layoutY="555.0" mnemonicParsing="false" onAction="#saveTeam" style="-fx-background-color: #f5f6fa;" text="Valider" />
       <TextField fx:id="TEAM_NAME" layoutX="222.0" layoutY="211.0" />
       <TextField fx:id="TEAM_COACH" layoutX="222.0" layoutY="261.0" />
-      <Label layoutX="136.0" layoutY="215.0" text="Equipe" />
-      <Label layoutX="135.0" layoutY="265.0" text="Entraineur" />
-      <Label layoutX="134.0" layoutY="317.0" text="Groupe" />
-      <Label layoutX="136.0" layoutY="370.0" text="Continent" />
-      <Label layoutX="141.0" layoutY="434.0" text="Drapeau" />
-      <Label layoutX="138.0" layoutY="490.0" text="Logo" />
-      <Button fx:id="addFlag" layoutX="245.0" layoutY="430.0" mnemonicParsing="false" onAction="#addFlag" text="Choisir un fichier" />
-      <Button fx:id="addLogo" layoutX="244.0" layoutY="486.0" mnemonicParsing="false" onAction="#addLogo" text="Choisir un fichier" />
+      <Label layoutX="136.0" layoutY="215.0" text="Team" textFill="#f5f5f5" />
+      <Label layoutX="135.0" layoutY="265.0" text="Coach" textFill="#f5f5f5" />
+      <Label layoutX="134.0" layoutY="317.0" text="Group" textFill="#f5f5f5" />
+      <Label layoutX="136.0" layoutY="370.0" text="Continent" textFill="#f5f5f5" />
+      <Label layoutX="141.0" layoutY="434.0" text="Flag" textFill="#f5f5f5" />
+      <Label layoutX="138.0" layoutY="490.0" text="Logo" textFill="#f5f5f5" />
+      <Button fx:id="addFlag" layoutX="245.0" layoutY="430.0" mnemonicParsing="false" onAction="#addFlag" style="-fx-background-color: #f5f6fa;" text="Choisir un fichier" />
+      <Button fx:id="addLogo" layoutX="244.0" layoutY="486.0" mnemonicParsing="false" onAction="#addLogo" style="-fx-background-color: #f5f6fa;" text="Choisir un fichier" />
       <ImageView fx:id="pic" fitHeight="69.0" fitWidth="105.0" layoutX="385.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="pic1" fitHeight="69.0" fitWidth="105.0" layoutX="385.0" layoutY="486.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView cache="true" fitHeight="203.0" fitWidth="160.0" layoutX="189.0" layoutY="14.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
@@ -33,10 +34,10 @@
             <Image url="@../Resources/Icons/FIFA_World_Cup_2018_Logo.png" />
          </image>
       </ImageView>
-      <Button fx:id="retour" layoutX="151.0" layoutY="555.0" mnemonicParsing="false" onAction="#retourner" text="Retour" />
-      <ChoiceBox fx:id="groupcb" layoutX="222.0" layoutY="313.0" prefWidth="150.0" />
-      <ChoiceBox fx:id="TEAM_CONTINENT" layoutX="223.0" layoutY="367.0" prefWidth="150.0" />
-      <Button fx:id="stop" layoutX="398.0" layoutY="22.0" mnemonicParsing="false" onAction="#stopper" text="Stop" />
-      <Button fx:id="play" layoutX="452.0" layoutY="22.0" mnemonicParsing="false" onAction="#play" text="Play" />
+      <Button fx:id="retour" layoutX="151.0" layoutY="555.0" mnemonicParsing="false" onAction="#retourner" style="-fx-background-color: #f5f6fa;" text="Retour" />
+      <ChoiceBox fx:id="groupcb" layoutX="222.0" layoutY="313.0" prefWidth="150.0" style="-fx-background-color: #f5f6fa;" />
+      <ChoiceBox fx:id="TEAM_CONTINENT" layoutX="223.0" layoutY="367.0" prefWidth="150.0" style="-fx-background-color: #f5f6fa;" />
+      <Button fx:id="stop" layoutX="398.0" layoutY="22.0" mnemonicParsing="false" onAction="#stopper" style="-fx-background-color: #f5f6fa;" text="Stop" />
+      <Button fx:id="play" layoutX="452.0" layoutY="22.0" mnemonicParsing="false" onAction="#play" style="-fx-background-color: #f5f6fa;" text="Play" />
    </children>
 </AnchorPane>

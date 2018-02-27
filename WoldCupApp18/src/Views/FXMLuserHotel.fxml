@@ -8,8 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="Controllers.FXMLuserHotelController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLuserHotelController">
    <children>
       <Label layoutX="218.0" layoutY="32.0" text="Hotels List">
          <font>
@@ -31,5 +30,6 @@
       </TableView>
       <TextField fx:id="Recherche" layoutX="144.0" layoutY="333.0" promptText="Rechercher" />
       <ChoiceBox fx:id="choiseBox" layoutX="322.0" layoutY="333.0" prefHeight="25.0" prefWidth="126.0" />
+      <Button fx:id="home" layoutX="39.0" layoutY="42.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
    </children>
 </AnchorPane>

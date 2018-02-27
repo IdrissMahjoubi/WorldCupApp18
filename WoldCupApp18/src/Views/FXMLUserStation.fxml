@@ -7,7 +7,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStationController">
+=======
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStationController">
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
    <children>
       <TableView fx:id="table" layoutX="32.0" layoutY="137.0" prefHeight="200.0" prefWidth="540.0">
          <columns>
@@ -26,6 +30,10 @@
       <TextField fx:id="StationType" layoutX="211.0" layoutY="416.0" promptText="bus/train/airport.." visible="false" />
       <TextField fx:id="XMAP" layoutX="211.0" layoutY="449.0" promptText="Latitude" visible="false" />
       <TextField fx:id="YMAP" layoutX="211.0" layoutY="484.0" promptText="Longtitude" visible="false" />
+<<<<<<< HEAD
+      <Button fx:id="Map" layoutX="456.0" layoutY="103.0" mnemonicParsing="false" onAction="#AfficherMap" text="Afficher MAP" />
+      <Button fx:id="home" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
+=======
       <Button fx:id="Map" layoutX="456.0" layoutY="103.0" mnemonicParsing="false" onAction="#AfficherMap" text="Show MAP" />
       <Button fx:id="acceuil" layoutX="102.0" layoutY="103.0" mnemonicParsing="false" onAction="#acceuil" text="Menu" />
       <Label layoutX="227.0" layoutY="27.0" text="Stations List" textFill="#f2f2f2">
@@ -33,5 +41,6 @@
             <Font size="30.0" />
          </font>
       </Label>
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.media.*?>
 <?import com.jfoenix.controls.*?>
 <?import com.jfoenix.validation.*?>
@@ -10,46 +11,43 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="738.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamController">
    <children>
-      <TableView fx:id="table" layoutX="26.0" layoutY="389.0" prefHeight="340.0" prefWidth="395.0">
+      <TableView fx:id="table" layoutX="51.0" layoutY="289.0" prefHeight="252.0" prefWidth="442.0" style="-fx-background-color: #353b48;">
         <columns>
-          <TableColumn fx:id="name" prefWidth="113.0" text="Equipe" />
-          <TableColumn fx:id="coach" prefWidth="111.0" text="Entraineur" />
-            <TableColumn fx:id="continent" prefWidth="95.0" text="Continent" />
-            <TableColumn fx:id="groupe" prefWidth="75.0" text="Group" />
+          <TableColumn fx:id="name" prefWidth="113.0" text="Team" />
+          <TableColumn fx:id="coach" prefWidth="120.0" text="Coach" />
+            <TableColumn fx:id="continent" prefWidth="140.0" text="Continent" />
+            <TableColumn fx:id="groupe" prefWidth="68.0" text="Group" />
         </columns>
       </TableView>
-      <ImageView fitHeight="230.0" fitWidth="352.0" layoutX="26.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../Resources/Icons/28235820_1814682398596456_1287436617_n.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="supprimer" layoutX="454.0" layoutY="697.0" mnemonicParsing="false" onAction="#supprimerTeamadmin" text="Supprimer" />
-      <Button fx:id="modifier" layoutX="547.0" layoutY="697.0" mnemonicParsing="false" onAction="#modifierTeam" prefHeight="25.0" prefWidth="72.0" text="Modifier" />
-      <TextField fx:id="team_txt" layoutX="547.0" layoutY="327.0" />
-      <TextField fx:id="coach_txt" layoutX="547.0" layoutY="377.0" />
-      <Label layoutX="463.0" layoutY="331.0" text="Equipe" />
-      <Button fx:id="BrowseFlag" layoutX="621.0" layoutY="623.0" mnemonicParsing="false" onAction="#BrowseFlag" prefHeight="25.0" prefWidth="108.0" text="Parcourir drapeau..." />
-      <Button fx:id="BrowseLogo" layoutX="621.0" layoutY="572.0" mnemonicParsing="false" onAction="#BrowseLogo" prefHeight="25.0" prefWidth="108.0" text="Parcourir logo..." />
-      <Label layoutX="462.0" layoutY="381.0" text="Entraineur" />
-      <Label layoutX="461.0" layoutY="466.0" text="Groupe" />
-      <Label layoutX="463.0" layoutY="424.0" text="Continent" />
-      <ImageView fx:id="flagimage" fitHeight="84.0" fitWidth="114.0" layoutX="460.0" layoutY="606.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="team_logo" fitHeight="77.0" fitWidth="108.0" layoutX="462.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="rechercheteam_txt" layoutX="224.0" layoutY="350.0" />
-      <Label layoutX="42.0" layoutY="354.0" text="Valeur :" />
-      <ChoiceBox fx:id="comboRech" layoutX="224.0" layoutY="302.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="42.0" layoutY="306.0" text="Choisir un critère de recherche :" />
-      <MediaView fx:id="view" fitHeight="200.0" fitWidth="200.0" layoutX="499.0" layoutY="14.0" AnchorPane.bottomAnchor="446.0" AnchorPane.leftAnchor="499.0" AnchorPane.rightAnchor="51.0" AnchorPane.topAnchor="14.0" />
-      <Button fx:id="play" layoutX="507.0" layoutY="250.0" mnemonicParsing="false" onAction="#play" text="play" />
-      <Button fx:id="stop" layoutX="554.0" layoutY="250.0" mnemonicParsing="false" onAction="#stop" text="stop" />
-      <ComboBox fx:id="ComboContinent" layoutX="547.0" layoutY="420.0" prefHeight="25.0" prefWidth="149.0" />
-      <ComboBox fx:id="ComboGrp" layoutX="547.0" layoutY="462.0" prefHeight="25.0" prefWidth="149.0" />
-      <ComboBox fx:id="ComboRechCont" layoutX="224.0" layoutY="350.0" onAction="#FonctionComboRechCont" prefWidth="150.0" />
-      <ComboBox fx:id="ComboRechGrp" layoutX="224.0" layoutY="350.0" onAction="#FonctionRechercheGrp" prefWidth="150.0" />
-      <Button fx:id="ajouter" layoutX="648.0" layoutY="697.0" mnemonicParsing="false" onAction="#ajouterEquipe" text="Ajouter" />
-      <Button fx:id="play2" layoutX="622.0" layoutY="521.0" mnemonicParsing="false" onAction="#playHymne" text="Hymne on" />
-      <Button fx:id="stop2" layoutX="703.0" layoutY="521.0" mnemonicParsing="false" onAction="#stopp" text="Hymne off" />
+      <Button fx:id="supprimer" layoutX="51.0" layoutY="546.0" mnemonicParsing="false" onAction="#supprimerTeamadmin" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #f5f6fa;" text="Delete team" />
+      <Button fx:id="modifier" layoutX="225.0" layoutY="546.0" mnemonicParsing="false" onAction="#modifierTeam" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #f5f6fa;" text="Update team" />
+      <TextField fx:id="team_txt" layoutX="610.0" layoutY="179.0" style="-fx-background-color: #c23616; -: #f5f6fa;" />
+      <TextField fx:id="coach_txt" layoutX="610.0" layoutY="226.0" style="-fx-background-color: #c23616; -: #f5f6fa;" />
+      <Label layoutX="532.0" layoutY="183.0" style="-fx-text-fill: #f5f6fa;" text="Team : " />
+      <Button fx:id="BrowseFlag" layoutX="732.0" layoutY="494.0" mnemonicParsing="false" onAction="#BrowseFlag" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #f5f6fa;" text="Browse flag" />
+      <Button fx:id="BrowseLogo" layoutX="732.0" layoutY="403.0" mnemonicParsing="false" onAction="#BrowseLogo" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #f5f6fa;" text="Browse logo" />
+      <Label layoutX="532.0" layoutY="230.0" style="-fx-text-fill: #f5f6fa;" text="Coach :" />
+      <Label layoutX="542.0" layoutY="329.0" style="-fx-text-fill: #f5f6fa;" text="Group :" />
+      <Label layoutX="532.0" layoutY="281.0" style="-fx-text-fill: #f5f6fa;" text="Continent :" />
+      <ImageView fx:id="flagimage" fitHeight="107.0" fitWidth="149.0" layoutX="551.0" layoutY="477.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="team_logo" fitHeight="107.0" fitWidth="149.0" layoutX="551.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="rechercheteam_txt" layoutX="344.0" layoutY="251.0" />
+      <Label layoutX="344.0" layoutY="230.0" style="-fx-text-fill: #f5f6fa;" text="Value :" />
+      <Label layoutX="51.0" layoutY="230.0" style="-fx-text-fill: #f5f6fa;" text="Choose a search criteria :" />
+      <ComboBox fx:id="ComboContinent" layoutX="610.0" layoutY="277.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #f5f6fa;" />
+      <ComboBox fx:id="ComboGrp" layoutX="610.0" layoutY="325.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #f5f6fa;" />
+      <ComboBox fx:id="ComboRechCont" layoutX="343.0" layoutY="251.0" onAction="#FonctionComboRechCont" prefWidth="150.0" style="-fx-background-color: #f5f6fa;" />
+      <ComboBox fx:id="ComboRechGrp" layoutX="343.0" layoutY="251.0" onAction="#FonctionRechercheGrp" prefWidth="150.0" style="-fx-background-color: #f5f6fa;" />
+      <Button fx:id="ajouter" layoutX="405.0" layoutY="546.0" mnemonicParsing="false" onAction="#ajouterEquipe" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #f5f6fa;" text="Add team" />
+      <Button fx:id="play2" layoutX="547.0" layoutY="116.0" mnemonicParsing="false" onAction="#playHymne" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #f5f6fa;" text="Anthem on" />
+      <Button fx:id="stop2" layoutX="694.0" layoutY="116.0" mnemonicParsing="false" onAction="#stopp" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #f5f6fa;" text="Anthem off" />
+      <Label layoutX="246.0" layoutY="20.0" prefHeight="73.0" prefWidth="350.0" style="-fx-text-fill: #f5f6fa;" text="Manage teams">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="comboRech" layoutX="51.0" layoutY="251.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #f5f6fa;" />
    </children>
 </AnchorPane>

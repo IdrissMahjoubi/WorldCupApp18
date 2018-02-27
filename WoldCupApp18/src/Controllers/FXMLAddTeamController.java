@@ -69,7 +69,7 @@ public class FXMLAddTeamController implements Initializable {
     private ImageView pic1;
     
     String imageFile;
-    static String imageFile1;
+    String imageFile1;
    // private static String uuid;  
     @FXML
     private ChoiceBox<String> groupcb;

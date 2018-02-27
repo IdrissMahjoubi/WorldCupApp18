@@ -54,12 +54,17 @@ public class FXMLUpdateUserController implements Initializable {
     private TextField password;
     @FXML
     private ChoiceBox<String> team;
-     ObservableList<String> comboList = FXCollections.observableArrayList("Egypte", "Maroc","Nigeria","Sénégal","Tunisie","Arabie Saoudite","Australie","Japon","Republique de Coree","RI Iran","Allemagne","Angleterre","Belgique","Croatie","Danemark","Espagne","France","Islande","Pologne","Portugal","Russie","Serbie","Suède","Suisse","Costa Rica","Mexique","Panama","Argentine","Brésil","Colombie","Pérou","Uruguay");
-    @FXML
+ ObservableList<String> comboList = FXCollections.observableArrayList("Egypt", "Morroco","Nigeria","Senegal","Tunisia","saudi Arabia","Australia","Japan","Coreen Republic","RI Iran","Germany","England","Belgium","Croatia","Danemark","Spain","France","Island","Poland","Portugal","Russia","Serbia","Sweeden","Switzerland","Costa Rica","Mexico","Panama","Argentina","Brasil","Colombia","Perou","Uruguay");    @FXML
     private Button buttonvalid;
     @FXML
     private Button logout;
+<<<<<<< HEAD
+    @FXML
+    private Button home;
+
+=======
     static int idusercon= Session.LoggedUser.getUser_id();
+>>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
     /**
      * Initializes the controller class.
      */
@@ -124,9 +129,22 @@ public class FXMLUpdateUserController implements Initializable {
             FXMLauthentificationController dc = loader.getController();
             logout.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLauthentificationController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage());        } 
+    }
+
+    @FXML
+    private void SwitchToHome(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
+        try {
+            Parent root = loader.load();
+            FXMLUserinterfaceController dc = loader.getController();
+            home.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
+        }
     }
     
     
 }
+
+
