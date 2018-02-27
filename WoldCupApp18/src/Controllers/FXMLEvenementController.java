@@ -141,7 +141,6 @@ public class FXMLEvenementController implements Initializable {
         nbrparticip.setCellValueFactory(new PropertyValueFactory<>("NBR_PARTICIP"));
         Table.setItems(null);
         Table.setItems(cr.showEvent());
-
     }
 
     @FXML
@@ -236,7 +235,7 @@ public class FXMLEvenementController implements Initializable {
     }
 
    /* private void DeleteEvent() throws SQLException {
-        Evenement e = new Evenement();
+       Evenement e = new Evenement();
        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 
         Date today = new Date();
