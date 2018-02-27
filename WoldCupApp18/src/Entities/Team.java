@@ -9,7 +9,7 @@ package Entities;
  *
  * @author pacha
  */
-public class Team {
+public class Team  {
     private int TEAM_ID;
     private String TEAM_NAME;
     private String TEAM_COACH;

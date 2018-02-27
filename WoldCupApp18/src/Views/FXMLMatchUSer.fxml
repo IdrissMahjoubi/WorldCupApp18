@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXPopup?>
-<?import com.jfoenix.controls.JFXSpinner?>
-<?import com.jfoenix.validation.NumberValidator?>
-<?import com.jfoenix.validation.RequiredFieldValidator?>
-<?import com.jfoenix.validation.ValidationFacade?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import java.net.URL?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import org.controlsfx.control.MaskerPane?>
-<?import org.controlsfx.control.PlusMinusSlider?>
-<?import org.controlsfx.control.RangeSlider?>
-<?import org.controlsfx.control.SnapshotView?>
-<?import org.controlsfx.control.StatusBar?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="652.0" prefWidth="1097.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Controllers.FXMLMatchUSerController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #40739e;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMatchUSerController">
     <stylesheets>
         <URL value="@fxmlmatchuser.css" />
     </stylesheets>
    <children>
-      <SplitPane dividerPositions="0.2327718223583461" layoutX="-2.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="655.0" prefWidth="1100.0">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <JFXSpinner layoutX="576.0" layoutY="58.0" />
-                  <JFXPopup layoutX="810.0" layoutY="73.0" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-               <children>
-                  <StatusBar layoutX="65.0" layoutY="438.0" prefWidth="278.0" />
-                  <ValidationFacade layoutX="140.0" layoutY="336.0" prefHeight="45.0" prefWidth="98.0" />
-                  <SnapshotView layoutX="160.0" layoutY="173.0" />
-                  <RequiredFieldValidator layoutX="189.0" layoutY="76.0" />
-                  <RangeSlider layoutX="473.0" layoutY="79.0" />
-                  <PlusMinusSlider layoutX="683.0" layoutY="148.0" />
-                  <NumberValidator layoutX="189.0" layoutY="45.0" />
-                  <MaskerPane layoutX="614.0" layoutY="272.0" />
-               </children>
-            </AnchorPane>
-        </items>
-      </SplitPane>
+      <JFXButton fx:id="ShowStream" layoutX="17.0" layoutY="539.0" onAction="#ShowStream" prefHeight="35.0" prefWidth="188.0" style="-fx-background-color: #e84118; -fx-text-fill: white;" text="Show Match ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="Reload" layoutX="228.0" layoutY="539.0" onAction="#ReloadFn" prefWidth="113.0" style="-fx-background-color: #e84118; -fx-text-fill: white;" text="Reload">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="256.0" layoutY="24.0" text="Watch Game Live @BeinSports" textFill="#282828">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Label>
+      <StackPane fx:id="StreamPane" layoutX="12.0" layoutY="78.0" prefHeight="444.0" prefWidth="976.0" style="-fx-background-color: #f5f6fa; -fx-border-color: #7f8fa6; -fx-border-width: 2;">
+         <children>
+            <Label text="Click on show match for Live Steam.." textFill="#222222">
+               <font>
+                  <Font name="Lato Light" size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </StackPane>
+      <JFXButton fx:id="Back" layoutX="860.0" layoutY="538.0" onAction="#SwitchShowMatchUser" prefWidth="113.0" style="-fx-background-color: #e84118; -fx-text-fill: white;" text="Back">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
