@@ -58,9 +58,13 @@ public class FXMLUpdateUserController implements Initializable {
     private Button buttonvalid;
     @FXML
     private Button logout;
+<<<<<<< HEAD
     @FXML
     private Button home;
 
+=======
+    static int idusercon= Session.LoggedUser.getUser_id();
+>>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
     /**
      * Initializes the controller class.
      */
@@ -76,6 +80,7 @@ public class FXMLUpdateUserController implements Initializable {
          login.setText(Session.LoggedUser.getUser_login());
          password.setText(Session.LoggedUser.getUser_password());
          team.getSelectionModel().selectFirst();
+        
     }    
 
     @FXML

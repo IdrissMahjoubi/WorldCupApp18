@@ -25,11 +25,12 @@ import javafx.scene.control.TextField;
 
 import Services.ServiceUser;
 import Utilities.Session;
-import com.jfoenix.controls.JFXButton;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
-import org.controlsfx.control.HyperlinkLabel;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -48,13 +49,21 @@ public class FXMLauthentificationController implements Initializable {
     private Button creer;
     @FXML
     private Label ForgotPass;
+    @FXML
+    private Label ExitLabel;
+    @FXML
+    private AnchorPane MainPane;
+    
+    MediaPlayer mediaPlayer;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
+        mediaPlayer=new MediaPlayer(musicFile);
+        mediaPlayer.setAutoPlay(true);
     }    
 
     @FXML
@@ -131,29 +140,34 @@ public class FXMLauthentificationController implements Initializable {
 
     }
 
-    private void sendSms(MouseDragEvent event) {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
+
+
+
+    @FXML
+    private void SelectLabel(MouseEvent event) {
+                ForgotPass.setStyle("-fx-font-weight: bold; -fx-text-fill:#40739e;");               
+    }
+
+    @FXML
+    private void DeselectLabel(MouseEvent event) {
+                ForgotPass.setStyle("-fx-font-weight: regular;-fx-text-fill:#333333;");
+    }
+
+    @FXML
+    private void SmsView(MouseEvent event) {
+    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLPasswordRecovery.fxml"));
         try {
             Parent root = loader.load();
             FXMLPasswordRecoveryController pr = loader.getController();
             creer.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLPasswordRecoveryController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-
-    @FXML
-    private void SelectLabel(MouseEvent event) {
-                ForgotPass.setStyle("-fx-text-fill:#273c75");
-
+            System.out.println("Password Recovery ERROR="+ex.getMessage());        }
     }
 
     @FXML
-    private void DeselectLabel(MouseEvent event) {
-                        ForgotPass.setStyle("-fx-text-fill:#273c75");
-
+    private void ExitApp(MouseEvent event) {
+        Stage stage = (Stage) MainPane.getScene().getWindow();
+        stage.close();
     }
     
 }

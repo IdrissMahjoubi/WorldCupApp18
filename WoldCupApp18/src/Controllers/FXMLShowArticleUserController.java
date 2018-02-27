@@ -15,11 +15,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import Services.ArticleServices;
+<<<<<<< HEAD
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+=======
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+>>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
 
 /**
  * FXML Controller class
@@ -28,6 +34,7 @@ import javafx.scene.control.Button;
  */
 public class FXMLShowArticleUserController implements Initializable {
 
+<<<<<<< HEAD
     @FXML
     private ScrollPane sp;
 
@@ -39,6 +46,21 @@ public class FXMLShowArticleUserController implements Initializable {
     VBox hb;
     @FXML
     private Button home;
+=======
+    
+    
+   @FXML
+   private ScrollPane sp;
+    
+   @FXML
+   VBox vb;
+
+
+   Label title;
+   Text desc;
+   ImageView img;
+   VBox hb;
+>>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
 
     //Pane p;
     /**
@@ -46,6 +68,7 @@ public class FXMLShowArticleUserController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
 
         ArticleServices s = new ArticleServices();
         for (int i = 0; i < s.showArticles().size(); i++) {
@@ -57,6 +80,20 @@ public class FXMLShowArticleUserController implements Initializable {
             Image image = new Image(s.showArticles().get(i).ARTICLE_IMAGE);
             img.setImage(image);
 
+=======
+        
+        ArticleServices s = ArticleServices.getInstance();
+        for (int i = 0; i <s.showArticles().size();i++ ){
+          hb = new VBox();
+          //p.getChildren().add(i, title);
+           title = new Label(s.showArticles().get(i).ARTICLE_TITLE);
+           img = new ImageView();
+           
+          desc = new Text(s.showArticles().get(i).ARTICLE_DESCRIPTION);
+          Image image = new Image(s.showArticles().get(i).ARTICLE_IMAGE);
+          img.setImage(image);
+           
+>>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
             img.setFitWidth(350);
             img.setFitHeight(300);
 

@@ -24,6 +24,22 @@ public class PlayerServices {
     
     Connection connection;
     PreparedStatement preparedStatement;
+    
+    static PlayerServices instance;
+   
+    public PlayerServices() {
+           connection = DataSource.getInstance().getConnection();
+
+    }
+
+      public static PlayerServices getInstance() {
+        if (instance == null) {
+            instance = new PlayerServices();
+        }
+        return instance;
+    }
+    
+    
     public void addPlayer(Player p){
         String requete="INSERT INTO `PLAYER`(`PLAYER_NAME`,`PLAYER_AGE`,`PLAYER_TEAM` ,`PLAYER_POSITION`,`PLAYER_CLUB`,`PLAYER_HEIGHT`,`PLAYER_TSHIRT`,`PLAYER_WEIGHT`) VALUES (?,?,?,?,?,?,?,?)";
         try {
@@ -31,7 +47,7 @@ public class PlayerServices {
           
             preparedStatement.setString(1, p.getPLAYER_NAME());
             preparedStatement.setInt(2, p.getPLAYER_AGE());
-            preparedStatement.setInt(3, p.getPLAYER_TEAM());
+            preparedStatement.setString(3, p.getPLAYER_TEAM());
             preparedStatement.setString(4, p.getPLAYER_POSITION());
             preparedStatement.setString(5, p.getPLAYER_CLUB());
             preparedStatement.setString(6, p.getPLAYER_HEIGHT());
@@ -73,7 +89,7 @@ public class PlayerServices {
                 p.setPLAYER_ID(rs.getInt(1));
                 p.setPLAYER_NAME(rs.getString(2));
                 p.setPLAYER_AGE(rs.getInt(3));
-                p.setPLAYER_TEAM(rs.getInt(4));
+                p.setPLAYER_TEAM(rs.getString(4));
                 p.setPLAYER_POSITION(rs.getString(5));
                 p.setPLAYER_CLUB(rs.getString(6));
                 p.setPLAYER_HEIGHT(rs.getString(7));
@@ -91,39 +107,55 @@ public class PlayerServices {
         return myList;
     }
     
-    public String selectTeamById (int team_id){
-       String team_name = null;
-       String requete ="SELECT `TEAM_NAME` FROM `TEAM` WHERE TEAM_ID ="+team_id;
-       PreparedStatement preparedStatement;
-        try {
-            preparedStatement =connection.prepareStatement(requete);
-            
-            
-            ResultSet rs = preparedStatement.executeQuery(requete);
-            while (rs.next()){
-            team_name = rs.getString(1);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(PlayerServices.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return team_name;
-    }
+   
     
-        public int selectTeamByName (String team_name){
-        int team_id = 0;
-       String requete ="select `TEAM_ID` from `TEAM` where TEAM_NAME ="+team_name; 
-       PreparedStatement preparedStatement;
+ public ObservableList<String> showPlayersTeams(){
+        ObservableList<String> myList=FXCollections.observableArrayList();
+        String requete="Select `TEAM_NAME` from TEAM";
+        PreparedStatement preparedStatement;
         try {
-            preparedStatement =connection.prepareStatement(requete);
-           
+            preparedStatement=connection.prepareStatement(requete);
+            //Statement st=DataSource.getInstance().getConn().createStatement();
             ResultSet rs = preparedStatement.executeQuery(requete);
-            while (rs.next()){
-            team_id = rs.getInt(1);
+            while(rs.next()){
+     
+                myList.add(rs.getString(1));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(PlayerServices.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error"+ex.getMessage());
         }
-        return team_id;
+        return myList;
+    }
+ 
+  public ObservableList<Player> showPlayersByTeam(String team){
+        ObservableList<Player> myList=FXCollections.observableArrayList();
+        String requete="Select * from PLAYER WHERE PLAYER_TEAM ='"+team+"'";
+        PreparedStatement preparedStatement;
+        try {
+            preparedStatement=connection.prepareStatement(requete);
+            //Statement st=DataSource.getInstance().getConn().createStatement();
+            ResultSet rs = preparedStatement.executeQuery(requete);
+            while(rs.next()){
+                Player p = new Player();
+                p.setPLAYER_ID(rs.getInt(1));
+                p.setPLAYER_NAME(rs.getString(2));
+                p.setPLAYER_AGE(rs.getInt(3));
+                p.setPLAYER_TEAM(rs.getString(4));
+                p.setPLAYER_POSITION(rs.getString(5));
+                p.setPLAYER_CLUB(rs.getString(6));
+                p.setPLAYER_HEIGHT(rs.getString(7));
+                p.setPLAYER_TSHIRT(rs.getInt(8));
+                p.setPLAYER_WEIGHT(rs.getString(9));
+                p.setPLAYER_PICTURE(rs.getString(10));
+
+                
+                
+                myList.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error"+ex.getMessage());
+        }
+        return myList;
     }
         
  
@@ -145,7 +177,7 @@ public class PlayerServices {
             preparedStatement = connection.prepareStatement(req);
             preparedStatement.setString(1, p.getPLAYER_NAME());
             preparedStatement.setInt(2, p.getPLAYER_AGE());
-            preparedStatement.setInt(3, p.getPLAYER_TEAM());
+            preparedStatement.setString(3, p.getPLAYER_TEAM());
             preparedStatement.setString(4, p.getPLAYER_POSITION());
             preparedStatement.setString(5, p.getPLAYER_CLUB());
             preparedStatement.setString(6, p.getPLAYER_HEIGHT());
@@ -164,8 +196,6 @@ public class PlayerServices {
      
      
 
-    public PlayerServices() {
-        connection = DataSource.getInstance().getConnection();
-    }
+  
     
 }

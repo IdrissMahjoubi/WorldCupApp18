@@ -7,6 +7,7 @@ package Controllers;
 
 
 import Services.ServiceTeam;
+import Services.StatServices;
 import com.jfoenix.controls.JFXTabPane;
 import java.io.IOException;
 
@@ -64,7 +65,7 @@ public class FXMLStatPlayerController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ServiceTeam st = new ServiceTeam();
+        StatServices st = StatServices.getInstance();
         
         ObservableList<PieChart.Data> myList = FXCollections.observableArrayList();
         ObservableList<PieChart.Data> myList1 = FXCollections.observableArrayList();

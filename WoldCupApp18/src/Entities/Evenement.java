@@ -20,6 +20,9 @@ public class Evenement {
     private String EVENT_PLACE;
     private String EVENT_DESC ;
     private int NBR_PARTICIP;
+   
+
+
     private static Evenement instance ;
 
     public Evenement() {
