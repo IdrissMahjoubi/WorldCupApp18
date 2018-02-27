@@ -23,6 +23,9 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import Entities.Article;
 import Services.ArticleServices;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -33,15 +36,17 @@ public class FXMLShowArticleUserController implements Initializable {
 
     
     
-    @FXML
-    private ScrollPane sp;
+   @FXML
+   private ScrollPane sp;
     
-    @FXML
-    VBox vb;
+   @FXML
+   VBox vb;
+
+
    Label title;
-   Label desc;
-    ImageView img;
-    VBox hb;
+   Text desc;
+   ImageView img;
+   VBox hb;
 
     
     //Pane p;
@@ -52,13 +57,14 @@ public class FXMLShowArticleUserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        ArticleServices s = new ArticleServices();
+        ArticleServices s = ArticleServices.getInstance();
         for (int i = 0; i <s.showArticles().size();i++ ){
           hb = new VBox();
           //p.getChildren().add(i, title);
            title = new Label(s.showArticles().get(i).ARTICLE_TITLE);
            img = new ImageView();
-           desc = new Label(s.showArticles().get(i).ARTICLE_DESCRIPTION);
+           
+          desc = new Text(s.showArticles().get(i).ARTICLE_DESCRIPTION);
           Image image = new Image(s.showArticles().get(i).ARTICLE_IMAGE);
           img.setImage(image);
            

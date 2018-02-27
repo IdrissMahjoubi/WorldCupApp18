@@ -103,7 +103,7 @@ public class FXMLShowArticleController implements Initializable {
     }  
     
         public void afficher() {
-            ArticleServices s = new ArticleServices();
+            ArticleServices s = ArticleServices.getInstance();
         title.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_TITLE"));
         desc.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_DESCRIPTION"));
         img.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_IMAGE"));
@@ -114,7 +114,7 @@ public class FXMLShowArticleController implements Initializable {
          @FXML
     private void modifier(ActionEvent event) {
          if (!table.getSelectionModel().isEmpty()) {
-            ArticleServices s = new ArticleServices();
+            ArticleServices s = ArticleServices.getInstance();
 
             Article a = new Article();
             a.setARTICLE_ID(Integer.valueOf(idTnew));
@@ -174,7 +174,7 @@ public class FXMLShowArticleController implements Initializable {
             alert.setHeaderText("Vouler vous vraiment supprimer  : " + table.getSelectionModel().getSelectedItem().getARTICLE_TITLE()+ " ?");
             Optional<ButtonType> result = alert.showAndWait();
             if (result.get() == ButtonType.OK) {
-                ArticleServices s = new ArticleServices();
+                ArticleServices s = ArticleServices.getInstance();
                 s.removeArticle(table.getSelectionModel().getSelectedItem().getARTICLE_ID());
                 afficher();
             }
@@ -205,7 +205,7 @@ public class FXMLShowArticleController implements Initializable {
     
 void filtrerArticleList(String oldValue, String newValue) {
         String choix = comboRech.getValue();
-        ArticleServices s = new ArticleServices();
+        ArticleServices s = ArticleServices.getInstance();
         if(choix.equals("Titre")){
         ObservableList<Article> filteredList = FXCollections.observableArrayList();
         if (rechercheArticle_txt.getText() == null || (newValue.length() < oldValue.length()) || newValue == null) {

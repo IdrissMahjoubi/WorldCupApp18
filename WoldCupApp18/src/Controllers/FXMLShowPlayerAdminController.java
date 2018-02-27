@@ -108,7 +108,7 @@ public class FXMLShowPlayerAdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         
-        
+      PlayerServices ps = PlayerServices.getInstance(); 
       ParseClubs pc = new ParseClubs();
       
       table.getSelectionModel().selectedItemProperty().
@@ -121,6 +121,7 @@ public class FXMLShowPlayerAdminController implements Initializable {
       clubUpdate.setItems(pc.clubs());
        posUpdate.setItems(comboPos);
        teamUpdate.setItems(comboTeam);
+       teamUpdate.setItems(ps.showPlayersTeams());
        
 afficher();
           
@@ -163,7 +164,7 @@ System.out.println(teamUpdate.getValue());
 System.out.println(heightUpdate.getText());
 System.out.println(weightUpdate.getText());
 System.out.println(imgPath);
-PlayerServices ps = new PlayerServices();
+PlayerServices ps = PlayerServices.getInstance();
             Player p = new Player();
             p.setPLAYER_ID(idTnew);
            
@@ -173,7 +174,7 @@ PlayerServices ps = new PlayerServices();
             p.setPLAYER_AGE(Integer.parseInt(ageUpdate.getText()));
             p.setPLAYER_CLUB(clubUpdate.getValue());
             
-            p.setPLAYER_TEAM(ps.selectTeamByName(teamUpdate.getValue()));
+            p.setPLAYER_TEAM(teamUpdate.getValue());
             p.setPLAYER_HEIGHT(heightUpdate.getText());
             p.setPLAYER_WEIGHT(weightUpdate.getText());
             p.setPLAYER_PICTURE(imgPath);
@@ -200,7 +201,7 @@ PlayerServices ps = new PlayerServices();
     
             void showPlayerDetails(Player p) {
                 
-                PlayerServices ps = new PlayerServices();
+                PlayerServices ps = PlayerServices.getInstance();
 
         idTnew = p.getPLAYER_ID();
         imgPath = String.valueOf(p.getPLAYER_PICTURE());
@@ -211,7 +212,7 @@ PlayerServices ps = new PlayerServices();
         ageUpdate.setText(String.valueOf(p.getPLAYER_AGE()));
         clubUpdate.setValue(p.getPLAYER_CLUB());
         
-        teamUpdate.setValue(ps.selectTeamById(p.getPLAYER_TEAM()));
+        teamUpdate.setValue(p.getPLAYER_TEAM());
         heightUpdate.setText(String.valueOf(p.getPLAYER_HEIGHT()));
         weightUpdate.setText(String.valueOf(p.getPLAYER_WEIGHT()));
         
@@ -243,7 +244,7 @@ PlayerServices ps = new PlayerServices();
     }
     void filtrerPlayerList(String oldValue, String newValue) {
         String choix = (String) comboRech.getValue();
-        PlayerServices ps = new PlayerServices();
+        PlayerServices ps = PlayerServices.getInstance();
         if(choix.equals("Name")){
         ObservableList<Player> filteredList = FXCollections.observableArrayList();
         if (recherchePlayer_txt.getText() == null || (newValue.length() < oldValue.length()) || newValue == null) {
@@ -368,7 +369,7 @@ PlayerServices ps = new PlayerServices();
 
     @FXML
     private void reparse(ActionEvent event) {
-        PlayerServices ps = new PlayerServices();
+        PlayerServices ps = PlayerServices.getInstance();
         ParseJoueurs pj = new ParseJoueurs();
         
         ps.EmptyPlayer();
