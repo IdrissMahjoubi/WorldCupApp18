@@ -5,6 +5,9 @@
  */
 package Entities;
 
+import Utilities.DataSource;
+import static Utilities.DataSource.instance;
+
 /**
  *
  * @author Bich
@@ -20,16 +23,17 @@ public class Stadium {
     
     
     public static Stadium instance ;
+    
+        public static Stadium getInstance(){
+        if (instance==null){
+            instance = new Stadium();
+        }
+        return instance;
+    }
 
     public Stadium() {
     }
 
-
-    
-    
-    public static Stadium getInstance() {
-        return instance;
-    }
 
     public static void setInstance(Stadium instance) {
         Stadium.instance = instance;
@@ -44,14 +48,7 @@ public class Stadium {
         this.STADIUM_LOCATION_Y = STADUIM_LOCATION_Y;
     }
 
-    public Stadium(int aInt, String string, String string0, int aInt0, String string1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
-    public Stadium(int aInt, String string, String string0, int aInt0, String string1, String string2, String string3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 
   
 

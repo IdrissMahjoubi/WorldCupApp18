@@ -5,13 +5,11 @@
  */
 package Services;
 
-import Entities.Participation;
 import Utilities.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *

@@ -90,6 +90,20 @@ public class Match_services implements Match_inteface {
         }
         return m;
     }
+    
+        public Match getMatchbyMatchNumber(int id) {
+        Match m = null;
+        try {
+            result = statement.executeQuery("SELECT * from GAME where GAME_MATCHNUMBER='" + id + "'");
+            if (result.next()) {
+                m = new Match(result.getInt("GAME_ID"), result.getDate("GAME_DATE"), result.getString("GAME_REFEREE"), result.getString("GAME_TIME"), result.getInt("GAME_WINNERTEAMSCORE"), result.getInt("GAME_LOSSTEAMSCORE"), result.getString("GAME_KIND"), result.getString("GAME_WINNERTEAM"), result.getString("GAME_LOSSTEAM"), result.getString("GAME_VENUE"), result.getString("GAME_STADIUM"), result.getInt("GAME_MATCHNUMBER"));
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("GetByGAME_MATCHNUMBER ERROR = " + ex.getMessage());
+        }
+        return m;
+    }
 
     @Override
     public boolean deleteMatch(int id) {

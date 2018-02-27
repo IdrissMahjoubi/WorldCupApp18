@@ -1,31 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStationController">
+=======
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStationController">
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
    <children>
       <TableView fx:id="table" layoutX="32.0" layoutY="137.0" prefHeight="200.0" prefWidth="540.0">
          <columns>
             <TableColumn fx:id="id" prefWidth="53.0" text="ID" visible="false" />
-            <TableColumn fx:id="name" prefWidth="97.0" text="Nom Station" />
-            <TableColumn fx:id="location" prefWidth="134.0" text="Localisation Station" />
-            <TableColumn fx:id="type" prefWidth="98.0" text="Type Station" />
+            <TableColumn fx:id="name" prefWidth="97.0" text="Station Name" />
+            <TableColumn fx:id="location" prefWidth="134.0" text="Station Location" />
+            <TableColumn fx:id="type" prefWidth="98.0" text="Station Type" />
             <TableColumn prefWidth="74.0" text="X MAP" fx:id="x" />
             <TableColumn fx:id="y" prefWidth="82.0" text="Y MAP" />
          </columns>
       </TableView>
-      <TextField fx:id="Recherche" layoutX="167.0" layoutY="103.0" prefHeight="25.0" prefWidth="119.0" promptText="Recherche" />
+      <TextField fx:id="Recherche" layoutX="181.0" layoutY="103.0" prefHeight="25.0" prefWidth="119.0" promptText="Search" />
       <ChoiceBox fx:id="choiseBox" layoutX="308.0" layoutY="103.0" prefHeight="25.0" prefWidth="119.0" />
       <TextField fx:id="StationName" layoutX="211.0" layoutY="352.0" promptText="Nom de station" visible="false" />
       <TextField fx:id="StationLocation" layoutX="211.0" layoutY="385.0" promptText="Localisation de station" visible="false" />
       <TextField fx:id="StationType" layoutX="211.0" layoutY="416.0" promptText="bus/train/airport.." visible="false" />
       <TextField fx:id="XMAP" layoutX="211.0" layoutY="449.0" promptText="Latitude" visible="false" />
       <TextField fx:id="YMAP" layoutX="211.0" layoutY="484.0" promptText="Longtitude" visible="false" />
+<<<<<<< HEAD
       <Button fx:id="Map" layoutX="456.0" layoutY="103.0" mnemonicParsing="false" onAction="#AfficherMap" text="Afficher MAP" />
       <Button fx:id="home" layoutX="32.0" layoutY="14.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
+=======
+      <Button fx:id="Map" layoutX="456.0" layoutY="103.0" mnemonicParsing="false" onAction="#AfficherMap" text="Show MAP" />
+      <Button fx:id="acceuil" layoutX="102.0" layoutY="103.0" mnemonicParsing="false" onAction="#acceuil" text="Menu" />
+      <Label layoutX="227.0" layoutY="27.0" text="Stations List" textFill="#f2f2f2">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
    </children>
 </AnchorPane>

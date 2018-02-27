@@ -9,19 +9,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStadiumController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="698.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLUserStadiumController">
    <children>
-      <Label layoutX="227.0" layoutY="37.0" text="Listes Des Stades">
+      <Label layoutX="227.0" layoutY="37.0" prefHeight="32.0" prefWidth="248.0" text="Stadiums List" textFill="WHITE">
          <font>
-            <Font size="22.0" />
+            <Font size="32.0" />
          </font>
       </Label>
       <TableView fx:id="table" editable="true" layoutX="20.0" layoutY="137.0" prefHeight="200.0" prefWidth="523.0">
          <columns>
             <TableColumn fx:id="id" prefWidth="37.0" text="ID" visible="false" />
-            <TableColumn fx:id="name" prefWidth="120.0" text="Nom Stade" />
-            <TableColumn fx:id="location" prefWidth="109.0" text="Localisation Stade" />
-            <TableColumn fx:id="capacity" prefWidth="143.0" text="Capacite Stade" />
+            <TableColumn fx:id="name" prefWidth="120.0" text="Stadium Name" />
+            <TableColumn fx:id="location" prefWidth="109.0" text="Stadium Location" />
+            <TableColumn fx:id="capacity" prefWidth="143.0" text="Stadium Capacity" />
             <TableColumn prefWidth="76.66668701171875" text="XMAP" fx:id="xmap" />
             <TableColumn fx:id="ymap" prefWidth="69.33331298828125" text="YMAP" />
          </columns>
@@ -29,10 +29,17 @@
             <Blend />
          </effect>
       </TableView>
+<<<<<<< HEAD
       <TextField fx:id="Recherche" layoutX="103.0" layoutY="106.0" promptText="Rechercher" />
       <ChoiceBox fx:id="choiseBox" layoutX="267.0" layoutY="106.0" prefHeight="25.0" prefWidth="126.0" />
       <Button fx:id="map" layoutX="402.0" layoutY="106.0" mnemonicParsing="false" onAction="#GotoMap" text="Afficher les stades dans laMAP" />
       <Button fx:id="home" layoutX="33.0" layoutY="106.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
+=======
+      <TextField fx:id="Recherche" layoutX="103.0" layoutY="106.0" prefHeight="25.0" prefWidth="91.0" promptText="Search" />
+      <ChoiceBox fx:id="choiseBox" layoutX="210.0" layoutY="106.0" prefHeight="25.0" prefWidth="103.0" />
+      <Button fx:id="map" layoutX="331.0" layoutY="106.0" mnemonicParsing="false" onAction="#GotoMap" text="Show Stadiums in MAP" />
+      <Button fx:id="acceuil" layoutX="33.0" layoutY="106.0" mnemonicParsing="false" onAction="#acceuil" text="Acceuil" textFill="#250f57" />
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
       <ImageView fx:id="PicViewer" fitHeight="169.0" fitWidth="371.0" layoutX="166.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="StadiumName" layoutX="151.0" layoutY="362.0" promptText="Nom de stade" visible="false" />
       <TextField fx:id="StadiumLocation" layoutX="151.0" layoutY="399.0" promptText="Localisation de stade" visible="false" />

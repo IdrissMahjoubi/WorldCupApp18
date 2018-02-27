@@ -5,12 +5,8 @@
  */
 package woldcupapp18;
 
-import Services.PlayerServices;
-import Services.ServiceTeam;
 
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -25,14 +21,16 @@ public class WoldCupApp18 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        //ServiceTeam sp = new ServiceTeam();
-        
-           // System.out.println(sp.showTeamsStat().get(0).getTEAM_CONTINENT());
+     
     
        Parent root;
         try {
 
+<<<<<<< HEAD
         root = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
+=======
+        root = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStadiums.fxml"));
+>>>>>>> 6a33d4aaa8ebba7bf00d836d2e5af64a86dc92f8
 
 
         Scene scene = new Scene(root);

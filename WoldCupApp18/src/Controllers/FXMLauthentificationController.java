@@ -61,9 +61,9 @@ public class FXMLauthentificationController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
+       /* Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
         mediaPlayer=new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setAutoPlay(true);*/
     }    
 
     @FXML
