@@ -116,7 +116,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions12 = new MarkerOptions();
-                //System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions12.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Stade Loujniki");
@@ -130,10 +129,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
        });
              
    
-             //  }
-      
-      // if(St == "Stade Krestovski")
-       // {
+
          G.geocode("Stade Krestovski, Saint-Pétersbourg", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -161,10 +157,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });
-        //}
-       
-        // if(St == "Stade de nijni Novgorod")
-       // {
+ 
          
         G.geocode("Stade de Nijni Novgorod, Nijni Novgorod", (GeocodingResult[] results, GeocoderStatus status) -> {
 
@@ -181,7 +174,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions2 = new MarkerOptions();
-              //  System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions2.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Stade de Nijni Novgorod");
@@ -193,10 +185,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });
-       // }
-       
-       //    if(St == "Stade de Kaliningrad")
-       // {
+
         G.geocode("Stade de Kaliningrad, Kaliningrad", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -212,7 +201,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions3 = new MarkerOptions();
-             //   System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions3.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Stade de Kaliningrad");
@@ -224,10 +212,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });
-      //  }
-           
-         //      if(St == "lekaterinbourg Arena")
-      //  {
+
         
            G.geocode("lekaterinbourg Arena, Iekaterinbourg", (GeocodingResult[] results, GeocoderStatus status) -> {
 
@@ -244,7 +229,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions4 = new MarkerOptions();
-               // System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions4.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("lekaterinbourg Arena");
@@ -256,10 +240,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });
-       // }
 
-           //   if(St == "Stade de Mordovie")
-       // {
                G.geocode("Stade de Mordovie, Saransk", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -275,7 +256,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions5 = new MarkerOptions();
-               // System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions5.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Stade de Mordovie");
@@ -288,11 +268,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });
-       // }
-              
-              
-          //     if(St == "Kuzan Arena")
-       // {
+
              G.geocode("Kazan-Arena, Kazan", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -308,7 +284,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions6 = new MarkerOptions();
-              //  System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions6.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Kazan-Arena");
@@ -320,10 +295,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });   
-       // }
-               
-       //  if(St == "Cosmos Arena")
-       // {
+
              G.geocode("Cosmos Arena, Samara", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -339,7 +311,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions7 = new MarkerOptions();
-              //  System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions7.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Cosmos Arena");
@@ -351,11 +322,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });   
-      //  }
-         
-         
-        //   if(St == "Rostov Arena")
-       // {
+
         
               G.geocode("Rostov Arena, Rostov-sur-le-Don", (GeocodingResult[] results, GeocoderStatus status) -> {
 
@@ -372,7 +339,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions8 = new MarkerOptions();
-              //  System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions8.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Rostov Arena");
@@ -384,10 +350,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });   
-       // }
-           
-       //     if(St == "Stade Ficht")
-      //  {
+
              G.geocode("Stade Ficht, Sotchi", (GeocodingResult[] results, GeocoderStatus status) -> {
 
             LatLong latLong = null;
@@ -403,7 +366,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions9 = new MarkerOptions();
-               // System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions9.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Stade Ficht");
@@ -414,10 +376,7 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
 
             map.setCenter(latLong);
        });  
-       // }
-            
-       // if(St == "Volgograd Arena")
-       // {
+
               
                 G.geocode("Volgograd Arena, Volgograd", (GeocodingResult[] results, GeocoderStatus status) -> {
 
@@ -434,7 +393,6 @@ public class FXMLMAPStationController implements Initializable,MapComponentIniti
             } else {
                 latLong = new LatLong(results[0].getGeometry().getLocation().getLatitude(), results[0].getGeometry().getLocation().getLongitude());
                 MarkerOptions markerOptions10 = new MarkerOptions();
-               // System.out.println("result LG "+latLong.getLongitude()+ "   " +latLong.getLatitude());
                 markerOptions10.position(latLong)
                         .visible(Boolean.TRUE)
                         .title("Volgograd Arena");
