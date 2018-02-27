@@ -141,15 +141,6 @@ public class FXMLAffichageTeamController implements Initializable {
         ComboRechGrp.getSelectionModel().selectFirst();
         ComboRechCont.setItems(comboListCont);
         ComboRechCont.getSelectionModel().selectFirst();
-
-        /*String urlv = "file:/@../../../../../../../Resources/Medias/fifa-world-cup-russia-2018-official-video.mp4";
-        media = new Media(urlv);
-        System.out.println(urlv);
-        mediaPlayer = new MediaPlayer(media);
-        view.setFitHeight(600);
-        view.setFitWidth(400);
-        view.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setAutoPlay(true);*/
         afficher();
         comboRech.setItems(comboList);
         table.getSelectionModel().selectedItemProperty().
@@ -158,33 +149,73 @@ public class FXMLAffichageTeamController implements Initializable {
                         showTeamDetails(newValue);
                          switch(newValue.getTEAM_NAME()) { 
                             case "Tunisia": 
-                            Media musicFile=new Media("file:/C:/wamp64/www/ImagesPacha/Ya%20russia%20haw%20jayin.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile);
+                            
+                                    Media musicFile1;
+                        try {
+                            File file = new File("src/Resources/jayin.mp3");
+                            musicFile1 = new Media(file.toURI().toURL().toString());
+                            mediaPlayer2=new MediaPlayer(musicFile1);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
                             break; 
                             case "Bresil": 
-                            Media musicFile2=new Media("file:/C:/Users/pacha/Music/Hymne%20National%20du%20Brésil.mp3");
+                                                       
+                                    Media musicFile2;
+                        try {
+                            File file = new File("src/Resources/Brésil.mp3");
+                            musicFile2 = new Media(file.toURI().toURL().toString());
                             mediaPlayer2=new MediaPlayer(musicFile2);
-                            break; 
-                            case "Allemagne": 
-                            Media musicFile3=new Media("file:/C:/Users/pacha/Music/Hymne%20national%20de%20lAllemagne.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile3);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
                             break;
+                                                       
                             case "Espagne": 
-                            Media musicFile4=new Media("file:/C:/Users/pacha/Music/Himno%20español.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile4);
+                                                        
+                                    Media musicFile3;
+                        try {
+                            File file = new File("src/Resources/Espagne.mp3");
+                            musicFile3 = new Media(file.toURI().toURL().toString());
+                            mediaPlayer2=new MediaPlayer(musicFile3);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
                             break; 
                             case "Panama": 
-                            Media musicFile5=new Media("file:/C:/Users/pacha/Music/Panama.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile5);
+                                                        
+                                    Media musicFile4;
+                        try {
+                            File file = new File("src/Resources/Panama.mp3");
+                            musicFile4 = new Media(file.toURI().toURL().toString());
+                            mediaPlayer2=new MediaPlayer(musicFile4);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
                             break;
                             case "Russia": 
-                            Media musicFile6=new Media("file:/C:/Users/pacha/Music/Russie.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile6);
+                                                        
+                                    Media musicFile5;
+                        try {
+                            File file = new File("src/Resources/Russie.mp3");
+                            musicFile5 = new Media(file.toURI().toURL().toString());
+                            mediaPlayer2=new MediaPlayer(musicFile5);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
                             break;
                             case "Egypt": 
-                            Media musicFile7=new Media("file:/C:/Users/pacha/Music/Égypte.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile7);
-                            break; 
+                                                        
+                                    Media musicFile6;
+                        try {
+                            File file = new File("src/Resources/Egypte.mp3");
+                            musicFile6 = new Media(file.toURI().toURL().toString());
+                            mediaPlayer2=new MediaPlayer(musicFile6);
+                        } catch (MalformedURLException ex) {
+                            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                        }         
+                            break;
+                            default: System.out.println("choose");
                             
                     }
                     }
@@ -481,20 +512,6 @@ public class FXMLAffichageTeamController implements Initializable {
         }
     }
 
-    @FXML
-    private void play(ActionEvent event) {
-        if (mediaPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
-            mediaPlayer.stop();
-            mediaPlayer.play();
-        } else {
-            mediaPlayer.play();
-        }
-    }
-
-    @FXML
-    private void stop(ActionEvent event) {
-        mediaPlayer.stop();
-    }
 
     @FXML
     private void FonctionRechercheGrp(ActionEvent event) {

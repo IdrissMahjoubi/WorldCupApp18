@@ -92,16 +92,10 @@ public class FXMLEvenementController implements Initializable {
     private Label txtnbrparticipant;
     @FXML
     private TextField txtparticipant;
-<<<<<<< HEAD
     int nbrpart=0;
     String newid;
-    @FXML
-    private TableColumn<?, ?> nbrparticip;
-    @FXML
-    private Button home;
-=======
 
-    int nbrpart = 0;
+
     CrudEvenement cr = new CrudEvenement();
     PreparedStatement pst;
     int xe;
@@ -112,7 +106,6 @@ public class FXMLEvenementController implements Initializable {
     ParticipationServices ps = new ParticipationServices();
     Participation p = new Participation();
 
->>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
     /**
      * Initializes the controller class.
      *
@@ -210,23 +203,10 @@ public class FXMLEvenementController implements Initializable {
 
     }
 
-    @FXML
-<<<<<<< HEAD
-    private void SwitchToHome(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
-        try {
-            Parent root = loader.load();
-            FXMLUserinterfaceController dc = loader.getController();
-            home.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
-        }
-    }
-
-}
 
 
-=======
+
+
     public void Participate(ActionEvent event) throws SQLException {
         xe = Table.getSelectionModel().getSelectedItem().getEVENT_ID();
         int h = ps.CheckIDexistance(userid, xe);
@@ -282,4 +262,3 @@ public class FXMLEvenementController implements Initializable {
     
     
 }
->>>>>>> d81c846c29556b9486a139c561d9f4433db6ecb4
