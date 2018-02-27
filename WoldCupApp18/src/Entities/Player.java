@@ -13,7 +13,7 @@ public class Player {
     private int PLAYER_ID;
     private String PLAYER_NAME;
     private int PLAYER_AGE;
-    private int PLAYER_TEAM;
+    private String PLAYER_TEAM;
     private String PLAYER_POSITION;
     private String PLAYER_CLUB;
     private String PLAYER_HEIGHT;
@@ -25,7 +25,7 @@ public class Player {
     public Player() {
     }
 
-    public Player(int PLAYER_ID, String PLAYER_NAME, int PLAYER_AGE, int PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE) {
+    public Player(int PLAYER_ID, String PLAYER_NAME, int PLAYER_AGE, String PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE) {
         this.PLAYER_ID = PLAYER_ID;
         this.PLAYER_NAME = PLAYER_NAME;
         this.PLAYER_AGE = PLAYER_AGE;
@@ -51,7 +51,7 @@ public class Player {
     
     
 
-    public Player(String PLAYER_NAME, int PLAYER_AGE, int PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE) {
+    public Player(String PLAYER_NAME, int PLAYER_AGE, String PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE) {
         this.PLAYER_NAME = PLAYER_NAME;
         this.PLAYER_AGE = PLAYER_AGE;
         this.PLAYER_TEAM = PLAYER_TEAM;
@@ -74,7 +74,7 @@ public class Player {
         this.PLAYER_PICTURE = PLAYER_PICTURE;
     }
 
-    public Player(String PLAYER_NAME, int PLAYER_AGE, int PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT) {
+    public Player(String PLAYER_NAME, int PLAYER_AGE, String PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT) {
         this.PLAYER_NAME = PLAYER_NAME;
         this.PLAYER_AGE = PLAYER_AGE;
         this.PLAYER_TEAM = PLAYER_TEAM;
@@ -115,11 +115,11 @@ public class Player {
         this.PLAYER_AGE = PLAYER_AGE;
     }
 
-    public int getPLAYER_TEAM() {
+    public String getPLAYER_TEAM() {
         return PLAYER_TEAM;
     }
 
-    public void setPLAYER_TEAM(int PLAYER_TEAM) {
+    public void setPLAYER_TEAM(String PLAYER_TEAM) {
         this.PLAYER_TEAM = PLAYER_TEAM;
     }
 

@@ -108,7 +108,7 @@ public class FXMLShowPlayerAdminController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         
-        
+      PlayerServices ps = PlayerServices.getInstance(); 
       ParseClubs pc = new ParseClubs();
       
       table.getSelectionModel().selectedItemProperty().
@@ -121,6 +121,7 @@ public class FXMLShowPlayerAdminController implements Initializable {
       clubUpdate.setItems(pc.clubs());
        posUpdate.setItems(comboPos);
        teamUpdate.setItems(comboTeam);
+       teamUpdate.setItems(ps.showPlayersTeams());
        
 afficher();
           
@@ -173,7 +174,7 @@ PlayerServices ps = PlayerServices.getInstance();
             p.setPLAYER_AGE(Integer.parseInt(ageUpdate.getText()));
             p.setPLAYER_CLUB(clubUpdate.getValue());
             
-            p.setPLAYER_TEAM(ps.selectTeamByName(teamUpdate.getValue()));
+            p.setPLAYER_TEAM(teamUpdate.getValue());
             p.setPLAYER_HEIGHT(heightUpdate.getText());
             p.setPLAYER_WEIGHT(weightUpdate.getText());
             p.setPLAYER_PICTURE(imgPath);
@@ -211,7 +212,7 @@ PlayerServices ps = PlayerServices.getInstance();
         ageUpdate.setText(String.valueOf(p.getPLAYER_AGE()));
         clubUpdate.setValue(p.getPLAYER_CLUB());
         
-        teamUpdate.setValue(ps.selectTeamById(p.getPLAYER_TEAM()));
+        teamUpdate.setValue(p.getPLAYER_TEAM());
         heightUpdate.setText(String.valueOf(p.getPLAYER_HEIGHT()));
         weightUpdate.setText(String.valueOf(p.getPLAYER_WEIGHT()));
         

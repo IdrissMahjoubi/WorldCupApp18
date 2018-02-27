@@ -81,7 +81,7 @@ public class ParseJoueurs {
                             int player_age = Integer.parseInt(strArray[1]);
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
-                            int player_team = 4;
+                            String player_team = "Espagne";
                  
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -98,7 +98,7 @@ public class ParseJoueurs {
                             int player_age = Integer.parseInt(strArray[1]);
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
-                            int player_team = 4;
+                            String player_team = "Espagne";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  
@@ -114,7 +114,7 @@ public class ParseJoueurs {
                             int player_age = Integer.parseInt(strArray[1]);
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
-                 int player_team = 4;
+                 String player_team = "Espagne";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -130,7 +130,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 4;
+                 String player_team = "Espagne";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -175,7 +175,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 5;
+                 String player_team = "France";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -192,7 +192,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                int player_team = 5;
+                String player_team = "France";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -208,7 +208,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 5;
+                 String player_team = "France";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -224,7 +224,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                int player_team = 5;
+                String player_team = "France";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -270,7 +270,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 3;
+                 String player_team = "Argentine";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -287,7 +287,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 3;
+                 String player_team = "Argentine";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -303,7 +303,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 3;
+                 String player_team = "Argentine";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -319,7 +319,7 @@ public class ParseJoueurs {
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-int player_team = 3;
+String player_team = "Argentine";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);                 ps.addPlayer(p);
                  }
@@ -364,7 +364,7 @@ int player_team = 3;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-int player_team = 6;
+String player_team = "Brésil";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -381,7 +381,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 6;
+                 String player_team = "Brésil";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -397,7 +397,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 6;
+                String player_team = "Brésil";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -413,7 +413,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 6;
+                 String player_team = "Brésil";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -460,7 +460,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 7;
+                String player_team = "Russia";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -477,7 +477,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 7;
+                 String player_team = "Russia";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -493,7 +493,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 7;
+                String player_team = "Russia";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -509,7 +509,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 7;
+                 String player_team = "Russia";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -555,7 +555,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 2;
+                 String player_team = "Germany";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -572,7 +572,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 2;
+                 String player_team = "Germany";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -588,7 +588,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 2;
+                 String player_team = "Germany";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
@@ -604,7 +604,7 @@ int player_team = 6;
                             String player_height = strArray[3];
                             String player_weight = strArray[4]+strArray[5];
                  
-                 int player_team = 2;
+                 String player_team = "Germany";
                             
                  Player p = new Player(player_name, player_age,player_team, player_position, player_club, player_height, player_tshirt, player_weight);
                  ps.addPlayer(p);
