@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,7 +27,6 @@
             <TableColumn fx:id="Col_Time" prefWidth="65.52996826171875" text="Time" />
         </columns>
       </TableView>
-      <Accordion layoutX="300.0" />
       <HBox layoutX="11.0" layoutY="10.0" prefHeight="59.0" prefWidth="424.0">
          <children>
             <JFXButton fx:id="Add_match_button" buttonType="RAISED" onAction="#Link_Add" prefHeight="54.0" prefWidth="103.0" ripplerFill="#ebebeb" text="Add" textFill="#d6d6d6">
