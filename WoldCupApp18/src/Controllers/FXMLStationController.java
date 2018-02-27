@@ -43,17 +43,16 @@ public class FXMLStationController implements Initializable {
     @FXML
     private Button afficher;
 
-  
-
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     /**
      *
@@ -62,16 +61,16 @@ public class FXMLStationController implements Initializable {
      */
     @FXML
     public void AddStation(ActionEvent event) throws SQLException {
-          String STATION_NAME = Stationname.getText(); 
+        String STATION_NAME = Stationname.getText();
         String STATION_LOCATION = Stationlocation.getText();
-         String STATION_TYPE = Stationtype.getText();
-         String STATION_LOCATION_X = Stationx.getText();
-         String STATION_LOCATION_Y = Stationy.getText();
-         
-         Station st = new Station (STATION_NAME,STATION_LOCATION,STATION_TYPE,STATION_LOCATION_X,STATION_LOCATION_Y);
-         CrudStation cr = new CrudStation();
-         cr.addStation(st);
-         
+        String STATION_TYPE = Stationtype.getText();
+        String STATION_LOCATION_X = Stationx.getText();
+        String STATION_LOCATION_Y = Stationy.getText();
+
+        Station st = new Station(STATION_NAME, STATION_LOCATION, STATION_TYPE, STATION_LOCATION_X, STATION_LOCATION_Y);
+        CrudStation cr = new CrudStation();
+        cr.addStation(st);
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowStations.fxml"));
         try {
             Parent root = loader.load();
@@ -84,32 +83,32 @@ public class FXMLStationController implements Initializable {
 
     @FXML
     private void Empltyfields(ActionEvent event) {
-    Stationname.clear();
-    Stationlocation.clear();
-    Stationtype.clear();
-    Stationx.clear();
-    Stationy.clear();
+        Stationname.clear();
+        Stationlocation.clear();
+        Stationtype.clear();
+        Stationx.clear();
+        Stationy.clear();
         try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStations.fxml"));
-                Scene scene = new Scene(page1);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ex) {
-                Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStations.fxml"));
+            Scene scene = new Scene(page1);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @FXML
     private void afficherstations(ActionEvent event) {
-                         try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStations.fxml"));
-                Scene scene = new Scene(page1);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ex) {
-                Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStations.fxml"));
+            Scene scene = new Scene(page1);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
