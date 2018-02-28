@@ -82,7 +82,7 @@ public class FXMLUserinterfaceController implements Initializable {
             articlesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
             //streamPane = FXMLLoader.load(getClass().getResource("/Views/GererProfile.fxml"));
             statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
-            streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
+            //streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
             updateaccount=FXMLLoader.load(getClass().getResource("/Views/FXMLUpdateUser.fxml"));
             //groupsPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
@@ -123,6 +123,7 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     private void teams(ActionEvent event) throws IOException {
         setNode(teamsPane);
+        
     }
 
    /* private void goToHotels(ActionEvent event) {

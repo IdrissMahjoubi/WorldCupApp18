@@ -35,6 +35,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -83,6 +84,8 @@ public class FXMLAffichageTeamUserController implements Initializable {
     private ComboBox<String> continents;
     @FXML
     private ComboBox<String> groupes;
+    @FXML
+    private Button bntHome;
     
     /**
      * Initializes the controller class.
@@ -319,6 +322,16 @@ public class FXMLAffichageTeamUserController implements Initializable {
     @FXML
     private void rechercheGroupes(ActionEvent event) {
         rechercheteam_txt.setText(groupes.getValue());
+    }
+
+    @FXML
+    private void home(ActionEvent event) throws IOException {
+        Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        ((Node) event.getSource()).getScene().getWindow().hide();
     }
 
 
