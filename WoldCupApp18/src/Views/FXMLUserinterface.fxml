@@ -78,17 +78,17 @@
             </ImageView>
             <HBox layoutX="764.0" layoutY="22.0" prefHeight="43.0" prefWidth="165.0" spacing="20.0">
                <children>
-                  <ImageView fx:id="MyAccount" fitHeight="40.0" fitWidth="40.0" onDragDetected="#updateUserDetails" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="MyAccount" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#myaccount" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/home/account_circle_white_192x192.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="Logout" fitHeight="40.0" fitWidth="40.0" onDragDetected="#logout" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="Logout" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#logout" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/home/logout.png" />
                      </image>
                   </ImageView>
-                  <ImageView fx:id="About" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="About" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#help" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Resources/home/help.png" />
                      </image>
