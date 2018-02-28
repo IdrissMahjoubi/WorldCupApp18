@@ -8,26 +8,26 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="532.0" prefWidth="959.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchsController">
+<AnchorPane id="AnchorPane" fx:id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchsController">
     <stylesheets>
     </stylesheets>
    <children>
-      <TableView fx:id="Table_matchAll" layoutX="-3.0" layoutY="76.0" prefHeight="426.0" prefWidth="959.0">
+      <TableView fx:id="Table_matchAll" layoutX="19.0" layoutY="66.0" prefHeight="428.0" prefWidth="802.0">
         <columns>
-            <TableColumn fx:id="Col_MatchNumber" prefWidth="61.97990155220032" text="N°" />
-            <TableColumn fx:id="Col_WinnerTeam" prefWidth="91.99571228027344" text="Team1" />
-            <TableColumn fx:id="Col_LooserTeam" prefWidth="82.0042724609375" text="Team2" />
-            <TableColumn fx:id="Col_GameKind" prefWidth="121.02726745605469" text="Game Kind" />
-            <TableColumn fx:id="Col_Venue" prefWidth="75.00143432617188" text="Venue" />
-            <TableColumn fx:id="Col_Stadium" prefWidth="69.8712158203125" text="Stadium" />
-            <TableColumn fx:id="Col_WinnerTeamScore" prefWidth="93.731201171875" text="Team1Score" />
-            <TableColumn fx:id="Col_LooserTeamScore" prefWidth="93.932373046875" text="Team2Score" />
-          <TableColumn fx:id="Col_Referee" prefWidth="115.94580078125" text="Match Referee" />
-          <TableColumn fx:id="Col_Date" editable="false" prefWidth="93.3150634765625" sortable="false" text="Match Date" />
-            <TableColumn fx:id="Col_Time" prefWidth="65.52996826171875" text="Time" />
+            <TableColumn fx:id="Col_MatchNumber" prefWidth="28.622846603393555" text="N°" />
+          <TableColumn fx:id="Col_Date" editable="false" prefWidth="69.69808578491211" sortable="false" text=" Date" />
+            <TableColumn fx:id="Col_Time" prefWidth="64.49050903320312" text="Time" />
+            <TableColumn fx:id="Col_WinnerTeam" prefWidth="62.697998046875" text="Team1" />
+            <TableColumn fx:id="Col_LooserTeam" prefWidth="62.26408386230469" text="Team2" />
+            <TableColumn fx:id="Col_WinnerTeamScore" prefWidth="93.7427978515625" text="Team1Score" />
+            <TableColumn fx:id="Col_LooserTeamScore" minWidth="0.0" prefWidth="98.97711181640625" text="Team2Score" />
+            <TableColumn fx:id="Col_GameKind" prefWidth="39.2640380859375" text="GK" />
+            <TableColumn fx:id="Col_Venue" prefWidth="67.11309814453125" text="Venue" />
+            <TableColumn fx:id="Col_Stadium" prefWidth="81.16961669921875" text="Stadium" />
+          <TableColumn fx:id="Col_Referee" prefWidth="123.962158203125" text="Match Referee" />
         </columns>
       </TableView>
-      <HBox layoutX="11.0" layoutY="10.0" prefHeight="59.0" prefWidth="424.0">
+      <HBox layoutX="11.0" layoutY="10.0" prefHeight="59.0" prefWidth="496.0">
          <children>
             <JFXButton fx:id="Add_match_button" buttonType="RAISED" onAction="#Link_Add" prefHeight="54.0" prefWidth="103.0" ripplerFill="#ebebeb" text="Add" textFill="#d6d6d6">
                <opaqueInsets>
@@ -47,7 +47,7 @@
                   <Font name="AgencyFB-Bold" size="27.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="Reparse_match_button" buttonType="RAISED" onAction="#ReparseMatch" prefHeight="54.0" prefWidth="119.0" ripplerFill="#ebebeb" text="Reparse" textFill="#d6d6d6">
+            <JFXButton fx:id="Reparse_match_button" buttonType="RAISED" onAction="#ReparseMatch" prefHeight="54.0" prefWidth="138.0" ripplerFill="#ebebeb" text="Parse Data" textFill="#d6d6d6">
                <font>
                   <Font name="AgencyFB-Bold" size="27.0" />
                </font>
