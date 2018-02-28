@@ -33,9 +33,11 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private Button Stations;
     @FXML
-    private ImageView ImageViewer;
-    @FXML
     private Button even;
+    @FXML
+    private Button menu;
+    @FXML
+    private Button hotel;
 
     /**
      * Initializes the controller class.
@@ -78,6 +80,32 @@ public class FXMLMenuController implements Initializable {
     private void CreateEvent(ActionEvent event) {
                 try {
                 Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLEvenement.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+
+    @FXML
+    private void backtomenu(ActionEvent event) {
+                            try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+
+    @FXML
+    private void hotels(ActionEvent event) {
+                        try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLuserHotel.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);

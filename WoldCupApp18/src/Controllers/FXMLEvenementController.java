@@ -42,6 +42,9 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -160,14 +163,15 @@ public class FXMLEvenementController implements Initializable {
 
     @FXML
     private void GoBack(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLEvenementController dc = loader.getController();
-            GoBack.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+                    try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLMenu.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
     @FXML

@@ -52,7 +52,7 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     public AnchorPane panePrincipale;
     
-    AnchorPane Single,EventsPane,homePane,gamesPane,groupsPane,teamsPane,accomodationsPane,articlesPane,streamPane,statisticsPane,logoutpane;
+    AnchorPane Single,EventsPane,homePane,gamesPane,groupsPane,teamsPane,accomodationsPane,articlesPane,streamPane,statisticsPane,logoutpane,updateaccount;
     @FXML
     private JFXButton bntGame;
     @FXML
@@ -84,7 +84,7 @@ public class FXMLUserinterfaceController implements Initializable {
             statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
             //streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
-            
+            updateaccount=FXMLLoader.load(getClass().getResource("/Views/FXMLUpdateUser.fxml"));
             //groupsPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             setNode(homePane);
 
@@ -181,9 +181,6 @@ public class FXMLUserinterfaceController implements Initializable {
         setNode(logoutpane);
     }
 
-    @FXML
-    private void updateUserDetails(MouseEvent event) {
-    }
 
     @FXML
     private void games(ActionEvent event) {
@@ -195,6 +192,16 @@ public class FXMLUserinterfaceController implements Initializable {
         
           Stage stage = (Stage) Main.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    private void myaccount(MouseEvent event) {
+        setNode(updateaccount);
+    }
+
+    @FXML
+    private void help(MouseEvent event) {
+      //  setNode(logoutpane);
     }
     
 }

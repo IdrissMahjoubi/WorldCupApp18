@@ -15,9 +15,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.util.Duration;
+import tray.notification.TrayNotification;
 
 /**
  * FXML Controller class
@@ -32,8 +35,13 @@ public class FXMLHomeController implements Initializable {
     private MediaView media;
     Media media1;
     MediaPlayer mediaPlayer;
+<<<<<<< HEAD
     @FXML
     private JFXButton bntStop;
+=======
+    
+    //public Image image=new Image("file:/Users/apple/Desktop/WorldCupApp18/WoldCupApp18/src/Resources/Icons/FIFA_World_Cup_2018_Logo.png",true);
+>>>>>>> 2c253b18dab205abc03ca6f369f65d32130b3eed
     /**
      * Initializes the controller class.
      */
@@ -49,6 +57,11 @@ public class FXMLHomeController implements Initializable {
         mediaPlayer = new MediaPlayer(media1);
         media.setMediaPlayer(mediaPlayer);
         mediaPlayer.setAutoPlay(true);
+        TrayNotification tray = new TrayNotification();
+        tray.setTitle("Hi");
+        tray.setMessage(Session.LoggedUser.getUser_name());
+        tray.showAndDismiss(Duration.seconds(4));
+        //tray.setImage(image);
     }    
 
     @FXML

@@ -27,7 +27,7 @@ public class ParticipationServices {
         try {
             PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(sql);
             ResultSet rs = pst.executeQuery(sql);
-            System.out.println(sql);
+            
 
             while (rs.next()) {
                 isValid = rs.getInt(1);

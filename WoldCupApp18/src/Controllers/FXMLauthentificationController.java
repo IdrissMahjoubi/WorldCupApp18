@@ -74,8 +74,7 @@ public class FXMLauthentificationController implements Initializable {
         System.out.println(s.CheckLoginAndPassword(login.getText(), password.getText()));
         if ((s.CheckLoginAndPassword(login.getText(), password.getText())) == 0){
             
-            System.out.println("asber");
-            System.out.println("veuillez verifier vos parametres");
+        
              Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("erreur");
             alert.setHeaderText("veuillez verifier vos parametres");
@@ -83,16 +82,12 @@ public class FXMLauthentificationController implements Initializable {
             
         }
         else {
-           System.out.println("sahit"); 
+           
             if ("admin".equals(s.CheckType(login.getText(), password.getText())) && (s.CheckState(login.getText(), password.getText()))== 1 ){
             Session.LoggedUser = (s.findByLogin(login.getText()));
 
                 System.out.println("bienvenue admin");
                 
-                /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Bienvenu");
-            alert.setHeaderText("authentification avec succes ");
-             Optional<ButtonType> result = alert.showAndWait();*/
             
         try {
            Stage stage = new Stage();    
@@ -108,12 +103,7 @@ public class FXMLauthentificationController implements Initializable {
             else if ("membre".equals(s.CheckType(login.getText(), password.getText())) && (s.CheckState(login.getText(), password.getText()))== 1 ) {
                  System.out.println("bienvenue membre");
                              Session.LoggedUser = (s.findByLogin(login.getText()));
-                             	//mail
-        
-                  /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Bienvenu");
-            alert.setHeaderText("authentification avec succes ");
-             Optional<ButtonType> result = alert.showAndWait();*/
+  
         
         try {
        Stage stage = new Stage();    
