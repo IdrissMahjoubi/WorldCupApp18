@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -33,5 +34,6 @@
             <Font size="22.0" />
          </font>
       </Text>
+      <JFXButton fx:id="bntStop" layoutX="107.0" layoutY="404.0" onAction="#stop" style="-fx-background-color: #c51010;" text="Stop" textFill="WHITE" />
    </children>
 </AnchorPane>

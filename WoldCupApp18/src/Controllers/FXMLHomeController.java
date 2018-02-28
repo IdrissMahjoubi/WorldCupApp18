@@ -6,10 +6,12 @@
 package Controllers;
 
 import Utilities.Session;
+import com.jfoenix.controls.JFXButton;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -30,6 +32,8 @@ public class FXMLHomeController implements Initializable {
     private MediaView media;
     Media media1;
     MediaPlayer mediaPlayer;
+    @FXML
+    private JFXButton bntStop;
     /**
      * Initializes the controller class.
      */
@@ -46,5 +50,10 @@ public class FXMLHomeController implements Initializable {
         media.setMediaPlayer(mediaPlayer);
         mediaPlayer.setAutoPlay(true);
     }    
+
+    @FXML
+    private void stop(ActionEvent event) {
+        mediaPlayer.stop();
+    }
     
 }
