@@ -6,11 +6,16 @@
 package Controllers;
 
 import Utilities.Session;
+import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 
 /**
  * FXML Controller class
@@ -21,13 +26,25 @@ public class FXMLHomeController implements Initializable {
 
     @FXML
     private Label userwelcome;
-
+    @FXML
+    private MediaView media;
+    Media media1;
+    MediaPlayer mediaPlayer;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         userwelcome.setText(Session.LoggedUser.getUser_name());
+        try {
+            File f=new File("src/Resources/v.mp4");
+            media1 = new Media(f.toURI().toURL().toString());
+        } catch (MalformedURLException ex) {
+            System.out.println("error media");
+        }
+        mediaPlayer = new MediaPlayer(media1);
+        media.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setAutoPlay(true);
     }    
     
 }
