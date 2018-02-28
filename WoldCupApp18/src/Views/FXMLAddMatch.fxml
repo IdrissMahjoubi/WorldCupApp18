@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="543.0" prefWidth="959.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddMatchController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #2c3e50;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddMatchController">
     <stylesheets>
      <!-- <URL value="@fxml_match.css" /> -->
     </stylesheets>
    <children>
-      <TextField fx:id="Referee_textfield" layoutX="299.0" layoutY="219.0" />
-
-            <DatePicker fx:id="DatePiker" layoutX="300.0" layoutY="178.0" prefHeight="26.0" prefWidth="152.0" />
-      <TextField fx:id="winner_textfield" layoutX="300.0" layoutY="265.0" />
-      <TextField fx:id="looser_textfield" layoutX="300.0" layoutY="311.0" />
-      <TextField fx:id="gamekind_textfield" layoutX="300.0" layoutY="358.0" />
-      <Button fx:id="add_button" layoutX="277.0" layoutY="430.0" mnemonicParsing="false" onAction="#SaveMatch" prefHeight="32.0" prefWidth="196.0" text="add" />
-      <Label layoutX="198.0" layoutY="182.0" style="-fx-text-fill: #d6d6d6;" text="Date of match" />
-      <Label layoutX="217.0" layoutY="223.0" style="-fx-text-fill: #d6d6d6;" text="Referee" />
-      <Label layoutX="201.0" layoutY="269.0" style="-fx-text-fill: #d6d6d6;" text="Winner Score" />
-      <Label layoutX="201.0" layoutY="315.0" style="-fx-text-fill: #d6d6d6;" text="Looser Score" />
-      <Label layoutX="197.0" layoutY="362.0" style="-fx-text-fill: #d6d6d6;" text="GameKind" />
-      <Label layoutX="359.0" layoutY="64.0" prefHeight="40.0" prefWidth="245.0" style="-fx-text-fill: d6d6d6; -fx-font-size: 32;" text="Ajout Du Match" />
-      <Separator layoutX="487.0" layoutY="173.0" orientation="VERTICAL" prefHeight="223.0" prefWidth="4.0" />
-      <TextField fx:id="winnerTeam_textfield1" layoutX="606.0" layoutY="203.0" />
-      <TextField fx:id="LooserTeam_textfield" layoutX="607.0" layoutY="249.0" />
-      <TextField fx:id="Venue_textfield" layoutX="607.0" layoutY="295.0" />
-      <TextField fx:id="Stadium_textfield" layoutX="607.0" layoutY="342.0" />
-      <Label layoutX="535.0" layoutY="166.0" style="-fx-text-fill: #d6d6d6;" text="Time" />
-      <Label layoutX="514.0" layoutY="207.0" style="-fx-text-fill: #d6d6d6;" text="Winner Team" />
-      <Label layoutX="514.0" layoutY="253.0" style="-fx-text-fill: #d6d6d6;" text="Looser Team" />
-      <Label layoutX="528.0" layoutY="299.0" style="-fx-text-fill: #d6d6d6;" text="Venue" />
-      <Label layoutX="524.0" layoutY="346.0" style="-fx-text-fill: #d6d6d6;" text="Stadium" />
-      <TextField fx:id="time_textfield" layoutX="606.0" layoutY="162.0" />
-      <TextField fx:id="MatchNumber_textfield" layoutX="607.0" layoutY="383.0" />
-      <Label layoutX="504.0" layoutY="387.0" style="-fx-text-fill: #d6d6d6;" text="Match Number" />
-      <Button fx:id="return_button" layoutX="495.0" layoutY="430.0" mnemonicParsing="false" onAction="#ReturnToView" prefHeight="32.0" prefWidth="196.0" text="Return" />
+      <Button fx:id="add_button" layoutX="227.0" layoutY="430.0" mnemonicParsing="false" onAction="#SaveMatch" prefHeight="32.0" prefWidth="196.0" text="add" />
+      <Label layoutX="310.0" layoutY="52.0" prefHeight="40.0" prefWidth="245.0" style="-fx-text-fill: d6d6d6; -fx-font-size: 32;" text="Ajout Du Match" />
+      <Separator layoutX="431.0" layoutY="149.0" orientation="VERTICAL" prefHeight="223.0" prefWidth="4.0" />
+      <Button fx:id="return_button" layoutX="445.0" layoutY="430.0" mnemonicParsing="false" onAction="#ReturnToView" prefHeight="32.0" prefWidth="196.0" text="Return" />
+      <VBox layoutX="218.0" layoutY="144.0" prefHeight="220.0" prefWidth="187.0">
+         <children>
+            <Label style="-fx-text-fill: #d6d6d6;" text="Date of match" />
+      
+                  <DatePicker fx:id="DatePiker" prefHeight="27.0" prefWidth="192.0" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Referee" />
+            <TextField fx:id="Referee_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Winner Score" />
+            <TextField fx:id="winner_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Looser Score" />
+            <TextField fx:id="looser_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="GameKind" />
+            <TextField fx:id="gamekind_textfield" />
+         </children>
+      </VBox>
+      <VBox layoutX="452.0" layoutY="126.0" prefHeight="319.0" prefWidth="183.0">
+         <children>
+            <Label style="-fx-text-fill: #d6d6d6;" text="Time" />
+            <TextField fx:id="time_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Winner Team" />
+            <TextField fx:id="winnerTeam_textfield1" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Looser Team" />
+            <TextField fx:id="LooserTeam_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Venue" />
+            <TextField fx:id="Venue_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Stadium" />
+            <TextField fx:id="Stadium_textfield" />
+            <Label style="-fx-text-fill: #d6d6d6;" text="Match Number" />
+            <TextField fx:id="MatchNumber_textfield" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
