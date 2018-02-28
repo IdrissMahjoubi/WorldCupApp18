@@ -8,14 +8,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLuserHotelController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLuserHotelController">
    <children>
-      <Label layoutX="218.0" layoutY="32.0" text="Hotels List">
+      <Label layoutX="359.0" layoutY="32.0" text="Hotels List" textFill="#f5f2f2">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <TableView fx:id="table" editable="true" layoutX="39.0" layoutY="108.0" prefHeight="200.0" prefWidth="523.0">
+      <TableView fx:id="table" editable="true" layoutX="167.0" layoutY="105.0" prefHeight="282.0" prefWidth="523.0">
          <columns>
             <TableColumn fx:id="id" prefWidth="37.0" text="ID" visible="false" />
             <TableColumn fx:id="nameh" prefWidth="120.0" text="hotel name" />
@@ -28,8 +28,10 @@
             <Blend />
          </effect>
       </TableView>
-      <TextField fx:id="Recherche" layoutX="144.0" layoutY="333.0" promptText="Rechercher" />
-      <ChoiceBox fx:id="choiseBox" layoutX="322.0" layoutY="333.0" prefHeight="25.0" prefWidth="126.0" />
-      <Button fx:id="home" layoutX="39.0" layoutY="42.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
+      <TextField fx:id="Recherche" layoutX="235.0" layoutY="438.0" promptText="Rechercher" />
+      <ChoiceBox fx:id="choiseBox" layoutX="508.0" layoutY="438.0" prefHeight="25.0" prefWidth="126.0" />
+      <Button fx:id="home" layoutX="107.0" layoutY="42.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
+      <Label layoutX="439.0" layoutY="442.0" text="Find by:" textFill="#f8f5f5" />
+      <Label layoutX="177.0" layoutY="442.0" text="Find" textFill="#fcfafa" />
    </children>
 </AnchorPane>

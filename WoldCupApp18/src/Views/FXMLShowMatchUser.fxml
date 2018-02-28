@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: #40739e;" styleClass="pane" stylesheets="@../CSS/GroupStage.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchUserController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #40739e;" styleClass="pane" stylesheets="@../CSS/GroupStage.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowMatchUserController">
    <children>
-      <ScrollPane fx:id="scrollpane" layoutX="93.0" layoutY="191.0" prefHeight="380.0" prefWidth="809.0">
+      <ScrollPane fx:id="scrollpane" layoutX="23.0" layoutY="147.0" prefHeight="306.0" prefWidth="798.0">
          <content>
-          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="863.0" prefWidth="778.0" style="-fx-background-color: #f5f6fa;">
+          <AnchorPane fx:id="anchorpane" minHeight="0.0" minWidth="0.0" prefHeight="860.0" prefWidth="778.0" style="-fx-background-color: #f5f6fa;">
                <children>
-                  <VBox prefHeight="864.0" prefWidth="788.0" spacing="40.0">
+                  <VBox layoutY="-30.0" prefHeight="864.0" prefWidth="788.0" spacing="40.0">
                      <children>
                         <HBox prefHeight="391.0" prefWidth="786.0" spacing="10.0">
                            <children>
@@ -804,12 +804,12 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Label layoutX="397.0" layoutY="48.0" text="Group Stage">
+      <Label layoutX="317.0" layoutY="28.0" text="Group Stage">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <Text fill="#c9c9c9" layoutX="327.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on a match to view details">
+      <Text fill="#c9c9c9" layoutX="247.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Click on a match to view details">
          <font>
             <Font size="24.0" />
          </font>
