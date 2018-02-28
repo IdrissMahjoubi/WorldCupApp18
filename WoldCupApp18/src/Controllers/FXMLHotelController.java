@@ -43,6 +43,8 @@ public class FXMLHotelController implements Initializable {
     private Button addhotel;
     @FXML
     private Button annuler;
+    @FXML
+    private Button hotel_menu;
 
     /**
      * Initializes the controller class.
@@ -80,6 +82,18 @@ public class FXMLHotelController implements Initializable {
     nbretoiles.clear();
     hotelx.clear();
     hotely.clear();
+    }
+
+    @FXML
+    private void SwitchToHotelMenu(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLadminHotelController.fxml"));
+        try {
+            Parent root = loader.load();
+            FXMLHotelController dc = loader.getController();
+            hotel_menu.getScene().setRoot(root);
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLHotelController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
