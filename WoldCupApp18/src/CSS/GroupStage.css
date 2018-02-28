@@ -1,3 +1,9 @@
 .pane {
     -fx-border-color: #f5f6fa;
 }
+.Label
+{
+	-fx-text-fill:white;
+	-fx-font-weight:bold;
+	-fx-font-size:18;
+}

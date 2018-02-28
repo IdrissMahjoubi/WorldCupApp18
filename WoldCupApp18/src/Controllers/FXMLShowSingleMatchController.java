@@ -43,7 +43,7 @@ public class FXMLShowSingleMatchController implements Initializable {
     @FXML
     private ImageView Team2;
     @FXML
-    private AnchorPane Mainpane;
+    public AnchorPane Mainpane;
     Match_services ms= Match_services.getInstance();
     Team t1,t2;
     Match m;
@@ -174,7 +174,7 @@ public class FXMLShowSingleMatchController implements Initializable {
 
     @FXML
     private void backFunction(ActionEvent event) {
-                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
         try {
             Parent root = loader.load();
             FXMLShowMatchUserController dc = loader.getController();

@@ -5,9 +5,12 @@
  */
 package Controllers;
 
+import Utilities.Session;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -16,12 +19,15 @@ import javafx.fxml.Initializable;
  */
 public class FXMLHomeController implements Initializable {
 
+    @FXML
+    private Label userwelcome;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        userwelcome.setText(Session.LoggedUser.getUser_name());
     }    
     
 }

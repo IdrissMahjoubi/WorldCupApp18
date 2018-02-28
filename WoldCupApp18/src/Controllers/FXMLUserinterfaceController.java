@@ -35,10 +35,6 @@ import static javax.management.remote.JMXConnectorFactory.connect;
 public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
-    private ImageView bouton_modif;
-    @FXML
-    private ImageView logout;
-    @FXML
     private Button teams;
     private Button hotels;
     @FXML
@@ -54,11 +50,23 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     private JFXButton bntStream;
     @FXML
-    private AnchorPane panePrincipale;
+    public AnchorPane panePrincipale;
     
-    AnchorPane homePane,gamesPane,groupsPane,teamsPane,accomodationsPane,articlesPane,streamPane,statisticsPane;
+    AnchorPane Single,EventsPane,homePane,gamesPane,groupsPane,teamsPane,accomodationsPane,articlesPane,streamPane,statisticsPane,logoutpane;
     @FXML
     private JFXButton bntGame;
+    @FXML
+    private JFXButton btnevents;
+    @FXML
+    private ImageView MyAccount;
+    @FXML
+    private ImageView Logout;
+    @FXML
+    private ImageView About;
+    @FXML
+    private ImageView Exit;
+    @FXML
+    private AnchorPane Main;
 
     /**
      * Initializes the controller class.
@@ -74,18 +82,20 @@ public class FXMLUserinterfaceController implements Initializable {
             articlesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
             //streamPane = FXMLLoader.load(getClass().getResource("/Views/GererProfile.fxml"));
             statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
+            streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
+            logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
+            
+            //groupsPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             setNode(homePane);
 
         } catch (IOException ex) {
             Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-        private void setNode(Node node) {
+        public void setNode(Node node) {
         panePrincipale.getChildren().clear();
         panePrincipale.getChildren().add((Node) node);
-
-
-    }
+        }
         // TODO
         
 
@@ -130,7 +140,7 @@ public class FXMLUserinterfaceController implements Initializable {
     private void statPlayer(ActionEvent event) throws IOException {
       setNode(statisticsPane);
     }
-
+    
     @FXML
     private void article(ActionEvent event) throws IOException {
        setNode(articlesPane);
@@ -162,11 +172,12 @@ public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
     private void stream(ActionEvent event) {
-        //setNode(streamPane);
+        setNode(streamPane);
     }
 
     @FXML
     private void logout(MouseEvent event) {
+        setNode(logoutpane);
     }
 
     @FXML
@@ -176,6 +187,13 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     private void games(ActionEvent event) {
         setNode(gamesPane);
+    }
+
+    @FXML
+    private void Exit(MouseEvent event) {
+        
+          Stage stage = (Stage) Main.getScene().getWindow();
+        stage.close();
     }
     
 }
