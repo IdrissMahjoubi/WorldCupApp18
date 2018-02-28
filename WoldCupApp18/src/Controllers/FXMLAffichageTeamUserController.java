@@ -29,6 +29,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import Services.ServiceTeam;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -216,15 +217,12 @@ public class FXMLAffichageTeamUserController implements Initializable {
     void showTeamDetails(Team t) {
        
 
-        flag_path = String.valueOf(t.getTEAM_FLAG());
-        logo_path = String.valueOf(t.getTEAM_LOGO());
-<<<<<<< HEAD
-=======
-        //Image image1 = new Image(t.getTEAM_FLAG());
->>>>>>> 7be82c57964bab4a681078f36fa5aca848773d6f
-        //flagview.setImage(image1);
-        //Image image2 = new Image(t.getTEAM_LOGO());
-        //logoview.setImage(image2);
+        File file = new File("src/Resources/Icons/Flags/"+t.getTEAM_FLAG());
+        Image image1 = new Image(file.toURI().toString());
+        flagview.setImage(image1);
+        File file2 = new File("src/Resources/Icons/Logos/"+t.getTEAM_LOGO());
+        Image image2 = new Image(file2.toURI().toString());
+        logoview.setImage(image2);
 
 
     }

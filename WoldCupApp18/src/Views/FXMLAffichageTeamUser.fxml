@@ -10,15 +10,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="554.0" prefWidth="782.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamUserController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAffichageTeamUserController">
 
    <children>
-      <ImageView fitHeight="150.0" fitWidth="286.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="118.0" fitWidth="123.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Resources/Icons/FIFA_World_Cup_2018_Logo.png" />
          </image>
       </ImageView>
-      <Label layoutX="267.0" layoutY="21.0" prefHeight="58.0" prefWidth="242.0" text="Teams" textAlignment="CENTER" textFill="#d70b0b">
+      <Label layoutX="280.0" layoutY="21.0" prefHeight="49.0" prefWidth="255.0" text="TEAMS" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="System Italic" size="80.0" />
          </font>
@@ -31,14 +31,19 @@
             <TableColumn fx:id="continent" prefWidth="117.0" text="Continent" />
         </columns>
       </TableView>
-      <ImageView fx:id="flagview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="logoview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="PLAY" layoutX="460.0" layoutY="507.0" mnemonicParsing="false" onAction="#play" text="Anthem On" />
-      <Button fx:id="STOP" layoutX="561.0" layoutY="507.0" mnemonicParsing="false" onAction="#stop" text="Anthem Off" />
-      <ChoiceBox fx:id="choice" layoutX="24.0" layoutY="181.0" prefWidth="150.0" />
-      <TextField fx:id="rechercheteam_txt" layoutX="211.0" layoutY="181.0" />
-      <ComboBox fx:id="continents" layoutX="211.0" layoutY="181.0" onAction="#rechercheContinent" prefWidth="150.0" />
-      <ComboBox fx:id="groupes" layoutX="211.0" layoutY="181.0" onAction="#rechercheGroupes" prefWidth="150.0" />
+      <ImageView fx:id="flagview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="logoview" fitHeight="150.0" fitWidth="200.0" layoutX="500.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="PLAY" layoutX="483.0" layoutY="482.0" mnemonicParsing="false" onAction="#play" text="Anthem On" />
+      <Button fx:id="STOP" layoutX="622.0" layoutY="482.0" mnemonicParsing="false" onAction="#stop" text="Anthem Off" />
+      <ChoiceBox fx:id="choice" layoutX="24.0" layoutY="169.0" prefWidth="150.0" />
+      <TextField fx:id="rechercheteam_txt" layoutX="212.0" layoutY="169.0" />
+      <ComboBox fx:id="continents" layoutX="211.0" layoutY="169.0" onAction="#rechercheContinent" prefWidth="150.0" />
+      <ComboBox fx:id="groupes" layoutX="211.0" layoutY="169.0" onAction="#rechercheGroupes" prefWidth="150.0" />
+      <ImageView fitHeight="118.0" fitWidth="149.0" layoutX="735.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Icons/masckot.png" />
+         </image>
+      </ImageView>
    
    </children>
 </AnchorPane>
