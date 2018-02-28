@@ -124,6 +124,7 @@ public class FXMLAffichageTeamController implements Initializable {
     private Button ajouter;
 
     static String imageFile;
+    static String imageFile2;
 
     /**
      * Initializes the controller class.
@@ -320,7 +321,7 @@ public class FXMLAffichageTeamController implements Initializable {
 
     @FXML
     private void modifierTeam(ActionEvent event) {
-        if (!table.getSelectionModel().isEmpty()) {
+          if (!table.getSelectionModel().isEmpty()) {
             ServiceTeam st = new ServiceTeam();
 
             Team t = new Team();
@@ -336,7 +337,7 @@ public class FXMLAffichageTeamController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Modifier team ");
             alert.setHeaderText("Modification d'equipe :"
-                    + table.getSelectionModel().getSelectedItem().getTEAM_NAME() + " est effectué avec succes");
+                    + table.getSelectionModel().getSelectedItem().getTEAM_NAME() );
             Optional<ButtonType> result = alert.showAndWait();
 
         } else {
@@ -373,7 +374,7 @@ public class FXMLAffichageTeamController implements Initializable {
             System.out.println("file doesn't exist");
         }
     }
-    static String imageFile2;
+    
 
     @FXML
     private void BrowseFlag(ActionEvent event) throws MalformedURLException, IOException {
@@ -419,6 +420,8 @@ public class FXMLAffichageTeamController implements Initializable {
         File file2 = new File("src/Resources/Icons/Logos/" + t.getTEAM_LOGO());
         Image image2 = new Image(file2.toURI().toString());
         team_logo.setImage(image2);
+        
+        
 
         for (int i = 0; i < comboListCont.size(); i++) {
             if (!t.getTEAM_CONTINENT().equals(comboListCont.get(i))) {

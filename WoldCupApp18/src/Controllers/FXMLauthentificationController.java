@@ -150,9 +150,6 @@ public class FXMLauthentificationController implements Initializable {
 
     }
 
-
-
-
     @FXML
     private void SelectLabel(MouseEvent event) {
                 ForgotPass.setStyle("-fx-font-weight: bold; -fx-text-fill:#40739e;");               
@@ -160,7 +157,7 @@ public class FXMLauthentificationController implements Initializable {
 
     @FXML
     private void DeselectLabel(MouseEvent event) {
-                ForgotPass.setStyle("-fx-font-weight: regular;-fx-text-fill:#333333;");
+                  ForgotPass.setStyle("-fx-font-weight: regular;-fx-text-fill:#333333;");
     }
 
     @FXML

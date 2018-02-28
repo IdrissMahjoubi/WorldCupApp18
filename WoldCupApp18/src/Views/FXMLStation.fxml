@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="548.0" prefWidth="712.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStationController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStationController">
    <children>
       <Label layoutX="237.0" layoutY="25.0" prefHeight="40.0" prefWidth="221.0" text="Add Station" textFill="WHITE">
          <font>

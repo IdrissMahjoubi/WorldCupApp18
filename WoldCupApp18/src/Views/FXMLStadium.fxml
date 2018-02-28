@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="633.0" prefWidth="600.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStadiumController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStadiumController">
    <children>
       <Label layoutX="192.0" layoutY="22.0" prefHeight="51.0" prefWidth="215.0" text="Add Statdium" textFill="WHITE">
          <font>
