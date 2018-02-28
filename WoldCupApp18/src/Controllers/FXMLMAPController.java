@@ -50,7 +50,6 @@ public class FXMLMAPController implements Initializable,MapComponentInitializedL
     
     @FXML
     private Button retour;
-    @FXML
     /**
      * Initializes the controller class.
      */
