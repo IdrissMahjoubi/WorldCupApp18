@@ -77,19 +77,13 @@ public class FXMLAddTeamController implements Initializable {
     MediaPlayer mediaPlayer;
     @FXML
     private Button retour;
-    @FXML
-    private Button stop;
-    @FXML
-    private Button play;
+
     
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
-        mediaPlayer=new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);
         groupcb.setItems(comboList);
         TEAM_CONTINENT.setItems(comboList2);
         // TODO
@@ -141,7 +135,8 @@ public class FXMLAddTeamController implements Initializable {
             System.out.println("file doesn't exist");
         }
     }
-    public Image image=new Image("file:/C:/Users/pacha/Pictures/FIFA_World_Cup_2018_Logo.png",true);
+     File file = new File("src/Resources/Icons/FIFA_World_Cup_2018_Logo.png");
+        Image image = new Image(file.toURI().toString());
     @FXML
     private void saveTeam(ActionEvent event) {
        
@@ -178,15 +173,7 @@ public class FXMLAddTeamController implements Initializable {
             mediaPlayer.pause();
     }
 
-    @FXML
-    private void stopper(ActionEvent event) {
-        mediaPlayer.pause();
-    }
 
-    @FXML
-    private void play(ActionEvent event) {
-        mediaPlayer.play();
-    }
     
     public void CopyImage(String url, String imageDestination) throws IOException {
         

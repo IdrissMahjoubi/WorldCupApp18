@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
+<?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStatPlayerController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLStatPlayerController">
    <children>
-      <Text fx:id="text" layoutX="295.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistics" wrappingWidth="47.36328125" />
-      <TabPane fx:id="tabPane" layoutY="64.0" prefHeight="406.0" prefWidth="638.0" tabClosingPolicy="UNAVAILABLE">
+      <Text fx:id="text" layoutX="399.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistics" wrappingWidth="47.36328125" />
+      <TabPane fx:id="tabPane" layoutY="64.0" prefHeight="451.0" prefWidth="839.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
-          <Tab fx:id="tab1" text="BEST ATTACK">
+          <Tab fx:id="tab1" text="Best Attack">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fx:id="sp" layoutY="44.0" prefHeight="398.0" prefWidth="638.0">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="639.0">
-                                 <children>
-                                    <VBox fx:id="vb" prefHeight="401.0" prefWidth="632.0">
-                                       <children>
-                                          <PieChart fx:id="pie" />
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
+                        <PieChart fx:id="pie" layoutX="99.0" layoutY="36.0" prefHeight="332.0" prefWidth="632.0" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="tab1" text="MOST WINNER TEAM">
+          <Tab fx:id="tab2" text="Most Winner Team">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fx:id="sp1" prefHeight="398.0" prefWidth="638.0">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="493.0" prefWidth="639.0">
-                                 <children>
-                                    <VBox fx:id="vb1" prefHeight="401.0" prefWidth="632.0">
-                                       <children>
-                                          <PieChart fx:id="pie1" />
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </ScrollPane>
+                        <PieChart fx:id="pie1" layoutX="112.0" layoutY="36.0" prefHeight="352.0" prefWidth="585.0" />
                      </children></AnchorPane>
             </content>
           </Tab>
+            <Tab fx:id="tab3" text="Best Player">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutX="54.0" layoutY="39.0" prefHeight="304.0" prefWidth="237.0">
+                          <columns>
+                            <TableColumn fx:id="player" prefWidth="144.0" text="Players" />
+                            <TableColumn fx:id="ratings" prefWidth="55.0" text="Ratings" />
+                          </columns>
+                        </TableView>
+                        <ImageView fx:id="imgPlayer" fitHeight="173.0" fitWidth="205.0" layoutX="592.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" />
+                        <Label fx:id="name" layoutX="359.0" layoutY="128.0" text="Label" />
+                        <Label fx:id="team" layoutX="359.0" layoutY="156.0" text="Label" />
+                        <Label fx:id="club" layoutX="359.0" layoutY="185.0" text="Label" />
+                        <Label fx:id="age" layoutX="512.0" layoutY="128.0" text="Label" />
+                        <Label fx:id="weight" layoutX="512.0" layoutY="156.0" text="Label" />
+                        <Label fx:id="height" layoutX="512.0" layoutY="185.0" text="Label" />
+                        <Rating fx:id="note" disable="true" layoutX="366.0" layoutY="238.0">
+                           <effect>
+                              <ColorAdjust contrast="1.0" hue="0.02" saturation="0.14">
+                                 <input>
+                                    <Blend />
+                                 </input>
+                              </ColorAdjust>
+                           </effect>
+                        </Rating>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
-      <Button fx:id="home" layoutX="38.0" layoutY="15.0" mnemonicParsing="false" onAction="#SwitchToHome" text="Home" />
    </children>
 </AnchorPane>

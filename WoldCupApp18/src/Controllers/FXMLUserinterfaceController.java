@@ -5,13 +5,13 @@
  */
 package Controllers;
 
-import java.io.File;
+import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,10 +20,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import static javax.management.remote.JMXConnectorFactory.connect;
 
 /**
@@ -34,66 +35,70 @@ import static javax.management.remote.JMXConnectorFactory.connect;
 public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
-    private Button bouton_modif;
+    private ImageView bouton_modif;
     @FXML
-    private Button logout;
+    private ImageView logout;
     @FXML
     private Button teams;
-    @FXML
     private Button hotels;
     @FXML
-    private Button game_stage;
+    private Button bntArticle;
     @FXML
-    private Button streaming;
+    private JFXButton bntAccomodation;
     @FXML
-    private Button articles;
+    private JFXButton bntStat;
     @FXML
-    private Button statistics;
+    private JFXButton home;
     @FXML
-    private Button stadiums;
+    private JFXButton bntGroups;
     @FXML
-    private Button stations;
+    private JFXButton bntStream;
     @FXML
-    private Button events;
+    private AnchorPane panePrincipale;
+    
+    AnchorPane homePane,gamesPane,groupsPane,teamsPane,accomodationsPane,articlesPane,streamPane,statisticsPane;
     @FXML
-    private MediaView video;
-    Media media;
-    MediaPlayer mediaPlayer;
+    private JFXButton bntGame;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        File f=new File("src/ImagesPacha/v.mp4");
-        try {
-            //String urlv = "";
-            media = new Media(f.toURI().toURL().toString());
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(FXMLAffichageTeamController.class.getName()).log(Level.SEVERE, null, ex);
+                try {
+            homePane = FXMLLoader.load(getClass().getResource("/Views/FXMLHome.fxml"));
+            gamesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
+            //groupsPane = FXMLLoader.load(getClass().getResource("/Views/FXML.fxml"));
+            teamsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeamUser.fxml"));
+            //accomodationsPane = FXMLLoader.load(getClass().getResource("/Views/Evenement.fxml"));
+            articlesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
+            //streamPane = FXMLLoader.load(getClass().getResource("/Views/GererProfile.fxml"));
+            statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
+            setNode(homePane);
+
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        mediaPlayer = new MediaPlayer(media);
-        //view.setFitHeight(600);
-        //view.setFitWidth(400);
-        video.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setAutoPlay(true);
+    }
+        private void setNode(Node node) {
+        panePrincipale.getChildren().clear();
+        panePrincipale.getChildren().add((Node) node);
 
 
+    }
+        // TODO
+        
 
-    }    
-
-    @FXML
-    private void updateUserDetails(ActionEvent event) {
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUpdateUser.fxml"));
+   /* private void updateUserDetails(ActionEvent event) {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUpdateUser.fxml"));
         try {
             Parent root = loader.load();
             FXMLUpdateUserController dc = loader.getController();
             bouton_modif.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLUpdateUserController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+            System.out.println("ERROR USER DETAILS=" + ex.getMessage());        } 
     }
 
-    @FXML
     private void logout(ActionEvent event) {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLauthentification.fxml"));  
         try {
@@ -103,97 +108,65 @@ public class FXMLUserinterfaceController implements Initializable {
         } catch (IOException ex) {
             System.out.println("ERROR LOGOUT=" + ex.getMessage());        
         } 
-    }
+    }*/
 
     @FXML
     private void teams(ActionEvent event) throws IOException {
-        Stage stage = new Stage();    
-            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeamUser.fxml"));
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-            ((Node) event.getSource()).getScene().getWindow().hide();
+        setNode(teamsPane);
     }
 
-    @FXML
-    private void goToHotels(ActionEvent event) {
+   /* private void goToHotels(ActionEvent event) {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLuserHotel.fxml"));
         try {
             Parent root = loader.load();
             FXMLuserHotelController dc = loader.getController();
             hotels.getScene().setRoot(root);
         } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());
+            Logger.getLogger(FXMLuserHotelController.class.getName()).log(Level.SEVERE, null, ex);
         } 
+    }*/
+
+    @FXML
+    private void statPlayer(ActionEvent event) throws IOException {
+      setNode(statisticsPane);
     }
 
     @FXML
-    private void switchToGameStage(ActionEvent event) {
-         
+    private void article(ActionEvent event) throws IOException {
+       setNode(articlesPane);
     }
 
     @FXML
-    private void switchToStreaming(ActionEvent event) {
+    private void accomodation(ActionEvent event) {
+        //setNode(accomodationsPane);
     }
 
     @FXML
-    private void switchToArticles(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLShowArticleUserController dc = loader.getController();
-            articles.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());
-        } 
+    private void homePage(ActionEvent event) {
+        setNode(homePane);
     }
 
     @FXML
-    private void switchTostatistics(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLStatPlayerController dc = loader.getController();
-            statistics.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());
-        } 
+    private void groups(ActionEvent event) {
+        //setNode(groupsPane);
     }
 
     @FXML
-    private void SwitchTotadiums(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserStadium.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLUserStadiumController dc = loader.getController();
-            stadiums.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());
-        } 
+    private void stream(ActionEvent event) {
+        //setNode(streamPane);
     }
 
     @FXML
-    private void SwitchToEvents(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLEvenement.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLEvenementController dc = loader.getController();
-            events.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());
-        } 
+    private void logout(MouseEvent event) {
     }
 
     @FXML
-    private void SwitchToStations(ActionEvent event) {
-         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserStation.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLUserStationController dc = loader.getController();
-            stations.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage());        
-        } 
+    private void updateUserDetails(MouseEvent event) {
+    }
+
+    @FXML
+    private void games(ActionEvent event) {
+        setNode(gamesPane);
     }
     
 }
