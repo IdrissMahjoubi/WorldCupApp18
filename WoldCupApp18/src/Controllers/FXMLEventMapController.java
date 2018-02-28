@@ -42,7 +42,6 @@ public class FXMLEventMapController implements Initializable,MapComponentInitial
     private Button exit;
       private GoogleMap map;
     private GeocodingService G;
-    private boolean ready;
 
     /**
      * Initializes the controller class.
@@ -66,7 +65,6 @@ public class FXMLEventMapController implements Initializable,MapComponentInitial
                 .streetViewControl(true)
                 .zoomControl(true)
                 .zoom(6);
-
         map = gmap.createMap(mapOptions);
     }
         

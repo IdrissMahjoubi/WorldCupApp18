@@ -21,13 +21,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -166,14 +169,15 @@ public class FXMLuserHotelController implements Initializable {
 
     @FXML
     private void SwitchToHome(ActionEvent event) {
-    FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
-        try {
-            Parent root = loader.load();
-            FXMLUserinterfaceController dc = loader.getController();
-            home.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
-        }
+                    try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLMenu.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLuserHotelController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
     
 }

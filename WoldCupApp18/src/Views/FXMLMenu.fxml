@@ -18,5 +18,7 @@
          </font>
       </Label>
       <Button fx:id="even" layoutX="339.0" layoutY="238.0" mnemonicParsing="false" onAction="#CreateEvent" text="Create Event" />
+      <Button fx:id="menu" layoutX="27.0" layoutY="22.0" mnemonicParsing="false" onAction="#backtomenu" text="Back To Menu" />
+      <Button fx:id="hotel" layoutX="445.0" layoutY="239.0" mnemonicParsing="false" onAction="#hotels" text="Hotels" />
    </children>
 </AnchorPane>

@@ -111,7 +111,7 @@ public class FXMLUserStationController implements Initializable {
             }
     }
 
-    private void acceuil(ActionEvent event) {
+    /*private void acceuil(ActionEvent event) {
        
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("FXMLMenu.fxml"));
         try{
@@ -122,7 +122,7 @@ public class FXMLUserStationController implements Initializable {
             Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
         
     } 
-    }
+    }*/
     
     
     
@@ -226,14 +226,15 @@ public class FXMLUserStationController implements Initializable {
     }
 
     @FXML
-    private void SwitchToHome(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));  
-        try {
-            Parent root = loader.load();
-            FXMLUserinterfaceController dc = loader.getController();
-            home.getScene().setRoot(root);
-        } catch (IOException ex) {
-            System.out.println("ERROR USER DETAILS=" + ex.getMessage()); 
-        }
+   private void SwitchToHome(ActionEvent event) {
+                    try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLMenu.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLUserStationController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 }
