@@ -31,6 +31,7 @@ import javafx.scene.media.MediaPlayer;
 import Services.ServiceTeam;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.EventHandler;
@@ -134,37 +135,72 @@ public class FXMLAffichageTeamUserController implements Initializable {
                 addListener((observable, oldValue, newValue) -> {
                     if (newValue != null) {
                         showTeamDetails(newValue);
-                       /*switch(newValue.getTEAM_NAME()) { 
-                            case "Tunisie": 
-                            Media musicFile=new Media("file:/C:/Users/pacha/Music/Tunisia%20National%20Anthem%20-%20HYMNE%20NATIONAL%20DE%20LA%20TUNISIE.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile);
+switch(newValue.getTEAM_NAME()) { 
+                            case "Tunisia":
+                                try {
+                                File f=new File("src/Resources/Tunisia.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break; 
-                            case "Bresil": 
-                            Media musicFile2=new Media("file:/C:/Users/pacha/Music/Hymne%20National%20du%20Brésil.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile2);
+                            case "Brazil": 
+                            try {
+                                File f=new File("src/Resources/Brésil.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break; 
-                            case "Allemagne": 
-                            Media musicFile3=new Media("file:/C:/Users/pacha/Music/Hymne%20national%20de%20lAllemagne.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile3);
+                            case "Germany": 
+                            try {
+                                File f=new File("src/Resources/Allemagne.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break;
-                            case "Espagne": 
-                            Media musicFile4=new Media("file:/C:/Users/pacha/Music/Himno%20español.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile4);
+                            case "Spain": 
+                            try {
+                                File f=new File("src/Resources/Espagne.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break; 
                             case "Panama": 
-                            Media musicFile5=new Media("file:/C:/Users/pacha/Music/Panama.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile5);
+                            try {
+                                File f=new File("src/Resources/Panama.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break;
-                            case "Russie": 
-                            Media musicFile6=new Media("file:/C:/Users/pacha/Music/Russie.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile6);
+                            case "Russia": 
+                            try {
+                                File f=new File("src/Resources/Russie.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
                             break;
                             case "Egypt": 
-                            Media musicFile7=new Media("file:/C:/Users/pacha/Music/Égypte.mp3");
-                            mediaPlayer2=new MediaPlayer(musicFile7);
-                            break; 
+                            try {
+                                File f=new File("src/Resources/Egypte.mp3");
+                                Media media = new Media(f.toURI().toURL().toString());
+                                mediaPlayer2=new MediaPlayer(media);
+                                      } catch (MalformedURLException ex) {
+                                            System.out.println("error media");
+                                       }
+                            break;
                             
-                    }*/
+                    }
                     }
 
                 });

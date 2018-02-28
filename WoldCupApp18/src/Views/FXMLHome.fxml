@@ -34,6 +34,9 @@
             <Font size="22.0" />
          </font>
       </Text>
-      <JFXButton fx:id="bntStop" layoutX="107.0" layoutY="404.0" onAction="#stop" style="-fx-background-color: #c51010;" text="Stop" textFill="WHITE" />
+      <JFXButton fx:id="bntStop" layoutX="730.0" layoutY="258.0" onAction="#stop" prefHeight="36.0" prefWidth="57.0" style="-fx-background-color: #c51010;" text="||" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></JFXButton>
    </children>
 </AnchorPane>

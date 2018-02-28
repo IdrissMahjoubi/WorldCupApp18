@@ -74,9 +74,7 @@ public class FXMLauthentificationController implements Initializable {
         }
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
-       // Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
-        //mediaPlayer=new MediaPlayer(musicFile);
-        //mediaPlayer.setAutoPlay(true);
+
     }    
 
     @FXML
@@ -107,6 +105,7 @@ public class FXMLauthentificationController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            mediaPlayer.stop();
         } catch (IOException ex) {
             Logger.getLogger(FXMLadminInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -123,6 +122,7 @@ public class FXMLauthentificationController implements Initializable {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
+            mediaPlayer.stop();
             ((Node) event.getSource()).getScene().getWindow().hide();
         } catch (IOException ex) {
             Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
@@ -148,6 +148,7 @@ public class FXMLauthentificationController implements Initializable {
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
+                mediaPlayer.stop();
             } catch (IOException ex) {
              System.out.println("erreur create");
             }
