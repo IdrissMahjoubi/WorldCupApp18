@@ -51,7 +51,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void BtnStades(ActionEvent event) {
                     try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStadiums.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLUserStadium.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -64,7 +64,7 @@ public class FXMLMenuController implements Initializable {
     @FXML
     private void BtnStations(ActionEvent event) {
                  try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowStations.fxml"));
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLUserStation.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);

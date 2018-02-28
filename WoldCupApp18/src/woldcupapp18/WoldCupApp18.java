@@ -32,12 +32,8 @@ public class WoldCupApp18 extends Application {
        Parent root;
         try {
 
-<<<<<<< HEAD
 
-        root = FXMLLoader.load(getClass().getResource("/Views/FXMLEvenement.fxml"));
-=======
         root = FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
->>>>>>> c0d4f928252e3b1321eba04329a9ff2907be8ce1
 
 
         Scene scene = new Scene(root);

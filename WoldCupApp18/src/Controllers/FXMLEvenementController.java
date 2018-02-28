@@ -114,17 +114,7 @@ public class FXMLEvenementController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date today = new Date();
-            Date todayWithZeroTime;
-        try {
-            todayWithZeroTime = formatter.parse(formatter.format(today));
-            System.out.println(todayWithZeroTime);
-
-        } catch (ParseException ex) {
-            Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+ 
             
         afficherEvent();
         txtnbrparticipant.setVisible(false);
@@ -173,10 +163,10 @@ public class FXMLEvenementController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
         try {
             Parent root = loader.load();
-            FXMLMenuController dc = loader.getController();
+            FXMLEvenementController dc = loader.getController();
             GoBack.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLEvenementController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

@@ -8,25 +8,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMenuController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLMenuController">
    <children>
-      <Button fx:id="Stades" layoutX="176.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnStades" text="Stades" />
-      <Button fx:id="Stations" layoutX="232.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnStations" text="Stations" />
-      <Label layoutX="103.0" layoutY="238.0" text="Aller à :">
+      <Button fx:id="Stades" layoutX="176.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnStades" text="Stadiums" />
+      <Button fx:id="Stations" layoutX="263.0" layoutY="238.0" mnemonicParsing="false" onAction="#BtnStations" text="Stations" />
+      <Label layoutX="103.0" layoutY="238.0" text="Aller à :" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <ImageView fx:id="ImageViewer" fitHeight="135.0" fitWidth="273.0" layoutX="124.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@World-Cup-2018-logo.jpg" />
-         </image>
-      </ImageView>
-      <Label layoutX="89.0" layoutY="34.0" text="Bienvenue à russia world cup app 2018 ">
-         <font>
-            <Font size="22.0" />
-         </font>
-      </Label>
-      <Button fx:id="even" layoutX="300.0" layoutY="238.0" mnemonicParsing="false" onAction="#CreateEvent" text="Créer Evenement" />
+      <Button fx:id="even" layoutX="339.0" layoutY="238.0" mnemonicParsing="false" onAction="#CreateEvent" text="Create Event" />
    </children>
 </AnchorPane>
