@@ -25,6 +25,8 @@ import javafx.scene.control.TextField;
 
 import Services.ServiceUser;
 import Utilities.Session;
+import java.io.File;
+import java.net.MalformedURLException;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -57,12 +59,21 @@ public class FXMLauthentificationController implements Initializable {
     private AnchorPane MainPane;
     
     MediaPlayer mediaPlayer;
+    Media media;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            File f=new File("src/Resources/jayin.mp3");
+            media = new Media(f.toURI().toURL().toString());
+        } catch (MalformedURLException ex) {
+            System.out.println("error media");
+        }
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
        // Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
         //mediaPlayer=new MediaPlayer(musicFile);
         //mediaPlayer.setAutoPlay(true);
