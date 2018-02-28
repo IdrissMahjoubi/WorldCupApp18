@@ -98,7 +98,7 @@ public class FXMLShowPlayerUserController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        user_id = Session.LoggedUser.getUser_id();
         PlayerServices s = PlayerServices.getInstance();
      
         tshirt.setCellValueFactory(new PropertyValueFactory<>("PLAYER_TSHIRT"));
@@ -155,23 +155,33 @@ public class FXMLShowPlayerUserController implements Initializable {
 
 
     @FXML
-    private void notePlayer(ActionEvent event) throws SQLException {
+    private void notePlayer(ActionEvent event) {
         
-       /* user_id = Session.LoggedUser.getUser_id();
+        
         NoteServices ns = NoteServices.getInstance();
         player_id = table.getSelectionModel().getSelectedItem().getPLAYER_ID();
-        if(ns.CheckNote(user_id, player_id)){
-          int x = (int) note.getRating();
-          int y = ns.getNumberNote(player_id);
-            ns.addNotePlayer(x, y, player_id);
-            ns.addNote(user_id, player_id);
-        }else{
-             Alert alert1 = new Alert(Alert.AlertType.WARNING);
-            alert1.setTitle("Erreur de selection");
-            alert1.setHeaderText("Vous etes déja votez");
-
-            Optional<ButtonType> result = alert1.showAndWait();
-        }*/
+        try {
+            if(ns.CheckNote(user_id, player_id)){
+                int x = (int) note.getRating();
+                int y = ns.getNumberNote(player_id);
+                int z = ns.getNote(player_id);
+                ns.addNotePlayer(x+z, y+1, player_id);
+                ns.addNote(user_id, player_id);
+                 int y1 = ns.getNumberNote(player_id);
+                int z1 = ns.getNote(player_id);
+                float w= (float) z1/y1;
+                ns.addRatingPlayer(w, player_id);
+                
+            }else{
+                Alert alert1 = new Alert(Alert.AlertType.WARNING);
+                alert1.setTitle("Erreur de selection");
+                alert1.setHeaderText("Vous etes déja votez");
+                
+                Optional<ButtonType> result = alert1.showAndWait();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLShowPlayerUserController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
    

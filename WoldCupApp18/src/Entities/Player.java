@@ -20,10 +20,31 @@ public class Player {
     private int PLAYER_TSHIRT;
     private String PLAYER_WEIGHT;
     private String PLAYER_PICTURE;
+    private int PLAYER_NOTE;
+    private int PLAYER_NUMBER_NOTE;
+    private float PLAYER_RATING;
    
 
     public Player() {
     }
+
+    public Player(int PLAYER_ID, String PLAYER_NAME, int PLAYER_AGE, String PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE, int PLAYER_NOTE, int PLAYER_NUMBER_NOTE, float PLAYER_RATING) {
+        this.PLAYER_ID = PLAYER_ID;
+        this.PLAYER_NAME = PLAYER_NAME;
+        this.PLAYER_AGE = PLAYER_AGE;
+        this.PLAYER_TEAM = PLAYER_TEAM;
+        this.PLAYER_POSITION = PLAYER_POSITION;
+        this.PLAYER_CLUB = PLAYER_CLUB;
+        this.PLAYER_HEIGHT = PLAYER_HEIGHT;
+        this.PLAYER_TSHIRT = PLAYER_TSHIRT;
+        this.PLAYER_WEIGHT = PLAYER_WEIGHT;
+        this.PLAYER_PICTURE = PLAYER_PICTURE;
+        this.PLAYER_NOTE = PLAYER_NOTE;
+        this.PLAYER_NUMBER_NOTE = PLAYER_NUMBER_NOTE;
+        this.PLAYER_RATING = PLAYER_RATING;
+    }
+    
+    
 
     public Player(int PLAYER_ID, String PLAYER_NAME, int PLAYER_AGE, String PLAYER_TEAM, String PLAYER_POSITION, String PLAYER_CLUB, String PLAYER_HEIGHT, int PLAYER_TSHIRT, String PLAYER_WEIGHT, String PLAYER_PICTURE) {
         this.PLAYER_ID = PLAYER_ID;
@@ -169,6 +190,30 @@ public class Player {
 
     public void setPLAYER_PICTURE(String PLAYER_PICTURE) {
         this.PLAYER_PICTURE = PLAYER_PICTURE;
+    }
+
+    public int getPLAYER_NOTE() {
+        return PLAYER_NOTE;
+    }
+
+    public void setPLAYER_NOTE(int PLAYER_NOTE) {
+        this.PLAYER_NOTE = PLAYER_NOTE;
+    }
+
+    public int getPLAYER_NUMBER_NOTE() {
+        return PLAYER_NUMBER_NOTE;
+    }
+
+    public void setPLAYER_NUMBER_NOTE(int PLAYER_NUMBER_NOTE) {
+        this.PLAYER_NUMBER_NOTE = PLAYER_NUMBER_NOTE;
+    }
+
+    public float getPLAYER_RATING() {
+        return PLAYER_RATING;
+    }
+
+    public void setPLAYER_RATING(float PLAYER_RATING) {
+        this.PLAYER_RATING = PLAYER_RATING;
     }
     
 

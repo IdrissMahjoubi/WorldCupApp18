@@ -82,7 +82,6 @@ public class FXMLAddArticleController implements Initializable {
         String titleA = title.getText();
         String descA = desc.getText();
 
-        
         Article a = new Article(titleA,descA,imageFile);
        
       
