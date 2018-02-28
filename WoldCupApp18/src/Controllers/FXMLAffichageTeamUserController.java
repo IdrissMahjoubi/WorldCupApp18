@@ -233,7 +233,7 @@ public class FXMLAffichageTeamUserController implements Initializable {
 
         flag_path = String.valueOf(t.getTEAM_FLAG());
         logo_path = String.valueOf(t.getTEAM_LOGO());
-        flagview.setImage(image1);
+        //flagview.setImage(image1);
         //Image image2 = new Image(t.getTEAM_LOGO());
         //logoview.setImage(image2);
 
