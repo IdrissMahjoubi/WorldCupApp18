@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowArticleUserController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowArticleUserController">
    <children>
-      <ScrollPane fx:id="sp" layoutX="159.0" prefHeight="400.0" prefWidth="576.0">
+      <ScrollPane fx:id="sp" layoutX="195.0" layoutY="51.0" prefHeight="468.0" prefWidth="645.0">
          <content>
-            <AnchorPane prefHeight="386.0" prefWidth="563.0">
+            <AnchorPane prefHeight="466.0" prefWidth="445.0" translateX="150.0">
                <children>
-                  <VBox fx:id="vb" prefHeight="387.0" prefWidth="565.0" />
+                  <VBox fx:id="vb" layoutX="16.0" layoutY="17.0" prefHeight="396.0" prefWidth="524.0" />
                </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
             </AnchorPane>
          </content>
       </ScrollPane>
+      <Text layoutX="355.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Articles" />
    </children>
 </AnchorPane>

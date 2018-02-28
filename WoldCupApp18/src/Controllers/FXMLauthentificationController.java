@@ -25,6 +25,8 @@ import javafx.scene.control.TextField;
 
 import Services.ServiceUser;
 import Utilities.Session;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -61,46 +63,50 @@ public class FXMLauthentificationController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       /* Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
-        mediaPlayer=new MediaPlayer(musicFile);
-        mediaPlayer.setAutoPlay(true);*/
+       // Media musicFile=new Media("file:/C:/wamp64/www/Ya%20russia%20haw%20jayin.mp3");
+        //mediaPlayer=new MediaPlayer(musicFile);
+        //mediaPlayer.setAutoPlay(true);
     }    
 
     @FXML
     private void authentification(ActionEvent event) throws SQLException {
         ServiceUser s = new ServiceUser();
-        //System.out.println(s.CheckLoginAndPassword(login.getText(), password.getText()));
+        System.out.println(s.CheckLoginAndPassword(login.getText(), password.getText()));
         if ((s.CheckLoginAndPassword(login.getText(), password.getText())) == 0){
             
-            
+            System.out.println("asber");
+            System.out.println("veuillez verifier vos parametres");
              Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("error");
-            alert.setHeaderText("Please check your parameters");
+            alert.setTitle("erreur");
+            alert.setHeaderText("veuillez verifier vos parametres");
              Optional<ButtonType> result = alert.showAndWait();
             
         }
         else {
-            
+           System.out.println("sahit"); 
             if ("admin".equals(s.CheckType(login.getText(), password.getText())) && (s.CheckState(login.getText(), password.getText()))== 1 ){
             Session.LoggedUser = (s.findByLogin(login.getText()));
 
-               
+                System.out.println("bienvenue admin");
                 
                 /*Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Bienvenu");
             alert.setHeaderText("authentification avec succes ");
              Optional<ButtonType> result = alert.showAndWait();*/
-             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLadminInterface.fxml"));
+            
         try {
-            Parent root = loader.load();
-            FXMLadminInterfaceController dc = loader.getController();
-            connect.getScene().setRoot(root);
+           Stage stage = new Stage();    
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLadminInterface.fxml"));
+            Scene scene = new Scene(root,1000,600);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
         } catch (IOException ex) {
             Logger.getLogger(FXMLadminInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         } 
         }
             else if ("membre".equals(s.CheckType(login.getText(), password.getText())) && (s.CheckState(login.getText(), password.getText()))== 1 ) {
-                 
+                 System.out.println("bienvenue membre");
                              Session.LoggedUser = (s.findByLogin(login.getText()));
                              	//mail
         
@@ -108,11 +114,15 @@ public class FXMLauthentificationController implements Initializable {
             alert.setTitle("Bienvenu");
             alert.setHeaderText("authentification avec succes ");
              Optional<ButtonType> result = alert.showAndWait();*/
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLUserinterface.fxml"));
+        
         try {
-            Parent root = loader.load();
-            FXMLUserinterfaceController dc = loader.getController();
-            connect.getScene().setRoot(root);
+       Stage stage = new Stage();    
+            Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
+            Scene scene = new Scene(root,1000,600);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+            ((Node) event.getSource()).getScene().getWindow().hide();
         } catch (IOException ex) {
             Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
         } 
@@ -132,10 +142,10 @@ public class FXMLauthentificationController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLCreate.fxml"));
         try {
             Parent root = loader.load();
-            FXMLCreateAccountController dc = loader.getController();
+            FXMLCreateController dc = loader.getController();
             creer.getScene().setRoot(root);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLCreateAccountController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLCreateController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

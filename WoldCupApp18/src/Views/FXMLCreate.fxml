@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="595.0" prefWidth="489.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLCreateController">
+    <children>
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+      <TextField fx:id="name" layoutX="245.0" layoutY="33.0" />
+      <TextField fx:id="lastname" layoutX="245.0" layoutY="71.0" />
+      <TextField fx:id="nationality" layoutX="245.0" layoutY="161.0" />
+      <TextField fx:id="email" layoutX="245.0" layoutY="204.0" />
+      <TextField fx:id="tel" layoutX="245.0" layoutY="249.0" />
+      <TextField fx:id="login" layoutX="245.0" layoutY="298.0" />
+      <TextField fx:id="password" layoutX="246.0" layoutY="343.0" />
+      <PasswordField fx:id="password2" layoutX="246.0" layoutY="385.0" />
+      <ChoiceBox fx:id="team" layoutX="245.0" layoutY="423.0" prefWidth="150.0" />
+      <Label layoutX="50.0" layoutY="37.0" text="prenom:" />
+      <Label layoutX="52.0" layoutY="75.0" text="nom:" />
+      <Label layoutX="52.0" layoutY="120.0" text="date de naissance:" />
+      <Label layoutX="55.0" layoutY="165.0" text="nationalite:" />
+      <Label layoutX="56.0" layoutY="208.0" text="email:" />
+      <Label layoutX="52.0" layoutY="253.0" prefHeight="17.0" prefWidth="97.0" text="numero de telephone:" />
+      <Label layoutX="56.0" layoutY="302.0" text="identifiant:" />
+      <Label layoutX="56.0" layoutY="347.0" text="mot de passe:" />
+      <Label layoutX="57.0" layoutY="427.0" text="equipe preferee:" />
+      <Button fx:id="save" layoutX="141.0" layoutY="490.0" mnemonicParsing="false" onAction="#addd" text="ajouter" />
+      <Label layoutX="56.0" layoutY="389.0" prefHeight="17.0" prefWidth="169.0" text="confirmation du mot de passe:" />
+      <DatePicker fx:id="birthday" layoutX="245.0" layoutY="116.0" prefHeight="25.0" prefWidth="149.0" />
+    </children>
+</AnchorPane>
