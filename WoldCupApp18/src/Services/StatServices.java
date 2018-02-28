@@ -5,6 +5,7 @@
  */
 package Services;
 
+import Entities.Evenement;
 import Entities.Team;
 import static Services.Match_services.instance;
 import Utilities.DataSource;
@@ -101,4 +102,35 @@ public class StatServices {
         }
         return myList;
     }
+     
+    /* public ObservableList<Evenement> showTopEvent() {
+    
+            ObservableList<Evenement> myList = FXCollections.observableArrayList();
+            String req = "SELECT * FROM EVENT ORDER BY `NBR_PARTICIP` DESC";
+            try{
+                PreparedStatement pst = DataSource.getInstance().getConnection().prepareStatement(req);
+                ResultSet rs = pst.executeQuery(req);
+              int i=0;
+                     
+                    while(rs.next() && i<5){
+                        i++;
+                    Evenement e = new Evenement();
+                   
+                    e.setEVENT_NAME(rs.getString(2));
+                    e.setEVENT_DATE(rs.getDate(3));
+                    e.setEVENT_END(rs.getDate(4));
+                    e.setEVENT_GOUV(rs.getString(5));
+                    e.setEVENT_PLACE(rs.getString(6));
+                    e.setEVENT_DESC(rs.getString(7));
+                    e.setNBR_PARTICIP(rs.getInt(8));
+                  
+                    myList.add(e);
+                    }
+                
+            }catch (SQLException ex){
+                System.out.println("Error"+ex.getMessage());
+            }
+            return myList;
+            
+        }*/
 }

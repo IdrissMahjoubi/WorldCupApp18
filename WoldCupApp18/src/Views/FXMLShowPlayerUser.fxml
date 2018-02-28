@@ -8,25 +8,25 @@
 <?import javafx.scene.text.Text?>
 <?import org.controlsfx.control.Rating?>
 
-<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="682.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowPlayerUserController">
+<AnchorPane id="AnchorPane" prefHeight="515.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowPlayerUserController">
    <children>
       <Button fx:id="bntBack" layoutX="33.0" layoutY="22.0" mnemonicParsing="false" onAction="#back" text="Back" />
       <Text fx:id="player" layoutX="330.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <TableView fx:id="table" layoutX="33.0" layoutY="87.0" prefHeight="200.0" prefWidth="617.0">
+      <TableView fx:id="table" layoutX="33.0" layoutY="87.0" prefHeight="229.0" prefWidth="766.0">
         <columns>
-            <TableColumn fx:id="tshirt" prefWidth="30.0" text="N°" />
-          <TableColumn fx:id="name" prefWidth="87.0" text="Name" />
-          <TableColumn fx:id="pos" prefWidth="87.0" text="Position" />
-            <TableColumn fx:id="club" prefWidth="79.0" text="Club" />
-            <TableColumn fx:id="age" prefWidth="84.0" text="Age" />
-            <TableColumn fx:id="weight" prefWidth="94.0" text="Weight" />
-            <TableColumn fx:id="height" prefWidth="78.0" text="Height" />
-            <TableColumn fx:id="team" prefWidth="76.0" text="Team" />
+            <TableColumn fx:id="tshirt" prefWidth="54.0" text="N°" />
+          <TableColumn fx:id="name" prefWidth="158.0" text="Name" />
+          <TableColumn fx:id="pos" prefWidth="135.3333282470703" text="Position" />
+            <TableColumn fx:id="club" prefWidth="114.33332824707031" text="Club" />
+            <TableColumn fx:id="age" prefWidth="52.666656494140625" text="Age" />
+            <TableColumn fx:id="weight" prefWidth="71.66665649414062" text="Weight" />
+            <TableColumn fx:id="height" prefWidth="70.6666259765625" text="Height" />
+            <TableColumn fx:id="team" prefWidth="111.3333740234375" text="Team" />
         </columns>
       </TableView>
-      <ImageView fx:id="imgPlayer" fitHeight="105.0" fitWidth="124.0" layoutX="534.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imgTeam" fitHeight="76.0" fitWidth="124.0" layoutX="365.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true" />
-      <Rating fx:id="note" layoutX="135.0" layoutY="354.0" prefHeight="32.0" prefWidth="105.0" visible="false" />
-      <Button fx:id="bntNote" layoutX="48.0" layoutY="361.0" mnemonicParsing="false" onAction="#notePlayer" text="Note" visible="false" />
+      <ImageView fx:id="imgPlayer" fitHeight="138.0" fitWidth="176.0" layoutX="571.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgTeam" fitHeight="76.0" fitWidth="124.0" layoutX="396.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true" />
+      <Rating fx:id="note" layoutX="158.0" layoutY="404.0" prefHeight="32.0" prefWidth="105.0" visible="false" />
+      <Button fx:id="bntNote" layoutX="62.0" layoutY="409.0" mnemonicParsing="false" onAction="#notePlayer" text="Note" visible="false" />
    </children>
 </AnchorPane>

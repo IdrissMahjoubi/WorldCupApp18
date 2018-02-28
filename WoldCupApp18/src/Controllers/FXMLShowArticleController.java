@@ -103,7 +103,7 @@ public class FXMLShowArticleController implements Initializable {
     }  
     
         public void afficher() {
-            ArticleServices s = ArticleServices.getInstance();
+        ArticleServices s = ArticleServices.getInstance();
         title.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_TITLE"));
         desc.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_DESCRIPTION"));
         img.setCellValueFactory(new PropertyValueFactory<>("ARTICLE_IMAGE"));
