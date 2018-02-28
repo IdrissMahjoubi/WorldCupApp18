@@ -28,7 +28,7 @@ public class WoldCupApp18 extends Application {
 
 
 
-        root = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeams.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
 
 
         Scene scene = new Scene(root);
