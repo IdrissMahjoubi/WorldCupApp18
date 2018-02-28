@@ -38,7 +38,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.SQLException;
 import java.util.UUID;
+import javafx.scene.control.Label;
 import org.controlsfx.tools.Utils;
 
 import tray.notification.TrayNotification;
@@ -77,6 +79,8 @@ public class FXMLAddTeamController implements Initializable {
     MediaPlayer mediaPlayer;
     @FXML
     private Button retour;
+    @FXML
+    private Label erreur;
 
     
     /**
@@ -138,8 +142,10 @@ public class FXMLAddTeamController implements Initializable {
      File file = new File("src/Resources/Icons/FIFA_World_Cup_2018_Logo.png");
         Image image = new Image(file.toURI().toString());
     @FXML
-    private void saveTeam(ActionEvent event) {
-       
+    private void saveTeam(ActionEvent event) throws SQLException {
+       if (!verifChamp()) {
+            return;
+        }
         String team_name = TEAM_NAME.getText();
         String team_coach = TEAM_COACH.getText();
         String team_group=groupcb.getValue();
@@ -160,6 +166,26 @@ public class FXMLAddTeamController implements Initializable {
         tray.showAndDismiss(Duration.seconds(4));
         tray.setImage(image);
         
+    }
+    public boolean verifChampVid(TextField element) {
+        if (element.getText() == null || element.getText().trim().isEmpty()) {
+            return false;
+
+        }
+
+        return true;
+    }
+
+    public boolean verifChamp() throws SQLException {
+        if (verifChampVid(TEAM_NAME) && verifChampVid(TEAM_COACH)) {
+            erreur.setVisible(false);
+
+            return true;
+        } else {
+            erreur.setVisible(true);
+            erreur.setText("Vous devez saisir tous les champs");
+            return false;
+        }
     }
 
     @FXML

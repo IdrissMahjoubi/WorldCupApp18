@@ -47,6 +47,7 @@ public class FXMLMAPController implements Initializable,MapComponentInitializedL
     private GoogleMapView gmap;
     private GoogleMap map;
     private GeocodingService G;
+    String x;
     
     @FXML
     private Button retour;
@@ -99,8 +100,10 @@ public class FXMLMAPController implements Initializable,MapComponentInitializedL
      
          createMap();
          
-    
-       String x=FXMLShowStadiumsController.StadiumNM +", "+ FXMLShowStadiumsController.GouvSM;
+    if(FXMLShowStadiumsController.StadiumNM !=null)
+    { x=FXMLShowStadiumsController.StadiumNM +", "+ FXMLShowStadiumsController.GouvSM;}
+    else
+    {x=FXMLUserStadiumController.StadiumNM +", "+ FXMLUserStadiumController.GouvSM;}
               
 
             G.geocode(x, (GeocodingResult[] results, GeocoderStatus status) -> {

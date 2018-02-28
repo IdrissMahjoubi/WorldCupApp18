@@ -80,6 +80,8 @@ public class FXMLUserStadiumController implements Initializable {
     private TextField YMAP;
     @FXML
     private Button home;
+    static String StadiumNM;
+    static String GouvSM;
     /**
      * Initializes the controller class.
      */
@@ -119,6 +121,9 @@ public class FXMLUserStadiumController implements Initializable {
     }
     @FXML
     private void GotoMap(ActionEvent event) {
+        
+         StadiumNM = table.getSelectionModel().getSelectedItem().getSTADIUM_NAME();
+         GouvSM = table.getSelectionModel().getSelectedItem().getSTADIUM_LOCATION();
                             try {
                 Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLMAP.fxml"));
                 Scene scene = new Scene(page1);
@@ -135,10 +140,10 @@ public class FXMLUserStadiumController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLMenu.fxml"));
         try{
             Parent root = loader.load();
-            FXMLMenuController dc = loader.getController();
+            FXMLUserStadiumController dc = loader.getController();
             acceuil.getScene().setRoot(root);
         }catch (IOException ex) {
-            Logger.getLogger(FXMLMenuController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FXMLUserStadiumController.class.getName()).log(Level.SEVERE, null, ex);
         
     }
     }

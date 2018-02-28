@@ -5,18 +5,24 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddArticleController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLAddArticleController">
    <children>
-      <Text layoutX="63.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Titre" />
-      <Text layoutX="63.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Image" />
-      <Text layoutX="63.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
-      <TextField fx:id="title" layoutX="151.0" layoutY="58.0" />
-      <TextArea fx:id="desc" layoutX="151.0" layoutY="227.0" prefHeight="134.0" prefWidth="149.0" />
-      <ImageView fx:id="img" fitHeight="112.0" fitWidth="149.0" layoutX="151.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="bnt1" layoutX="371.0" layoutY="132.0" mnemonicParsing="false" onAction="#browserImage" text="Parcourir..." />
-      <Button fx:id="bnt2" layoutX="434.0" layoutY="330.0" mnemonicParsing="false" onAction="#addArticle" text="Ajouter" />
-      <Button fx:id="cancel" layoutX="511.0" layoutY="330.0" mnemonicParsing="false" onAction="#cancelAdd" text="Annuler" />
+      <Text fill="WHITE" layoutX="63.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+      <Text fill="WHITE" layoutX="63.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Picture" />
+      <Text fill="WHITE" layoutX="63.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" />
+      <TextField fx:id="title" layoutX="151.0" layoutY="73.0" />
+      <TextArea fx:id="desc" layoutX="151.0" layoutY="242.0" prefHeight="134.0" prefWidth="149.0" />
+      <ImageView fx:id="img" fitHeight="112.0" fitWidth="149.0" layoutX="151.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="bnt1" layoutX="371.0" layoutY="147.0" mnemonicParsing="false" onAction="#browserImage" text="Browse..." />
+      <Button fx:id="bnt2" layoutX="434.0" layoutY="345.0" mnemonicParsing="false" onAction="#addArticle" text="Add" />
+      <Button fx:id="cancel" layoutX="511.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelAdd" text="Cancel" />
+      <Text fill="#c31010" layoutX="196.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add your Article">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

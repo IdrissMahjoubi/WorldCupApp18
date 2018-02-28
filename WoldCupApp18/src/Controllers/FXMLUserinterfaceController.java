@@ -139,6 +139,15 @@ public class FXMLUserinterfaceController implements Initializable {
     @FXML
     private void accomodation(ActionEvent event) {
         //setNode(accomodationsPane);
+                            try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLMenu.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
     @FXML

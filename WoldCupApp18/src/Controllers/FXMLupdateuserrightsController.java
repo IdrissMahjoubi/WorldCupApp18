@@ -65,8 +65,6 @@ public class FXMLupdateuserrightsController implements Initializable {
     private ChoiceBox<String> combo_rech;
     ObservableList<String> comboList = FXCollections.observableArrayList("nom","nationalite","equipe preferée");
     @FXML
-    private Label label;
-    @FXML
     private Button modifrights;
     @FXML
     private Button bloquer;
