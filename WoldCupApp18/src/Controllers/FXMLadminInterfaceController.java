@@ -111,12 +111,29 @@ public class FXMLadminInterfaceController implements Initializable {
 
     @FXML
     private void statPlayer(ActionEvent event) throws IOException {
+                   try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowPlayerAdmin.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLadminInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+            }
       
     }
 
     @FXML
     private void article(ActionEvent event) throws IOException {
-       
+                          try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticle.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLadminInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
     @FXML
@@ -178,10 +195,13 @@ public class FXMLadminInterfaceController implements Initializable {
             }
     }
 
+ 
+
     @FXML
-    private void updateUserDetails(MouseEvent event) {
-            try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowUserToAdmin.fxml"));
+    private void games(ActionEvent event) {
+        
+                try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
@@ -192,10 +212,9 @@ public class FXMLadminInterfaceController implements Initializable {
     }
 
     @FXML
-    private void games(ActionEvent event) {
-        
-                try {
-                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
+    private void updateUserDetails(MouseEvent event) {
+                    try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLShowUserToAdmin.fxml"));
                 Scene scene = new Scene(page1);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 stage.setScene(scene);

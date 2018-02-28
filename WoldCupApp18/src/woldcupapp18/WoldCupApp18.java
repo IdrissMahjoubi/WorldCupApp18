@@ -16,6 +16,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -37,7 +38,8 @@ public class WoldCupApp18 extends Application {
 
 
         Scene scene = new Scene(root);
-        Stage stage=new Stage();
+        Stage stage=new Stage(StageStyle.TRANSPARENT);
+
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

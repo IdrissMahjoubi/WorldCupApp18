@@ -76,16 +76,14 @@ public class FXMLUserinterfaceController implements Initializable {
                 try {
             homePane = FXMLLoader.load(getClass().getResource("/Views/FXMLHome.fxml"));
             gamesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
-            //groupsPane = FXMLLoader.load(getClass().getResource("/Views/FXML.fxml"));
+            groupsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLPoints.fxml"));
             teamsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeamUser.fxml"));
             //accomodationsPane = FXMLLoader.load(getClass().getResource("/Views/Evenement.fxml"));
             articlesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
-            //streamPane = FXMLLoader.load(getClass().getResource("/Views/GererProfile.fxml"));
             statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
-            //streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
-            logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
+            streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
+            //logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
             updateaccount=FXMLLoader.load(getClass().getResource("/Views/FXMLUpdateUser.fxml"));
-            //groupsPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             setNode(homePane);
 
         } catch (IOException ex) {
@@ -168,7 +166,7 @@ public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
     private void groups(ActionEvent event) {
-        //setNode(groupsPane);
+        setNode(groupsPane);
     }
 
     @FXML
@@ -178,7 +176,15 @@ public class FXMLUserinterfaceController implements Initializable {
 
     @FXML
     private void logout(MouseEvent event) {
-        setNode(logoutpane);
+        try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FXMLUserinterfaceController.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }
 
 

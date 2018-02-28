@@ -15,18 +15,21 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -136,6 +139,8 @@ public class FXMLShowMatchUserController implements Initializable {
     @FXML
     private AnchorPane anchorpane;
     static int matchn = 0;
+    @FXML
+    private AnchorPane pg;
 
     /**
      * Initializes the controller class.
@@ -199,6 +204,18 @@ public class FXMLShowMatchUserController implements Initializable {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+    }
+
+    @FXML
+    private void back(ActionEvent event) throws IOException {
+        
+        
+                Stage stage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        ((Node) event.getSource()).getScene().getWindow().hide();
     }
 
 }

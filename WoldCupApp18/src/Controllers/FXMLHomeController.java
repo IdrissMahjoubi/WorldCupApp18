@@ -35,13 +35,10 @@ public class FXMLHomeController implements Initializable {
     private MediaView media;
     Media media1;
     MediaPlayer mediaPlayer;
-<<<<<<< HEAD
     @FXML
     private JFXButton bntStop;
-=======
     
     //public Image image=new Image("file:/Users/apple/Desktop/WorldCupApp18/WoldCupApp18/src/Resources/Icons/FIFA_World_Cup_2018_Logo.png",true);
->>>>>>> 2c253b18dab205abc03ca6f369f65d32130b3eed
     /**
      * Initializes the controller class.
      */
