@@ -129,14 +129,17 @@ public class FXMLauthentificationController implements Initializable {
 
     @FXML
     private void creerCompte(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLCreate.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLCreateController dc = loader.getController();
-            creer.getScene().setRoot(root);
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLCreateController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
+        
+         try {
+                Parent page1 = FXMLLoader.load(getClass().getResource("/Views/FXMLCreate.fxml"));
+                Scene scene = new Scene(page1);
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+             System.out.println("erreur create");
+            }
 
     }
 

@@ -304,7 +304,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchStad" fill="#5a8eff" layoutX="451.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchStad" fill="#5a8eff" layoutX="441.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>
@@ -314,7 +314,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchVenue" fill="#5a8eff" layoutX="450.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchVenue" fill="#5a8eff" layoutX="440.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>
@@ -334,7 +334,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchReferee" fill="#5a8eff" layoutX="450.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchReferee" fill="#5a8eff" layoutX="440.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>
