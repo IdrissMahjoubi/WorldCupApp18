@@ -10,8 +10,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="661.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowArticleController">
+<AnchorPane id="AnchorPane" prefHeight="661.0" prefWidth="715.0" style="-fx-background-color: #353b48;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FXMLShowArticleController">
      <children>
       <TableView fx:id="table" layoutX="73.0" layoutY="299.0" prefHeight="281.0" prefWidth="320.0">
         <columns>
@@ -22,20 +23,32 @@
       </TableView>
       <ImageView fitHeight="195.0" fitWidth="168.0" layoutX="275.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@830x532_logo-officiel-coupe-monde-2018-presente-28-octobre-2014.jpg" />
+            <Image url="@../Resources/Icons/FIFA_World_Cup_2018_Logo.png" />
          </image>
       </ImageView>
       <Button fx:id="supprimer" layoutX="239.0" layoutY="608.0" mnemonicParsing="false" onAction="#supprimer" text="Supprimer" />
       <Button fx:id="modifier" layoutX="357.0" layoutY="608.0" mnemonicParsing="false" onAction="#modifier" prefHeight="25.0" prefWidth="72.0" text="Modifier" />
       <TextField fx:id="titleUpdate" layoutX="538.0" layoutY="250.0" />
-      <Label layoutX="442.0" layoutY="254.0" text="Title" />
+      <Label layoutX="442.0" layoutY="254.0" text="Title" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Button fx:id="BrowseImg" layoutX="406.0" layoutY="484.0" mnemonicParsing="false" onAction="#BrowseLogo" prefHeight="25.0" prefWidth="108.0" text="Parcourir..." />
-      <Label layoutX="442.0" layoutY="303.0" text="Description" />
+      <Label layoutX="442.0" layoutY="303.0" text="Description" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <ImageView fx:id="imgUpdate" fitHeight="112.0" fitWidth="168.0" layoutX="529.0" layoutY="440.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="rechercheArticle_txt" layoutX="207.0" layoutY="258.0" />
-      <Label layoutX="33.0" layoutY="262.0" text="Valeur :" />
-      <ChoiceBox fx:id="comboRech" layoutX="206.0" layoutY="219.0" prefHeight="25.0" prefWidth="149.0" />
-      <Label layoutX="33.0" layoutY="223.0" text="Choisir un critère de recherche :" />
+      <TextField fx:id="rechercheArticle_txt" layoutX="245.0" layoutY="258.0" />
+      <Label layoutX="33.0" layoutY="262.0" text="Valeur :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <ChoiceBox fx:id="comboRech" layoutX="246.0" layoutY="219.0" prefHeight="25.0" prefWidth="149.0" />
+      <Label layoutX="33.0" layoutY="223.0" text="Choisir un critère de recherche :" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <Button fx:id="add" layoutX="491.0" layoutY="608.0" mnemonicParsing="false" onAction="#addArticle" text="Ajouter" />
       <Button fx:id="user" layoutX="73.0" layoutY="79.0" mnemonicParsing="false" onAction="#user" text="User" />
       <TextArea fx:id="descUpdate" layoutX="538.0" layoutY="299.0" prefHeight="126.0" prefWidth="149.0" />

@@ -45,8 +45,12 @@ public class FXMLShowArticleUserController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         ArticleServices s = new ArticleServices();
+        
+        
         for (int i = 0; i < s.showArticles().size(); i++) {
             hb = new VBox();
+            
+            
             //p.getChildren().add(i, title);
             title = new Label(s.showArticles().get(i).ARTICLE_TITLE);
             img = new ImageView();
@@ -54,9 +58,6 @@ public class FXMLShowArticleUserController implements Initializable {
             Image image = new Image(s.showArticles().get(i).ARTICLE_IMAGE);
             img.setImage(image);
 
-        
-        
-           
             img.setFitWidth(350);
             img.setFitHeight(300);
 
