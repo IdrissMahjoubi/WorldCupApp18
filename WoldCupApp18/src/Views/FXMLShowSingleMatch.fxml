@@ -30,7 +30,7 @@
                   <Image url="@../Resources/Icons/Logos/Tunisia_FA.svg.png" />
                </image>
             </ImageView>
-            <JFXButton fx:id="BackBtn" layoutX="731.0" layoutY="48.0" onAction="#backFunction" prefHeight="32.0" prefWidth="77.0" style="-fx-background-color: lightgrey;" text="Back ">
+            <JFXButton fx:id="BackBtn" layoutX="731.0" layoutY="48.0" onAction="#backFunction" prefHeight="32.0" prefWidth="77.0" style="-fx-background-color: #e84118;" text="Back " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -299,22 +299,22 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Label layoutX="311.0" layoutY="63.0" text="Match Stadium" textFill="#e1e1e1">
+            <Label layoutX="311.0" layoutY="63.0" text="Stadium" textFill="#e1e1e1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchStad" fill="#5a8eff" layoutX="441.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchStad" fill="#5a8eff" layoutX="391.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <Label layoutX="311.0" layoutY="25.0" text="Match Venue" textFill="#e1e1e1">
+            <Label layoutX="311.0" layoutY="25.0" text="Venue" textFill="#e1e1e1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchVenue" fill="#5a8eff" layoutX="440.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchVenue" fill="#5a8eff" layoutX="390.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>
@@ -329,12 +329,12 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <Label layoutX="311.0" layoutY="103.0" text="Match Referee" textFill="#e1e1e1">
+            <Label layoutX="311.0" layoutY="103.0" text="Referee" textFill="#e1e1e1">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Text fx:id="MatchReferee" fill="#5a8eff" layoutX="440.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+            <Text fx:id="MatchReferee" fill="#5a8eff" layoutX="390.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                <font>
                   <Font size="18.0" />
                </font>

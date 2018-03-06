@@ -11,9 +11,9 @@ import java.util.logging.Logger;
  */
 public class DataSource {
     public static DataSource instance;
-    String url="jdbc:mysql://sql11.freemysqlhosting.net/sql11222693";
-    String username="sql11222693";
-    String password= "HsKTYLsInw";
+    String url="jdbc:mysql://localhost/world_cup_app_18";
+    String username="root";
+    String password= "root";
     Connection conn ;
     DataSource() {
        

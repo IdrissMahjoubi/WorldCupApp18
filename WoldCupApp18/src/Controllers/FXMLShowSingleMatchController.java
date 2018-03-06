@@ -174,14 +174,12 @@ public class FXMLShowSingleMatchController implements Initializable {
 
     @FXML
     private void backFunction(ActionEvent event) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
-        try {
-            Parent root = loader.load();
-            FXMLShowMatchUserController dc = loader.getController();
-            MatchKind.getScene().setRoot(root);
+            try {
+            AnchorPane pane =FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
+            Mainpane.getChildren().setAll(pane);
         } catch (IOException ex) {
-            Logger.getLogger(FXMLadminInterfaceController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            System.out.println("error view"+ex.getMessage());    
+        }  
     }
     
 }

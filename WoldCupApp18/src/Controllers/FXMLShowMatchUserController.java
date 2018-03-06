@@ -170,7 +170,6 @@ public class FXMLShowMatchUserController implements Initializable {
 
                     matchn=Integer.parseInt(p.getId().substring(1,p.getId().length()));
                     LoadSingleMatch();
-                    System.out.println(matchn);
                 }
                     
             });
@@ -195,22 +194,19 @@ public class FXMLShowMatchUserController implements Initializable {
     }
 
     public void LoadSingleMatch() {
-        FXMLLoader ld = new FXMLLoader(getClass().getResource("/Views/FXMLShowSingleMatch.fxml"));
-        Parent root;
+        
         try {
-            root = ld.load();
-            m1.getScene().setRoot(root);
-
+            AnchorPane pane =FXMLLoader.load(getClass().getResource("/Views/FXMLShowSingleMatch.fxml"));
+            pg.getChildren().setAll(pane);
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }
+            System.out.println("error view"+ex.getMessage());    
+        }  
     }
 
-    @FXML
     private void back(ActionEvent event) throws IOException {
         
         
-                Stage stage = new Stage();
+        Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);

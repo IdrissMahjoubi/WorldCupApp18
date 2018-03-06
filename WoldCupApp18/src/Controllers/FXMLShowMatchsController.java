@@ -30,7 +30,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import Entities.Match;
 import Services.Match_services;
-import Utilities.ParseHTML;
+import Utilities.ParseMatchs;
+import Utilities.ParseTeams;
 import javafx.concurrent.Task;
 import javafx.geometry.Pos;
 import javafx.scene.layout.VBox;
@@ -193,12 +194,13 @@ public class FXMLShowMatchsController implements Initializable {
 
     @FXML
     private void ReparseMatch(ActionEvent event) {
-           int i=1;
+//        ParseTeams.ParseMatch();
+       /*    int i=1;
         match_service.EmptyMatch();
-        ParseHTML.ParseMatch();
-        for (int j = 0; j < ParseHTML.ParseReferee().size(); j++) {
+        ParseMatchs.ParseMatch();
+        for (int j = 0; j < ParseMatchs.ParseReferee().size(); j++) {
             
-        match_service.updateReferee((String)ParseHTML.ParseReferee().get(j),i++);
+        match_service.updateReferee((String)ParseMatchs.ParseReferee().get(j),i++);
         }                                       
         FXMLShowMatchsController.alertMessage("Reparsing reussie",Alert.AlertType.INFORMATION);
         FXMLLoader ld=new FXMLLoader(getClass().getResource("/Views/FXMLShowMatchs.fxml"));
@@ -208,6 +210,6 @@ public class FXMLShowMatchsController implements Initializable {
             Add_match_button.getScene().setRoot(root);
         } catch (IOException ex) {
             System.out.println("Load Empty to Show Fail= "+ex.getMessage());       
-        }
+        }*/
     }
 }

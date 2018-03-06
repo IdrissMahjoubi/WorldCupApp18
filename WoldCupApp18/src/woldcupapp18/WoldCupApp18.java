@@ -7,6 +7,7 @@ package woldcupapp18;
 
 import Services.PlayerServices;
 import Services.ServiceTeam;
+import Utilities.ParseTeams;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -46,7 +47,6 @@ public class WoldCupApp18 extends Application {
         } catch (IOException ex) {
             System.out.println("START METHOD ERROR="+ex.getMessage());
         }
-
     
 }
     /**
