@@ -177,46 +177,36 @@ public class Match_services implements Match_inteface {
         }
     }
 
-    public void PointsCount(Match m) {
+   public void PointsCount(Match m) {
         FXMLShowMatchsController.alertMessage("Group Stage", Alert.AlertType.WARNING);
         //get both teams from table view
         Team t1 = getTeamByName(m.getTeam1());
         Team t2 = getTeamByName(m.getTeam2());
-
         //team one goals for and agains
         t1.setTEAM_GOALSFOR(t1.getTEAM_GOALSFOR() + m.getTeam1Score());
         t1.setTEAM_GOALSAGAINST(t1.getTEAM_GOALSAGAINST() + m.getTeam2Score());
-
         //team two goals for and agains
         t2.setTEAM_GOALSFOR(t2.getTEAM_GOALSFOR() + m.getTeam2Score());
         t2.setTEAM_GOALSAGAINST(t2.getTEAM_GOALSAGAINST() + m.getTeam1Score());
-
         //Number of match played
         t1.setTEAM_NUMBERMATCHPLAYED(t1.getTEAM_NUMBERMATCHPLAYED() + 1);
         t2.setTEAM_NUMBERMATCHPLAYED(t2.getTEAM_NUMBERMATCHPLAYED() + 1);
-     
         if(m.getGameKind().contains("Group"))
         {
         //Count Points
         if (m.getTeam1Score() > m.getTeam2Score()) {
-
             t1.setTEAM_POINTS(t1.getTEAM_POINTS() + 3);
             t1.setTEAM_NUMBERMATCHWON(t1.getTEAM_NUMBERMATCHWON()+1);
             t2.setTEAM_NUMBERMATCHLOST(t2.getTEAM_NUMBERMATCHLOST()+1);
-
         } else if (m.getTeam1Score() < m.getTeam2Score()) {
-
             t2.setTEAM_POINTS(t2.getTEAM_POINTS() + 3);
             t2.setTEAM_NUMBERMATCHWON(t2.getTEAM_NUMBERMATCHWON()+1);
             t1.setTEAM_NUMBERMATCHLOST(t1.getTEAM_NUMBERMATCHLOST()+1);
-
         } else {
-
             t1.setTEAM_POINTS(t1.getTEAM_POINTS() + 1);
             t2.setTEAM_POINTS(t2.getTEAM_POINTS() + 1);
             t1.setTEAM_NUMBERMATCHDRAW(t1.getTEAM_NUMBERMATCHDRAW()+1);
             t2.setTEAM_NUMBERMATCHDRAW(t2.getTEAM_NUMBERMATCHDRAW()+1);
-
         }
         //update database (table team)
         ServiceTeam st = new ServiceTeam();
@@ -247,7 +237,6 @@ public class Match_services implements Match_inteface {
         List<Team> t=new ArrayList<Team>();
         List<Team> teams=st.showTeams();
         
-  
         for (int i=0;i<teams.size();i++)
         {
                 if (teams.get(i).getTEAM_GROUP().equals(Group)) 
@@ -265,10 +254,11 @@ public class Match_services implements Match_inteface {
         public int compare(Team p1, Team p2) {
             return   p2.getTEAM_POINTS() - p1.getTEAM_POINTS(); 
         }
-        });
+        }); 
+        
         for(int i=0;i<t.size();i++)
         {
-            
+           
             t.get(i).setTEAM_POSITION(i+1);
             updatePosition(t.get(i).getTEAM_NAME(), t.get(i).getTEAM_POSITION());
         }

@@ -44,8 +44,8 @@ public class FXMLShowSingleMatchController implements Initializable {
     private ImageView Team2;
     @FXML
     public AnchorPane Mainpane;
-    Match_services ms= Match_services.getInstance();
-    Team t1,t2;
+    Match_services ms = Match_services.getInstance();
+    Team t1, t2;
     Match m;
     @FXML
     private Text MatchDate;
@@ -103,83 +103,82 @@ public class FXMLShowSingleMatchController implements Initializable {
     private Text PlayedTeam2;
     @FXML
     private JFXButton BackBtn;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        System.out.println("Single "+FXMLShowMatchUserController.matchn);
-      m=ms.getMatchbyMatchNumber(FXMLShowMatchUserController.matchn);
-      t1=ms.getTeamByName(m.Team1);
-      t2=ms.getTeamByName(m.Team2);
-        System.out.println("two "+FXMLShowMatchUserController.matchn);
+
+        System.out.println("Single " + FXMLShowMatchUserController.matchNumber);
+        m = ms.getMatchbyMatchNumber(FXMLShowMatchUserController.matchNumber);
+        t1 = ms.getTeamByName(m.Team1);
+        t2 = ms.getTeamByName(m.Team2);
+        System.out.println("two " + FXMLShowMatchUserController.matchNumber);
 
         InitLogos();
         InitMatch(m);
         InitTeam(t1, t2);
-                System.out.println("three"+FXMLShowMatchUserController.matchn);
+        System.out.println("three" + FXMLShowMatchUserController.matchNumber);
 
-    }    
-    
-    public void InitLogos()
-    {
-            
-    File file1 = new File("src/Resources/Icons/Logos/"+t1.getTEAM_LOGO());
-    Image image1 = new Image(file1.toURI().toString());
-    Team1.setImage(image1);
-   
-    File file2 = new File("src/Resources/Icons/Logos/"+t2.getTEAM_LOGO());
-    Image image2 = new Image(file2.toURI().toString());
-    Team2.setImage(image2);
-    
     }
-    public void InitMatch(Match m)
-    {
-        
-     MatchDate.setText(m.getDate_match().toString());
-     MatchTime.setText(m.getTime());
-     MatchNumber.setText(String.valueOf(m.getMatchNumber()) );
-     MatchStad.setText(m.getStadium());
-     MatchVenue.setText(m.getVenue());
-     MatchKind.setText(m.getGameKind());
-     MatchReferee.setText(m.getReferee());
-     ScoreTeam1.setText(String.valueOf(m.getTeam1Score()));
-     ScoreTeam2.setText(String.valueOf(m.getTeam2Score()));
-        
+
+    public void InitLogos() {
+
+        File file1 = new File("src/Resources/Icons/Logos/" + t1.getTEAM_LOGO());
+        Image image1 = new Image(file1.toURI().toString());
+        Team1.setImage(image1);
+
+        File file2 = new File("src/Resources/Icons/Logos/" + t2.getTEAM_LOGO());
+        Image image2 = new Image(file2.toURI().toString());
+        Team2.setImage(image2);
+
     }
-    
-    public void InitTeam(Team t1,Team t2)
-    {
-    NameTeam1.setText(t1.getTEAM_NAME());
-    PointsTeam1.setText(String.valueOf(t1.getTEAM_POINTS()));
-    PositionTeam1.setText(String.valueOf(t1.getTEAM_POSITION()));
-    WonTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHWON()));
-    LostTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHLOST()));
-    DrawTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHDRAW()));
-    AgainstTeam1.setText(String.valueOf(t1.getTEAM_GOALSAGAINST()));
-    ForTeam1.setText(String.valueOf(t1.getTEAM_GOALSFOR()));
-    PlayedTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHPLAYED()));
-    
-    NameTeam2.setText(t2.getTEAM_NAME());
-    PointsTeam2.setText(String.valueOf(t2.getTEAM_POINTS()));
-    PositionTeam2.setText(String.valueOf(t2.getTEAM_POSITION()));
-    WonTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHWON()));
-    LostTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHLOST()));
-    DrawTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHDRAW()));
-    AgainstTeam2.setText(String.valueOf(t2.getTEAM_GOALSAGAINST()));
-    ForTeam2.setText(String.valueOf(t2.getTEAM_GOALSFOR()));
-    PlayedTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHPLAYED()));
+
+    public void InitMatch(Match m) {
+
+        MatchDate.setText(m.getDate_match().toString());
+        MatchTime.setText(m.getTime());
+        MatchNumber.setText(String.valueOf(m.getMatchNumber()));
+        MatchStad.setText(m.getStadium());
+        MatchVenue.setText(m.getVenue());
+        MatchKind.setText(m.getGameKind());
+        MatchReferee.setText(m.getReferee());
+        ScoreTeam1.setText(String.valueOf(m.getTeam1Score()));
+        ScoreTeam2.setText(String.valueOf(m.getTeam2Score()));
+
+    }
+
+    public void InitTeam(Team t1, Team t2) {
+        NameTeam1.setText(t1.getTEAM_NAME());
+        PointsTeam1.setText(String.valueOf(t1.getTEAM_POINTS()));
+        PositionTeam1.setText(String.valueOf(t1.getTEAM_POSITION()));
+        WonTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHWON()));
+        LostTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHLOST()));
+        DrawTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHDRAW()));
+        AgainstTeam1.setText(String.valueOf(t1.getTEAM_GOALSAGAINST()));
+        ForTeam1.setText(String.valueOf(t1.getTEAM_GOALSFOR()));
+        PlayedTeam1.setText(String.valueOf(t1.getTEAM_NUMBERMATCHPLAYED()));
+
+        NameTeam2.setText(t2.getTEAM_NAME());
+        PointsTeam2.setText(String.valueOf(t2.getTEAM_POINTS()));
+        PositionTeam2.setText(String.valueOf(t2.getTEAM_POSITION()));
+        WonTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHWON()));
+        LostTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHLOST()));
+        DrawTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHDRAW()));
+        AgainstTeam2.setText(String.valueOf(t2.getTEAM_GOALSAGAINST()));
+        ForTeam2.setText(String.valueOf(t2.getTEAM_GOALSFOR()));
+        PlayedTeam2.setText(String.valueOf(t2.getTEAM_NUMBERMATCHPLAYED()));
     }
 
     @FXML
     private void backFunction(ActionEvent event) {
-            try {
-            AnchorPane pane =FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowMatchUser.fxml"));
             Mainpane.getChildren().setAll(pane);
         } catch (IOException ex) {
-            System.out.println("error view"+ex.getMessage());    
-        }  
+            System.out.println("error view" + ex.getMessage());
+        }
     }
-    
+
 }

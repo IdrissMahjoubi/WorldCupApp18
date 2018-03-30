@@ -135,57 +135,51 @@ public class FXMLShowMatchUserController implements Initializable {
     @FXML
     private Pane m48;
     @FXML
-    private ScrollPane scrollpane;
+    private ScrollPane scrollPane;
     @FXML
-    private AnchorPane anchorpane;
-    static int matchn = 0;
+    private AnchorPane anchorPane;
+    static int matchNumber = 0;
     @FXML
-    private AnchorPane pg;
+    private AnchorPane page;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        List<Node> lnodes = getAllNodes(anchorpane);
 
-       for(int i=0;i<lnodes.size();i++)
-       {
-            setEvent((Pane) lnodes.get(i));
-       }
+        List<Node> lnodes = getAllNodes(anchorPane);
 
-        
+        for (Node node : lnodes) {
+            setEvent((Pane) node);
+
+        }
+
     }
-    
-    
-    
-    public void setEvent(Pane p)
-    {
-        
-            p.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-                @Override
-                public void handle(MouseEvent e) {
+    public void setEvent(Pane p) {
+        p.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
-                    matchn=Integer.parseInt(p.getId().substring(1,p.getId().length()));
-                    LoadSingleMatch();
-                }
-                    
-            });
+            @Override
+            public void handle(MouseEvent e) {
+
+                matchNumber = Integer.parseInt(p.getId().substring(1, p.getId().length()));
+                LoadSingleMatch();
+            }
+
+        });
     }
-    
+
     public static ArrayList<Node> getAllNodes(Parent root) {
-        ArrayList<Node> nodes = new ArrayList<Node>();
+        ArrayList<Node> nodes = new ArrayList<>();
         addAllDescendents(root, nodes);
         return nodes;
     }
 
     private static void addAllDescendents(Parent parent, ArrayList<Node> nodes) {
         for (Node node : parent.getChildrenUnmodifiable()) {
-               if(node.getClass() == Pane.class)
-            {
-            nodes.add(node);
+            if (node.getClass() == Pane.class) {
+                nodes.add(node);
             }
             if (node instanceof Parent) {
                 addAllDescendents((Parent) node, nodes);
@@ -194,18 +188,17 @@ public class FXMLShowMatchUserController implements Initializable {
     }
 
     public void LoadSingleMatch() {
-        
+
         try {
-            AnchorPane pane =FXMLLoader.load(getClass().getResource("/Views/FXMLShowSingleMatch.fxml"));
-            pg.getChildren().setAll(pane);
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowSingleMatch.fxml"));
+            page.getChildren().setAll(pane);
         } catch (IOException ex) {
-            System.out.println("error view"+ex.getMessage());    
-        }  
+            System.out.println("error view" + ex.getMessage());
+        }
     }
 
     private void back(ActionEvent event) throws IOException {
-        
-        
+
         Stage stage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/Views/FXMLUserinterface.fxml"));
         Scene scene = new Scene(root);
