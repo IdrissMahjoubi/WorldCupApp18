@@ -2,22 +2,22 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost:3306
--- Généré le :  mar. 06 mars 2018 à 12:34
--- Version du serveur :  5.6.38
--- Version de PHP :  5.6.32
+-- Host: localhost:3306
+-- Generation Time: Mar 30, 2018 at 03:27 PM
+-- Server version: 5.6.38
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Base de données :  `world_cup_app_18`
+-- Database: `world_cup_app_18`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ARTICLE`
+-- Table structure for table `ARTICLE`
 --
 
 CREATE TABLE `ARTICLE` (
@@ -30,7 +30,7 @@ CREATE TABLE `ARTICLE` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `GAME`
+-- Table structure for table `GAME`
 --
 
 CREATE TABLE `GAME` (
@@ -49,7 +49,7 @@ CREATE TABLE `GAME` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `GAME`
+-- Dumping data for table `GAME`
 --
 
 INSERT INTO `GAME` (`GAME_ID`, `GAME_KIND`, `GAME_WINNERTEAM`, `GAME_LOSSTEAM`, `GAME_TIME`, `GAME_DATE`, `GAME_WINNERTEAMSCORE`, `GAME_LOSSTEAMSCORE`, `GAME_REFEREE`, `GAME_STADIUM`, `GAME_VENUE`, `GAME_MATCHNUMBER`) VALUES
@@ -116,12 +116,13 @@ INSERT INTO `GAME` (`GAME_ID`, `GAME_KIND`, `GAME_WINNERTEAM`, `GAME_LOSSTEAM`, 
 (189, 'Semi-finals', '[W57]', '[W58]', '21:00', '2018-07-10', 0, 0, 'unknown', 'Saint Petersburg Stadium', 'Saint Petersburg', 61),
 (190, 'Semi-finals', '[W59]', '[W60]', '21:00', '2018-07-11', 0, 0, 'unknown', 'Luzhniki Stadium', 'Moscow', 62),
 (191, 'Play-off for third place', '[L61]', '[L62]', '17:00', '2018-07-14', 0, 0, 'unknown', 'Saint Petersburg Stadium', 'Saint Petersburg', 63),
-(192, 'Final', '[W61]', '[W62]', '18:00', '2018-07-15', 0, 0, 'unknown', 'Luzhniki Stadium', 'Moscow', 64);
+(192, 'Final', '[W61]', '[W62]', '18:00', '2018-07-15', 0, 0, 'unknown', 'Luzhniki Stadium', 'Moscow', 64),
+(193, 'sdf', 'qsd', 'qs', '12:12', '2018-03-06', 2, 3, 'qsd', 'qsd', 'qsd', 12);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `GOAL`
+-- Table structure for table `GOAL`
 --
 
 CREATE TABLE `GOAL` (
@@ -134,7 +135,7 @@ CREATE TABLE `GOAL` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `HOTEL`
+-- Table structure for table `HOTEL`
 --
 
 CREATE TABLE `HOTEL` (
@@ -149,25 +150,29 @@ CREATE TABLE `HOTEL` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `PLAYER`
+-- Table structure for table `PLAYER`
 --
 
 CREATE TABLE `PLAYER` (
   `PLAYER_ID` int(4) NOT NULL,
-  `PLAYER_LASTNAME` varchar(40) NOT NULL,
-  `PLAYER_FIRSTNAME` varchar(40) NOT NULL,
+  `PLAYER_NAME` varchar(40) NOT NULL,
   `PLAYER_AGE` int(2) NOT NULL,
   `PLAYER_TEAM` int(3) DEFAULT NULL,
-  `PLAYER_POSITION` enum('goalkeeper','defender','midfielder','forward') NOT NULL,
-  `PLAYER_CURRENTCLUB` varchar(25) NOT NULL,
-  `PLAYER_HEIGHT` int(3) NOT NULL,
-  `PLAYER_SHIRTINT` int(2) NOT NULL
+  `PLAYER_PICTURE` int(3) DEFAULT NULL,
+  `PLAYER_POSITION` varchar(25) NOT NULL,
+  `PLAYER_CLUB` varchar(25) NOT NULL,
+  `PLAYER_HEIGHT` varchar(25) NOT NULL,
+  `PLAYER_WEIGHT` varchar(25) NOT NULL,
+  `PLAYER_TSHIRT` int(2) NOT NULL,
+  `PLAYER_TSHIRT` int(2) NOT NULL,
+  `PLAYER_NUMBER_NOTE` int(3) NOT NULL,
+  `PLAYER_RATING` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `STADIUM`
+-- Table structure for table `STADIUM`
 --
 
 CREATE TABLE `STADIUM` (
@@ -175,22 +180,22 @@ CREATE TABLE `STADIUM` (
   `STADIUM_NAME` varchar(25) NOT NULL,
   `STADIUM_LOCATION` varchar(50) NOT NULL,
   `STADIUM_CAPACITY` int(1) NOT NULL,
-  `STADUIM_PICTURE` varchar(500) DEFAULT NULL,
-  `STADUIM_LOCATION_X` varchar(50) NOT NULL,
-  `STADUIM_LOCATION_Y` varchar(50) NOT NULL
+  `STADIUM_PICTURE` varchar(500) DEFAULT NULL,
+  `STADIUM_LOCATION_X` varchar(50) NOT NULL,
+  `STADIUM_LOCATION_Y` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `STATION`
+-- Table structure for table `STATION`
 --
 
 CREATE TABLE `STATION` (
   `STATION_ID` int(11) NOT NULL,
   `STATION_NAME` varchar(20) NOT NULL,
   `STATION_LOCATION` varchar(30) NOT NULL,
-  `STATION_TYPE` enum('bus','train') NOT NULL,
+  `STATION_TYPE` varchar(30) NOT NULL,
   `STATION_LOCATION_X` varchar(50) NOT NULL,
   `STATION_LOCATION_Y` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -198,7 +203,7 @@ CREATE TABLE `STATION` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `TEAM`
+-- Table structure for table `TEAM`
 --
 
 CREATE TABLE `TEAM` (
@@ -220,7 +225,7 @@ CREATE TABLE `TEAM` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `TEAM`
+-- Dumping data for table `TEAM`
 --
 
 INSERT INTO `TEAM` (`TEAM_ID`, `TEAM_NAME`, `TEAM_COACH`, `TEAM_INTMATCHPLAYED`, `TEAM_INTMATCHWON`, `TEAM_INTMATCHLOST`, `TEAM_INTMATCHDRAW`, `TEAM_GOALSFOR`, `TEAM_GOALSAGAINST`, `TEAM_POINTS`, `TEAM_POSITION`, `TEAM_GROUP`, `TEAM_CONTINENT`, `TEAM_LOGO`, `TEAM_FLAG`) VALUES
@@ -233,7 +238,7 @@ INSERT INTO `TEAM` (`TEAM_ID`, `TEAM_NAME`, `TEAM_COACH`, `TEAM_INTMATCHPLAYED`,
 (7, 'IR Iran', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (8, 'Japan', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (9, 'Korea Republic', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(10, 'Saudi Arabia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
+(10, 'Saudi Arabia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 'saudi_arabia_national_football.png', NULL),
 (11, 'Belgium', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (12, 'Croatia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (13, 'Denmark', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
@@ -243,7 +248,7 @@ INSERT INTO `TEAM` (`TEAM_ID`, `TEAM_NAME`, `TEAM_COACH`, `TEAM_INTMATCHPLAYED`,
 (17, 'Iceland', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (18, 'Poland', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (19, 'Portugal', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(20, 'Russia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
+(20, 'Russia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 'téléchargement (2).png', NULL),
 (21, 'Serbia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (22, 'Spain', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (23, 'Sweden', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
@@ -257,54 +262,20 @@ INSERT INTO `TEAM` (`TEAM_ID`, `TEAM_NAME`, `TEAM_COACH`, `TEAM_INTMATCHPLAYED`,
 (31, 'Peru', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
 (32, 'Uruguay', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL);
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `USER`
---
-
-CREATE TABLE `USER` (
-  `USER_ID` int(11) NOT NULL,
-  `USER_NAME` varchar(30) NOT NULL,
-  `USER_LASTNAME` varchar(30) NOT NULL,
-  `USER_BIRTHDAY` varchar(10) NOT NULL,
-  `USER_NATIONALITY` varchar(20) NOT NULL,
-  `USER_EMAIL` varchar(30) NOT NULL,
-  `USER_TEL` int(11) NOT NULL,
-  `USER_LOGIN` varchar(30) NOT NULL,
-  `USER_PASSWORD` varchar(30) NOT NULL,
-  `USER_TEAM` int(3) DEFAULT NULL,
-  `USER_FIDELITY` int(11) DEFAULT NULL,
-  `USER_STATE` int(1) DEFAULT NULL,
-  `USER_TYPE` enum('admin','membre') NOT NULL DEFAULT 'membre'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `USER`
---
-
-INSERT INTO `USER` (`USER_ID`, `USER_NAME`, `USER_LASTNAME`, `USER_BIRTHDAY`, `USER_NATIONALITY`, `USER_EMAIL`, `USER_TEL`, `USER_LOGIN`, `USER_PASSWORD`, `USER_TEAM`, `USER_FIDELITY`, `USER_STATE`, `USER_TYPE`) VALUES
-(1, 'idriss', 'mahjoubi', '22-22-2222', 'tunisian', 'idris.mahjoubi@esprit.tn', 23232323, 'idriss', 'idriss', NULL, 1, 1, 'membre'),
-(2, 'b', 'b', 'b', 'b', 'b', 2, 'b', 'b', NULL, 1, 1, 'admin');
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `ARTICLE`
+-- Indexes for table `ARTICLE`
 --
 ALTER TABLE `ARTICLE`
   ADD PRIMARY KEY (`ARTICLE_ID`);
 
 --
--- Index pour la table `GAME`
+-- Indexes for table `GAME`
 --
 ALTER TABLE `GAME`
   ADD PRIMARY KEY (`GAME_ID`);
 
 --
--- Index pour la table `GOAL`
+-- Indexes for table `GOAL`
 --
 ALTER TABLE `GOAL`
   ADD PRIMARY KEY (`GOAL_ID`),
@@ -312,120 +283,91 @@ ALTER TABLE `GOAL`
   ADD KEY `FK_GOAL_PLAYER` (`GOAL_PLAYER`);
 
 --
--- Index pour la table `HOTEL`
+-- Indexes for table `HOTEL`
 --
 ALTER TABLE `HOTEL`
   ADD PRIMARY KEY (`HOTEL_ID`);
 
 --
--- Index pour la table `PLAYER`
+-- Indexes for table `PLAYER`
 --
 ALTER TABLE `PLAYER`
   ADD PRIMARY KEY (`PLAYER_ID`),
   ADD KEY `FK_PLAYER_TEAM` (`PLAYER_TEAM`);
 
 --
--- Index pour la table `STADIUM`
+-- Indexes for table `STADIUM`
 --
 ALTER TABLE `STADIUM`
   ADD PRIMARY KEY (`STADIUM_ID`);
 
 --
--- Index pour la table `STATION`
+-- Indexes for table `STATION`
 --
 ALTER TABLE `STATION`
   ADD PRIMARY KEY (`STATION_ID`);
 
 --
--- Index pour la table `TEAM`
+-- Indexes for table `TEAM`
 --
 ALTER TABLE `TEAM`
   ADD PRIMARY KEY (`TEAM_ID`);
 
 --
--- Index pour la table `USER`
---
-ALTER TABLE `USER`
-  ADD PRIMARY KEY (`USER_ID`),
-  ADD KEY `FK_USER_TEAM` (`USER_TEAM`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `ARTICLE`
+-- AUTO_INCREMENT for table `ARTICLE`
 --
 ALTER TABLE `ARTICLE`
   MODIFY `ARTICLE_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `GAME`
+-- AUTO_INCREMENT for table `GAME`
 --
 ALTER TABLE `GAME`
-  MODIFY `GAME_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=193;
+  MODIFY `GAME_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 
 --
--- AUTO_INCREMENT pour la table `GOAL`
+-- AUTO_INCREMENT for table `GOAL`
 --
 ALTER TABLE `GOAL`
   MODIFY `GOAL_ID` int(3) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `HOTEL`
+-- AUTO_INCREMENT for table `HOTEL`
 --
 ALTER TABLE `HOTEL`
   MODIFY `HOTEL_ID` int(3) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `PLAYER`
+-- AUTO_INCREMENT for table `PLAYER`
 --
 ALTER TABLE `PLAYER`
   MODIFY `PLAYER_ID` int(4) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `STADIUM`
+-- AUTO_INCREMENT for table `STADIUM`
 --
 ALTER TABLE `STADIUM`
   MODIFY `STADIUM_ID` int(1) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `STATION`
+-- AUTO_INCREMENT for table `STATION`
 --
 ALTER TABLE `STATION`
   MODIFY `STATION_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `TEAM`
+-- AUTO_INCREMENT for table `TEAM`
 --
 ALTER TABLE `TEAM`
   MODIFY `TEAM_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT pour la table `USER`
+-- AUTO_INCREMENT for table `USER`
 --
 ALTER TABLE `USER`
   MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `GOAL`
---
-ALTER TABLE `GOAL`
-  ADD CONSTRAINT `FK_GOAL_GAME` FOREIGN KEY (`GOAL_GAME`) REFERENCES `GAME` (`GAME_ID`),
-  ADD CONSTRAINT `FK_GOAL_PLAYER` FOREIGN KEY (`GOAL_PLAYER`) REFERENCES `PLAYER` (`PLAYER_ID`);
-
---
--- Contraintes pour la table `PLAYER`
---
-ALTER TABLE `PLAYER`
-  ADD CONSTRAINT `FK_PLAYER_TEAM` FOREIGN KEY (`PLAYER_TEAM`) REFERENCES `TEAM` (`TEAM_ID`);
-
---
--- Contraintes pour la table `USER`
---
-ALTER TABLE `USER`
-  ADD CONSTRAINT `FK_USER_TEAM` FOREIGN KEY (`USER_TEAM`) REFERENCES `TEAM` (`TEAM_ID`);
