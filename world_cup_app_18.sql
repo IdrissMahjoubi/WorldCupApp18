@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 30, 2018 at 03:27 PM
+-- Generation Time: Mar 30, 2018 at 05:26 PM
 -- Server version: 5.6.38
 -- PHP Version: 5.6.32
 
@@ -11,7 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 --
--- Database: `world_cup_app_18`
+-- Database: `worldcuptest`
 --
 
 -- --------------------------------------------------------
@@ -26,6 +26,36 @@ CREATE TABLE `ARTICLE` (
   `ARTICLE_DESCRIPTION` text NOT NULL,
   `ARTICLE_IMAGE` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fos_user`
+--
+
+CREATE TABLE `fos_user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(180) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `confirmation_token` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `fos_user`
+--
+
+INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `confirmation_token`, `password_requested_at`, `roles`) VALUES
+(1, 'testuser', 'testuser', 'test@example.com', 'test@example.com', 1, NULL, '$2y$13$PlMIKVidCIrkDmFxw6Hm9uEvu6uB5sPAYoHvnavOF4RG24iaBSU9W', NULL, NULL, NULL, 'a:0:{}'),
+(3, 'codereview', 'codereview', 'user.chris@codereviewsvideo.com', 'user.chris@codereviewsvideo.com', 1, NULL, '$2y$13$4ZFMLhCEWyia6Ly1DNV9oeM5gF2xo.7AbsKaHn7O3O1KLB3I1cRhC', '2018-03-23 19:41:24', NULL, NULL, 'a:0:{}'),
+(4, 'idris', 'idris', 'idris.mahjoubi@esprit.tn', 'idris.mahjoubi@esprit.tn', 1, NULL, '$2y$13$UgYYauGuciqhdRJlm7kMWOMQd3fCaCgAuXBMWG/pyuLhkZWzRRfbK', '2018-03-29 15:55:13', 'AtSzuqDq39Df-QRTYmCP172ndEM9K1bEW8JVf_XITGk', '2018-03-23 19:44:59', 'a:0:{}');
 
 -- --------------------------------------------------------
 
@@ -150,224 +180,108 @@ CREATE TABLE `HOTEL` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `PLAYER`
+-- Table structure for table `NOTE`
 --
 
-CREATE TABLE `PLAYER` (
-  `PLAYER_ID` int(4) NOT NULL,
-  `PLAYER_NAME` varchar(40) NOT NULL,
-  `PLAYER_AGE` int(2) NOT NULL,
-  `PLAYER_TEAM` int(3) DEFAULT NULL,
-  `PLAYER_PICTURE` int(3) DEFAULT NULL,
-  `PLAYER_POSITION` varchar(25) NOT NULL,
-  `PLAYER_CLUB` varchar(25) NOT NULL,
-  `PLAYER_HEIGHT` varchar(25) NOT NULL,
-  `PLAYER_WEIGHT` varchar(25) NOT NULL,
-  `PLAYER_TSHIRT` int(2) NOT NULL,
-  `PLAYER_TSHIRT` int(2) NOT NULL,
-  `PLAYER_NUMBER_NOTE` int(3) NOT NULL,
-  `PLAYER_RATING` int(3) NOT NULL
+CREATE TABLE `NOTE` (
+  `NOTE_ID` int(11) NOT NULL,
+  `PLAYER_ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `STADIUM`
+-- Table structure for table `PARTICIPATION`
 --
 
-CREATE TABLE `STADIUM` (
-  `STADIUM_ID` int(1) NOT NULL,
-  `STADIUM_NAME` varchar(25) NOT NULL,
-  `STADIUM_LOCATION` varchar(50) NOT NULL,
-  `STADIUM_CAPACITY` int(1) NOT NULL,
-  `STADIUM_PICTURE` varchar(500) DEFAULT NULL,
-  `STADIUM_LOCATION_X` varchar(50) NOT NULL,
-  `STADIUM_LOCATION_Y` varchar(50) NOT NULL
+CREATE TABLE `PARTICIPATION` (
+  `PARTICIPATION_ID` int(11) NOT NULL,
+  `EVENT_ID` int(11) NOT NULL,
+  `USER_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `STATION`
+-- Table structure for table `USER`
 --
 
-CREATE TABLE `STATION` (
-  `STATION_ID` int(11) NOT NULL,
-  `STATION_NAME` varchar(20) NOT NULL,
-  `STATION_LOCATION` varchar(30) NOT NULL,
-  `STATION_TYPE` varchar(30) NOT NULL,
-  `STATION_LOCATION_X` varchar(50) NOT NULL,
-  `STATION_LOCATION_Y` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `TEAM`
---
-
-CREATE TABLE `TEAM` (
-  `TEAM_ID` int(3) NOT NULL,
-  `TEAM_NAME` varchar(45) DEFAULT NULL,
-  `TEAM_COACH` varchar(45) DEFAULT NULL,
-  `TEAM_INTMATCHPLAYED` int(1) DEFAULT '0',
-  `TEAM_INTMATCHWON` int(1) DEFAULT '0',
-  `TEAM_INTMATCHLOST` int(1) DEFAULT '0',
-  `TEAM_INTMATCHDRAW` int(1) DEFAULT '0',
-  `TEAM_GOALSFOR` int(2) DEFAULT '0',
-  `TEAM_GOALSAGAINST` int(2) DEFAULT '0',
-  `TEAM_POINTS` int(2) DEFAULT '0',
-  `TEAM_POSITION` int(3) DEFAULT '0',
-  `TEAM_GROUP` char(1) DEFAULT NULL,
-  `TEAM_CONTINENT` varchar(45) DEFAULT NULL,
-  `TEAM_LOGO` varchar(500) DEFAULT NULL,
-  `TEAM_FLAG` varchar(500) DEFAULT NULL
+CREATE TABLE `USER` (
+  `USER_ID` int(11) NOT NULL,
+  `USER_NAME` varchar(30) NOT NULL,
+  `USER_LASTNAME` varchar(30) NOT NULL,
+  `USER_BIRTHDAY` date NOT NULL,
+  `USER_EMAIL` varchar(30) NOT NULL,
+  `USER_LOGIN` varchar(30) NOT NULL,
+  `USER_PASSWORD` varchar(30) NOT NULL,
+  `USER_CIN` varchar(30) DEFAULT NULL,
+  `USER_TYPE` varchar(45) NOT NULL DEFAULT 'membre'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `TEAM`
+-- Dumping data for table `USER`
 --
 
-INSERT INTO `TEAM` (`TEAM_ID`, `TEAM_NAME`, `TEAM_COACH`, `TEAM_INTMATCHPLAYED`, `TEAM_INTMATCHWON`, `TEAM_INTMATCHLOST`, `TEAM_INTMATCHDRAW`, `TEAM_GOALSFOR`, `TEAM_GOALSAGAINST`, `TEAM_POINTS`, `TEAM_POSITION`, `TEAM_GROUP`, `TEAM_CONTINENT`, `TEAM_LOGO`, `TEAM_FLAG`) VALUES
-(1, 'Egypt', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(2, 'Morocco', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(3, 'Nigeria', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(4, 'Senegal', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(5, 'Tunisia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(6, 'Australia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(7, 'IR Iran', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(8, 'Japan', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(9, 'Korea Republic', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(10, 'Saudi Arabia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 'saudi_arabia_national_football.png', NULL),
-(11, 'Belgium', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(12, 'Croatia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(13, 'Denmark', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(14, 'England', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(15, 'France', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(16, 'Germany', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(17, 'Iceland', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(18, 'Poland', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(19, 'Portugal', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(20, 'Russia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', 'téléchargement (2).png', NULL),
-(21, 'Serbia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(22, 'Spain', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(23, 'Sweden', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(24, 'Switzerland', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(25, 'Costa Rica', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(26, 'Mexico', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(27, 'Panama', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(28, 'Argentina', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(29, 'Brazil', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(30, 'Colombia', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(31, 'Peru', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL),
-(32, 'Uruguay', '', 0, 0, 0, 0, 0, 0, 0, 0, '', '', NULL, NULL);
+INSERT INTO `USER` (`USER_ID`, `USER_NAME`, `USER_LASTNAME`, `USER_BIRTHDAY`, `USER_EMAIL`, `USER_LOGIN`, `USER_PASSWORD`, `USER_CIN`, `USER_TYPE`) VALUES
+(4, 'sdf', 'hjgf', '2018-03-28', 'jhg', 'fjhg', 'fjhg', 'jhgf', 'membre'),
+(5, 'kjhg', 'jkh', '2018-03-08', 'hg', 'kjhg', 'jkhg', 'gkj', 'membre');
 
 --
--- Indexes for table `ARTICLE`
+-- Indexes for dumped tables
 --
-ALTER TABLE `ARTICLE`
-  ADD PRIMARY KEY (`ARTICLE_ID`);
 
 --
--- Indexes for table `GAME`
+-- Indexes for table `fos_user`
 --
-ALTER TABLE `GAME`
-  ADD PRIMARY KEY (`GAME_ID`);
+ALTER TABLE `fos_user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_957A647992FC23A8` (`username_canonical`),
+  ADD UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
+  ADD UNIQUE KEY `UNIQ_957A6479C05FB297` (`confirmation_token`);
 
 --
--- Indexes for table `GOAL`
+-- Indexes for table `NOTE`
 --
-ALTER TABLE `GOAL`
-  ADD PRIMARY KEY (`GOAL_ID`),
-  ADD KEY `FK_GOAL_GAME` (`GOAL_GAME`),
-  ADD KEY `FK_GOAL_PLAYER` (`GOAL_PLAYER`);
+ALTER TABLE `NOTE`
+  ADD PRIMARY KEY (`NOTE_ID`);
 
 --
--- Indexes for table `HOTEL`
+-- Indexes for table `PARTICIPATION`
 --
-ALTER TABLE `HOTEL`
-  ADD PRIMARY KEY (`HOTEL_ID`);
+ALTER TABLE `PARTICIPATION`
+  ADD PRIMARY KEY (`PARTICIPATION_ID`);
 
 --
--- Indexes for table `PLAYER`
+-- Indexes for table `USER`
 --
-ALTER TABLE `PLAYER`
-  ADD PRIMARY KEY (`PLAYER_ID`),
-  ADD KEY `FK_PLAYER_TEAM` (`PLAYER_TEAM`);
-
---
--- Indexes for table `STADIUM`
---
-ALTER TABLE `STADIUM`
-  ADD PRIMARY KEY (`STADIUM_ID`);
-
---
--- Indexes for table `STATION`
---
-ALTER TABLE `STATION`
-  ADD PRIMARY KEY (`STATION_ID`);
-
---
--- Indexes for table `TEAM`
---
-ALTER TABLE `TEAM`
-  ADD PRIMARY KEY (`TEAM_ID`);
+ALTER TABLE `USER`
+  ADD PRIMARY KEY (`USER_ID`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `ARTICLE`
+-- AUTO_INCREMENT for table `fos_user`
 --
-ALTER TABLE `ARTICLE`
-  MODIFY `ARTICLE_ID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `fos_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `GAME`
+-- AUTO_INCREMENT for table `NOTE`
 --
-ALTER TABLE `GAME`
-  MODIFY `GAME_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+ALTER TABLE `NOTE`
+  MODIFY `NOTE_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `GOAL`
+-- AUTO_INCREMENT for table `PARTICIPATION`
 --
-ALTER TABLE `GOAL`
-  MODIFY `GOAL_ID` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `HOTEL`
---
-ALTER TABLE `HOTEL`
-  MODIFY `HOTEL_ID` int(3) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `PLAYER`
---
-ALTER TABLE `PLAYER`
-  MODIFY `PLAYER_ID` int(4) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `STADIUM`
---
-ALTER TABLE `STADIUM`
-  MODIFY `STADIUM_ID` int(1) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `STATION`
---
-ALTER TABLE `STATION`
-  MODIFY `STATION_ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `TEAM`
---
-ALTER TABLE `TEAM`
-  MODIFY `TEAM_ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+ALTER TABLE `PARTICIPATION`
+  MODIFY `PARTICIPATION_ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `USER`
 --
 ALTER TABLE `USER`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
