@@ -1,0 +1,18 @@
+game_index:
+    path:     /
+    defaults: { _controller: GameBundle:Game:index }
+game_new:
+    path:     /new
+    defaults: { _controller: GameBundle:Game:new }
+game_show:
+    path:     /show/{gameId}
+    defaults: { _controller: GameBundle:Game:show }
+game_edit:
+    path:     /edit/{gameId}
+    defaults: { _controller: GameBundle:Game:edit }
+game_delete:
+    path:     /delete/{gameId}
+    defaults: { _controller: GameBundle:Game:delete }
+parse_data:
+    path:     /parse_data
+    defaults: { _controller: GameBundle:Game:parseData }

@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+    {% block container %}
+            <div class="page-title">
+                <h3 class="breadcrumb-header">View All Games</h3>
+            </div>
+            <div id="main-wrapper">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-white">
+                            <div class="panel-body">
+
+                                <h1>Games list</h1>
+                                <!-- Data table -->
+                                <div class="table-responsive">
+                                    <div id="example3_wrapper" class="dataTables_wrapper">
+                                        <table id="example3" class="display table dataTable" style="width: 100%;" role="grid" aria-describedby="example3_info">
+                                            <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Game Kind: activate to sort column descending" style="width: 107px;">Game Kind</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-Game Kind="First Team: activate to sort column ascending" style="width: 140px;">1st Team</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Second Team: activate to sort column ascending" style="width: 79px;">2nd Team</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 168px;">Start date</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Start time: activate to sort column ascending" style="width: 168px;">Start time</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="First Team Score: activate to sort column ascending" style="width: 110px;">1st Team Score</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Second Team Score: activate to sort column ascending" style="width: 110px;">2nd Team Score</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Referee: activate to sort column ascending" style="width: 110px;">Referee</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Stadium: activate to sort column ascending" style="width: 110px;">Stadium</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Venue: activate to sort column ascending" style="width: 110px;">Venue</th><th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-label="Match Number: activate to sort column ascending" style="width: 110px;">Match Number</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example3" rowspan="1" colspan="1" aria-Action="Action: activate to sort column ascending" style="width: 140px;">Action</th></tr>
+                                            </thead>
+
+                                            <tfoot>
+                                            <tr><th rowspan="1" colspan="1">Game Kind</th><th rowspan="1" colspan="1">1st Team</th><th rowspan="1" colspan="1">2nd Team</th><th rowspan="1" colspan="1">Start date</th><th rowspan="1" colspan="1">Start time</th><th rowspan="1" colspan="1">1st Team Score</th><th rowspan="1" colspan="1">2nd Team Score</th><th rowspan="1" colspan="1">Referee </th><th rowspan="1" colspan="1">Stadium</th><th rowspan="1" colspan="1">Venue</th><th rowspan="1" colspan="1">Match Number</th></tr>
+                                            </tfoot>
+                                            <tbody>
+                                            {% for game in games %}
+                                                <tr class="odd">
+                                                    <td><a href="{{ path('game_show', { 'gameId': game.gameId }) }}">{{ game.gameKind }}</a></td>
+                                                    <td>{{ game.gameWinnerteam }}</td>
+                                                    <td>{{ game.gameLossteam }}</td>
+                                                    <td>{{ game.gameTime }}</td>
+                                                    <td>{% if game.gameDate %}{{ game.gameDate|date('Y-m-d') }}{% endif %}</td>
+                                                    <td>{{ game.gameWinnerteamscore }}</td>
+                                                    <td>{{ game.gameLossteamscore }}</td>
+                                                    <td>{{ game.gameReferee }}</td>
+                                                    <td>{{ game.gameStadium }}</td>
+                                                    <td>{{ game.gameVenue }}</td>
+                                                    <td>{{ game.gameMatchnumber }}</td>
+                                                    <td>
+                                                                <a href="{{ path('game_show', { 'gameId': game.gameId }) }}">
+                                                                    <i class="menu-icon fa fa-list"></i>
+                                                                </a>
+                                                                <a href="{{ path('game_edit', { 'gameId': game.gameId }) }}">
+                                                                    <i class="menu-icon fa fa-edit"></i>
+                                                                </a>
+
+
+                                                    </td>
+                                                </tr>
+
+                                            {% endfor %}
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+{% endblock %}

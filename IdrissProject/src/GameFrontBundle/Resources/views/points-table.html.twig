@@ -1,0 +1,69 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block container %}
+<!-- Section Title -->
+<div class="section-title" style="background:url({{ asset('app/front/img/slide/3.jpg') }})">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>Points Table</h1>
+            </div>
+
+            <div class="col-md-4">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li><a href="{{ path('game_index') }}">Home</a></li>
+                        <li>Points Table</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Section Title -->
+<!-- Section Area - Content Central -->
+<section class="content-info">
+
+    <div class="container paddings-mini">
+        <div class="row">
+            <div class="col-lg-12">
+                <table class="table-striped table-responsive table-hover result-point">
+                    <thead class="point-table-head">
+                    <tr>
+                        <th class="text-left">No</th>
+                        <th class="text-left">TEAM</th>
+                        <th class="text-center">W</th>
+                        <th class="text-center">D</th>
+                        <th class="text-center">L</th>
+                        <th class="text-center">GS</th>
+                        <th class="text-center">GA</th>
+                        <th class="text-center">PTS</th>
+
+                    </tr>
+                    </thead>
+
+                    <tbody class="text-center">
+                    {% for team in teams %}
+
+                    <tr>
+                        <td class="text-left number">{{ team.teamId }}<i class="fa fa-caret-up" aria-hidden="true"></i></td>
+                        <td class="text-left">
+                            <img src="{{ asset(''~team.teamFlag~'') }}" alt="{{ team.teamName }}"><span>{{ team.teamName }}</span>
+
+                        </td>
+                        <td>{{ team.teamIntmatchwon }}</td>
+                        <td>{{ team.teamIntmatchdraw }}</td>
+                        <td>{{ team.teamIntmatchlost }}</td>
+                        <td>{{ team.teamGoalsfor }}</td>
+                        <td>{{ team.teamGoalsagainst }}</td>
+                        <td>{{ team.teamPoints }}</td>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

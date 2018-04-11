@@ -1,0 +1,93 @@
+
+
+
+
+
+
+{% extends 'base.html.twig' %}
+    {% block container %}
+
+
+        <div class="page-title">
+            <h3 class="breadcrumb-header">Show Game</h3>
+        </div>
+        <h4>
+            <a href="{{ path('game_index') }}">Back to the list of Games</a>
+        </h4>
+        <div id="main-wrapper">
+            <div class="row">
+                <div class="col-md-12">
+
+                    <div class="panel panel-white">
+                        <div class="panel-body">
+
+                            <h1>Game</h1>
+
+                            <table id="example3" class="display table dataTable" style="width: 100%;" role="grid" aria-describedby="example3_info">
+                                <tbody>
+                                <tr>
+                                    <th>Gamekind</th>
+                                    <td>{{ game.gameKind }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamewinnerteam</th>
+                                    <td>{{ game.gameWinnerteam }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamelossteam</th>
+                                    <td>{{ game.gameLossteam }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gametime</th>
+                                    <td>{{ game.gameTime }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamedate</th>
+                                    <td>{% if game.gameDate %}{{ game.gameDate|date('Y-m-d') }}{% endif %}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamewinnerteamscore</th>
+                                    <td>{{ game.gameWinnerteamscore }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamelossteamscore</th>
+                                    <td>{{ game.gameLossteamscore }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamereferee</th>
+                                    <td>{{ game.gameReferee }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamestadium</th>
+                                    <td>{{ game.gameStadium }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamevenue</th>
+                                    <td>{{ game.gameVenue }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gamematchnumber</th>
+                                    <td>{{ game.gameMatchnumber }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Gameid</th>
+                                    <td>{{ game.gameId }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+
+
+
+                        </div>
+                    </div>
+                    <a href="{{ path('game_edit', { 'gameId': game.gameId }) }}" id="add-row" class="btn btn-success m-b-sm">Edit Game</a>
+                    {{ form_start(delete_form) }}
+                    <button type="submit" id="add-row" class="btn btn-danger m-b-sm">Delete Game</button>
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+game_front:
+    resource: "@GameFrontBundle/Resources/config/routing.yml"
+    prefix:   /game_front
+game:
+    resource: "@GameBundle/Resources/config/routing.yml"
+    prefix:   /game
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+homepage:
+    resource: '@AppBundle/Resources/config/routing/routing.yml'
+    prefix:   /

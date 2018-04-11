@@ -1,0 +1,12 @@
+game_front_homepage:
+    path:     /
+    defaults: { _controller: GameFrontBundle:Default:index }
+game_front_points:
+    path:     /points
+    defaults: { _controller: GameFrontBundle:Default:points }
+game_front_results:
+    path:     /results
+    defaults: { _controller: GameFrontBundle:Default:result }
+game_front_single_result:
+    path:     /single_result/{id}
+    defaults: { _controller: GameFrontBundle:Default:singleResult }

@@ -1,0 +1,696 @@
+{% extends 'baseFront.html.twig' %}
+{% block container %}
+
+    <!-- section-hero-->
+    <div class="hero-header hero-bg" style="background:url('{{ asset('app/front/img/slide/3.jpg') }}');">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 no-margin">
+                    <h1>FIFA WORLD CUP 2018</h1>
+                </div>
+                <div class="col-lg-12">
+                    <div class="box-start">
+                        <div class="row align-items-center">
+                            <div class="col-lg-4">
+                                <div class="info-match">
+                                    <div class="row">
+                                        <div class="col">
+                                            <h4>
+                                                <span>Starting Date</span>
+                                                30 JAN 2018
+                                            </h4>
+                                        </div>
+                                        <div class="col">
+                                            <h4>
+                                                <span>Luzhniki Stadium</span>
+                                                Moscow
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="horizontal-next-teams">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/colombia.png') }}" alt="">
+                                                <span>Colombia</span>
+                                            </a>
+                                        </div>
+                                        <div class="col">
+                                            <strong>Vs</strong>
+                                        </div>
+                                        <div class="col">
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/rusia.png') }}" alt="">
+                                                <span>Rusia</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="horizontal-next-counter">
+                                    <div id="event-one" class="counter"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End section-hero-->
+
+    <!-- Section Area - Content Central -->
+    <section class="content-info">
+
+        <!-- Dark Home -->
+        <div class="dark-home paddings-50-50">
+            <div class="container">
+                <div class="row">
+                    <!-- Club Ranking -->
+                    <div class="col-lg-4">
+                        <div class="club-ranking">
+                            <h5><a href="http://html.iwthemes.com/sportscup/run/group-list.html">Club Ranking</a></h5>
+                            <div class="info-ranking">
+                                <ul>
+                                    <li>
+                                              <span class="position">
+                                                  1
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/rusia.png') }}" alt="">
+                                            Russia
+                                        </a>
+                                        <span class="points">
+                                                    90
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  2
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/arabia.png') }}" alt="">
+                                            Saudi Arabia
+                                        </a>
+                                        <span class="points">
+                                                    86
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  3
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/egy.png') }}" alt="">
+                                            Egypt
+                                        </a>
+                                        <span class="points">
+                                                    84
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  4
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/uru.png') }}" alt="">
+                                            Uruguay
+                                        </a>
+                                        <span class="points">
+                                                  70
+                                               </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  5
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/por.png') }}" alt="">
+                                            Portugal
+                                        </a>
+                                        <span class="points">
+                                                    67
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  6
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/esp.png') }}" alt="">
+                                            Spain
+                                        </a>
+                                        <span class="points">
+                                                    60
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  55
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/mar.png') }}" alt="">
+                                            Morocco
+                                        </a>
+                                        <span class="points">
+                                                    90
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  8
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/clubs-logos/irn.png') }}" alt="">
+                                            IR Iran
+                                        </a>
+                                        <span class="points">
+                                                    53
+                                                </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Club Ranking -->
+
+                    <!-- recent-results -->
+                    <div class="col-lg-4">
+                        <div class="recent-results">
+                            <h5><a href="http://html.iwthemes.com/sportscup/run/group-list.html">Recent Result</a></h5>
+                            <div class="info-results">
+                                <ul>
+                                    <li>
+                                                <span class="head">
+                                                    Portugal Vs Spain <span class="date">27 Jun 2017</span>
+                                                </span>
+
+                                        <div class="goals-result">
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/por.png') }}" alt="">
+                                                Portugal
+                                            </a>
+
+                                            <span class="goals">
+                                                        <b>2</b> - <b>3</b>
+                                                    </span>
+
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/esp.png') }}" alt="">
+                                                Spain
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                                <span class="head">
+                                                    Rusia Vs Colombia <span class="date">30 Jun 2017</span>
+                                                </span>
+
+                                        <div class="goals-result">
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/rusia.png') }}" alt="">
+                                                Rusia
+                                            </a>
+
+                                            <span class="goals">
+                                                        <b>2</b> - <b>3</b>
+                                                    </span>
+
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/colombia.png') }}" alt="">
+                                                Colombia
+                                            </a>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                                <span class="head">
+                                                    Uruguay Vs Portugal <span class="date">31 Jun 2017</span>
+                                                </span>
+
+                                        <div class="goals-result">
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/uru.png') }}" alt="">
+                                                Uruguay
+                                            </a>
+
+                                            <span class="goals">
+                                                        <b>2</b> - <b>3</b>
+                                                    </span>
+
+                                            <a href="single-team.html">
+                                                <img src="{{ asset('app/front/img/clubs-logos/por.png') }}" alt="">
+                                                Portugal
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end recent-results -->
+
+                    <!-- Top player -->
+                    <div class="col-lg-4">
+                        <div class="player-ranking">
+                            <h5><a href="http://html.iwthemes.com/sportscup/run/group-list.html">Top player</a></h5>
+                            <div class="info-player">
+                                <ul>
+                                    <li>
+                                              <span class="position">
+                                                  1
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/1.jpg') }}" alt="">
+                                            Cristiano R.
+                                        </a>
+                                        <span class="points">
+                                                    90
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  2
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/2.jpg') }}" alt="">
+                                            Lionel Messi
+                                        </a>
+                                        <span class="points">
+                                                    88
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  3
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/3.jpg') }}" alt="">
+                                            Neymar
+                                        </a>
+                                        <span class="points">
+                                                    86
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  4
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/4.jpg') }}" alt="">
+                                            Luis Suárez
+                                        </a>
+                                        <span class="points">
+                                                  80
+                                               </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  5
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/5.jpg') }}" alt="">
+                                            Gareth Bale
+                                        </a>
+                                        <span class="points">
+                                                    76
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  6
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/6.jpg') }}" alt="">
+                                            Sergio Agüero
+                                        </a>
+                                        <span class="points">
+                                                    74
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  7
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/7.jpg') }}" alt="">
+                                            Jamez R.
+                                        </a>
+                                        <span class="points">
+                                                    70
+                                                </span>
+                                    </li>
+
+                                    <li>
+                                              <span class="position">
+                                                  8
+                                              </span>
+                                        <a href="single-team.html">
+                                            <img src="{{ asset('app/front/img/players/1.jpg') }}" alt="">
+                                            Falcao Garcia
+                                        </a>
+                                        <span class="points">
+                                                    65
+                                                </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Top player -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Central -->
+        <div class="container padding-top">
+            <div class="row">
+
+                <!-- content Column Left -->
+                <div class="col-lg-6 col-xl-7">
+                    <!-- Recent Post -->
+                    <div class="panel-box">
+
+                        <div class="titles">
+                            <h4>Recent News</h4>
+                        </div>
+
+                        <!-- Post Item -->
+                        <div class="post-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="img-hover">
+                                        <img src="{{ asset('app/front/img/blog/1.jpg') }}" alt="" class="img-responsive">
+                                        <div class="overlay"><a href="single-news.html">+</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><a href="single-news.html">Group Stage Breakdown</a></h5>
+                                    <span class="data-info">January 3, 2014  / <i class="fa fa-comments"></i><a href="index-3.html#">0</a></span>
+                                    <p>While familiar with fellow European nation France, Hareide admits that South American side Peru.<a href="single-news.html">Read More [+]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Post Item -->
+
+                        <!-- Post Item -->
+                        <div class="post-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="img-hover">
+                                        <img src="{{ asset('app/front/img/blog/2.jpg') }}" alt="" class="img-responsive">
+                                        <div class="overlay"><a href="single-news.html">+</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><a href="single-news.html">Russia 2018’s potential classic match-ups</a></h5>
+                                    <span class="data-info">January 9, 2014  / <i class="fa fa-comments"></i><a href="index-3.html#">5</a></span>
+                                    <p>Our goal is very clear, it didn’t change after the draw. We should qualify for the knockout stage.<a href="single-news.html">Read More [+]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Post Item -->
+
+                        <!-- Post Item -->
+                        <div class="post-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="img-hover">
+                                        <img src="{{ asset('app/front/img/blog/3.jpg') }}" alt="" class="img-responsive">
+                                        <div class="overlay"><a href="single-news.html">+</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><a href="single-news.html">World Cup rivalries reprised</a></h5>
+                                    <span class="data-info">January  4, 2014  / <i class="fa fa-comments"></i><a href="index-3.html#">3</a></span>
+                                    <p>The outdoor exhibition on Manezhnaya Square comprises 11 figures that symbolise the main sites of interest.<a href="single-news.html">Read More [+]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Post Item -->
+
+                        <!-- Post Item -->
+                        <div class="post-item">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="img-hover">
+                                        <img src="{{ asset('app/front/img/blog/4.jpg') }}" alt="" class="img-responsive">
+                                        <div class="overlay"><a href="single-news.html">+</a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5><a href="single-news.html">All set for your trip to Russia?</a></h5>
+                                    <span class="data-info">January 8, 2014  / <i class="fa fa-comments"></i><a href="index-3.html#">2</a></span>
+                                    <p>Colombia play Japan on 19 June at the Mordovia Arena, where the piling and casting operations.<a href="single-news.html">Read More [+]</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Post Item -->
+                    </div>
+                    <!-- End Recent Post -->
+
+                    <!-- Experts -->
+                    <div class="panel-box">
+                        <div class="titles">
+                            <h4>Best Players</h4>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/1.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html">Cristiano Ronaldo</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/2.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html">Lionel Messi</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/3.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html">Neymar</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/4.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html">Luis Suárez</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/5.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html"> Gareth Bale</a></h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-3 col-md-4 col-lg-4">
+                                <div class="box-info">
+                                    <a href="single-player.html">
+                                        <img src="{{ asset('app/front/img/players/6.jpg') }}" alt="" class="img-responsive">
+                                    </a>
+                                    <h6 class="entry-title"><a href="single-player.html">Sergio Agüero</a></h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Experts -->
+                </div>
+                <!-- End content Left -->
+
+                <!-- content Sidebar Center -->
+                <aside class="col-sm-6 col-lg-3 col-xl-3">
+                    <!-- Locations -->
+                    <div class="panel-box">
+                        <div class="titles no-margin">
+                            <h4>Locations</h4>
+                        </div>
+                        <!-- Locations Carousel -->
+                        <ul class="single-carousel">
+                            <li>
+                                <img src="{{ asset('app/front/img/locations/1.jpg') }}" alt="" class="img-responsive">
+                                <div class="info-single-carousel">
+                                    <h4>Saint Petersburg</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cillum dolore eu fugiat nulla  sit amet, consectetur adipisicing elit, pariatur.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="{{ asset('app/front/img/locations/2.jpg') }}" alt="" class="img-responsive">
+                                <div class="info-single-carousel">
+                                    <h4>Ekaterinburg</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="i{{ asset('app/front/img/locations/3.jpg') }}" alt="" class="img-responsive">
+                                <div class="info-single-carousel">
+                                    <h4>Nizhny Novgorod</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Locations Carousel -->
+                    </div>
+                    <!-- End Locations -->
+
+                    <!-- Video presentation -->
+                    <div class="panel-box">
+                        <div class="titles no-margin">
+                            <h4>Presentation</h4>
+                        </div>
+                        <!-- Locations Video -->
+                        <div class="row">
+                            <iframe src="https://www.youtube.com/embed/AfOlAUd7u4o" class="video"></iframe>
+                            <div class="info-panel">
+                                <h4>Rio de Janeiro</h4>
+                                <p>Lorem ipsum dolor sit amet, sit amet, consectetur adipisicing elit, elit, incididunt ut labore et dolore magna aliqua sit amet, consectetur adipisicing elit,</p>
+                            </div>
+                        </div>
+                        <!-- End Locations Video -->
+                    </div>
+                    <!-- End Video presentation-->
+
+                    <!-- Widget img-->
+                    <div class="panel-box">
+                        <div class="titles no-margin">
+                            <h4>Widget Image</h4>
+                        </div>
+                        <img src="{{ asset('app/front/img/slide/1.jpg') }}" alt="">
+                        <div class="row">
+                            <div class="info-panel">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,  ut sit amet, consectetur adipisicing elit, labore et dolore.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Widget img-->
+                </aside>
+                <!-- End content Sidebar Center -->
+
+                <!-- content Sidebar Right -->
+                <aside class="col-sm-6 col-lg-3 col-xl-2">
+                    <!-- Diary -->
+                    <div class="panel-box">
+                        <div class="titles">
+                            <h4><i class="fa fa-calendar"></i>Diary</h4>
+                        </div>
+
+                        <!-- List Diary -->
+                        <ul class="list-diary">
+                            <!-- Item List Diary -->
+                            <li>
+                                <h6>GROUP A <span>14 JUN 2018 - 18:00</span></h6>
+                                <ul class="club-logo">
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/rusia.png') }}" alt="">
+                                        <span>RUSSIA</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/arabia.png') }}" alt="">
+                                        <span>SAUDI ARABIA</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Item List Diary -->
+
+                            <!-- Item List Diary -->
+                            <li>
+                                <h6>GROUP E <span>22 JUN 2018 - 15:00</span></h6>
+                                <ul class="club-logo">
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/bra.png') }}" alt="">
+                                        <span>BRAZIL</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/costa-rica.png') }}" alt="">
+                                        <span>COSTA RICA</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Item List Diary -->
+
+                            <!-- Item List Diary -->
+                            <li>
+                                <h6>GROUP H <span>19 JUN 2018 - 15:00</span></h6>
+                                <ul class="club-logo">
+                                    <li>
+                                        <img src="img/clubs-logos/{{ asset('app/front/img/clubs-logos/colombia.png') }}" alt="">
+                                        <span>COLOMBIA</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/japan.png') }}" alt="">
+                                        <span>JAPAN</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Item List Diary -->
+
+                            <!-- Item List Diary -->
+                            <li>
+                                <h6>GROUP C <span>16 JUN 2018 - 15:00</span></h6>
+                                <ul class="club-logo">
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/fra.png') }}" alt="">
+                                        <span>FRANCE</span>
+                                    </li>
+                                    <li>
+                                        <img src="{{ asset('app/front/img/clubs-logos/aus.png') }}" alt="">
+                                        <span>AUSTRALIA</span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- End Item List Diary -->
+                        </ul>
+                        <!-- End List Diary -->
+                    </div>
+                    <!-- End Diary -->
+
+                    <!-- Adds Sidebar -->
+                    <div class="panel-box">
+                        <div class="titles no-margin">
+                            <h4><i class="fa fa-link"></i>Cta</h4>
+                        </div>
+                        <a href="http://themeforest.net/user/iwthemes/portfolio?ref=iwthemes" target="_blank">
+                            <img src="{{ asset('app/front/img/adds/sidebar.png') }}" class="img-responsive" alt="">
+                        </a>
+                    </div>
+                    <!-- End Adds Sidebar -->
+                </aside>
+                <!-- End content Sidebar Right -->
+
+            </div>
+        </div>
+        <!-- End Content Central -->
+
+
+{% endblock %}
