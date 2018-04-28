@@ -5,7 +5,11 @@
  */
 package com.esprit.Entities;
 
-import java.sql.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 /**
  *
@@ -16,24 +20,14 @@ public class Game {
     private Date date_match;
     private String referee;
     private String time;
-    private int Team1Score;
-    private int Team2Score;
+    private String Team1Score;
+    private String Team2Score;
     public String gameKind; 
     public String Team1;
     public String Team2;
     public String Venue;
     public String Stadium;
-    public int MatchNumber;
-        
-    
-    
-    public int getMatchNumber() {
-        return MatchNumber;
-    }
-
-    public void setMatchNumber(int MatchNumber) {
-        this.MatchNumber = MatchNumber;
-    }
+    public String MatchNumber;
 
     public int getMatch_id() {
         return match_id;
@@ -47,8 +41,13 @@ public class Game {
         return date_match;
     }
 
-    public void setDate_match(Date date_match) {
-        this.date_match = date_match;
+    public void setDate_match(String date_match) {
+        DateFormat format = new SimpleDateFormat("yyyy-MMMM-d");
+        try {
+            this.date_match= format.parse(date_match);
+        } catch (ParseException ex) {
+            System.out.println("err");
+        }
     }
 
     public String getReferee() {
@@ -67,20 +66,20 @@ public class Game {
         this.time = time;
     }
 
-    public int getTeam1Score() {
+    public String getTeam1Score() {
         return Team1Score;
     }
 
-    public void setTeam1Score(int Winner_teamScore) {
-        this.Team1Score = Winner_teamScore;
+    public void setTeam1Score(String Team1Score) {
+        this.Team1Score = Team1Score;
     }
 
-    public int getTeam2Score() {
+    public String getTeam2Score() {
         return Team2Score;
     }
 
-    public void setTeam2Score(int Looser_teamScore) {
-        this.Team2Score = Looser_teamScore;
+    public void setTeam2Score(String Team2Score) {
+        this.Team2Score = Team2Score;
     }
 
     public String getGameKind() {
@@ -95,16 +94,16 @@ public class Game {
         return Team1;
     }
 
-    public void setTeam1(String Winnerteam) {
-        this.Team1 = Winnerteam;
+    public void setTeam1(String Team1) {
+        this.Team1 = Team1;
     }
 
     public String getTeam2() {
         return Team2;
     }
 
-    public void setTeam2(String LooserTeam) {
-        this.Team2 = LooserTeam;
+    public void setTeam2(String Team2) {
+        this.Team2 = Team2;
     }
 
     public String getVenue() {
@@ -123,7 +122,15 @@ public class Game {
         this.Stadium = Stadium;
     }
 
-    public Game(int match_id, Date date_match, String referee, String time, int Team1Score, int Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, int MatchNumber) {
+    public String getMatchNumber() {
+        return MatchNumber;
+    }
+
+    public void setMatchNumber(String MatchNumber) {
+        this.MatchNumber = MatchNumber;
+    }
+
+    public Game(int match_id, Date date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
         this.match_id = match_id;
         this.date_match = date_match;
         this.referee = referee;
@@ -138,7 +145,7 @@ public class Game {
         this.MatchNumber = MatchNumber;
     }
 
-    public Game(Date date_match, String referee, String time, int Team1Score, int Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, int MatchNumber) {
+    public Game(Date date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
         this.date_match = date_match;
         this.referee = referee;
         this.time = time;
@@ -151,19 +158,13 @@ public class Game {
         this.Stadium = Stadium;
         this.MatchNumber = MatchNumber;
     }
+        
+    
+    
     public Game()
     {
         
     }
-   
-    public Game(Date date_match, String referee, String time, int Winner_teamScore, int Looser_teamScore) {
-        this.date_match = date_match;
-        this.referee = referee;
-        this.time = time;
-        this.Team1Score = Winner_teamScore;
-        this.Team2Score = Looser_teamScore;
-    }
-
 
 
  

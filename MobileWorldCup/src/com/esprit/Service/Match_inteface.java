@@ -7,6 +7,7 @@ package com.esprit.Service;
 
 import javafx.collections.ObservableList;
 import com.esprit.Entities.Game;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,19 +15,6 @@ import com.esprit.Entities.Game;
  */
 public interface Match_inteface {
 
-    public void createMatch(Game M);
+    public ArrayList<Game> getListOfGames();
 
-    public ObservableList getAMatch();
-
-    public ObservableList getAllMatchs();
-    
-    boolean deleteMatch(int id);
-
-    public Game getMatchbyId(int id);
-
-    public void updateMatch(Game p);
-    
-    public void updateReferee(String referee,int Id);
-
-    public void EmptyMatch();
 }

@@ -23,10 +23,10 @@ public class ShowGame {
     public ShowGame() {
         
         f = new Form();
-        lb = new SpanLabel("");
+        lb = new SpanLabel("All Games");
         f.add(lb);
         ServiceGame serviceTask=new ServiceGame();
-        ArrayList<Game> lis=serviceTask.getList2();
+        ArrayList<Game> lis=serviceTask.getListOfGames();
         lb.setText(lis.toString());
           f.getToolbar().addCommandToRightBar("back", null, (ev)->{HomeGame h=new HomeGame();
           h.getF().show();

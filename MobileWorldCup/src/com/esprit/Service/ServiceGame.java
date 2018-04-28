@@ -8,6 +8,7 @@ package com.esprit.Service;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
+import com.codename1.io.Log;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
@@ -21,64 +22,62 @@ import java.util.Map;
  *
  * @author sana
  */
-public class ServiceGame {
 
-    public void ajoutTask(Game ta) {
-        ConnectionRequest con = new ConnectionRequest();
-        String Url = "http://41.226.11.243:10004/tasks/ "+ ta.getNom() + "/" + ta.getEtat();
-        con.setUrl(Url);
+public class ServiceGame implements Match_inteface{
 
-        System.out.println("tt");
-
-        con.addResponseListener((e) -> {
-            String str = new String(con.getResponseData());
-            System.out.println(str);
-//            if (str.trim().equalsIgnoreCase("OK")) {
-//                f2.setTitle(tlogin.getText());
-//             f2.show();
-//            }
-//            else{
-//            Dialog.show("error", "login ou pwd invalid", "ok", null);
-//            }
-        });
-        NetworkManager.getInstance().addToQueueAndWait(con);
-    }
     
 
-    public ArrayList<Game> getList2() {
-        ArrayList<Game> listTasks = new ArrayList<>();
+    public ArrayList<Game> getListOfGames()  {
+        ArrayList<Game> listGames = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
-        con.setUrl("http://41.226.11.243:10004/tasks/");
+        
+        
+        
+        con.setUrl("http://localhost/IdrissProject/web/app_dev.php/api/all");
         con.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                //listTasks = getListTask(new String(con.getResponseData()));
+            //    listGames = getListOfGames(new String(con.getResponseData()));
                 JSONParser jsonp = new JSONParser();
                 
                 try {
                     //renvoi une map avec clé = root et valeur le reste
-                    Map<String, Object> tasks = jsonp.parseJSON(new CharArrayReader(new String(con.getResponseData()).toCharArray()));
-                    System.out.println("roooooot:" +tasks.get("root"));
+                    Map<String, Object> games;
+                    games = jsonp.parseJSON(new CharArrayReader(new String(con.getResponseData()).toCharArray()));
+                    
+                    System.out.println("ROOOOTT !!!!!!!!:" +games.get("root"));
 
-                    List<Map<String, Object>> list = (List<Map<String, Object>>) tasks.get("root");
+                    List<Map<String, Object>> list = (List<Map<String, Object>>) games.get("root");
 
                     for (Map<String, Object> obj : list) {
-                        Game task = new Game();
-                        float id = Float.parseFloat(obj.get("id").toString());
+                        Game game = new Game();
+                        float id = Float.parseFloat(obj.get("gameId").toString());
                         
-                        task.setId((int) id);
-                        task.setEtat(obj.get("state").toString());
-                        task.setNom(obj.get("name").toString());
-                        listTasks.add(task);
+                        game.setMatch_id((int) id);
+                       // game.setDate_match(obj.get("game_date").toString());
+                        game.setGameKind(obj.get("gameKind").toString());
+                      /*  game.setMatchNumber(obj.get("game_matchnumber").toString());
+                        game.setReferee(obj.get("game_referee").toString());
+                        game.setStadium(obj.get("game_stadium").toString());
+                        game.setTeam1(obj.get("game_winnerteam").toString());
+                        game.setTeam1Score(obj.get("game_winnerteamscore").toString());
+                        game.setTeam2(obj.get("game_lossteam").toString());
+                        game.setTeam2Score(obj.get("game_lossteamscore").toString());
+                        game.setTime(obj.get("game_time").toString());
+                        game.setVenue(obj.get("game_venue").toString());*/
+
+                        listGames.add(game);
 
                     }
                 } catch (IOException ex) {
+                    System.out.println("ERROR HERE !!!");
+                    Log.e(ex);
                 }
 
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(con);
-        return listTasks;
+        return listGames;
     }
 
 }
