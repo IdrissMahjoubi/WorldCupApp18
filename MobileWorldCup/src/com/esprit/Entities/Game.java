@@ -166,6 +166,11 @@ public class Game {
         
     }
 
+    @Override
+    public String toString() {
+        return "Game{" + "match_id=" + match_id + ", date_match=" + date_match + ", referee=" + referee + ", time=" + time + ", Team1Score=" + Team1Score + ", Team2Score=" + Team2Score + ", gameKind=" + gameKind + ", Team1=" + Team1 + ", Team2=" + Team2 + ", Venue=" + Venue + ", Stadium=" + Stadium + ", MatchNumber=" + MatchNumber + '}';
+    }
+
 
  
     

@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Entities;
+package com.esprit.Entities;
 
-import Utilities.DataSource;
-import static Utilities.DataSource.instance;
 import java.sql.Date;
 
 /**

@@ -17,7 +17,7 @@ import java.util.Date;
  */
 public class Game {
     private int match_id;
-    private Date date_match;
+    private String date_match;
     private String referee;
     private String time;
     private String Team1Score;
@@ -37,17 +37,12 @@ public class Game {
         this.match_id = match_id;
     }
 
-    public Date getDate_match() {
+    public String getDate_match() {
         return date_match;
     }
 
     public void setDate_match(String date_match) {
-        DateFormat format = new SimpleDateFormat("yyyy-MMMM-d");
-        try {
-            this.date_match= format.parse(date_match);
-        } catch (ParseException ex) {
-            System.out.println("err");
-        }
+            this.date_match= date_match;
     }
 
     public String getReferee() {
@@ -130,7 +125,7 @@ public class Game {
         this.MatchNumber = MatchNumber;
     }
 
-    public Game(int match_id, Date date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
+    public Game(int match_id, String date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
         this.match_id = match_id;
         this.date_match = date_match;
         this.referee = referee;
@@ -145,7 +140,7 @@ public class Game {
         this.MatchNumber = MatchNumber;
     }
 
-    public Game(Date date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
+    public Game(String date_match, String referee, String time, String Team1Score, String Team2Score, String gameKind, String Team1, String Team2, String Venue, String Stadium, String MatchNumber) {
         this.date_match = date_match;
         this.referee = referee;
         this.time = time;
@@ -164,6 +159,11 @@ public class Game {
     public Game()
     {
         
+    }
+
+    @Override
+    public String toString() {
+        return "Game{" + "match_id=" + match_id + ", date_match=" + date_match + ", referee=" + referee + ", time=" + time + ", Team1Score=" + Team1Score + ", Team2Score=" + Team2Score + ", gameKind=" + gameKind + ", Team1=" + Team1 + ", Team2=" + Team2 + ", Venue=" + Venue + ", Stadium=" + Stadium + ", MatchNumber=" + MatchNumber + '}';
     }
 
 

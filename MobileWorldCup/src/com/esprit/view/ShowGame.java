@@ -5,8 +5,13 @@
  */
 package com.esprit.view;
 
+import com.codename1.components.MultiButton;
 import com.codename1.components.SpanLabel;
+import static com.codename1.ui.CN.CENTER;
+import com.codename1.ui.Container;
 import com.codename1.ui.Form;
+import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.util.Resources;
 import com.esprit.Service.ServiceGame;
 import com.esprit.Entities.Game;
 import java.util.ArrayList;
@@ -19,19 +24,36 @@ public class ShowGame {
 
     Form f;
     SpanLabel lb;
-  
+    private Resources theme;
+
     public ShowGame() {
         
         f = new Form();
-        lb = new SpanLabel("All Games");
-        f.add(lb);
-        ServiceGame serviceTask=new ServiceGame();
-        ArrayList<Game> lis=serviceTask.getListOfGames();
-        lb.setText(lis.toString());
+        ServiceGame serviceGame =new ServiceGame();
+        ArrayList<Game> list=serviceGame.getListOfGames();
+        
+        Container listGames = new Container(BoxLayout.y());
+        listGames.setScrollable(true);
+        for (Game game: list)
+        {
+            MultiButton mb = new MultiButton(game.getTeam1()+" VS "+game.getTeam2());
+            mb.setTextLine2("more Details..");
+            mb.addActionListener((e)->{
+                
+        ShowSingle single=new ShowSingle(game.getMatch_id());
+        single.getF().show();
+        });
+            listGames.add(mb);
+            
+        }        
+        f.add(listGames);
+
           f.getToolbar().addCommandToRightBar("back", null, (ev)->{HomeGame h=new HomeGame();
           h.getF().show();
           });
+          
     }
+    
 
     public Form getF() {
         return f;
