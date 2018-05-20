@@ -21,14 +21,20 @@ package com.codename1.uikit.cleanmodern;
 
 import com.codename1.components.FloatingHint;
 import com.codename1.ui.Button;
+import com.codename1.ui.Component;
 import com.codename1.ui.Container;
+import com.codename1.ui.Dialog;
 import com.codename1.ui.Display;
+import com.codename1.ui.TextArea;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.util.Resources;
+import com.esprit.Entities.User;
+import com.esprit.Service.ServiceUser;
+import tools.Connectivity;
 
 /**
  * Sign in UI
@@ -68,10 +74,29 @@ public class SignInForm extends BaseForm {
                 signIn,
                 FlowLayout.encloseCenter(doneHaveAnAccount, signUp)
         );
+        
+
+        
         content.setScrollableY(true);
         add(BorderLayout.SOUTH, content);
         signIn.requestFocus();
         signIn.addActionListener(e -> new NewsfeedForm(res).show());
-    }
+final Button showPopup = new Button("Sorry");
+        
+        if (Connectivity.isConnected()) {
+            System.out.println("Connection established !");
+
+        } else {
+            
+        
+        Dialog d = new Dialog("Connection failed");
+        TextArea popupBody = new TextArea("Please check your connetion", 3, 10);
+        popupBody.setUIID("PopupBody");
+        popupBody.setEditable(false);
+        d.setLayout(new BorderLayout());
+        d.add(BorderLayout.CENTER, popupBody);
+        d.showPopupDialog(showPopup);
+        }
+        }
     
 }

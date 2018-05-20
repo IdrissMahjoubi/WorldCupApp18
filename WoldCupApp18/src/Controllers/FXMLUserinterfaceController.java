@@ -80,7 +80,7 @@ public class FXMLUserinterfaceController implements Initializable {
             teamsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLAffichageTeamUser.fxml"));
             //accomodationsPane = FXMLLoader.load(getClass().getResource("/Views/Evenement.fxml"));
             articlesPane = FXMLLoader.load(getClass().getResource("/Views/FXMLShowArticleUser.fxml"));
-//            statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
+            //statisticsPane = FXMLLoader.load(getClass().getResource("/Views/FXMLStatPlayer.fxml"));
             streamPane=FXMLLoader.load(getClass().getResource("/Views/FXMLMatchStreaming.fxml"));
             //logoutpane=FXMLLoader.load(getClass().getResource("/Views/FXMLauthentification.fxml"));
             updateaccount=FXMLLoader.load(getClass().getResource("/Views/FXMLUpdateUser.fxml"));

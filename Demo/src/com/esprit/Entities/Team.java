@@ -7,7 +7,7 @@ package com.esprit.Entities;
 
 /**
  *
- * @author pacha
+ * @author apple
  */
 public class Team  {
     private int TEAM_ID;
